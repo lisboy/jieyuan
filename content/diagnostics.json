@@ -1,0 +1,67 @@
+{
+  "comment": "战报失败诊断规则（DESIGN-EXPANSION §2.7）。前端 js/report.js 从 battle result 计算事实（facts），按数组顺序匹配第一条命中的规则。when 里所有条件是 AND；占位符 {n} 由前端填。只描述、不判罪，文案保持克制。",
+  "schema": 1,
+  "facts": "deaths, worstWave, worstWaveDeaths, aoeRound, firstDeathRound, avgHp, turnsOverPar, mods[], bossPhase, comboUsed, ultCount, healCount, elemBad, win",
+  "rules": [
+    {
+      "id": "aoe-collapse",
+      "when": { "worstWaveDeathsGte": 3 },
+      "text": "第 {worstWave} 波有 {worstWaveDeaths} 人几乎同时倒下：多半被一波 AoE 收掉。下回分散承伤点，或带一名护盾位（guard）提前铺盾。"
+    },
+    {
+      "id": "boss-final-phase",
+      "when": { "bossPhaseGte": 3, "win": false },
+      "text": "关主打到了第三阶段才分出胜负：他的高强度招式已全部展开。下次尝试在第二阶段前就集火压血，或留好大招等破防窗口。"
+    },
+    {
+      "id": "elem-counter",
+      "when": { "elemBad": true, "win": false },
+      "text": "敌方六气大多克制我方：伤害被压着打。换上克制敌方主气的队员，克制 +30% 不是小数。"
+    },
+    {
+      "id": "thin-qi-energy",
+      "when": { "modsHas": "thin-qi", "win": false },
+      "text": "本关「灵气稀薄」压了大招频率：终式比平时来得慢。要么带续气型队友（support / 灵饰首回合能量），要么接受更多回合。"
+    },
+    {
+      "id": "heal-absent",
+      "when": { "healCountEq": 0, "deathsGte": 1, "win": false },
+      "text": "整场没有一次治疗：血线是一路磨穿的。带一位 sustain 定位，或用护盾位替代。"
+    },
+    {
+      "id": "attrition",
+      "when": { "turnsOverParGte": 1.5, "win": false },
+      "text": "打满了 {turns} 次出手仍未破局：输出强度不够。检查主力等级 / 技能等级 / 缘器主属性是否跟上关卡等级。"
+    },
+    {
+      "id": "hp-grind",
+      "when": { "avgHpLte": 0.35, "win": false },
+      "text": "结束时全队平均血量仅剩 {avgHp}%：差一点扛过去。波间调息回 25%，试着用 control 拖回合换调息空间。"
+    },
+    {
+      "id": "first-death-early",
+      "when": { "firstDeathRoundLte": 3, "win": false },
+      "text": "第 {firstDeathRound} 次出手内就有人倒下：开场压力比预计大。换 guard 顶前排，或给主 C 件道袍（受伤 -8%）。"
+    },
+    {
+      "id": "twin-point-kill",
+      "when": { "modsHas": "twin", "win": false },
+      "text": "「双生」词条生效：同名敌人互相分摊伤害。这关要点杀——把伤害集中在同一个目标上，别雨露均沾。"
+    },
+    {
+      "id": "combo-unused",
+      "when": { "comboUsedEq": 0, "deathsGte": 2, "win": false },
+      "text": "本场一次合击都没发出来：同羁绊两人同场、各攒 60 能量即可发动。编队时留意羁绊成对。"
+    },
+    {
+      "id": "generic-deaths",
+      "when": { "deathsGte": 1, "win": false },
+      "text": "倒下了 {deaths} 人：整体练度或站位还有空间。先看战报时间轴里倒下前发生了什么——是爆发、dot 还是持续磨血。"
+    },
+    {
+      "id": "win-close",
+      "when": { "win": true, "avgHpLte": 0.4 },
+      "text": "险胜：平均血量只剩 {avgHp}%。这关的强度已经顶到你队伍上限，稳定 Farm 前先抬一抬生存。"
+    }
+  ]
+}

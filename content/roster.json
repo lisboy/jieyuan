@@ -1,0 +1,5070 @@
+{
+  "comment": "128 角色主数据。红 13 / 金 15 为人工手写技能（含缘法代价），紫 34 / 蓝 34 / 绿 22 先给概念位、技能由 skill_templates.json 装配。稀有度以 id 前缀为准：ur=红 / ssr=金 / sr=紫 / r=蓝 / n=绿。字段 age_band=child/teen 的出图受 content/modesty.md 硬约束。",
+  "version": 1,
+  "characters": [
+    {
+      "id": "ur-zf-01",
+      "name": "虞清都",
+      "title": "紫府·太史令",
+      "rarity": "red",
+      "faction": "zf",
+      "element": "storm",
+      "role": "control",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她在星案前坐了四十年，把一个人的死期从命盘上抹掉了。代价是自己往后看见的每一场星象，都少一笔。",
+      "art": {
+        "set": "高空星案与铜浑仪，脚下云海",
+        "outfit": "月白广袖道袍，外披星纱帔帛，腰间悬算筹与符胆",
+        "motif": "指尖引下一道紫雷，绕着案上星图缓缓推演"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "朱笔勾名",
+          "energy": 75,
+          "cd": 4,
+          "desc": "把一个名字从命盘上划掉：对单体造成 210% 紫雷伤害，并使其「失位」（定身 1 回合，70% 概率）。她替你承担一次本该落在你身上的天谴。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.1,
+              "type": "magic"
+            },
+            {
+              "k": "stun",
+              "turns": 1,
+              "chance": 0.7
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "星图缺笔",
+          "desc": "每次施术后，自身速度 -4%（可叠 4 层）。她看见的东西越来越少，出手也因此越来越慢。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "debuff",
+                  "stat": "spd",
+                  "op": "mul",
+                  "value": 0.96,
+                  "turns": 99,
+                  "maxStacks": 4,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "移命换劫",
+          "desc": "为最危急的同伴挡下致死一击（保留 1 血，1 次），并把这份因果转嫁给自己：虞清都受到等量反噬。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "ally_down",
+              "fx": [
+                {
+                  "k": "revive",
+                  "pctHp": 0.01,
+                  "target": "ally_lowest_hp"
+                },
+                {
+                  "k": "damage",
+                  "coef": 0.9,
+                  "type": "true",
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ssr-zf-01",
+          "rel": "师徒"
+        }
+      ]
+    },
+    {
+      "id": "ur-gh-01",
+      "name": "顾霜心",
+      "title": "广寒·拾霜司主",
+      "rarity": "red",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "人间每一句没说出口的话都会结一层霜，她负责收进瓮里。她的瓮已经满了十九个。",
+      "art": {
+        "set": "桂影与巨大月轮，霜瓮成列",
+        "outfit": "银白素纱长裙，外罩霜色短氅，袖口结霜",
+        "motif": "广袖展开如月华，袖间霜粒飘向倒地的同伴"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "霜瓮启封",
+          "energy": 70,
+          "cd": 3,
+          "desc": "把一瓮霜化开：全队回复 140% 攻击力的生命，解除 2 层负面，并在 2 回合内受到的治疗量 +20%。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.4,
+              "target": "ally_all"
+            },
+            {
+              "k": "dispel",
+              "count": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "buff",
+              "stat": "healRecv",
+              "op": "add",
+              "value": 0.2,
+              "turns": 2,
+              "target": "ally_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "九坛封霜",
+          "desc": "回合末为全队续一层薄霜盾（60% 攻击力，回合末消散）。这些话她替你记着，不用你再说一遍。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "turn_end",
+              "fx": [
+                {
+                  "k": "shield",
+                  "coef": 0.6,
+                  "turns": 1,
+                  "target": "ally_all",
+                  "decays": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "分霜共盏",
+          "desc": "自身在场时，所有同伴的持续伤害减免 18%。霜是冷的，但分着受就没那么冷。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "dotReduce",
+              "op": "add",
+              "value": 0.18,
+              "turns": 99,
+              "target": "ally_all_except_self"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ssr-gh-06",
+          "rel": "姐妹"
+        },
+        {
+          "id": "ssr-gh-01",
+          "rel": "主从"
+        }
+      ]
+    },
+    {
+      "id": "ur-yx-01",
+      "name": "涂山月见",
+      "title": "云岫·九尾齐开",
+      "rarity": "red",
+      "faction": "yx",
+      "element": "dusk",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "修行到第九尾，狐族三百年只她一个。九尾齐开那夜，山下的名字她一条也没忘——化形完全就要忘掉名字，她没忘。",
+      "art": {
+        "set": "云岫松雪，远处云外钟声与雾",
+        "outfit": "山居麻布与兽裘混穿，缀骨笛铃铛，赤足",
+        "motif": "九条蓬松狐尾在身后展开成扇，尾尖各悬一点月下的萤火"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "九尾·齐开",
+          "energy": 80,
+          "cd": 3,
+          "desc": "九尾齐扫：对敌方全体造成 118% 素月伤害，附加 2 回合「萤火」持续伤害（每回合 38% 攻击力，上限为攻击力 110%）。尾光扫过之处留下「月痕」：受到伤害 +12%（2 回合）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 1.18,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "dot",
+              "mode": "atk",
+              "coef": 0.38,
+              "turns": 2,
+              "capCoef": 1.1,
+              "target": "enemy_all"
+            },
+            {
+              "k": "mark",
+              "dmgTake": 0.12,
+              "turns": 2,
+              "target": "enemy_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "断尾续命",
+          "desc": "倒下时以一条尾替死，复活并保留 35% 生命（1 次），此后自身终结技倍率 +12%。她少一条尾，你多一次机会。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "self_down",
+              "fx": [
+                {
+                  "k": "revive",
+                  "pctHp": 0.35,
+                  "target": "self"
+                },
+                {
+                  "k": "buff",
+                  "stat": "skillCoef",
+                  "op": "add",
+                  "value": 0.12,
+                  "turns": 99,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "借尾挡劫",
+          "desc": "上阵助战时，被助战者获得 1 次免死（保留 1 血）；用掉后涂山月见的星级永久 -1（本局）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "battle_start",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "graze",
+                  "op": "add",
+                  "value": 1,
+                  "turns": 99,
+                  "target": "ally_single"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ssr-yx-03",
+          "rel": "同族·狐"
+        }
+      ]
+    },
+    {
+      "id": "ur-qx-01",
+      "name": "林栖迟",
+      "title": "栖霞·首席蒙学",
+      "rarity": "red",
+      "faction": "qx",
+      "element": "light",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "衡门之下可以栖迟。她是学宫里唯一敢在晚钟后翻墙出去的人，回来时总带着别人没见过的东西。",
+      "art": {
+        "set": "杏坛黄昏与墨池，斜阳穿廊",
+        "outfit": "青碧交领直裾长袍，外罩曜金半臂（短背心压在长袍之外），腰系朱红丝绦，袖口挽起到腕上，平底布鞋",
+        "motif": "竹简在手里展开，曜光从简上的字缝里漏出来，落在同伴肩上"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "传道授业",
+          "energy": 60,
+          "cd": 3,
+          "desc": "将自身推演分给全队：全体攻击 +26%、速度 +14%（2 回合），自身同回合内攻击 -20%（这是借出去的代价）。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.26,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "buff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 1.14,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "debuff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 0.8,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "夜课传灯",
+          "desc": "回合末为其他同伴续气 +12。她把能记的都记了，唯独不记自己的份额。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "turn_end",
+              "fx": [
+                {
+                  "k": "energy",
+                  "value": 12,
+                  "target": "ally_all_except_self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "授业催行",
+          "desc": "助战时，每场战斗首次终结技后使目标再行动一次。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "extraAction",
+                  "op": "add",
+                  "value": 1,
+                  "turns": 1,
+                  "target": "ally_single"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "r-qx-07",
+          "rel": "同窗"
+        }
+      ]
+    },
+    {
+      "id": "ur-cc-01",
+      "name": "赫连铸",
+      "title": "赤城·第七炉大炉师",
+      "rarity": "red",
+      "faction": "cc",
+      "element": "flame",
+      "role": "break",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "他铸剑要拿自己的骨头做模，因为他不信任何一块铁比人更懂什么叫硬。",
+      "art": {
+        "set": "剑炉夜班，淬火白烟与飞溅火星",
+        "outfit": "麻布围裙系于窄袖短打之外，护目铜镜推在额上，小臂缠灼痕",
+        "motif": "单手把烧红的剑身对折，火星在他脚边炸开"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "折骨铸锋",
+          "energy": 70,
+          "cd": 3,
+          "desc": "对单体造成 260% 离火伤害，削减其 32% 防御（3 回合），并打掉 60% 护盾。同时自身受到 12% 当前生命的反噬。烙铁按上去就是「烙痕」：受到伤害 +10%（2 回合）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.6,
+              "type": "phys"
+            },
+            {
+              "k": "debuff",
+              "stat": "def",
+              "op": "mul",
+              "value": 0.68,
+              "turns": 3
+            },
+            {
+              "k": "shieldBreak",
+              "value": 0.6
+            },
+            {
+              "k": "damage",
+              "coef": 0.12,
+              "type": "maxHpSelf",
+              "target": "self"
+            },
+            {
+              "k": "mark",
+              "dmgTake": 0.1,
+              "turns": 2,
+              "target": "enemy_single"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "炉前不熄火",
+          "desc": "自身在场时，全队「凿阵」类削防效果持续时间 +1 回合。他盯着炉子，谁也别想趁冷动手。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "debuffExtend",
+              "op": "add",
+              "value": 1,
+              "turns": 99,
+              "target": "ally_all_except_self"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "为君开炉",
+          "desc": "助战时，被助战者的终结技伤害 +18%，但每回合自身损失 3% 生命。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "ultCoef",
+              "op": "add",
+              "value": 0.18,
+              "turns": 99,
+              "target": "ally_single"
+            },
+            {
+              "k": "dot",
+              "mode": "maxHp",
+              "coef": 0.03,
+              "turns": 99,
+              "target": "self",
+              "capCoef": 0.1
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ssr-cc-01",
+          "rel": "兄弟"
+        }
+      ]
+    },
+    {
+      "id": "ur-yh-01",
+      "name": "姜潮生",
+      "title": "瀛海·珠阙守溟",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "tide",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "潮信每年来一次，她每年都在。溟火烧到第三回的时候，她把珠阙的门从外面关上了。",
+      "art": {
+        "set": "海眼与珠帘，水下溟火在深处发红光",
+        "outfit": "鲛绡长裙外覆鳞纹薄甲，发尾入水般散开，贝饰",
+        "motif": "双手撑开一面水幕挡住浪头，浪碎成满屏气泡"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "沧溟潮信",
+          "energy": 65,
+          "cd": 3,
+          "target": "ally_all",
+          "desc": "为全队套上 165% 攻击力的沧水盾（2 回合），并嘲讽敌方全体 1 回合。她应下的事，浪也得排队。",
+          "fx": [
+            {
+              "k": "shield",
+              "coef": 1.65,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "taunt",
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "潮闭重门",
+          "desc": "自身受到的伤害有 25% 转由生命最高的同伴分担，但她在场时全队防御 +10%。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "self_hit",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "def",
+                  "op": "mul",
+                  "value": 1.1,
+                  "turns": 99,
+                  "target": "ally_all"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "共御水幕",
+          "desc": "助战时，被助战者受到群体伤害降低 24%。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "aoeReduce",
+              "op": "add",
+              "value": 0.24,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ssr-yh-01",
+          "rel": "恋人"
+        }
+      ]
+    },
+    {
+      "id": "ssr-gh-06",
+      "name": "谢枕霜",
+      "title": "广寒·霜谱录事",
+      "rarity": "gold",
+      "faction": "gh",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她在霜谱上记下每一场霜的来处，唯独自己那一页是空白。有人问她为什么，她说：记上去的东西会化，没记的才留得住。",
+      "art": {
+        "set": "月府抄霜廊，成排霜谱摊在石案上，廊外月轮低垂",
+        "outfit": "银白短襦外罩霜色半臂，袖口缠紫雷纹细绳，裙摆缀小银铃，肩上斜挎一只装谱的布囊",
+        "motif": "指尖牵起一缕紫雷，把散落的霜粒串成一行会发亮的字"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "引雷入谱",
+          "energy": 60,
+          "cd": 3,
+          "target": "ally_all",
+          "desc": "全队攻击提升 18%（2 回合），并为生命最低的同伴续气 +30；她自己承受 8% 当前生命的反噬。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.18,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "energy",
+              "value": 30,
+              "target": "ally_lowest_hp"
+            },
+            {
+              "k": "damage",
+              "coef": 0.08,
+              "type": "true",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "霜谱自记",
+          "desc": "每次同伴施术后，生命最低的同伴攻击提升 12%（2 回合）。她把自己那一页留白，换别人多写一行。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 1.12,
+                  "turns": 2,
+                  "target": "ally_lowest_hp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "共名一页",
+          "desc": "自身在场时，其他同伴暴击 +8%。她的谱上不写自己，只写你们。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "crit",
+              "op": "add",
+              "value": 0.08,
+              "turns": 99,
+              "target": "ally_all_except_self"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ur-gh-01",
+          "rel": "姐妹"
+        }
+      ]
+    },
+    {
+      "id": "ssr-gh-05",
+      "name": "闻人漱月",
+      "title": "广寒·断霜刃主",
+      "rarity": "gold",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "月府三百年没开过的霜门，是她一个人守的。刀上结的霜比血厚，她说等刀化开那天，就把自己还给自己。",
+      "art": {
+        "set": "断霜崖顶，巨大月轮压在地平线上，脚下是封冻的霜海",
+        "outfit": "月白窄袖长裙，外披深蓝霜纹大氅，腰间悬一柄无鞘冰刃，发间一支断霜簪",
+        "motif": "单手持冰刃斜指地面，刃上霜纹一层层亮起，寒气顺着刀锋爬向四周"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "霜天裂月",
+          "energy": 70,
+          "cd": 4,
+          "target": "enemy_single",
+          "desc": "单体敌人：造成 280% 法术伤害，并标记（受到伤害 +15%，2 回合）。代价：自身防御降低 20%（2 回合）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.8,
+              "type": "magic",
+              "target": "enemy_single"
+            },
+            {
+              "k": "mark",
+              "dmgTake": 0.15,
+              "turns": 2,
+              "target": "enemy_single"
+            },
+            {
+              "k": "debuff",
+              "stat": "def",
+              "op": "mul",
+              "value": 0.8,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "刃霜自噬",
+          "desc": "每次施术后，自身攻击提升 6%（可叠 3 层），防御降低 3%（可叠 3 层）。刀喝她的血，也替她磨刃。她的刀认得所有「痕迹」：对被标记的目标，伤害再 +10%。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 1.06,
+                  "turns": 99,
+                  "maxStacks": 3,
+                  "target": "self"
+                },
+                {
+                  "k": "debuff",
+                  "stat": "def",
+                  "op": "mul",
+                  "value": 0.97,
+                  "turns": 99,
+                  "maxStacks": 3,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "同霜共刃",
+          "desc": "自身在场时，其他同伴暴击 +10%。霜会认人，认下了就不换。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "crit",
+              "op": "add",
+              "value": 0.1,
+              "turns": 99,
+              "target": "ally_all_except_self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ur-zf-03",
+      "name": "沈砚秋",
+      "title": "紫府·抄星官",
+      "rarity": "red",
+      "faction": "zf",
+      "element": "light",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她把死者的生辰抄进砚里磨开，说这样他们至少还能参与一次推演。",
+      "art": {
+        "set": "星案偏厅，成排抄本与灯",
+        "outfit": "靛青官袍，袖口磨白，执笔的手有墨渍",
+        "motif": "砚中墨光浮起一行行名字"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "命簿还生",
+          "energy": 60,
+          "cd": 3,
+          "desc": "为单体回复 190% 攻击力的生命，若目标本回合内下过阵亡判定则额外复活至 40%（1 次）。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.9,
+              "target": "ally_lowest_hp"
+            },
+            {
+              "k": "revive",
+              "pctHp": 0.4,
+              "target": "ally_down"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "抄星分辉",
+          "desc": "自身施术时，随机一名同伴回复 45% 攻击力生命。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "heal",
+                  "coef": 0.45,
+                  "target": "ally_random"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "抄名续命",
+          "desc": "助战时，被助战者受到的治疗 +15%。她把你的名字抄进砚里磨开，替你多续一笔。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "healTake",
+              "op": "mul",
+              "value": 1.15,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ur-zf-01",
+          "rel": "师徒"
+        }
+      ]
+    },
+    {
+      "id": "ssr-zf-02",
+      "name": "韩昭",
+      "title": "紫府·执雷",
+      "rarity": "gold",
+      "faction": "zf",
+      "element": "storm",
+      "role": "break",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "执雷人要替星案挨雷，他挨了十一年，耳朵从此只听得见一句：再靠前半寸。",
+      "art": {
+        "set": "雷坛与符柱，夜空将裂",
+        "outfit": "窄袖道袍外束雷纹甲片，背负符筒",
+        "motif": "一柄符剑插进阵眼，雷顺着甲片纹路走"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "踏雷寸进",
+          "energy": 65,
+          "cd": 3,
+          "desc": "对单体造成 205% 紫雷伤害并削其 26% 法防（2 回合），自身承受 8% 当前生命反噬。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.05,
+              "type": "magic"
+            },
+            {
+              "k": "debuff",
+              "stat": "mdef",
+              "op": "mul",
+              "value": 0.74,
+              "turns": 2
+            },
+            {
+              "k": "damage",
+              "coef": 0.08,
+              "type": "maxHpSelf",
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "以身承雷",
+          "desc": "被法术击中时，减伤 20%，并在回合末续气 +10。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "self_hit",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "mdef",
+                  "op": "mul",
+                  "value": 1.2,
+                  "turns": 1,
+                  "target": "self"
+                },
+                {
+                  "k": "energy",
+                  "value": 10,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-zf-03",
+      "name": "阮云台",
+      "title": "紫府·望气",
+      "rarity": "gold",
+      "faction": "zf",
+      "element": "light",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她望气总望错，把凶说成吉，因为她舍不得让人难过。星案为此罚她抄了三年。",
+      "art": {
+        "set": "云台高处，晨光破雾",
+        "outfit": "月白短袍配束袖长裤，发间一支旧铜簪",
+        "motif": "抬手把一片朝光推出去，光分成数道落在敌阵"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "望气讳凶",
+          "energy": 55,
+          "cd": 3,
+          "desc": "对敌方全体造成 105% 曜光伤害，并为生命最低的同伴回复 55% 攻击力生命。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 1.05,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "heal",
+              "coef": 0.55,
+              "target": "ally_lowest_hp"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "谶言既出",
+          "desc": "终结技命中 3 个以上目标时，自身暴击率 +10%（2 回合）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "crit",
+                  "op": "add",
+                  "value": 0.1,
+                  "turns": 2,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-gh-01",
+      "name": "白玉杵",
+      "title": "广寒·捣霜",
+      "rarity": "gold",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兔灵",
+      "beast": true,
+      "lore": "她捣的不是药，是霜。捣碎了才分得匀，一坛霜分给一百个人，每人只欠一点点。",
+      "art": {
+        "set": "桂树下霜臼，月轮压得很低",
+        "outfit": "霜色短打加长裤，长兔耳绑了一小段红绳，怀抱玉杵",
+        "motif": "玉杵砸地，霜面裂成环形护障"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "捣霜分玉",
+          "energy": 60,
+          "cd": 3,
+          "target": "ally_all",
+          "desc": "为全队套上 130% 攻击力的霜盾（2 回合），自身嘲讽敌方 1 回合。",
+          "fx": [
+            {
+              "k": "shield",
+              "coef": 1.3,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "taunt",
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "霜散留温",
+          "desc": "自身护盾被击破时，为最危急同伴回复 70% 攻击力生命（每场 2 次）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "shield_broken",
+              "fx": [
+                {
+                  "k": "heal",
+                  "coef": 0.7,
+                  "target": "ally_lowest_hp"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ur-gh-04",
+      "name": "洛绮",
+      "title": "广寒·织霜",
+      "rarity": "red",
+      "faction": "gh",
+      "element": "storm",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她用雷光做经线织霜纱，织坏了的从不拆，直接盖在亡者身上，说这样体面。",
+      "art": {
+        "set": "月下织机，纱在风里带出电弧",
+        "outfit": "暮紫长裙配露指手套，肩绕半成之纱",
+        "motif": "整幅霜纱掀起，裹着雷光横扫敌阵"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "霜纱缚形",
+          "energy": 65,
+          "cd": 3,
+          "desc": "对敌方全体造成 100% 紫雷伤害，附加 2 回合「麻痒」（速度 -18%）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 1,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "debuff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 0.82,
+              "turns": 2,
+              "target": "enemy_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "霜结不解",
+          "desc": "自身攻击 +12%。织坏的纱她从不拆，直接盖在亡者身上。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.12,
+              "turns": 99,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "霜纱共织",
+          "desc": "助战时，被助战者攻击 +9%。织坏的纱她从不拆，借给你的这一幅，她也不收回去。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.09,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-yx-01",
+      "name": "云中等",
+      "title": "云岫·鹿灵",
+      "rarity": "gold",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她记得每一条山路，却记不住自己的名字。坞里人就一路喊她「云中等」，她也就一路回头。",
+      "art": {
+        "set": "松雪云隙，远处社火微光",
+        "outfit": "药篓斜背，粗布交领，鹿角上挂着别人托带的信",
+        "motif": "蹲身把一味草药按进同伴伤口，角上信纸簌簌响"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "鹿衔春信",
+          "energy": 55,
+          "cd": 3,
+          "desc": "对全队回复 115% 攻击力生命，并解除 1 层负面。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.15,
+              "target": "ally_all"
+            },
+            {
+              "k": "dispel",
+              "count": 1,
+              "target": "ally_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "顾盼回春",
+          "desc": "任一同伴生命低于 30% 时，下一次对其治疗量 +35%。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "ally_low_hp",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "healOut",
+                  "op": "add",
+                  "value": 0.35,
+                  "turns": 1,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-yx-02",
+      "name": "姜窈",
+      "title": "云岫·貂灵",
+      "rarity": "gold",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她替整座山藏东西，藏得最深的是自己那次没救回来的人。",
+      "art": {
+        "set": "山腹暗窖与灯，貂裘半披",
+        "outfit": "青褐窄袖，腰缠多层小袋",
+        "motif": "抖开袖里一蓬雾气，雾里浮出同伴的兵刃"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "灵貂匿踪",
+          "energy": 55,
+          "cd": 3,
+          "target": "ally_single",
+          "desc": "使单体同伴「匿影」1 回合，并令其下 2 次攻击倍率 +30%。",
+          "fx": [
+            {
+              "k": "stealth",
+              "turns": 1,
+              "target": "ally_strongest"
+            },
+            {
+              "k": "buff",
+              "stat": "nextAtkCoef",
+              "op": "add",
+              "value": 0.3,
+              "turns": 2,
+              "maxStacks": 2,
+              "target": "ally_strongest"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "隐雾蔽身",
+          "desc": "自身在场时，全队被选中为群体目标的概率降低（AoE 承伤 -12%）。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "aoeReduce",
+              "op": "add",
+              "value": 0.12,
+              "turns": 99,
+              "target": "ally_all"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-yx-03",
+      "name": "苏狸",
+      "title": "云岫·三尾",
+      "rarity": "gold",
+      "faction": "yx",
+      "element": "dusk",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "三尾的狐最会挑软的地方下手。她说这不是坏，是修行不到就别硬碰。",
+      "art": {
+        "set": "夜山雾，社火余光",
+        "outfit": "兽裘短打加长裤，踝上系铃，三尾低垂",
+        "motif": "身形化出三道残影，从同一人背后经过"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "寻隙连爪",
+          "energy": 70,
+          "cd": 3,
+          "desc": "对单体连击 3 次（每次 95% 素月伤害），若目标护盾为空则第三次倍率翻倍。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 0.95,
+              "type": "magic",
+              "times": 3
+            },
+            {
+              "k": "damage",
+              "coef": 0.95,
+              "type": "magic",
+              "cond": "target_shield_empty"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "铃寂杀机",
+          "desc": "暴击率 +8%，且对被控制的目标伤害 +20%。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "crit",
+              "op": "add",
+              "value": 0.08,
+              "turns": 99,
+              "target": "self"
+            },
+            {
+              "k": "buff",
+              "stat": "vsControlled",
+              "op": "add",
+              "value": 0.2,
+              "turns": 99,
+              "target": "self"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ur-yx-01",
+          "rel": "同族·狐"
+        }
+      ]
+    },
+    {
+      "id": "ssr-qx-01",
+      "name": "顾兰台",
+      "title": "栖霞·女先生",
+      "rarity": "gold",
+      "faction": "qx",
+      "element": "tide",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她教了二十年蒙学，课业只有一条：把今天想说的话当天说完。",
+      "art": {
+        "set": "溪畔书斋，晚钟与墨池",
+        "outfit": "青碧直裾，袖宽，执一卷被翻烂的书",
+        "motif": "以墨池之水化开一线雾气，润遍同伴伤口"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "讲筵无遮",
+          "energy": 60,
+          "cd": 3,
+          "desc": "对全队回复 120% 攻击力生命，并使「无法沉默」2 回合。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.2,
+              "target": "ally_all"
+            },
+            {
+              "k": "buff",
+              "stat": "silenceImmune",
+              "op": "add",
+              "value": 1,
+              "turns": 2,
+              "target": "ally_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "守静回澜",
+          "desc": "回合末若本回合自身未施术，则为生命最低者回复 50%。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "turn_end",
+              "fx": [
+                {
+                  "k": "heal",
+                  "coef": 0.5,
+                  "target": "ally_lowest_hp"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-qx-02",
+      "name": "沈砚舟",
+      "title": "栖霞·算学",
+      "rarity": "gold",
+      "faction": "qx",
+      "element": "storm",
+      "role": "burst",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "他算得出所有人的落榜日期，唯独算不出自己为什么要来学宫。",
+      "art": {
+        "set": "学宫廊下夜雨，算筹铺一地",
+        "outfit": "青衿学袍，袖口卷起，指间夹算筹如夹剑",
+        "motif": "把一道雷劈成三记，算筹在雨里排成直线"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "算无遗策",
+          "energy": 70,
+          "cd": 3,
+          "desc": "对单体造成 235% 紫雷伤害，暴击时追加 120%（视为要害）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.35,
+              "type": "magic"
+            },
+            {
+              "k": "damage",
+              "coef": 1.2,
+              "type": "magic",
+              "cond": "self_critical"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "筹算不竭",
+          "desc": "每次普攻后自身攻击力 +6%（可叠 5 层）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "attack_used",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 1.06,
+                  "turns": 99,
+                  "maxStacks": 5,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-cc-01",
+      "name": "殷铁衣",
+      "title": "赤城·淬火",
+      "rarity": "gold",
+      "faction": "cc",
+      "element": "flame",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她把自己的护甲淬坏了七次，因为她说人要比铁脆一点，才肯躲。",
+      "art": {
+        "set": "淬火池与蒸汽，炉口余红",
+        "outfit": "烧边甲片外罩湿布袍，发被蒸汽打湿",
+        "motif": "以身挡在池口，水与火在她背上交汇成白雾"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "七淬铁衣",
+          "energy": 60,
+          "cd": 3,
+          "desc": "为全队套上 120% 攻击力护盾，2 回合内自身受到伤害 +20%（她替你多挨）。",
+          "fx": [
+            {
+              "k": "shield",
+              "coef": 1.2,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "debuff",
+              "stat": "dmgTaken",
+              "op": "add",
+              "value": 0.2,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "残甲愈坚",
+          "desc": "生命低于 50% 时，防御 +30%，速度 -10%。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "self_low_hp",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "def",
+                  "op": "mul",
+                  "value": 1.3,
+                  "turns": 99,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ur-cc-01",
+          "rel": "兄弟"
+        }
+      ]
+    },
+    {
+      "id": "ssr-cc-02",
+      "name": "谢残锋",
+      "title": "赤城·剑灵",
+      "rarity": "gold",
+      "faction": "cc",
+      "element": "storm",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "剑灵",
+      "beast": false,
+      "lore": "一柄断过三次的剑，第三次没断，因为它自己学会了躲。",
+      "art": {
+        "set": "炉前刀架，雷光映在刃口",
+        "outfit": "窄袖短打外披锻衣，肩头一道旧灼痕",
+        "motif": "半截剑身浮起雷纹，人随剑走"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "三悟剑遁",
+          "energy": 75,
+          "cd": 3,
+          "desc": "对单体造成 250% 紫雷伤害，命中后自身闪避率 +25%（1 回合）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.5,
+              "type": "phys"
+            },
+            {
+              "k": "buff",
+              "stat": "evasion",
+              "op": "add",
+              "value": 0.25,
+              "turns": 1,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "折剑犹击",
+          "desc": "自身受到伤害致死时保留 1 血并反击 90%（1 次）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "self_down",
+              "fx": [
+                {
+                  "k": "revive",
+                  "pctHp": 0.01,
+                  "target": "self"
+                },
+                {
+                  "k": "damage",
+                  "coef": 0.9,
+                  "type": "phys",
+                  "target": "enemy_single"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ur-yh-03",
+      "name": "洛珠",
+      "title": "瀛海·潮使",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "tide",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她送出的每一封潮信都要回，不回的她自己下水去取。",
+      "art": {
+        "set": "浪尖与珠帘，月影入水",
+        "outfit": "鲛绡窄袖长裙，腕间贝链",
+        "motif": "一道浪拧成柱状贯下，水珠在击中前凝住"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "入渊取珠",
+          "energy": 70,
+          "cd": 3,
+          "desc": "对单体造成 225% 沧水伤害，并标记其 2 回合（受到伤害 +18%）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.25,
+              "type": "magic"
+            },
+            {
+              "k": "mark",
+              "turns": 2,
+              "dmgTake": 0.18
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "珠债必偿",
+          "desc": "被标记目标死亡时，自身怒气 +25。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "marked_target_down",
+              "fx": [
+                {
+                  "k": "energy",
+                  "value": 25,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "潮信有回",
+          "desc": "助战时，被助战者暴击 +8%。她送出的每一封潮信都要回，你的这一封她亲自来取。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "crit",
+              "op": "add",
+              "value": 0.08,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ur-yh-01",
+          "rel": "恋人"
+        }
+      ]
+    },
+    {
+      "id": "ur-yh-04",
+      "name": "温海月",
+      "title": "瀛海·珊瑚林",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "verdant",
+      "role": "control",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她养的珊瑚会听人说话，听完就把话锁在枝里。锁得最多的是一场没开成的婚礼。",
+      "art": {
+        "set": "水下珊瑚林，光斑摇碎",
+        "outfit": "青碧纱衣缀珊瑚枝，发间盘一枝未开的",
+        "motif": "珊瑚枝疯长成牢，把敌人锁进光斑里"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "珊瑚缚音",
+          "energy": 65,
+          "cd": 3,
+          "desc": "对敌方前排造成 90% 青木伤害，并以 60% 概率使目标「缄口」1 回合。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 0.9,
+              "type": "magic",
+              "target": "enemy_front"
+            },
+            {
+              "k": "silence",
+              "turns": 1,
+              "chance": 0.6,
+              "target": "enemy_front"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "听澜索隙",
+          "desc": "自身在场时，全队攻击 +8%。珊瑚把话锁在枝里，也把力气借给同伴。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.08,
+              "turns": 99,
+              "target": "ally_all"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "珊瑚听语",
+          "desc": "助战时，被助战者受到伤害降低 12%。珊瑚把话锁在枝里，也把你的伤锁在外面。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "aoeReduce",
+              "op": "add",
+              "value": 0.12,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ur-yh-05",
+      "name": "阿溟火",
+      "title": "瀛海·溟火",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "flame",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "海底烧起来那天，水国所有人都说会灭。她站在火边上等到天亮，证明他们错了。",
+      "art": {
+        "set": "海底熔渊裂缝，周围仍是水",
+        "outfit": "素色交领长衣，衣摆被火燎卷，火纹自手背蔓延到颈",
+        "motif": "水与火同时涌出，火在水面下烧成一条线"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "溟火焚渊",
+          "energy": 65,
+          "cd": 3,
+          "desc": "对敌方全体造成 98% 离火伤害，附加 2 回合「灼痕」（每回合 30%，上限攻击力 85%）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 0.98,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "dot",
+              "mode": "atk",
+              "coef": 0.3,
+              "turns": 2,
+              "capCoef": 0.85,
+              "target": "enemy_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "烬夜蓄焰",
+          "desc": "自身在受击后下一回合伤害 +22%。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "self_hit",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 1.22,
+                  "turns": 1,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "烬火借焰",
+          "desc": "助战时，被助战者攻击 +10%。她站在火边上等天亮，也把火借给你照路。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.1,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr-zf-01",
+      "name": "陆离",
+      "title": "紫府·观雷",
+      "rarity": "purple",
+      "faction": "zf",
+      "element": "storm",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她能在雷落下来之前数清它有几叉。数清了也不敢说。",
+      "art": {
+        "set": "雷坛侧阶",
+        "outfit": "月白短袍束袖配长裤",
+        "motif": "指尖引出一缕细雷"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-zf-02",
+      "name": "姜雪扶",
+      "title": "紫府·守案",
+      "rarity": "purple",
+      "faction": "zf",
+      "element": "light",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "星案的门槛是她跪坏的第三块。",
+      "art": {
+        "set": "星案阶前积雪",
+        "outfit": "银甲外罩素氅",
+        "motif": "以臂挡住落下的门扇"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-zf-03",
+      "name": "温小令",
+      "title": "紫府·符纸",
+      "rarity": "purple",
+      "faction": "zf",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她写的符效力太强，只是每次都要少睡一天。",
+      "art": {
+        "set": "符架与纸屑",
+        "outfit": "袖口全是朱砂渍",
+        "motif": "一把符纸散开成雷纹"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-zf-04",
+      "name": "岑月观",
+      "title": "紫府·幼观主",
+      "rarity": "purple",
+      "faction": "zf",
+      "element": "light",
+      "role": "control",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "human",
+      "beast": false,
+      "lore": "她被抱上观主位时脚还够不到地，只会说一句话：别吵。",
+      "art": {
+        "set": "高大的观星台，她坐在台阶上",
+        "outfit": "过宽的道袍，袖口挽三层，头发松松束起",
+        "motif": "抬手比了个「静」的手势，晨光在她掌心聚成一点"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-gh-01",
+      "name": "桂枝寒",
+      "title": "广寒·伐枝",
+      "rarity": "purple",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "control",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "桂树砍了会合上，所以她专挑夜里砍。",
+      "art": {
+        "set": "桂影斑驳",
+        "outfit": "霜色短打加长裤背刃",
+        "motif": "斧刃凝霜"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-gh-05",
+      "name": "殷羽衣",
+      "title": "广寒·落霜",
+      "rarity": "red",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她的衣上一沾人的体温就化，所以她从不让人抱。",
+      "art": {
+        "set": "月下霜阶",
+        "outfit": "银白纱衣带冰棱",
+        "motif": "霜片化作刃"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "千霜裁衣",
+          "energy": 65,
+          "cd": 3,
+          "desc": "对敌方全体造成 102% 素月伤害，并为自身附加 2 回合「霜衣」（受到伤害 -18%）。她的衣一沾体温就化，所以她从不让人抱。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 1.02,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "buff",
+              "stat": "def",
+              "op": "mul",
+              "value": 1.18,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "霜衣自持",
+          "desc": "自身防御 +19%。霜片在衣上结成薄甲，替她挡下那些没说完的话。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "def",
+              "op": "mul",
+              "value": 1.192,
+              "turns": 99,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "霜刃借寒",
+          "desc": "助战时，被助战者攻击 +9%、暴击 +6%。衣上霜片化刃，借你的手递出去。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.09,
+              "turns": 99,
+              "target": "ally_single"
+            },
+            {
+              "k": "buff",
+              "stat": "crit",
+              "op": "add",
+              "value": 0.06,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr-gh-03",
+      "name": "明梭",
+      "title": "广寒·织月",
+      "rarity": "purple",
+      "faction": "gh",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "human",
+      "beast": false,
+      "lore": "她负责在织机下递线，够不着就踩着小凳踩。",
+      "art": {
+        "set": "巨大织机下方",
+        "outfit": "过宽学袍加长裤，抱一卷比自己还宽的素绢",
+        "motif": "纱线尽头有雷光闪烁"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-gh-04",
+      "name": "尉明",
+      "title": "广寒·守夜",
+      "rarity": "purple",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "break",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "拾霜司唯一的男丁，负责把霜瓮搬到搬不动为止。",
+      "art": {
+        "set": "霜瓮长廊",
+        "outfit": "玄色短打，肩缠绳",
+        "motif": "一锤砸开瓮口寒气"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-zf-01",
+      "name": "苏暮雨",
+      "title": "紫府·掌灯",
+      "rarity": "blue",
+      "faction": "zf",
+      "element": "storm",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她每晚把星案的灯挨个点上，点到自己那盏就留到明天。",
+      "art": {
+        "set": "长廊灯影",
+        "outfit": "青灰道袍提一盏铜灯",
+        "motif": "灯火分出一缕暖光"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-zf-02",
+      "name": "卫子期",
+      "title": "紫府·候补",
+      "rarity": "blue",
+      "faction": "zf",
+      "element": "light",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她考了四次才进星案，第五次她把榜文贴在了自己门口。",
+      "art": {
+        "set": "榜文与晨光",
+        "outfit": "洗白的月白学袍",
+        "motif": "一记穿光直取"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-zf-03",
+      "name": "商祈",
+      "title": "紫府·祷雨",
+      "rarity": "blue",
+      "faction": "zf",
+      "element": "storm",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她求雨从不为自己求，所以山下的人愿意给她留一碗饭。",
+      "art": {
+        "set": "祭雨台",
+        "outfit": "素色短袍绑麻绳配长裤",
+        "motif": "雷云压成一线铺开"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-zf-04",
+      "name": "谢无咎",
+      "title": "紫府·守阙",
+      "rarity": "blue",
+      "faction": "zf",
+      "element": "light",
+      "role": "guard",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "他的名字是无咎，可他守的门从没丢过东西，也没回过一次家。",
+      "art": {
+        "set": "星阙门",
+        "outfit": "薄金甲外罩大氅",
+        "motif": "横身挡住落下的光"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-zf-01",
+      "name": "阿霰",
+      "title": "紫府·扫雪",
+      "rarity": "green",
+      "faction": "zf",
+      "element": "storm",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "human",
+      "beast": false,
+      "lore": "雪一落她就出来扫，扫完又落，她也不恼。",
+      "art": {
+        "set": "阶前薄雪",
+        "outfit": "过宽的小道袍，围巾绕两圈，执竹帚",
+        "motif": "帚尖扬起一片细光"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-zf-04",
+      "name": "祝眠",
+      "title": "紫府·值夜",
+      "rarity": "red",
+      "faction": "zf",
+      "element": "light",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她替人值夜，值到天亮就把自己的梦记下几笔，说反正没人看。",
+      "art": {
+        "set": "夜尽前的案头",
+        "outfit": "薄氅裹身",
+        "motif": "一盏不灭的小灯"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "长明守夜",
+          "energy": 60,
+          "cd": 3,
+          "desc": "为全队回复 125% 攻击力生命，并使全队攻击 +15%（2 回合）。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.25,
+              "target": "ally_all"
+            },
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.15,
+              "turns": 2,
+              "target": "ally_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "值夜不眠",
+          "desc": "回合末为全队续气 +8。她替人值夜，值到天亮就把自己的梦记下几笔。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "turn_end",
+              "fx": [
+                {
+                  "k": "energy",
+                  "value": 8,
+                  "target": "ally_all_except_self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "留一盏灯",
+          "desc": "助战时，被助战者受到的治疗 +12%。她替人值夜，也替你留一盏不灭的灯。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "healTake",
+              "op": "mul",
+              "value": 1.12,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r-gh-01",
+      "name": "霜华",
+      "title": "广寒·凝霜",
+      "rarity": "blue",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她把手放在谁额头上谁就退烧，代价是她自己要多冷一夜。",
+      "art": {
+        "set": "霜阶侧灯",
+        "outfit": "霜色小袄系带",
+        "motif": "掌心浮起一层薄霜"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-gh-06",
+      "name": "叶知冥",
+      "title": "广寒·引路",
+      "rarity": "red",
+      "faction": "gh",
+      "element": "storm",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她认得所有走丢的人，因为她自己走丢过一次，走了三年。",
+      "art": {
+        "set": "夜雾小径",
+        "outfit": "玄衣缀银铃",
+        "motif": "一线雷光破雾"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "破雾一线",
+          "energy": 70,
+          "cd": 3,
+          "desc": "对敌方单体造成 275% 紫雷伤害。雾里她只认雷光。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.75,
+              "type": "magic"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "循雾追形",
+          "desc": "每次暴击后自身速度 +6%（可叠 3 层）。雾里她只认雷光。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "critical_hit",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "spd",
+                  "op": "mul",
+                  "value": 1.06,
+                  "turns": 99,
+                  "maxStacks": 3,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "雷痕指路",
+          "desc": "助战时，被助战者暴击 +8%。她认得所有走丢的人，也替你认一条回来的路。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "crit",
+              "op": "add",
+              "value": 0.08,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r-gh-03",
+      "name": "江晚棠",
+      "title": "广寒·花信",
+      "rarity": "blue",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她把每月第一朵开的花压进册子，说要给看不见春天的人留着。",
+      "art": {
+        "set": "花架与册",
+        "outfit": "月白长裙",
+        "motif": "花瓣散出淡淡月华"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-gh-07",
+      "name": "羽流萤",
+      "title": "广寒·萤羽",
+      "rarity": "red",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "control",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "羽灵",
+      "beast": true,
+      "lore": "她的翅在夜里发亮，一亮就有人睡不着，于是她总把翅收得很紧。",
+      "art": {
+        "set": "夜色林隙",
+        "outfit": "交领窄袖长衣外覆萤色翅羽",
+        "motif": "萤光散开令人迟缓"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "流萤慢舞",
+          "energy": 60,
+          "cd": 3,
+          "desc": "对敌方全体造成 88% 素月伤害，附加 2 回合「萤滞」（速度 -20%）。萤光散开，谁都快不起来。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 0.88,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "debuff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 0.8,
+              "turns": 2,
+              "target": "enemy_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "夜萤引路",
+          "desc": "自身在场时，敌方全体速度 -6%。她把翅收得很紧，光是漏出来的那一点。",
+          "fx": [
+            {
+              "k": "debuff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 0.94,
+              "turns": 99,
+              "target": "enemy_all"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "萤光护行",
+          "desc": "助战时，被助战者受到群体伤害降低 16%。她把翅收得很紧，只怕惊了你的夜。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "aoeReduce",
+              "op": "add",
+              "value": 0.16,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n-gh-01",
+      "name": "小满",
+      "title": "广寒·捧瓮",
+      "rarity": "green",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兔灵",
+      "beast": true,
+      "lore": "她力气小，瓮只抱得动最小的那只，可她每天都抱。",
+      "art": {
+        "set": "霜瓮角落",
+        "outfit": "霜色小褂，长耳绑红绳，抱小瓮",
+        "motif": "把小瓮挡在身前"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-gh-02",
+      "name": "冷烟",
+      "title": "广寒·守炉",
+      "rarity": "green",
+      "faction": "gh",
+      "element": "storm",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她煮的不是药，是一锅热汤，谁从雪里回来都能喝一碗。",
+      "art": {
+        "set": "石灶白汽",
+        "outfit": "粗布围裙",
+        "motif": "汤气笼住伤口"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yx-01",
+      "name": "白耳",
+      "title": "云岫·兔灵",
+      "rarity": "purple",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她耳朵白，一有动静整个坞都知道她睡了。",
+      "art": {
+        "set": "草垛与雪",
+        "outfit": "厚绒兜帽加粗布小袄，长耳从帽顶穿出",
+        "motif": "张开小身体挡在同伴前面"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yx-02",
+      "name": "岑蕙",
+      "title": "云岫·鹤灵",
+      "rarity": "purple",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "control",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她站得最直，一睡一百年也不肯弯腿。",
+      "art": {
+        "set": "松顶云雾",
+        "outfit": "青灰长裙，羽氅垂地",
+        "motif": "长喙一点，万物定住"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yx-03",
+      "name": "石桃枝",
+      "title": "云岫·猫灵",
+      "rarity": "purple",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "break",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她专挑门栓下手，坞里换过十七根。",
+      "art": {
+        "set": "山门木栓",
+        "outfit": "短打加爪钩，桃木簪",
+        "motif": "指爪勾进门缝"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yx-04",
+      "name": "鹿回",
+      "title": "云岫·鹿灵",
+      "rarity": "purple",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "guard",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "他每年回一次同一处山谷，因为那里有别人不认得的碑。",
+      "art": {
+        "set": "山谷旧碑",
+        "outfit": "兽裘披肩，角缠麻绳",
+        "motif": "以角抵住塌下来的木梁"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yx-01",
+      "name": "山桃",
+      "title": "云岫·狸灵",
+      "rarity": "blue",
+      "faction": "yx",
+      "element": "dusk",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她怕生，只在社火那晚才出来。",
+      "art": {
+        "set": "社火夜",
+        "outfit": "兽尾小袄",
+        "motif": "火光里翻身横扫"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yx-02",
+      "name": "涧草",
+      "title": "云岫·药奴",
+      "rarity": "blue",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "认得山下每一味药，不认得山下每一个人。",
+      "art": {
+        "set": "溪涧药圃",
+        "outfit": "粗布束袖背篓",
+        "motif": "捣碎的草药泛出青光"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yx-03",
+      "name": "雪爪",
+      "title": "云岫·狼灵",
+      "rarity": "blue",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她一次只咬一口，因为坞里只养得起她吃一顿。",
+      "art": {
+        "set": "雪坡",
+        "outfit": "灰狼皮半披",
+        "motif": "扑击带起一片雪"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yx-04",
+      "name": "乌臼",
+      "title": "云岫·鸟灵",
+      "rarity": "blue",
+      "faction": "yx",
+      "element": "dusk",
+      "role": "support",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她替人传话，传到后来学会只传好的一半。",
+      "art": {
+        "set": "檐下巢",
+        "outfit": "宽大小氅，翅羽未丰",
+        "motif": "抖落一片亮羽给同伴"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-yx-01",
+      "name": "阿獾",
+      "title": "云岫·守穴",
+      "rarity": "green",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她挖的洞只够自己钻，可她每次都钻进最冷的那一头。",
+      "art": {
+        "set": "洞口落叶",
+        "outfit": "厚布短褂，指甲缝有泥",
+        "motif": "抱住同伴的腿往洞里拽"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-yx-02",
+      "name": "采蕨",
+      "title": "云岫·樵余",
+      "rarity": "green",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "break",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她砍柴不问树龄，只问挡不挡路。",
+      "art": {
+        "set": "柴堆",
+        "outfit": "束腰麻衣绑腿",
+        "motif": "一斧劈开石阶"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-qx-01",
+      "name": "阿蒙",
+      "title": "栖霞·蒙童",
+      "rarity": "purple",
+      "faction": "qx",
+      "element": "light",
+      "role": "control",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "human",
+      "beast": false,
+      "lore": "她念错了三个字，把整个学宫的钟敲早了半个时辰。",
+      "art": {
+        "set": "钟架下",
+        "outfit": "过小学袍，袖子挽起，胸前挂木牌",
+        "motif": "捧着竹简一开口，光从字缝里散出去"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-qx-02",
+      "name": "温叙",
+      "title": "栖霞·水钟",
+      "rarity": "purple",
+      "faction": "qx",
+      "element": "tide",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她算时辰只用一只漏壶，壶底裂了也不换。",
+      "art": {
+        "set": "廊下漏壶",
+        "outfit": "青碧直裾，袖口湿",
+        "motif": "水线横扫，划出齐整一道"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-qx-03",
+      "name": "裴云简",
+      "title": "栖霞·纸鸢",
+      "rarity": "purple",
+      "faction": "qx",
+      "element": "storm",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "器灵",
+      "beast": false,
+      "lore": "一只被雷打过的纸鸢成了灵，从此下雨她就挡在别人头上。",
+      "art": {
+        "set": "雨中操场",
+        "outfit": "厚布斗篷带竹骨",
+        "motif": "张开竹骨挡住落雷"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-qx-04",
+      "name": "江采",
+      "title": "栖霞·采墨",
+      "rarity": "purple",
+      "faction": "qx",
+      "element": "light",
+      "role": "break",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "他磨的墨比别人的黑，因为掺了自己的旧信。",
+      "art": {
+        "set": "墨池",
+        "outfit": "窄袖学袍围裙",
+        "motif": "浓墨破开一层光"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-qx-03",
+      "name": "苏晚照",
+      "title": "栖霞·晚课",
+      "rarity": "red",
+      "faction": "qx",
+      "element": "light",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她只在日落那刻用功，因为那时最好看。",
+      "art": {
+        "set": "黄昏窗下",
+        "outfit": "青衿直裾",
+        "motif": "一束晚光穿指"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "晚照穿云",
+          "energy": 70,
+          "cd": 3,
+          "desc": "对敌方单体造成 265% 曜光伤害。日落那刻的光最好看。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.65,
+              "type": "magic"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "夕时最好",
+          "desc": "自身在战斗前 3 回合攻击 +12%。她只在日落那刻用功，因为那时最好看。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "battle_start",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 1.12,
+                  "turns": 3,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "借你一束光",
+          "desc": "助战时，被助战者攻击 +8%。日落那刻的光最好看，她分你一束。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.08,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r-qx-02",
+      "name": "何昭昭",
+      "title": "栖霞·辩难",
+      "rarity": "blue",
+      "faction": "qx",
+      "element": "tide",
+      "role": "control",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她辩不倒对方就把水端过来，让对方自己想想。",
+      "art": {
+        "set": "辩论台",
+        "outfit": "素色长衫",
+        "motif": "水碗一放，全场静音"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-qx-03",
+      "name": "阿归",
+      "title": "栖霞·扫阶",
+      "rarity": "blue",
+      "faction": "qx",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "human",
+      "beast": false,
+      "lore": "她每天把学宫的石阶扫三遍，说要扫到某人从山下来。",
+      "art": {
+        "set": "雨后石阶",
+        "outfit": "宽袖小袍拿比自己高的帚",
+        "motif": "帚尖挑起一串细小电光"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-qx-04",
+      "name": "柳含章",
+      "title": "栖霞·砚侍",
+      "rarity": "blue",
+      "faction": "qx",
+      "element": "tide",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她添水时从不看人，只看砚。",
+      "art": {
+        "set": "砚案边",
+        "outfit": "青碧短襦配长裤",
+        "motif": "清水注入干墨"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-qx-01",
+      "name": "阿朴",
+      "title": "栖霞·未雕",
+      "rarity": "green",
+      "faction": "qx",
+      "element": "light",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "human",
+      "beast": false,
+      "lore": "先生说她是一块没雕的木头，她很高兴，说那就不用怕刻错。",
+      "art": {
+        "set": "木工坊",
+        "outfit": "围裙过宽，抱一小块木料",
+        "motif": "木料挡住落在同伴身上的手"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-qx-04",
+      "name": "云书",
+      "title": "栖霞·誊抄",
+      "rarity": "red",
+      "faction": "qx",
+      "element": "tide",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她替人誊了十年信，一封都没寄。",
+      "art": {
+        "set": "书架深处",
+        "outfit": "素衫束袖",
+        "motif": "成叠信纸散开成光"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "万笺流光",
+          "energy": 60,
+          "cd": 3,
+          "desc": "为全队回复 130% 攻击力的生命，并解除 1 层负面状态。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.3,
+              "target": "ally_all"
+            },
+            {
+              "k": "dispel",
+              "count": 1,
+              "target": "ally_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "未寄之信",
+          "desc": "回合末为生命最低的同伴回复 40% 攻击力生命。她替人誊了十年信，一封都没寄。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "turn_end",
+              "fx": [
+                {
+                  "k": "heal",
+                  "coef": 0.4,
+                  "target": "ally_lowest_hp"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "代书一笺",
+          "desc": "助战时，被助战者受到的治疗 +15%。她替人誊了十年信，这一封是替你写的。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "healTake",
+              "op": "mul",
+              "value": 1.15,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sr-cc-01",
+      "name": "温燎",
+      "title": "赤城·燎火",
+      "rarity": "purple",
+      "faction": "cc",
+      "element": "flame",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她点火前一定先退两步，因为第一次她没退。",
+      "art": {
+        "set": "柴垛与火星",
+        "outfit": "烧边短袍系铁扣",
+        "motif": "火舌横扫成一条线"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-cc-02",
+      "name": "石敢",
+      "title": "赤城·炉丁",
+      "rarity": "purple",
+      "faction": "cc",
+      "element": "flame",
+      "role": "guard",
+      "sex": "m",
+      "archetype": "成男",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "炉前没人敢坐的位置他坐了十年，因为他不怕烫。",
+      "art": {
+        "set": "炉口",
+        "outfit": "湿布围裙赤膊",
+        "motif": "以身挡住喷出的火"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-cc-03",
+      "name": "阿淬",
+      "title": "赤城·器灵",
+      "rarity": "purple",
+      "faction": "cc",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "器灵",
+      "beast": false,
+      "lore": "一只风箱成了灵，一呼吸就让整条街的炉火旺三分。",
+      "art": {
+        "set": "皮橐风箱",
+        "outfit": "油污短打背风箱",
+        "motif": "一口长气点亮同伴兵刃"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-cc-04",
+      "name": "炉月",
+      "title": "赤城·司温",
+      "rarity": "purple",
+      "faction": "cc",
+      "element": "flame",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她守夜班，负责在最冷的时候把炉门打开一条缝。",
+      "art": {
+        "set": "夜炉一线红光",
+        "outfit": "厚毡披肩",
+        "motif": "炉门缝里透出暖意"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-cc-01",
+      "name": "铁线",
+      "title": "赤城·拉丝",
+      "rarity": "blue",
+      "faction": "cc",
+      "element": "storm",
+      "role": "control",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她把铁丝拉得比头发细，用来绊人最好。",
+      "art": {
+        "set": "拉模台",
+        "outfit": "护手与束袖",
+        "motif": "细线绷成网"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-cc-02",
+      "name": "莲生",
+      "title": "赤城·锻花",
+      "rarity": "blue",
+      "faction": "cc",
+      "element": "flame",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她打的莲花纹剑最漂亮，也最没人敢买。",
+      "art": {
+        "set": "砧上前夜",
+        "outfit": "火星密布的短打",
+        "motif": "一锤落下莲纹炸开"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-cc-03",
+      "name": "锤锦",
+      "title": "赤城·小锤",
+      "rarity": "blue",
+      "faction": "cc",
+      "element": "flame",
+      "role": "break",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她敲的节拍是全炉的号子，慢一拍所有人都停。",
+      "art": {
+        "set": "群炉齐鸣",
+        "outfit": "绑腰小锤",
+        "motif": "锤响处甲片崩开"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-cc-04",
+      "name": "烟渚",
+      "title": "赤城·白烟",
+      "rarity": "blue",
+      "faction": "cc",
+      "element": "storm",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她淬完火就把窗推开，说白烟比药好使。",
+      "art": {
+        "set": "蒸汽与窗光",
+        "outfit": "湿袖长裙",
+        "motif": "白雾笼住伤口"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-cc-01",
+      "name": "阿铜",
+      "title": "赤城·打磨",
+      "rarity": "green",
+      "faction": "cc",
+      "element": "flame",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她把每块铜都磨到自己能照见脸才肯交。",
+      "art": {
+        "set": "砂轮",
+        "outfit": "皮围裙配长裤",
+        "motif": "飞散的铜屑成火"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-cc-02",
+      "name": "火浣",
+      "title": "赤城·布衣",
+      "rarity": "green",
+      "faction": "cc",
+      "element": "flame",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她洗的布烧不坏，因为她用的是炉灰水。",
+      "art": {
+        "set": "灰水池",
+        "outfit": "粗布裹袖",
+        "motif": "展布挡住一片火星"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yh-01",
+      "name": "卷珠",
+      "title": "瀛海·珠帘",
+      "rarity": "purple",
+      "faction": "yh",
+      "element": "tide",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她卷帘子的顺序从不乱，乱一次就有一艘船找不到港。",
+      "art": {
+        "set": "珠帘与潮口",
+        "outfit": "贝链垂袖",
+        "motif": "帘幕立起成壁"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yh-02",
+      "name": "夜潮",
+      "title": "瀛海·鲛灵",
+      "rarity": "purple",
+      "faction": "yh",
+      "element": "tide",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "鲛灵",
+      "beast": true,
+      "lore": "她织的绡一沾水就轻三分，穿上的人跑得快，也记性差。",
+      "art": {
+        "set": "月下浅滩",
+        "outfit": "半透鲛绡外衫",
+        "motif": "抛出一匹纱裹住同伴"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yh-03",
+      "name": "珊然",
+      "title": "瀛海·珊瑚",
+      "rarity": "purple",
+      "faction": "yh",
+      "element": "verdant",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "她身上枝子断了会再长，长的方向全凭心情。",
+      "art": {
+        "set": "珊瑚林",
+        "outfit": "青碧交领长裙缀枝",
+        "motif": "枝端开出暖光小花"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yh-04",
+      "name": "溟渺",
+      "title": "瀛海·熔渊",
+      "rarity": "purple",
+      "faction": "yh",
+      "element": "flame",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她被派去守海底那道缝，一守就到忘了自己姓什么。",
+      "art": {
+        "set": "熔渊裂缝",
+        "outfit": "鳞纹薄甲",
+        "motif": "岩浆贯出一道水柱"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yh-01",
+      "name": "沫吟",
+      "title": "瀛海·碎沫",
+      "rarity": "blue",
+      "faction": "yh",
+      "element": "tide",
+      "role": "control",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她哼的调子让人忘记自己在哪，包括她自己。",
+      "art": {
+        "set": "浪间浮沫",
+        "outfit": "青碧小褂加长裤",
+        "motif": "泡沫封住声音"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-yh-06",
+      "name": "潮音",
+      "title": "瀛海·贝笛",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "tide",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "贝笛一响，潮就来，来了就不问要不要。",
+      "art": {
+        "set": "潮头",
+        "outfit": "湿透长裾",
+        "motif": "笛声掀起横扫的浪"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "横潮一曲",
+          "energy": 65,
+          "cd": 3,
+          "desc": "对敌方全体造成 105% 沧水伤害，附加 1 回合「湿滞」（受到伤害 +10%）。笛声掀起横扫的浪。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 1.05,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "mark",
+              "dmgTake": 0.1,
+              "turns": 1,
+              "target": "enemy_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "潮随笛至",
+          "desc": "每次施放终结技后，全队怒气 +8。来了就不问要不要。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "energy",
+                  "value": 8,
+                  "target": "ally_all"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "笛声引潮",
+          "desc": "助战时，被助战者攻击 +7%、速度 +5%。贝笛一响，潮就来，替你推着往前走。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.07,
+              "turns": 99,
+              "target": "ally_single"
+            },
+            {
+              "k": "buff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 1.05,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r-yh-03",
+      "name": "汀兰",
+      "title": "瀛海·洲上",
+      "rarity": "blue",
+      "faction": "yh",
+      "element": "verdant",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "洲边的草只在她脚边长得最好。",
+      "art": {
+        "set": "沙洲草丛",
+        "outfit": "素色短襦配长裤",
+        "motif": "草叶结成小环发光"
+      },
+      "skills": null
+    },
+    {
+      "id": "ur-yh-07",
+      "name": "火浔",
+      "title": "瀛海·溟火使",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "flame",
+      "role": "break",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她在水下点火，为的是让沉船的人看得见家。",
+      "art": {
+        "set": "深水火光",
+        "outfit": "防火纱衣",
+        "motif": "火纹破开一层水膜"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "破膜火纹",
+          "energy": 65,
+          "cd": 3,
+          "desc": "对敌方单体造成 215% 离火伤害，并附加 2 回合破甲（防御 -25%）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.15,
+              "type": "magic"
+            },
+            {
+              "k": "debuff",
+              "stat": "def",
+              "op": "mul",
+              "value": 0.75,
+              "turns": 2
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "水下燃灯",
+          "desc": "自身攻击无视目标 15% 防御。她在水下点火，为的是让沉船的人看得见家。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.15,
+              "turns": 99,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "火照归途",
+          "desc": "助战时，被助战者攻击 +8%。她在水下点火，为的是让沉船的人看得见家。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 1.08,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ur-yh-08",
+      "name": "细螺",
+      "title": "瀛海·听潮",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "tide",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她把螺贴在别人耳边，说里面是海，其实是她唱。",
+      "art": {
+        "set": "浅水滩",
+        "outfit": "小褂加长裤",
+        "motif": "螺里漏出一线柔光"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "螺音回春",
+          "energy": 60,
+          "cd": 3,
+          "desc": "为全队回复 120% 攻击力生命，并附加 2 回合护盾（60% 攻击力）。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.2,
+              "target": "ally_all"
+            },
+            {
+              "k": "shield",
+              "mode": "atk",
+              "coef": 0.6,
+              "turns": 2,
+              "target": "ally_all",
+              "decays": true
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "海在耳边",
+          "desc": "自身受到的治疗 +15%。她把螺贴在别人耳边，说里面是海，其实是她唱。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "healTake",
+              "op": "mul",
+              "value": 1.15,
+              "turns": 99,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "螺声安慰",
+          "desc": "助战时，被助战者受到伤害降低 10%。她说里面是海，其实是她唱给你听。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "dmgTake",
+              "op": "mul",
+              "value": 0.9,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ur-yh-09",
+      "name": "浮玉",
+      "title": "瀛海·守阙",
+      "rarity": "red",
+      "faction": "yh",
+      "element": "tide",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "阙门前的玉是浮的，一沉就说明有人要来了。",
+      "art": {
+        "set": "珠阙门",
+        "outfit": "素甲长裙",
+        "motif": "浮玉沉下凝成一面壁"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "浮玉成壁",
+          "energy": 60,
+          "cd": 3,
+          "desc": "为全队套上 150% 攻击力护盾（2 回合），并嘲讽敌方全体 1 回合。浮玉沉下，凝成一面壁。",
+          "fx": [
+            {
+              "k": "shield",
+              "coef": 1.5,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "taunt",
+              "turns": 1
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "玉沉示警",
+          "desc": "自身防御 +15%。阙门前的玉是浮的，一沉就说明有人要来了。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "def",
+              "op": "mul",
+              "value": 1.15,
+              "turns": 99,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "玉壁分忧",
+          "desc": "助战时，被助战者受到群体伤害降低 22%。浮玉一沉，说明她替你挡在了门前。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "aoeReduce",
+              "op": "add",
+              "value": 0.22,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r-zf-07",
+      "name": "褚星阑",
+      "title": "紫府·司岁女史",
+      "rarity": "blue",
+      "faction": "zf",
+      "element": "light",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她替人看过四十年星历，从没写错一笔。代价是她自己的寿数，早在第一页就被人借走了。",
+      "art": {
+        "set": "高空星台，铜浑仪与摊开的星历，案角一盏将熄的灯",
+        "outfit": "月白广袖星官袍，外罩一层霜色披风，腰束苍青宽带，悬星历与铜尺",
+        "motif": "铜尺横在星历上，指尖点着一行未干的字"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "移岁接劫",
+          "energy": 70,
+          "cd": 4,
+          "target": "ally_all",
+          "desc": "全队：套上 150% 攻击力的护盾（2回合），嘲讽敌方全体 1 回合。代价：自身速度降低 20%（2回合）。",
+          "fx": [
+            {
+              "k": "shield",
+              "coef": 1.5,
+              "turns": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "taunt",
+              "turns": 1
+            },
+            {
+              "k": "debuff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 0.8,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "司岁留白",
+          "desc": "战斗开始时，全队法抗 +8%；代价：自身攻击 -10%（持续整场）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "battle_start",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "mdef",
+                  "op": "add",
+                  "value": 0.08,
+                  "turns": 99,
+                  "target": "ally_all"
+                },
+                {
+                  "k": "debuff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 0.9,
+                  "turns": 99,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "星台遮雨",
+          "desc": "助战时，被助战者受到群体伤害降低 18%。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "aoeReduce",
+              "op": "add",
+              "value": 0.18,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r-qx-07",
+      "name": "宋知微",
+      "title": "栖霞·抄书人",
+      "rarity": "blue",
+      "faction": "qx",
+      "element": "storm",
+      "role": "control",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她抄书十遍，只为把一个人的名字从罚簿上抄掉。抄掉的每一笔，都从她自己的记性里扣。",
+      "art": {
+        "set": "栖霞学宫的回廊，廊下竹简架与一池墨砚，晚钟声里",
+        "outfit": "青衿学袍改短，束袖束带，腰间挂一只小书箱，裙摆绣着几行小字",
+        "motif": "把一册卷了边的书按在胸口，侧身从廊柱后探头"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "误笔成谶",
+          "energy": 65,
+          "cd": 4,
+          "target": "enemy_single",
+          "desc": "单体敌人：造成 200% 法术伤害，定身 1 回合（65% 概率）。代价：自身速度降低 30%（1回合）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2,
+              "type": "magic",
+              "target": "enemy_single"
+            },
+            {
+              "k": "stun",
+              "turns": 1,
+              "chance": 0.65
+            },
+            {
+              "k": "debuff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 0.7,
+              "turns": 1,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "抄书百遍",
+          "desc": "每次施术后，自身速度提升 5%（可叠 4 层），防御降低 2%（可叠 4 层）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "skill_used",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "spd",
+                  "op": "mul",
+                  "value": 1.05,
+                  "turns": 99,
+                  "maxStacks": 4,
+                  "target": "self"
+                },
+                {
+                  "k": "debuff",
+                  "stat": "def",
+                  "op": "mul",
+                  "value": 0.98,
+                  "turns": 99,
+                  "maxStacks": 4,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "借你一笔",
+          "desc": "助战时，被助战者暴击提升 8%。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "crit",
+              "op": "add",
+              "value": 0.08,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ur-qx-01",
+          "rel": "同窗"
+        }
+      ]
+    },
+    {
+      "id": "r-yx-07",
+      "name": "辛夷",
+      "title": "云岫·山君",
+      "rarity": "blue",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "break",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "兽灵",
+      "beast": true,
+      "lore": "山君守着云岫北坡三百年，猎过的妖物堆成山。她记得每一头的气息，却记不清自己原来的名字。",
+      "art": {
+        "set": "雪后山坞的北坡石阶，松雪与旧山门，社火灯在远处",
+        "outfit": "山居麻布短打外披虎纹兽裘，腰系骨扣皮带，耳后别一枚小骨爪",
+        "motif": "蹲在山石上，虎尾垂下来，手里转着一枚骨爪"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "裂山一爪",
+          "energy": 70,
+          "cd": 4,
+          "target": "enemy_single",
+          "desc": "单体敌人：造成 230% 物理伤害，打掉 60% 护盾。代价：自身防御降低 15%（2回合）。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 2.3,
+              "type": "phys",
+              "target": "enemy_single"
+            },
+            {
+              "k": "shieldBreak",
+              "value": 0.6
+            },
+            {
+              "k": "debuff",
+              "stat": "def",
+              "op": "mul",
+              "value": 0.85,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "山君嗅血",
+          "desc": "每次暴击后，自身攻击提升 7%（可叠 3 层），生命降低 3%（可叠 3 层）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "critical_hit",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 1.07,
+                  "turns": 99,
+                  "maxStacks": 3,
+                  "target": "self"
+                },
+                {
+                  "k": "debuff",
+                  "stat": "hp",
+                  "op": "mul",
+                  "value": 0.97,
+                  "turns": 99,
+                  "maxStacks": 3,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "兽道同途",
+          "desc": "其他同伴攻击提升 6%。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "add",
+              "value": 0.06,
+              "turns": 99,
+              "target": "ally_all_except_self"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "id": "ssr-yx-05",
+          "rel": "同族"
+        }
+      ]
+    },
+    {
+      "id": "r-cc-06",
+      "name": "青枢",
+      "title": "赤城·青铜枢机",
+      "rarity": "blue",
+      "faction": "cc",
+      "element": "flame",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "器灵",
+      "beast": false,
+      "lore": "她是赤城剑炉里烧出来的第一具机关，替人打了三百年剑。每换一次芯，就忘掉一个曾经的主人。",
+      "art": {
+        "set": "赤城剑炉的炉前夜班，铁砧与淬火池，白烟漫过窗棂",
+        "outfit": "青铜色窄袖工装，肩甲与臂甲都是可拆的铜片，腰间挂一圈小扳手与量尺，炉火色镶边",
+        "motif": "把一截小臂拆下来递向炉火，断面露出铜线"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "换芯续火",
+          "energy": 60,
+          "cd": 3,
+          "target": "ally_lowest_hp",
+          "desc": "生命最低的同伴：回复 180% 攻击力的生命，续气 +20。代价：自身防御降低 25%（2回合）。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 1.8,
+              "target": "ally_lowest_hp"
+            },
+            {
+              "k": "energy",
+              "value": 20,
+              "target": "ally_lowest_hp"
+            },
+            {
+              "k": "debuff",
+              "stat": "def",
+              "op": "mul",
+              "value": 0.75,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "机关自检",
+          "desc": "每次回合开始，自身回复 4% 攻击力的生命；攻击降低 8%（持续整场）。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "turn_start",
+              "fx": [
+                {
+                  "k": "heal",
+                  "coef": 0.04,
+                  "target": "self"
+                },
+                {
+                  "k": "debuff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 0.92,
+                  "turns": 99,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "零件拆借",
+          "desc": "助战时，被助战者攻击提升 10%。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "atk",
+              "op": "add",
+              "value": 0.1,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r-yh-06",
+      "name": "阿汐",
+      "title": "瀛海·拾泪",
+      "rarity": "blue",
+      "faction": "yh",
+      "element": "tide",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "幼态",
+      "age_band": "child",
+      "species": "human",
+      "beast": false,
+      "lore": "她捡海里的泪，一颗一颗擦亮，等失主来认。没有人来认的，她就自己吞下去，眼睛越来越亮，话越来越少。",
+      "art": {
+        "set": "瀛海礁岸的浅水湾，珠帘与海贝散在沙上，月光落潮",
+        "outfit": "宽大包覆的浅青短袄配及踝长裙，领口袖口滚白边，外罩一件小披风",
+        "motif": "双手捧着一枚发光的贝，凑到耳边听"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "拾泪成珠",
+          "energy": 65,
+          "cd": 3,
+          "target": "ally_all",
+          "desc": "全队：回复 90% 攻击力的生命，解除 2 层负面。代价：自身防御降低 20%（2回合）。",
+          "fx": [
+            {
+              "k": "heal",
+              "coef": 0.9,
+              "target": "ally_all"
+            },
+            {
+              "k": "dispel",
+              "count": 2,
+              "target": "ally_all"
+            },
+            {
+              "k": "debuff",
+              "stat": "def",
+              "op": "mul",
+              "value": 0.8,
+              "turns": 2,
+              "target": "self"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "潮汐小名",
+          "desc": "每次回合开始，生命最低的同伴回复 30% 攻击力的生命；自身攻击降低 5%。",
+          "fx": [
+            {
+              "k": "trigger",
+              "on": "turn_start",
+              "fx": [
+                {
+                  "k": "heal",
+                  "coef": 0.3,
+                  "target": "ally_lowest_hp"
+                },
+                {
+                  "k": "debuff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 0.95,
+                  "turns": 99,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "贝壳里的话",
+          "desc": "助战时，被助战者受到群体伤害降低 12%。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "aoeReduce",
+              "op": "add",
+              "value": 0.12,
+              "turns": 99,
+              "target": "ally_single"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ssr-zf-04",
+      "name": "裴照微",
+      "title": "紫府·司灯",
+      "rarity": "gold",
+      "faction": "zf",
+      "element": "light",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她替将死的人点最后一盏灯，灯灭时替他们记住一句没说完的话。",
+      "art": {
+        "set": "星台下的灯廊，万盏小灯排到看不见的尽头",
+        "outfit": "月白广袖长袍，外披浅金灯纹帔帛，袖口收得利落",
+        "motif": "抬手拨亮一盏将熄的灯，灯光顺着指尖淌向远处"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-gh-03",
+      "name": "白露生",
+      "title": "广寒·收露",
+      "rarity": "gold",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "control",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她收的不是露，是露水里泡着的那些没做完的梦。",
+      "art": {
+        "set": "月府霜庭的桂树列，露水压弯了每一片叶",
+        "outfit": "霜白短襦配月灰长裙，腰间悬一只细颈小瓶",
+        "motif": "指尖停住一滴将落的露，露里映出一座陌生的城"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-gh-04",
+      "name": "陆停云",
+      "title": "广寒·停云使",
+      "rarity": "gold",
+      "faction": "gh",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她把云按在广寒的门槛外，替里面的人挡了三百年的雷。",
+      "art": {
+        "set": "月府高阙外的云海，雷光在云底滚动",
+        "outfit": "霜紫长裾，束腰，外罩一件云纹短氅",
+        "motif": "单手按在云层上，雷光顺着指缝被压回去"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-yx-04",
+      "name": "鹿衔霜",
+      "title": "云岫·衔霜鹿灵",
+      "rarity": "gold",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "鹿灵",
+      "beast": true,
+      "lore": "她走过的地方霜会化，可她自己背上永远落着一层不化的雪。",
+      "art": {
+        "set": "雪后山坞的松林，晨光从云隙斜落",
+        "outfit": "苔绿麻布长衣配兽裘披肩，腰间挂一只药囊",
+        "motif": "低头把一束带霜的草叶递向伤者"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-yx-05",
+      "name": "江鹤衣",
+      "title": "云岫·鹤羽客",
+      "rarity": "gold",
+      "faction": "yx",
+      "element": "dusk",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她借鹤的翅膀看过一整座山，从此再不肯走山路。",
+      "art": {
+        "set": "云岫山巅的断崖，暮色里一群白鹤绕崖而飞",
+        "outfit": "炭灰短打配长裤，肩头披一件鹤羽短氅",
+        "motif": "展开双袖借风，鹤群随她一齐俯冲"
+      },
+      "skills": null,
+      "relations": [
+        {
+          "id": "r-yx-07",
+          "rel": "同族"
+        }
+      ]
+    },
+    {
+      "id": "ssr-qx-03",
+      "name": "谢知白",
+      "title": "栖霞·典书郎",
+      "rarity": "gold",
+      "faction": "qx",
+      "element": "light",
+      "role": "break",
+      "sex": "m",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "书里写错的字他从不改，只在旁边添一笔，让后来的人知道这里曾经错过。",
+      "art": {
+        "set": "学宫藏书阁，斜阳穿过竹帘落在书脊上",
+        "outfit": "青衿直裾学袍，外罩一件洗旧的灰蓝半臂",
+        "motif": "提笔在一页旧书的错字旁添一道细线"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-qx-04",
+      "name": "温见微",
+      "title": "栖霞·抄经生",
+      "rarity": "gold",
+      "faction": "qx",
+      "element": "tide",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她抄经时总在纸上多留一笔，说那是替读经的人留的呼吸。",
+      "art": {
+        "set": "学宫墨池边的抄经廊，水面映着一排窗格",
+        "outfit": "青碧交领学袍配长裙，袖口挽起一截",
+        "motif": "悬腕抄经，最后一笔轻轻提起来"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-cc-03",
+      "name": "祝熔",
+      "title": "赤城·熔心",
+      "rarity": "gold",
+      "faction": "cc",
+      "element": "flame",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她能在炉火里看见铁想变成什么，所以她从不按图纸打剑。",
+      "art": {
+        "set": "剑炉深处的淬火池，火光映得四壁通红",
+        "outfit": "橙红短打罩麻布围裙，手臂缠着防火布",
+        "motif": "抡起小锤，火星顺着锤路炸开成一条河"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-cc-04",
+      "name": "傅照野",
+      "title": "赤城·照野",
+      "rarity": "gold",
+      "faction": "cc",
+      "element": "flame",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她扛着炉门替同伴断后，说铁烧红了才知道自己有多硬。",
+      "art": {
+        "set": "剑炉外场的刀架阵，夜色里炉门像一只睁开的红眼",
+        "outfit": "深红甲片罩麻布短打，肩甲有灼烧的痕迹",
+        "motif": "横过一柄厚背刀，把扑来的火星尽数挡下"
+      },
+      "skills": null
+    },
+    {
+      "id": "ssr-yh-04",
+      "name": "阮听潮",
+      "title": "瀛海·听潮人",
+      "rarity": "gold",
+      "faction": "yh",
+      "element": "tide",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她把耳朵贴在礁石上听潮，说潮水里藏着所有出海未归的人的名字。",
+      "art": {
+        "set": "海屿礁岸的月夜，潮水一层层推上黑色礁石",
+        "outfit": "青碧长裙配鲛绡外披，裙摆绣着细密的浪纹",
+        "motif": "俯身贴耳在礁石上，指尖随潮声轻点"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-zf-05",
+      "name": "沈观澜",
+      "title": "紫府·观澜",
+      "rarity": "purple",
+      "faction": "zf",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她观星观了三年，只学会一件事：星落下来的时候要有人接。",
+      "art": {
+        "set": "星台侧廊，廊下悬着一排测风的铜铃",
+        "outfit": "月白对襟衫配靛青长裙，腰束细带",
+        "motif": "抬手扶住一只被风吹歪的铜铃"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-zf-06",
+      "name": "韩青崖",
+      "title": "紫府·守碑",
+      "rarity": "purple",
+      "faction": "zf",
+      "element": "light",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她守的碑上没有一个字，因为她答应过替所有人把名字忘掉。",
+      "art": {
+        "set": "星台后的碑林，夜色里石碑像一排沉默的卫士",
+        "outfit": "灰蓝劲装外罩轻甲，腰佩一柄无鞘短刀",
+        "motif": "背靠无字碑，单刀横在身前"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-gh-05",
+      "name": "姜月白",
+      "title": "广寒·捣霜",
+      "rarity": "purple",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她捣霜时数着杵声，数到一百下就许一个愿，从来不说给谁听。",
+      "art": {
+        "set": "月府霜庭的捣霜房，月光从高窗落进石臼",
+        "outfit": "月白短襦配霜紫长裙，袖口卷到手肘",
+        "motif": "举起玉杵往下捣，霜粒溅起像碎星"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-gh-06",
+      "name": "桑晚",
+      "title": "广寒·拾忆",
+      "rarity": "purple",
+      "faction": "gh",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她替人拾回落下的记忆，自己的那份却始终空着。",
+      "art": {
+        "set": "月府回廊，廊下挂着成排封着光的霜灯",
+        "outfit": "霜紫交领长褙配月白裙，腰间挂着几只小霜灯",
+        "motif": "伸手从空中拈起一缕光，放进腰间的灯里"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yx-05",
+      "name": "阿箬",
+      "title": "云岫·箬叶",
+      "rarity": "purple",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她把箬叶包成小船放进溪里，船上写着给下游人的一句话。",
+      "art": {
+        "set": "山坞溪边，箬叶宽大，溪水清得见底",
+        "outfit": "苔绿短襦配麻布长裤，腰间系一只小药囊",
+        "motif": "蹲在溪边把一片箬叶折成小船放走"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-qx-05",
+      "name": "陆知秋",
+      "title": "栖霞·扫叶生",
+      "rarity": "purple",
+      "faction": "qx",
+      "element": "light",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她扫落叶扫了五年，扫到后来能从叶脉看出这一年的风往哪吹。",
+      "art": {
+        "set": "学宫回廊外的银杏道，满地金黄落叶",
+        "outfit": "青衿短衫配长裤，袖口扎紧，腰间别一柄竹帚",
+        "motif": "挥帚扫起一地落叶，叶片在光里翻成一片金"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-cc-05",
+      "name": "铁苔",
+      "title": "赤城·苔痕",
+      "rarity": "purple",
+      "faction": "cc",
+      "element": "flame",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她说铁也会累，只是没人听见它响；所以她替铁站着。",
+      "art": {
+        "set": "剑炉废料场，锈铁堆上爬满暗绿的苔",
+        "outfit": "深棕麻布长衣外罩旧铁甲，甲面覆着一层青苔",
+        "motif": "把一面废铁盾立在身前，苔痕被火光映亮"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-cc-06",
+      "name": "阿砺",
+      "title": "赤城·磨刃",
+      "rarity": "purple",
+      "faction": "cc",
+      "element": "storm",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她磨刀时不看刀，只看磨石上留下的水痕。",
+      "art": {
+        "set": "剑炉偏房的磨刀廊，水槽里漂着铁屑",
+        "outfit": "铁灰短打配深色长裤，袖口卷起",
+        "motif": "俯身在磨石上推刀，水花溅起"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yh-05",
+      "name": "贝青",
+      "title": "瀛海·贝市",
+      "rarity": "purple",
+      "faction": "yh",
+      "element": "tide",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她在海底市集卖贝壳，每个贝壳里都有一段别人的悄悄话。",
+      "art": {
+        "set": "瀛海珠阙的潮间市集，贝壳挂在珠帘间",
+        "outfit": "青碧短襦配鲛绡长裙，腰间挂着大小不一的贝壳",
+        "motif": "举起一枚贝壳贴在耳边，笑意浮上来"
+      },
+      "skills": null
+    },
+    {
+      "id": "sr-yh-06",
+      "name": "桑鱼",
+      "title": "瀛海·织绡",
+      "rarity": "purple",
+      "faction": "yh",
+      "element": "verdant",
+      "role": "control",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "鲛灵",
+      "beast": true,
+      "lore": "她织的绡能兜住声音，所以她织一张网，替海底的人留住歌。",
+      "art": {
+        "set": "珠阙的水下织房，鲛绡从梁上垂下",
+        "outfit": "青绿交领短襦配长裙，腰间系鲛绡带",
+        "motif": "抬手引出一根发光的水线，织进绡里"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-zf-05",
+      "name": "程墨迟",
+      "title": "紫府·点星",
+      "rarity": "blue",
+      "faction": "zf",
+      "element": "storm",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她替人点星，点到自己的那一颗时总说还没到时候。",
+      "art": {
+        "set": "星台东角的小露台，夜风把星图吹得哗哗响",
+        "outfit": "靛青窄袖短袍配长裤，腰间挂一只笔袋",
+        "motif": "笔尖点过之处亮起一粒细星"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-zf-06",
+      "name": "卫星回",
+      "title": "紫府·回星",
+      "rarity": "blue",
+      "faction": "zf",
+      "element": "light",
+      "role": "control",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她能把走错方向的星引回来，却引不回自己走散的那一个。",
+      "art": {
+        "set": "星台西侧的铜仪廊，浑仪在夜色里缓缓转",
+        "outfit": "月白广袖长袍，外披靛青星纹帔帛",
+        "motif": "两指并拢沿星轨一划，星点依次归位"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-gh-05",
+      "name": "许霜枝",
+      "title": "广寒·扫霜",
+      "rarity": "blue",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她扫霜扫到天亮，总把最干净的一段路留给晚归的人。",
+      "art": {
+        "set": "月府外的结霜石径，两侧桂枝压着白霜",
+        "outfit": "霜白短袄配月灰长裤，腰间插着一柄小竹帚",
+        "motif": "竹帚一挥，霜粒扫成一道白弧"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-gh-06",
+      "name": "桑落",
+      "title": "广寒·落桂",
+      "rarity": "blue",
+      "faction": "gh",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她扫落桂的时候会把完整的花都挑出来，说碎了的东西不该混在一起。",
+      "art": {
+        "set": "月府桂园深处，桂花落了一地",
+        "outfit": "桂黄短襦配霜紫长裙，袖口绣着细桂纹",
+        "motif": "抬手接住一捧落桂，花瓣从指缝漏下"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yx-05",
+      "name": "祝青禾",
+      "title": "云岫·田灵",
+      "rarity": "blue",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她在山坳里种一小块田，说人只要还有饭吃，就还有力气等春天。",
+      "art": {
+        "set": "山坞的梯田边，稻穗在风里翻浪",
+        "outfit": "苔绿粗布短衫配长裤，裤脚挽起",
+        "motif": "把一束新稻穗按在伤处，稻香散开"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yx-06",
+      "name": "鹿溪",
+      "title": "云岫·溪鹿",
+      "rarity": "blue",
+      "faction": "yx",
+      "element": "dusk",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "鹿灵",
+      "beast": true,
+      "lore": "她守着山溪的渡口，说水再急也得有个能落脚的地方。",
+      "art": {
+        "set": "山坞溪口，暮色里溪水泛着银光",
+        "outfit": "灰绿麻布长衣配兽裘披肩，脚边放着一面木盾",
+        "motif": "把木盾横在溪石前，替身后的人挡住水势"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-qx-05",
+      "name": "闻书",
+      "title": "栖霞·书童",
+      "rarity": "blue",
+      "faction": "qx",
+      "element": "light",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她替先生抱书，抱了三年，书里的字一个也没学会，倒把每本书的重量记住了。",
+      "art": {
+        "set": "学宫书阁的窄梯，阳光从窗缝切进来",
+        "outfit": "青衿短衫配长裤，怀里抱着一摞书",
+        "motif": "把一摞书横在身前挡住飞来的碎木"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-qx-06",
+      "name": "柳小砚",
+      "title": "栖霞·洗砚",
+      "rarity": "blue",
+      "faction": "qx",
+      "element": "tide",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她洗砚台洗出一池墨色，说墨沉下去的地方，鱼都认得字。",
+      "art": {
+        "set": "学宫墨池边，池水黑得能照见人影",
+        "outfit": "青碧短襦配素色长裙，袖子挽到手肘",
+        "motif": "捧起一捧墨池水，水里浮起几个字"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-cc-05",
+      "name": "秦炉",
+      "title": "赤城·拉风",
+      "rarity": "blue",
+      "faction": "cc",
+      "element": "flame",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她拉风箱能拉一整夜，说火要有人哄着才肯好好烧。",
+      "art": {
+        "set": "剑炉侧间的风箱房，炉火从门缝漏进来",
+        "outfit": "橙灰短打配长裤，头上包着一块旧布巾",
+        "motif": "双手拉动风箱，火舌从炉口窜起"
+      },
+      "skills": null
+    },
+    {
+      "id": "r-yh-05",
+      "name": "阿珠",
+      "title": "瀛海·采珠",
+      "rarity": "blue",
+      "faction": "yh",
+      "element": "tide",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她潜到海底采珠，采到最大的那颗从不卖，说那颗像她娘的眼睛。",
+      "art": {
+        "set": "瀛海浅湾的礁石滩，水下隐约有珠光",
+        "outfit": "青碧短打配长裤，腰间系一只防水小袋",
+        "motif": "从水里托起一颗发亮的珠子"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-zf-03",
+      "name": "小算",
+      "title": "紫府·算童",
+      "rarity": "green",
+      "faction": "zf",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她把算筹当积木搭，搭到第十七层时忽然说：天机就是个架子。",
+      "art": {
+        "set": "星案角落的矮案，算筹散了一桌",
+        "outfit": "靛青小袄配长裤，腰间挂着算筹袋",
+        "motif": "指尖拨动算筹，筹影排成一道细线"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-zf-04",
+      "name": "阿烛",
+      "title": "紫府·守灯",
+      "rarity": "green",
+      "faction": "zf",
+      "element": "light",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她守着一盏长明灯，灯油是攒了三年的一句句祈福。",
+      "art": {
+        "set": "星台下的长明灯房，灯盏排到墙根",
+        "outfit": "月白小袄配靛青长裤，袖口沾着灯油",
+        "motif": "张开双臂挡在灯前，灯焰在身后拉长影子"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-gh-03",
+      "name": "霜团",
+      "title": "广寒·团霜",
+      "rarity": "green",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她把霜捏成小团子分给怕冷的人，捏一个化一个，从不嫌烦。",
+      "art": {
+        "set": "月府回廊拐角，霜结在栏杆上",
+        "outfit": "霜白厚袄配月灰长裤，脖子上围着毛领",
+        "motif": "双手捧着一团霜，霜团冒出细细的白气"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-gh-04",
+      "name": "小杵",
+      "title": "广寒·药杵",
+      "rarity": "green",
+      "faction": "gh",
+      "element": "storm",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她捣药捣得比谁都细，说药渣粗一分，喝的人就多苦一分。",
+      "art": {
+        "set": "月府药房，窗外一道雷光掠过",
+        "outfit": "霜紫短襦配月白长裤，围着一块药渍围裙",
+        "motif": "举杵轻捣，药粉在光里扬起"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-yx-03",
+      "name": "狸花",
+      "title": "云岫·狸花",
+      "rarity": "green",
+      "faction": "yx",
+      "element": "verdant",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "狸灵",
+      "beast": true,
+      "lore": "她总在树杈上睡觉，醒来第一件事是数尾巴还在不在。",
+      "art": {
+        "set": "山坞古树的横杈，午后阳光从叶隙漏下",
+        "outfit": "灰绿短袄配长裤，尾巴从衣摆下探出来",
+        "motif": "从树杈上翻身跃下，双爪带起一阵风"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-yx-04",
+      "name": "阿蕨",
+      "title": "云岫·蕨芽",
+      "rarity": "green",
+      "faction": "yx",
+      "element": "dusk",
+      "role": "sustain",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她认得山上每一丛蕨，说蕨叶卷起来的时候最像人还没想通的心事。",
+      "art": {
+        "set": "山坞背阴的蕨类谷，暮色从谷口漫进来",
+        "outfit": "苔灰对襟长衫配长裤，腰间挂一只采药篓",
+        "motif": "把一卷蕨叶按在伤口上，叶脉透出微光"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-qx-03",
+      "name": "小墨",
+      "title": "栖霞·墨童",
+      "rarity": "green",
+      "faction": "qx",
+      "element": "light",
+      "role": "burst",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "他磨墨磨得满手黑，说墨越黑，写出来的字越亮。",
+      "art": {
+        "set": "学宫书案边的矮凳，窗外竹影摇曳",
+        "outfit": "青衿小衫配长裤，袖口全是墨点",
+        "motif": "双手按着墨锭在砚里打圈，墨光映脸"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-qx-04",
+      "name": "阿禾",
+      "title": "栖霞·洒扫",
+      "rarity": "green",
+      "faction": "qx",
+      "element": "tide",
+      "role": "guard",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她洒扫时总把水泼成一条线，说这样扫过的地方才算真的干净。",
+      "art": {
+        "set": "学宫回廊清晨，水痕在青砖上泛光",
+        "outfit": "青碧对襟长衫配长裤，腰间别着一只水瓢",
+        "motif": "一瓢水泼出去，水线在晨光里亮成一条"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-cc-03",
+      "name": "铜豆",
+      "title": "赤城·捡铜",
+      "rarity": "green",
+      "faction": "cc",
+      "element": "flame",
+      "role": "break",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "他在炉渣里捡铜豆，捡满一罐就熔成一颗大的，说要给自己打一枚护心镜。",
+      "art": {
+        "set": "剑炉炉渣场，地上散着铜色的碎粒",
+        "outfit": "焦褐短衫配长裤，腰间挂一只小陶罐",
+        "motif": "弯腰从炉渣里捡起一颗铜豆，对着光看"
+      },
+      "skills": null
+    },
+    {
+      "id": "n-yh-03",
+      "name": "珠芽",
+      "title": "瀛海·珠芽",
+      "rarity": "green",
+      "faction": "yh",
+      "element": "tide",
+      "role": "support",
+      "sex": "f",
+      "archetype": "少女",
+      "age_band": "teen",
+      "species": "human",
+      "beast": false,
+      "lore": "她在珠田里照顾还没成形的珠子，说每颗珠都要有人陪着长大。",
+      "art": {
+        "set": "瀛海珠田的浅水滩，一排排珠贝半开着",
+        "outfit": "青螺色对襟长衫配长裤，裤脚挽到膝下",
+        "motif": "跪在水里给珠贝换水，水面浮起细小的光"
+      },
+      "skills": null
+    },
+    {
+      "id": "dk-gh-08",
+      "name": "姬月寒",
+      "title": "广寒·晶月女帝",
+      "rarity": "diamond",
+      "faction": "gh",
+      "element": "dusk",
+      "role": "cleave",
+      "sex": "f",
+      "archetype": "成女",
+      "age_band": "adult",
+      "species": "human",
+      "beast": false,
+      "lore": "她把自己的名字冻进一整座晶山，谁想唤她，先得在冰里看见自己的死期。月府说她是拾霜司的旧主，她自己只认「朕」这个字。",
+      "art": {
+        "set": "晶月大殿：整座殿由透明晶柱撑起，殿外是低垂的巨月与刀锋般的冰山，晶面把月光折射成无数碎钻",
+        "outfit": "月白金丝云纹长袍，外罩一层棱晶绣面的广袖披氅，领口与袖缘镶碎钻冷光，裙摆垂地如水银",
+        "motif": "指尖拈起一枚悬浮的晶钻，晶面里同时映出她的眼睛与整片星空"
+      },
+      "skills": [
+        {
+          "slot": "ultimate",
+          "name": "太阴碎晶·万相归霜",
+          "energy": 60,
+          "cd": 3,
+          "desc": "召下整座晶月，对敌方全体造成 315% 素月伤害，并 100% 打掉护盾、使其「晶滞」（速度 -30%，2 回合）。晶光落下时，朕的疆域便多了一寸。",
+          "fx": [
+            {
+              "k": "damage",
+              "coef": 3.15,
+              "type": "magic",
+              "target": "enemy_all"
+            },
+            {
+              "k": "shieldBreak",
+              "value": 1,
+              "target": "enemy_all"
+            },
+            {
+              "k": "debuff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 0.7,
+              "turns": 2,
+              "target": "enemy_all"
+            }
+          ]
+        },
+        {
+          "slot": "passive",
+          "name": "晶冕不落",
+          "desc": "自身在场时，敌方全体攻击 -12%、速度 -8%；每有一位敌人倒下，自身攻击提升 6%（可叠 5 层）。晶冕太重，压得旁人抬不起头。",
+          "fx": [
+            {
+              "k": "debuff",
+              "stat": "atk",
+              "op": "mul",
+              "value": 0.88,
+              "turns": 99,
+              "target": "enemy_all"
+            },
+            {
+              "k": "debuff",
+              "stat": "spd",
+              "op": "mul",
+              "value": 0.92,
+              "turns": 99,
+              "target": "enemy_all"
+            },
+            {
+              "k": "trigger",
+              "on": "marked_target_down",
+              "fx": [
+                {
+                  "k": "buff",
+                  "stat": "atk",
+                  "op": "mul",
+                  "value": 1.06,
+                  "turns": 99,
+                  "maxStacks": 5,
+                  "target": "self"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slot": "assist",
+          "name": "碎晶代冕",
+          "desc": "助战时，被助战者受到伤害降低 20%；自身每回合开始时为其续气 +6。晶冕碎一片，替你还一次。",
+          "fx": [
+            {
+              "k": "buff",
+              "stat": "dmgTake",
+              "op": "mul",
+              "value": 0.8,
+              "turns": 99,
+              "target": "ally_single"
+            },
+            {
+              "k": "trigger",
+              "on": "turn_start",
+              "fx": [
+                {
+                  "k": "energy",
+                  "value": 6,
+                  "target": "ally_single"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

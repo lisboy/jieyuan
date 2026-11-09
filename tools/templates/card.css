@@ -1,0 +1,83 @@
+/* 卡面样式。设计约束（2026-10-23 调整）：81 张卡要放在一起看不打架，
+   所以整张卡只允许一个强调色（稀有度色 --rc），六气色 --ec 只用于那颗属性点；
+   其余全部走中性灰阶。不要给每个信息块都套边框——分隔靠留白和一条发丝线。 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.card {
+  width: 760px; height: 1080px; position: relative; overflow: hidden;
+  background: #0d0f14; font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  color: #dfe2e8;
+}
+.frame {
+  position: absolute; inset: 0; border: 1px solid #23262e;
+  background: linear-gradient(180deg, #14171f, #0b0d12 60%);
+}
+
+/* ---------- 立绘区 ---------- */
+.art { position: absolute; left: 22px; right: 22px; top: 22px; height: 548px; overflow: hidden;
+  background: #05060a; }
+.art img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; display: block; }
+/* 卡面图是横构图且自己留好了上下暗部，居中偏上即可；退回竖立绘时要往上取，不然脸被裁掉 */
+.art-card img { object-position: 50% 32%; }
+.art-portrait img { object-position: 50% 10%; }
+.art .missing { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: #4f545e; font-size: 20px; letter-spacing: 6px; background: #0a0c11; }
+/* 立绘底部渐隐，让名字压得住 */
+.art::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 150px;
+  background: linear-gradient(180deg, transparent, rgba(8,9,13,.94)); }
+
+.cost { position: absolute; left: 16px; top: 16px; width: 52px; height: 52px; border-radius: 50%;
+  background: rgba(10,12,16,.78); border: 1px solid color-mix(in srgb, var(--rc) 75%, transparent);
+  color: #f2eee5; font-weight: 600; font-size: 26px; z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "KaiTi", "STKaiti", serif; }
+
+.elem { position: absolute; right: 18px; top: 26px; z-index: 3; display: flex; align-items: center; gap: 8px;
+  font-size: 15px; letter-spacing: 3px; color: #b9bfca; }
+.elem::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--ec); }
+
+.stars { position: absolute; right: 18px; bottom: 16px; z-index: 3; font-size: 19px; letter-spacing: 3px;
+  color: #b89a63; }
+
+.nameband { position: absolute; left: 18px; bottom: 16px; z-index: 3; }
+.name { font-family: "KaiTi", "STKaiti", serif; font-size: 44px; line-height: 1.1; color: #f7f2e6;
+  text-shadow: 0 2px 10px rgba(0,0,0,.9); letter-spacing: 3px; }
+.title { font-size: 16px; color: #9aa1ad; letter-spacing: 4px; margin-top: 3px; }
+
+/* ---------- 正文区 ---------- */
+.body { position: absolute; left: 22px; right: 22px; top: 584px; bottom: 22px;
+  padding: 14px 16px 34px; }
+
+/* 元信息不用五个小框，改成一行点分文本 */
+.meta { display: flex; gap: 0; align-items: center; flex-wrap: wrap; font-size: 14px; color: #8b93a1; }
+.chip { letter-spacing: 1px; }
+.chip + .chip::before { content: "·"; margin: 0 10px; color: #3f4652; }
+.chip.role { color: color-mix(in srgb, var(--rc) 55%, #fff); }
+.chip.tag { color: #6d7481; }
+
+.hr { height: 1px; background: #22262e; margin: 13px 0 12px; }
+
+.stats { display: grid; grid-template-columns: repeat(6, 1fr); }
+.stat { padding: 2px 2px 4px; text-align: center; }
+.stat + .stat { border-left: 1px solid #1c2028; }
+.stat b { display: block; font-size: 21px; color: #eae6dd; font-weight: 600; }
+.stat span { font-size: 11px; color: #6d7481; letter-spacing: 2px; }
+.statnote { font-size: 11px; color: #565c68; margin-top: 4px; text-align: right; }
+
+.skills { display: flex; flex-direction: column; gap: 9px; }
+.skill { display: grid; grid-template-columns: 58px 1fr; gap: 12px; align-items: start; }
+.skill .kind { font-size: 12px; text-align: right; padding-top: 4px; letter-spacing: 1px; color: #6d7481; }
+.skill .head { display: flex; gap: 8px; align-items: baseline; }
+.skill .sn { font-family: "KaiTi", "STKaiti", serif; font-size: 19px; color: #eae5da; letter-spacing: 1px; }
+/* 全卡唯一的一处强调：终结技名字用稀有度色，其余不加色 */
+.skill.ult .sn { color: color-mix(in srgb, var(--rc) 62%, #fff); }
+.skill .res { font-size: 11px; color: #8a8069; letter-spacing: 1px; }
+.skill .desc { font-size: 13px; line-height: 1.5; color: #9aa1ad; margin-top: 2px; }
+
+.lore { margin-top: 16px; font-family: "KaiTi", "STKaiti", serif; font-size: 14px; line-height: 1.6;
+  color: #7d7466; border-left: 1px solid #2a2f38; padding-left: 12px;
+  /* 卡面高度固定，逸闻最多两行，超出截断，避免压到底栏 */
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.foot { position: absolute; left: 16px; right: 16px; bottom: 12px; display: flex; justify-content: space-between;
+  font-size: 11px; color: #464c57; letter-spacing: 1px; }

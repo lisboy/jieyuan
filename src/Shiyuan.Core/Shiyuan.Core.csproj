@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <!-- Unity 6 按 C# 9 编译，且不注入隐式 using。这里刻意锁死同样的限制，
+         这样 dotnet 构建通过就等于这份文件能原样拷进 Assets 里编过。 -->
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>9.0</LangVersion>
+    <RootNamespace>Shiyuan.Core</RootNamespace>
+    <AssemblyName>Shiyuan.Core</AssemblyName>
+    <!-- 纯数值核心：不引用 UnityEngine，因此可以脱离编辑器用 dotnet 跑交叉验证 -->
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+{
+  "comment": "六气（元素）分两环生克，跨环中性。命名走道门气质：火/木/水为形，光/雷/月为神。",
+  "advantageMult": 1.30,
+  "disadvantageMult": 0.75,
+  "neutralMult": 1.00,
+  "sameElementEnergyBonus": 5,
+  "list": {
+    "flame":   { "label": "离火", "plain": "火", "ring": "form",  "color": "#d0563c", "beats": "verdant", "mood": "炉星、灯花、焚香" },
+    "verdant": { "label": "青木", "plain": "木", "ring": "form",  "color": "#54915f", "beats": "tide",    "mood": "云岫、药圃、松雪" },
+    "tide":    { "label": "沧水", "plain": "水", "ring": "form",  "color": "#3d7f9c", "beats": "flame",   "mood": "烟雨、潮信、墨池" },
+    "light":   { "label": "曜光", "plain": "光", "ring": "spirit","color": "#dcc182", "beats": "storm",   "mood": "晨雾破晓、铜镜、玉案反光" },
+    "storm":   { "label": "紫雷", "plain": "雷", "ring": "spirit","color": "#8f7cc0", "beats": "dusk",    "mood": "符胆、松间雷、破空" },
+    "dusk":    { "label": "素月", "plain": "月", "ring": "spirit","color": "#6a5f86", "beats": "light",   "mood": "月华、霜、影" }
+  }
+}

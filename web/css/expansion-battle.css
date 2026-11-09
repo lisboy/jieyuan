@@ -1,0 +1,378 @@
+/* 拾缘 · expansion-battle —— 扩展战斗演出与战报（DESIGN-EXPANSION）
+ * 前缀 .xpb- / .btough / .broken。质感沿用 style.css 的变量与既有通道样式：
+ * #bvBanner 暗带、#bvCutin 终式立绘、卡片浮字、@keyframes fcIn 等。
+ */
+
+/* ================= 韧性条（hp 条下方细条；toughMax 为 0/缺失时根本不渲染 DOM） ================= */
+.btough {
+  position: relative;
+  height: 5px;
+  margin: 0 10px 5px;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: default;
+  background: rgba(8, 12, 20, .8);
+  border: 1px solid rgba(111, 155, 209, .28);
+}
+.btough > i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #6fc3e8, #3f8fc0);
+  box-shadow: 0 0 6px rgba(111, 195, 232, .45);
+  transition: width .3s var(--ease);
+}
+/* 「破」字标：只在 broken 时出现（纯文字，不依赖图标） */
+.btough .btg-brk {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #ffd9cf;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .9);
+  pointer-events: none;
+}
+.btough.broken { border-color: rgba(208, 86, 60, .65); }
+.btough.broken > i {
+  background: linear-gradient(90deg, #d0563c, #9e4038);
+  box-shadow: 0 0 6px rgba(208, 86, 60, .5);
+}
+.btough.broken .btg-brk { display: grid; }
+/* 关主的韧性条夹在 boss-hp 与 boss-en 之间，稍粗、全宽 */
+.boss-unit .btough { height: 6px; margin: 5px 0 4px; }
+
+/* ================= 破防红光（联动 btPaint 的 .broken 类，友/敌通用） ================= */
+.buc.broken,
+.boss-unit.broken {
+  border-color: rgba(208, 86, 60, .8) !important;
+  animation: xpbBrokenPulse 1.6s ease-in-out infinite;
+}
+@keyframes xpbBrokenPulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(208, 86, 60, .32), 0 6px 18px rgba(0, 0, 0, .45); }
+  50% { box-shadow: 0 0 24px rgba(208, 86, 60, .55), 0 6px 18px rgba(0, 0, 0, .45); }
+}
+
+/* ================= 破防碎裂（break 事件的一瞬演出） ================= */
+.xpb-breakflash { animation: xpbBreakFlash .55s var(--ease); }
+@keyframes xpbBreakFlash {
+  0% { filter: brightness(2.4) saturate(0); }
+  30% { filter: brightness(1.5) saturate(1.4); }
+  100% { filter: none; }
+}
+.xpb-shatters { position: absolute; inset: 0; pointer-events: none; z-index: 6; }
+.xpb-shatters i {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 5px;
+  height: 9px;
+  background: var(--pc, #ff8a70);
+  border-radius: 1.5px;
+  animation: xpbShard .6s var(--ease) forwards;
+}
+@keyframes xpbShard {
+  from { opacity: 1; transform: translate(-50%, -50%) rotate(0deg); }
+  to { opacity: 0; transform: translate(calc(-50% + var(--dx, 20px)), calc(-50% + var(--dy, 20px))) rotate(220deg); }
+}
+
+/* ================= 开战天时横幅（复用 #bvBanner，重置其大字排版） ================= */
+#bvBanner.xpb-mod-on {
+  font-size: initial;
+  letter-spacing: normal;
+  text-indent: 0;
+  background: linear-gradient(90deg, transparent, rgba(4, 5, 9, .85) 16%, rgba(4, 5, 9, .85) 84%, transparent);
+}
+.xpb-modban {
+  display: grid;
+  gap: 7px;
+  justify-items: center;
+  padding: 15px 60px;
+  border-top: 1px solid color-mix(in srgb, var(--xpb-el, #8fb6e8) 55%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--xpb-el, #8fb6e8) 55%, transparent);
+  animation: fcIn .22s var(--ease);
+}
+.xpb-mb-who {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: .5em;
+  text-indent: .5em;
+  color: rgba(240, 232, 214, .6);
+}
+.xpb-mb-name {
+  font-family: var(--font-display);
+  font-size: 33px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: var(--xpb-el, #8fb6e8);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--xpb-el, #8fb6e8) 50%, transparent), 0 2px 10px rgba(0, 0, 0, .8);
+}
+.xpb-mb-desc {
+  font-size: 12.5px;
+  color: rgba(237, 230, 214, .78);
+  letter-spacing: .08em;
+}
+
+/* ================= BOSS 阶段 Cut-in（独立层，暗幕 + 「进入第 X 形」 + 台词气泡） ================= */
+.xpb-phase { position: absolute; inset: 0; z-index: 55; pointer-events: none; }
+.xpb-ph-shade {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(900px 560px at 50% 44%, rgba(20, 4, 4, .62), rgba(2, 2, 5, .9) 82%);
+  animation: ciFade .3s var(--ease) forwards;
+}
+.xpb-ph-body {
+  position: absolute;
+  left: 0; right: 0;
+  top: 33%;
+  display: grid;
+  gap: 11px;
+  justify-items: center;
+  animation: xpbPhaseIn .45s var(--ease);
+}
+@keyframes xpbPhaseIn {
+  from { opacity: 0; transform: translateY(16px) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+.xpb-ph-who {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: .4em;
+  text-indent: .4em;
+  color: rgba(240, 225, 214, .66);
+}
+.xpb-ph-title {
+  font-family: var(--font-display);
+  font-size: 46px;
+  font-weight: 900;
+  letter-spacing: .24em;
+  color: #ff9a7a;
+  text-shadow: 0 0 26px rgba(208, 86, 60, .6), 0 3px 14px rgba(0, 0, 0, .9);
+}
+.xpb-ph-line {
+  font-size: 14px;
+  color: rgba(237, 230, 214, .85);
+  letter-spacing: .1em;
+  padding: 7px 22px;
+  border: 1px solid rgba(255, 154, 122, .35);
+  border-radius: 999px;
+  background: rgba(10, 6, 6, .72);
+}
+
+/* ================= 双人合击 Cut-in：副位立绘从右侧斜切推入（主位走 #ciArt 原通道） ================= */
+.ci-art.xpb-ci2 {
+  animation-name: ciArtIn2;
+  object-position: center 15%;
+  clip-path: polygon(38% 0, 100% 0, 100% 100%, 20% 100%);
+}
+@keyframes ciArtIn2 {
+  0% { opacity: 0; transform: scale(1.26) translateX(-2.5%); }
+  20% { opacity: 1; }
+  100% { opacity: 1; transform: scale(1.03); }
+}
+
+/* ================= 六气反应气泡（目标卡上弹出，元素色渐变圆点） ================= */
+.xpb-react {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 7;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  animation: xpbReactPop 1.5s var(--ease) forwards;
+}
+.xpb-rb-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #ffe9b8, #ff9a6a 46%, #7cc7e8 100%);
+  border: 1.5px solid rgba(255, 255, 255, .5);
+  box-shadow: 0 0 16px rgba(255, 200, 130, .65);
+}
+@keyframes xpbReactPop {
+  0% { opacity: 0; transform: translateX(-50%) scale(.4); }
+  16% { opacity: 1; transform: translateX(-50%) scale(1.12); }
+  28% { transform: translateX(-50%) scale(1); }
+  78% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-14px) scale(.9); }
+}
+
+/* ================= 候补 / 召唤滑入（我方从左、敌方从右） ================= */
+.xpb-enter.from-left { animation: xpbEnterL .65s var(--ease); }
+.xpb-enter.from-right { animation: xpbEnterR .65s var(--ease); }
+@keyframes xpbEnterL {
+  from { opacity: 0; transform: translateX(-70px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes xpbEnterR {
+  from { opacity: 0; transform: translateX(70px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ================= 天时脉冲顶部提示（轻量，8s 节流） ================= */
+.xpb-modhint {
+  position: absolute;
+  top: 74px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 35;
+  pointer-events: none;
+  font-size: 12px;
+  letter-spacing: .18em;
+  color: #cfe3f5;
+  padding: 4px 18px;
+  border: 1px solid rgba(143, 182, 232, .4);
+  border-radius: 999px;
+  background: rgba(8, 12, 20, .78);
+  animation: xpbHint 2.2s var(--ease) forwards;
+}
+@keyframes xpbHint {
+  0% { opacity: 0; transform: translate(-50%, -6px); }
+  12% { opacity: 1; transform: translate(-50%, 0); }
+  82% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ================= 战报弹窗（三区块：伤害构成 / 时间轴 / 心结自诊 + 抄作业串） ================= */
+.xpb-report { text-align: left; }
+.xpb-rp-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: .4em;
+  text-indent: .4em;
+  color: var(--gold-hi);
+  text-align: center;
+  margin: 6px 0 2px;
+}
+.xpb-rp-sub {
+  text-align: center;
+  font-size: 12px;
+  color: var(--faint);
+  margin-bottom: 2px;
+}
+.xpb-rp-h {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: .3em;
+  color: var(--gold);
+  margin: 15px 0 8px;
+}
+.xpb-rp-h::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--gold-line);
+}
+/* 伤害构成：名字 + 纯 CSS 百分比横条 + 数值 */
+.xpb-rp-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 3px 0;
+}
+.xpb-rp-name {
+  flex: none;
+  width: 68px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--dim);
+}
+.xpb-rp-track {
+  position: relative;
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, .05);
+  overflow: hidden;
+}
+.xpb-rp-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(232, 201, 138, .75), rgba(232, 201, 138, .25));
+  box-shadow: 0 0 8px rgba(232, 201, 138, .25);
+}
+.xpb-rp-val { flex: none; width: 70px; text-align: right; color: var(--ink); }
+.xpb-rp-tot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.xpb-rp-tot span {
+  font-size: 11px;
+  color: var(--dim);
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+.xpb-rp-tot b { color: var(--ink); }
+/* 时间轴：一行一条关键事件 */
+.xpb-rp-tl { display: grid; gap: 3px; }
+.xpb-rp-tlrow {
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.xpb-rp-tlw {
+  flex: none;
+  color: var(--faint);
+  font-size: 10.5px;
+  letter-spacing: .04em;
+}
+.xpb-rp-tlt { color: var(--dim); }
+/* 心结自诊：克制、不判罪的红笺 */
+.xpb-rp-diag {
+  border: 1px solid rgba(208, 86, 60, .35);
+  background: rgba(208, 86, 60, .07);
+  border-radius: var(--r-m);
+  padding: 10px 12px;
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.xpb-rp-diag b {
+  color: #ff9a7a;
+  font-family: var(--font-display);
+  letter-spacing: .2em;
+}
+/* 抄作业串 */
+.xpb-rp-copy {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.xpb-rp-copy textarea {
+  flex: 1;
+  height: 64px;
+  resize: none;
+  background: rgba(8, 10, 16, .8);
+  border: 1px solid var(--line2);
+  border-radius: var(--r-s);
+  color: var(--dim);
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 7px 9px;
+  font-family: var(--font-ui);
+}
+.xpb-rp-copy textarea:focus { outline: none; border-color: var(--gold); }
+.xpb-rp-copy .btn { flex: none; align-self: center; }
+.xpb-rp-empty {
+  font-size: 12px;
+  color: var(--faint);
+  padding: 6px 2px;
+}

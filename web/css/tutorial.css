@@ -1,0 +1,88 @@
+/* 新手教学指引（强制式：聚光 + 指针 + 只许点指定位置）
+ * 与 web/js/tutorial.js 配套；z 序高于弹窗(80)，低于 toast。
+ */
+.tut-layer { position: fixed; inset: 0; z-index: 200; pointer-events: none; }
+.tut-shade {
+  position: fixed; inset: 0; background: rgba(3, 5, 9, .82);
+  pointer-events: none;
+  animation: fadeIn .2s var(--ease);
+}
+.tut-layer.has-target .tut-shade { display: none; }
+.tut-hole {
+  position: fixed; border-radius: 12px; pointer-events: none;
+  box-shadow: 0 0 0 9999px rgba(3, 5, 9, .82), 0 0 0 2px rgba(232, 201, 138, .9), 0 0 34px rgba(232, 201, 138, .35);
+  transition: left .22s var(--ease), top .22s var(--ease), width .22s var(--ease), height .22s var(--ease);
+}
+.tut-hole.off { opacity: 0; }
+.tut-pointer {
+  position: fixed; width: 52px; height: 52px; pointer-events: none;
+  transition: left .22s var(--ease), top .22s var(--ease);
+}
+.tut-pointer.off { display: none; }
+.tut-pointer::before {
+  content: ""; position: absolute; inset: 6px; border-radius: 50%;
+  border: 2px solid rgba(246, 227, 184, .9);
+  box-shadow: 0 0 18px rgba(232, 201, 138, .55), inset 0 0 12px rgba(232, 201, 138, .25);
+  animation: tutPulse 1.25s var(--ease) infinite;
+}
+.tut-pointer::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 0;
+  transform: translate(-30%, -70%);
+  border-left: 9px solid transparent; border-right: 9px solid transparent;
+  border-top: 16px solid #f6e3b8;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .6));
+  animation: tutTap .9s var(--ease) infinite;
+}
+@keyframes tutPulse { 0%, 100% { transform: scale(.82); opacity: .55; } 50% { transform: scale(1.08); opacity: 1; } }
+@keyframes tutTap { 0%, 100% { transform: translate(-30%, -78%); } 50% { transform: translate(-30%, -58%); } }
+
+.tut-card-host { position: fixed; inset: 0; pointer-events: none; }
+.tut-card {
+  position: fixed; width: 392px; max-width: calc(100vw - 24px);
+  pointer-events: auto; padding: 20px 22px 16px;
+  border-radius: 14px; border: 1px solid rgba(232, 201, 138, .45);
+  background: linear-gradient(165deg, rgba(24, 27, 40, .985), rgba(12, 15, 23, .985));
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .06);
+  transition: left .22s var(--ease), top .22s var(--ease);
+}
+.tut-card::before {
+  content: ""; position: absolute; left: 20px; right: 20px; top: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 201, 138, .85), transparent);
+}
+.tut-card .tut-eyebrow {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10.5px; letter-spacing: .12em; color: var(--gold-dp);
+  font-family: var(--font-display);
+}
+.tut-kind {
+  display: inline-block; padding: 2px 8px; border-radius: 999px;
+  font-size: 10px; letter-spacing: .18em;
+  border: 1px solid rgba(232, 201, 138, .45); color: var(--gold-hi);
+  background: rgba(232, 201, 138, .1);
+}
+.tut-kind.do { border-color: rgba(126, 200, 255, .55); color: #b9dcff; background: rgba(90, 160, 230, .14); }
+.tut-card h3 {
+  margin: 9px 0 10px; font-family: var(--font-display); font-size: 20px;
+  letter-spacing: .1em; color: var(--gold-hi);
+}
+.tut-card p { font-size: 13.5px; line-height: 1.9; color: #c8cfdd; margin: 0; }
+.tut-progress {
+  margin-top: 10px; font-size: 12px; color: var(--dim);
+  padding: 7px 10px; border-radius: 8px;
+  background: rgba(232, 201, 138, .07); border: 1px solid rgba(232, 201, 138, .22);
+}
+.tut-progress b { color: var(--gold-hi); font-size: 14px; }
+.tut-dots { display: flex; flex-wrap: wrap; gap: 5px; margin: 16px 0 13px; }
+.tut-dots i {
+  width: 5px; height: 5px; border-radius: 50%; background: rgba(255, 255, 255, .16);
+  transition: background .18s var(--ease), transform .18s var(--ease);
+}
+.tut-dots i.done { background: rgba(232, 201, 138, .45); }
+.tut-dots i.on { background: var(--gold); transform: scale(1.6); }
+.tut-actions { display: flex; align-items: center; gap: 8px; }
+.tut-actions .grow { flex: 1; }
+.tut-wait { font-size: 11.5px; color: var(--faint); }
+.tut-wait b { color: var(--gold); font-weight: 700; }
+.tut-card .btn.sm { padding: 6px 12px; font-size: 12px; }
+.tut-card .btn.ghost { color: var(--faint); }
+.tut-card .btn.ghost:hover { color: var(--dim); }

@@ -1,0 +1,33 @@
+{
+  "name": "shiyuan-card-game",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "拾缘 - 数据驱动东方仙侠卡牌骨架。content/ 为人工源，data/ 为构建产物。",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "validate": "node tools/validate.mjs",
+    "mobile:estimate": "node tools/mobile-estimate.mjs",
+    "mobile:ready": "node tools/mobile-ready.mjs",
+    "cards": "node tools/render-cards.mjs",
+    "core": "node tools/dotnet.mjs run --project src/Shiyuan.Core.Runner -c Release",
+    "check": "node tools/build.mjs && node tools/validate.mjs && node tools/dotnet.mjs run --project src/Shiyuan.Core.Runner -c Release",
+    "serve": "node tools/serve.mjs",
+    "serve:guard": "node tools/serve-guard.mjs --port 5174",
+    "test:web": "node tools/test-web.mjs",
+    "art:exclusive:jobs": "node tools/make-exclusive-art-ai.mjs --emit-jobs target/exclusive-jobs.json",
+    "art:exclusive:daily": "node tools/make-exclusive-art-ai.mjs --daily 12",
+    "art:exclusive:all": "node tools/make-exclusive-art-ai.mjs",
+    "art:exclusive:svg": "node tools/make-exclusive-art.mjs",
+    "package": "node tools/package.mjs",
+    "package:zip": "node tools/package.mjs --zip",
+    "release": "node tools/package.mjs --zip --skip-core",
+    "serve:prod": "node tools/serve-guard.mjs --port 5174",
+    "db:init": "node tools/db-init.mjs",
+    "db:check": "node tools/db-init.mjs --check"
+  },
+  "dependencies": {
+    "jsdom": "^29.1.1",
+    "mysql2": "^3.24.6"
+  }
+}

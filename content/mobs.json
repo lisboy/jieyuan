@@ -1,0 +1,1494 @@
+{
+  "comment": "小怪表：不进名册、不进卡池、不进 index.json，只作为关卡的敌人上阵（主线、材料本、登仙塔都只用小怪，名册角色不再当敌人）。每只小怪按 base 克隆一名同势力同稀有度角色的技能与数值模板（保证公式与校验和名册完全同源），再换名字、称号、立绘。每章至少 5 只普通小怪 + 1 只妖王，第 7/8 章（妖潮/归墟）为混合章，敌人从全势力小怪池里抽。art 目录名遵循 content/art/<名字>-<id>/<中文资产名>.png；shape 字段指定 tools/render-mob-art.mjs 的剪影款式。",
+  "version": 2,
+  "mobs": [
+    {
+      "id": "mob-cc-xiang",
+      "name": "宝箱妖",
+      "title": "赤城·蹲在关前等人来开的箱",
+      "faction": "cc",
+      "element": "dusk",
+      "rarity": "green",
+      "role": "sustain",
+      "base": "n-cc-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "妖",
+      "lore": "它自愿长成一只宝箱，只为听清楚每个推开它的人许的愿；开口的一瞬，愿都归它。",
+      "look": {
+        "hair": "箱盖上贴着一张被雨泡皱的封条符纸，符角卷起",
+        "eyes": "箱缝里一对贪看人愿的金红竖瞳，瞳孔像烧透的炭",
+        "expr": "等人来开时咧嘴的贪笑，两排尖牙从缝里露出来",
+        "mark": "箱身正面一枚裂开的铜锁，锁眼漏出金红光",
+        "pose": "箱盖半掀，一只手扶着盖沿探头往外看",
+        "poseAlt": "整只箱子踮起短腿往前一扑，箱盖大张喷出金光",
+        "prop": "一枚裂开的铜锁",
+        "accent": {
+          "name": "褪色红",
+          "hex": "#a8382f"
+        },
+        "set": "赤城关前的旧驿道，散落的车辙与碎木箱压在中景，箱盖缝隙里漏出金红的光",
+        "outfit": "木质宝箱的箱身长出四条短腿，铜箍包角、缠着半截褪色红绸，箱盖缝里露出两排尖牙",
+        "motif": "箱盖「啪」地掀开，金红的光与纸符碎片一起喷出来"
+      }
+    },
+    {
+      "id": "mob-qx-deng",
+      "name": "灯下狸",
+      "title": "栖霞·山门小妖",
+      "faction": "qx",
+      "element": "light",
+      "rarity": "green",
+      "role": "cleave",
+      "shape": "beast",
+      "look": {
+        "set": "栖霞山门夜的碎石小径，两侧悬挂纸灯笼",
+        "outfit": "狸耳直立，披着被人丢下的旧书页当斗篷，尾巴缠着一盏将熄的灯",
+        "motif": "爪尖挑起一簇灯火，眯着眼打量来客"
+      },
+      "skills": {
+        "attack": "扑灯",
+        "skill": "掀石",
+        "passive": "见光长"
+      },
+      "lore": "它守在山门外的灯下，专捡路人落下的书页当被子。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-qx-zhu",
+      "name": "风竹魈",
+      "title": "栖霞·林间游魂",
+      "faction": "qx",
+      "element": "storm",
+      "rarity": "green",
+      "role": "break",
+      "shape": "bamboo",
+      "look": {
+        "set": "栖霞竹林深处，风过处竹叶如刀",
+        "outfit": "细长的青竹色躯体，关节处缠着枯叶，脸是一块空白竹节",
+        "motif": "手中竹枝横扫，带起一道风痕"
+      },
+      "skills": {
+        "attack": "扫叶",
+        "skill": "折竹",
+        "passive": "风随影"
+      },
+      "lore": "书隐弟子背不出的经文，多半被它藏在了竹节里。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-qx-shi",
+      "name": "石灯傀",
+      "title": "栖霞·守径石偶",
+      "faction": "qx",
+      "element": "light",
+      "rarity": "blue",
+      "role": "guard",
+      "shape": "golem",
+      "look": {
+        "set": "栖霞石阶尽头，苔痕爬满的旧灯座",
+        "outfit": "粗石拼成的躯体，胸口嵌一盏残灯，纹路里透出微光",
+        "motif": "双臂护在灯前，石屑沿肩落下"
+      },
+      "skills": {
+        "attack": "压石",
+        "skill": "护灯",
+        "passive": "苔甲"
+      },
+      "lore": "灯不灭，它就不算倒下；灯灭了，它才想起自己只是石头。",
+      "kin": "傀"
+    },
+    {
+      "id": "mob-qx-li",
+      "name": "墨池鲤",
+      "title": "栖霞·洗笔池底的吞字鱼",
+      "faction": "qx",
+      "element": "tide",
+      "rarity": "blue",
+      "role": "sustain",
+      "shape": "koi",
+      "look": {
+        "set": "栖霞墨池，水面浮着洗笔洗出的墨痕",
+        "outfit": "一身墨青鳞，鳞片上隐约排着没写完的字，背鳍像一页湿透的纸",
+        "motif": "跃出水面时甩下一串墨点，墨点落回水里排成半句话"
+      },
+      "skills": {
+        "attack": "泼墨",
+        "skill": "衔字",
+        "passive": "腹有诗书"
+      },
+      "lore": "弟子们在墨池边背书，背错的那半句沉下去，被它衔走了。",
+      "kin": "灵"
+    },
+    {
+      "id": "mob-qx-yuan",
+      "name": "纸鸢妖",
+      "title": "栖霞·断线的纸鸢",
+      "faction": "qx",
+      "element": "storm",
+      "rarity": "green",
+      "role": "burst",
+      "shape": "kite",
+      "look": {
+        "set": "栖霞放鸢坪的上空，风把云扯成细丝",
+        "outfit": "竹骨纸面折成的躯干，尾穗是一条写满愿望的短笺",
+        "motif": "顺着风俯冲，尾穗在身后抽出一道白痕"
+      },
+      "skills": {
+        "attack": "俯冲",
+        "skill": "割线",
+        "passive": "借风势"
+      },
+      "lore": "孩子们把心愿写在鸢尾上放上天。它替风收走这些心愿，也算替风还愿。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-qx-zhong",
+      "name": "晚钟偶",
+      "title": "栖霞·钟楼下的守夜木偶",
+      "faction": "qx",
+      "element": "light",
+      "rarity": "purple",
+      "role": "guard",
+      "shape": "bell",
+      "look": {
+        "set": "栖霞晚钟楼底，钟绳垂到地面还挂着露水",
+        "outfit": "旧木头拼成的钟形身躯，漆皮剥落处露出更旧的刻字",
+        "motif": "抬手撞向自己胸口，发出一声闷响"
+      },
+      "skills": {
+        "attack": "撞钟",
+        "skill": "余音",
+        "passive": "晚课"
+      },
+      "lore": "敲钟人走后，最后一记钟声没散，凝成这具木偶接着值夜。",
+      "kin": "傀"
+    },
+    {
+      "id": "mob-yx-mang",
+      "name": "雾蟒",
+      "title": "云岫·坞外长虫",
+      "faction": "yx",
+      "element": "verdant",
+      "rarity": "blue",
+      "role": "cleave",
+      "shape": "serpent",
+      "look": {
+        "set": "云岫山径的湿雾里，藤蔓垂落",
+        "outfit": "鳞片泛着青苔色，背脊长出一排细蕨，呼吸间吐出白雾",
+        "motif": "盘身昂首，尾尖敲击湿石"
+      },
+      "skills": {
+        "attack": "缠藤",
+        "skill": "吐雾",
+        "passive": "苔息"
+      },
+      "lore": "它把整条山径的雾都吞了，所以坞里的人从来看不清上山的路。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-yx-yan",
+      "name": "山魇",
+      "title": "云岫·梦游人",
+      "faction": "yx",
+      "element": "dusk",
+      "rarity": "purple",
+      "role": "control",
+      "shape": "wraith",
+      "look": {
+        "set": "云岫夜行山道，月光被树影切成碎片",
+        "outfit": "披着一张漆黑山影当袍，脸藏在影里，只有两点幽光",
+        "motif": "抬手一挥，树影顺着地面爬过来"
+      },
+      "skills": {
+        "attack": "影搡",
+        "skill": "压梦",
+        "passive": "踏影"
+      },
+      "lore": "夜路上多走一步，你就替它多做一个梦。",
+      "kin": "鬼"
+    },
+    {
+      "id": "mob-yx-lu",
+      "name": "鹿铃幼兽",
+      "title": "云岫·坞门前的引路鹿",
+      "faction": "yx",
+      "element": "verdant",
+      "rarity": "green",
+      "role": "sustain",
+      "shape": "fawn",
+      "look": {
+        "set": "云岫坞门的青石阶，晨雾未散",
+        "outfit": "梅花斑点的幼鹿，颈间系一枚坞里铸的小铜铃，耳尖绒毛打着卷",
+        "motif": "低头轻蹭地面，铃声荡开一层浅浅的雾"
+      },
+      "skills": {
+        "attack": "犄角",
+        "skill": "摇铃",
+        "passive": "引路"
+      },
+      "lore": "在山里迷路的人只要跟着铃声走。它不知道自己引过多少人，只知道铃响就要走。",
+      "kin": "兽"
+    },
+    {
+      "id": "mob-yx-gui",
+      "name": "石苔龟",
+      "title": "云岫·苔阶下的老石龟",
+      "faction": "yx",
+      "element": "verdant",
+      "rarity": "blue",
+      "role": "guard",
+      "shape": "turtle",
+      "look": {
+        "set": "云岫后山的苔阶，雨水在石缝里汇成细流",
+        "outfit": "背甲隆起如一座小丘，整片背甲覆着厚苔，苔间开着一朵小黃花",
+        "motif": "四肢缓缓收进壳里，苔屑簌簌往下掉"
+      },
+      "skills": {
+        "attack": "碾石",
+        "skill": "收壳",
+        "passive": "厚苔"
+      },
+      "lore": "它蹲在阶下三十年，苔把它当成了山，山把它当成了苔。",
+      "kin": "兽"
+    },
+    {
+      "id": "mob-yx-zhi",
+      "name": "蕨羽雉",
+      "title": "云岫·蕨叶尾的山雉",
+      "faction": "yx",
+      "element": "verdant",
+      "rarity": "purple",
+      "role": "burst",
+      "shape": "bird",
+      "look": {
+        "set": "云岫涧边的蕨丛，孢子在光柱里浮沉",
+        "outfit": "尾羽是七枚舒展的蕨叶，颈羽墨绿泛着金属光，爪上缠着一截藤",
+        "motif": "尾羽展开时抖下一把金色孢子"
+      },
+      "skills": {
+        "attack": "啄击",
+        "skill": "展蕨",
+        "passive": "孢子雨"
+      },
+      "lore": "坞里的药童追了它三个山头。后来才知道，它尾羽上的孢子正是那味缺的药引。",
+      "kin": "妖"
+    },
+    {
+      "id": "boss-yx-teng",
+      "name": "藤冢夫人",
+      "title": "云岫·缠住崖壁的那位",
+      "faction": "yx",
+      "element": "dusk",
+      "rarity": "purple",
+      "role": "control",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "vine",
+      "look": {
+        "set": "云岫深处的藤冢崖，整面崖壁被老藤织成一张网",
+        "outfit": "墨绿长裙外覆霜蓝羽氅，青灰超长直发间缠生垂落的细藤，头顶一小撮白与鹤丹发饰，赤足，小腿有羽纹，指尖开着食虫的暗花",
+        "motif": "抬手时整面藤网跟着收紧，崖石咯咯作响"
+      },
+      "skills": {
+        "attack": "藤鞭",
+        "skill": "缠冢",
+        "passive": "根须相连"
+      },
+      "lore": "山里说，被藤缠住的不是猎物，是她等了许多年、还没认出来的旧人。",
+      "voice": {
+        "phases": [
+          "藤蔓初醒，客且留步。",
+          "根须入骨——休想再走！",
+          "腐土之下……与我同眠。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "mob-gh-zhu",
+      "name": "霜蛛",
+      "title": "广寒·檐下织者",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "purple",
+      "role": "break",
+      "shape": "spider",
+      "look": {
+        "set": "广寒霜径的破檐下，冰棱垂成帘幕",
+        "outfit": "半透明的霜色躯体，八足覆着薄冰，腹下垂着一枚冻住的月亮",
+        "motif": "前足以霜丝悬停在半空"
+      },
+      "skills": {
+        "attack": "霜咬",
+        "skill": "织霜",
+        "passive": "冰足"
+      },
+      "lore": "它织的网冻住了整夜的月光，落下来的都成了霜。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-gh-e",
+      "name": "霜蛾幼灵",
+      "title": "广寒·扑月的小蛾",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "blue",
+      "role": "burst",
+      "shape": "moth",
+      "look": {
+        "set": "广寒拾霜司的檐角，月光从瓦缝里漏下来",
+        "outfit": "粉翅覆着一层薄霜，翅面上有两粒月斑，触须结着细小的冰珠",
+        "motif": "绕着光打转，抖翅时撒下一圈霜屑"
+      },
+      "skills": {
+        "attack": "霜扑",
+        "skill": "月斑",
+        "passive": "趋光"
+      },
+      "lore": "拾霜司收人间的霜，它收拾霜司漏掉的那一点点月光。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-gh-tu",
+      "name": "玉杵兔",
+      "title": "广寒·逃下凡的捣药兔",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "green",
+      "role": "break",
+      "shape": "rabbit",
+      "look": {
+        "set": "广寒霜径旁的药圃，霜把药苗冻成半透明",
+        "outfit": "雪白的兔子，长耳一竖一折，肩上扛着一根比自己还高的玉杵",
+        "motif": "抡起玉杵往下砸，砸出一圈霜纹"
+      },
+      "skills": {
+        "attack": "捣霜",
+        "skill": "杵落",
+        "passive": "药性"
+      },
+      "lore": "它捣了三千年的药，某天忽然想知道药苦不苦。为了这件事，它把月府的规矩捣了个洞。",
+      "kin": "兽"
+    },
+    {
+      "id": "mob-gh-bing",
+      "name": "冰棱俑",
+      "title": "广寒·回廊里的守夜冰偶",
+      "faction": "gh",
+      "element": "storm",
+      "rarity": "blue",
+      "role": "guard",
+      "shape": "golem",
+      "look": {
+        "set": "广寒结霜回廊，两侧冰俑握戟而立",
+        "outfit": "冰棱拼成的躯体，棱面折着月光的冷色，胸口冻着一枚旧令牌",
+        "motif": "移动时体内冰棱相互碰响，像一串细铃"
+      },
+      "skills": {
+        "attack": "冰戟",
+        "skill": "棱甲",
+        "passive": "寒廊"
+      },
+      "lore": "月府的规矩刻在它胸口的令牌上。规矩还在，它就还站在这里。",
+      "kin": "傀"
+    },
+    {
+      "id": "mob-gh-mao",
+      "name": "桂影猫",
+      "title": "广寒·藏在桂影里的猫",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "purple",
+      "role": "control",
+      "shape": "cat",
+      "look": {
+        "set": "广寒桂庭，桂影被月光印在霜地上",
+        "outfit": "霜灰色的猫，毛尖泛着月白，尾巴尖拖着一点若有若无的桂香",
+        "motif": "踩着桂影走路，落地的爪印开出一朵小小的桂花"
+      },
+      "skills": {
+        "attack": "影扑",
+        "skill": "桂眠",
+        "passive": "踏月"
+      },
+      "lore": "在广寒睡着的都会做同一个梦。梦的来处，就是它蜷着的那团影子。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-gh-chan",
+      "name": "桂魄蟾",
+      "title": "广寒·月中桂下的蟾",
+      "faction": "gh",
+      "element": "storm",
+      "rarity": "gold",
+      "role": "guard",
+      "shape": "turtle",
+      "look": {
+        "set": "广寒桂树根下，一泓积着月光的浅潭",
+        "outfit": "背甲隆起如一轮圆月，甲面嵌着桂叶纹，喉下一鼓一鼓泛着霜色",
+        "motif": "鼓腮长鸣，潭面跟着荡开一圈圈月纹"
+      },
+      "skills": {
+        "attack": "蟾鸣",
+        "skill": "桂露",
+        "passive": "月圆"
+      },
+      "lore": "月中蟾蜍的血脉。它鸣叫的晚上，拾霜司收到的霜会多出三成。",
+      "kin": "灵"
+    },
+    {
+      "id": "boss-gh-shuang",
+      "name": "弃霜人",
+      "title": "广寒·自己收自己霜的司主",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "red",
+      "role": "control",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "throne",
+      "sex": "f",
+      "archetype": "成女",
+      "ageBand": "adult",
+      "species": "human",
+      "beast": false,
+      "look": {
+        "set": "广寒拾霜司旧址，成列霜臼全部空着，霜积成山",
+        "outfit": "月白司袍褪成了灰，袖口结着收不完的霜，冠上还挂着司主的印",
+        "hair": "霜白长发半披半挽，头戴冰晶花丝冠、两侧伸出细冰枝",
+        "eyes": "浅灰蓝眼，眼尾微垂，瞳中一点霜色反光",
+        "expr": "清冷寡淡，像刚把一册名字全部划完",
+        "mark": "冠上悬一枚小小的司主印，指尖与袖口凝着不化的霜",
+        "pose": "端坐霜玉王座，一手扶着膝上印，一手拢在袖中",
+        "poseAlt": "自王座微微前倾，抬袖之间身后霜山起立",
+        "accent": {
+          "name": "霜青",
+          "hex": "#7fa3a0"
+        },
+        "prop": "一枚司主印",
+        "motif": "抬袖时霜山随之起立，像被点名的旧部"
+      },
+      "skills": {
+        "attack": "点霜",
+        "skill": "霜葬",
+        "passive": "无主之霜"
+      },
+      "lore": "月府把她的名字从司册里划掉那天，人间的霜没有主。她说：那我替霜，把月府也收进册里。",
+      "voice": {
+        "phases": [
+          "霜瓮未启，旧誓无声。",
+          "满坛怨言，今日尽出！",
+          "霜化了……话，也说完了。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "boss-gh-dengying",
+      "name": "霜灯影",
+      "title": "广寒·替霜夜提灯的引路人",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "red",
+      "role": "support",
+      "boss": true,
+      "bossTitle": "妖王",
+      "eventOnly": true,
+      "shape": "throne",
+      "look": {
+        "set": "月府霜庭深夜，成列结霜回廊与空霜臼，廊下挂满封光的霜灯",
+        "outfit": "霜紫交领长褙配月白长裙，广袖下垂着数盏霜灯，左肩披霜紫短氅",
+        "motif": "提灯回望，袖中霜灯次第亮起，像一条照向月下的灯河"
+      },
+      "skills": {
+        "attack": "挑灯",
+        "skill": "万灯引路",
+        "passive": "灯影随行"
+      },
+      "lore": "拾霜司的灯从不照自己人。她提灯在霜夜走了三百年，替迷途的人照路，却没人记得回头看她一眼。后来她把自己的影子也点成了灯。",
+      "voice": {
+        "phases": [
+          "灯亮着，路就还在。",
+          "一盏一盏，都随我来。",
+          "灯灭了……这次，换你记得我。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "boss-gh-xuemei",
+      "name": "雪魅",
+      "title": "广寒界外·乘黑雪而来的霜妖之王",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "red",
+      "role": "sustain",
+      "boss": true,
+      "bossTitle": "妖王",
+      "eventOnly": true,
+      "shape": "throne",
+      "look": {
+        "set": "广寒界外冻结海面，巨大低垂的月亮与横贯天际的青绿极光",
+        "outfit": "霜紫与月白层叠长裙，半透雪纱大袖，肩颈围一圈雪狐绒毛，腰封茜草红",
+        "motif": "抬手凝雪成花，霜雪随指尖起落，整片冰海亮起霜纹"
+      },
+      "skills": {
+        "attack": "霜吻",
+        "skill": "雪魅夜行",
+        "passive": "黑雪压境"
+      },
+      "lore": "广寒界外的霜妖不拜月。它们只认一个在极光下走过冰海的影子——她走过的地方，雪是黑的，月光会结冰。",
+      "voice": {
+        "phases": [
+          "雪落下来，就别想回头了。",
+          "整片冰海，都是我的镜子。",
+          "霜化了……你也该醒了。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "mob-zf-luo",
+      "name": "星尘螺",
+      "title": "紫府·星阶上的小螺",
+      "faction": "zf",
+      "element": "light",
+      "rarity": "blue",
+      "role": "sustain",
+      "shape": "snail",
+      "look": {
+        "set": "紫府星台的石阶，阶缝里嵌着未扫的星尘",
+        "outfit": "壳是旋紧的星轨纹，爬过的地方留下一条淡淡的光痕",
+        "motif": "慢慢探出触角，触角尖各挑着一粒星屑"
+      },
+      "skills": {
+        "attack": "星粘",
+        "skill": "回壳",
+        "passive": "星尘养"
+      },
+      "lore": "判官划掉名字时掉的星屑，落进星阶的缝里。螺把它们一颗颗捡回壳中，攒着还给人间。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-zf-chou",
+      "name": "算筹傀",
+      "title": "紫府·算错了就拆自己的傀",
+      "faction": "zf",
+      "element": "storm",
+      "rarity": "green",
+      "role": "guard",
+      "shape": "golem",
+      "look": {
+        "set": "紫府案房角落，散落着一地横七竖八的算筹",
+        "outfit": "几十根算筹捆成的傀，身上缠着打结的旧绳，胸口的筹摆成一只眼睛",
+        "motif": "每走一步，身上的筹就自己重新排一次队"
+      },
+      "skills": {
+        "attack": "掷筹",
+        "skill": "结绳",
+        "passive": "复盘"
+      },
+      "lore": "它算错一道题就抽掉自己一根筹。等筹抽完了，那道题也就忘了。",
+      "kin": "傀"
+    },
+    {
+      "id": "mob-zf-ling",
+      "name": "残卷灵",
+      "title": "紫府·被划掉的散页",
+      "faction": "zf",
+      "element": "storm",
+      "rarity": "purple",
+      "role": "burst",
+      "shape": "wraith",
+      "look": {
+        "set": "紫府案上无名的角落，纸页翻动如潮",
+        "outfit": "一团圆滚的纸页之灵，页边焦黑，页面上只剩没被划掉的那个字",
+        "motif": "翻页即是出手，纸页割开空气的声音像撕布"
+      },
+      "skills": {
+        "attack": "纸割",
+        "skill": "翻页",
+        "passive": "无名"
+      },
+      "lore": "命册散页本该散尽。它们聚成灵，是想在被彻底划掉之前，把名字再念一遍。",
+      "kin": "鬼"
+    },
+    {
+      "id": "mob-zf-dou",
+      "name": "墨斗鱼精",
+      "title": "紫府·替人写倒霉字的墨",
+      "faction": "zf",
+      "element": "storm",
+      "rarity": "blue",
+      "role": "control",
+      "shape": "squid",
+      "look": {
+        "set": "紫府案下的墨池，池面浮着一层未干的墨光",
+        "outfit": "通体墨色的柔躯，八腕各卷着一支用秃的笔，背鳍是一页皱纸",
+        "motif": "喷出一团墨，墨在半空凝成一个还没写完的字"
+      },
+      "skills": {
+        "attack": "泼墨",
+        "skill": "点卯",
+        "passive": "字未干"
+      },
+      "lore": "判官不写的判词，它替写。它写的字第二天准应验，所以没人敢让它写自己的名字。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-zf-que",
+      "name": "缺页童",
+      "title": "紫府·从命册里掉出来的孩子",
+      "faction": "zf",
+      "element": "light",
+      "rarity": "green",
+      "role": "cleave",
+      "shape": "kite",
+      "look": {
+        "set": "紫府星案下缘，案角垂着几页没钉牢的散页",
+        "outfit": "纸叠成的瘦小身影，折痕是衣缝，缺的那页成了它胸口的洞",
+        "motif": "纸手抚过胸口，洞里透出一点星色的光"
+      },
+      "skills": {
+        "attack": "纸削",
+        "skill": "缺页",
+        "passive": "待补"
+      },
+      "lore": "命册缺的那一页正好是它。它不生气，只是到处找那一页，找到时也许就散了。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-zf-heng",
+      "name": "玉衡铃",
+      "title": "紫府·浑仪上掉下来的铃",
+      "faction": "zf",
+      "element": "light",
+      "rarity": "gold",
+      "role": "support",
+      "shape": "bell",
+      "look": {
+        "set": "紫府观星的铜浑仪，仪身玉衡串成的环还在轻响",
+        "outfit": "玉衡珠串成的铃身，铃舌是一枚旧算筹，系绳是截褪色的星图",
+        "motif": "无风自响，响声落处星轨亮了一线"
+      },
+      "skills": {
+        "attack": "铃震",
+        "skill": "正轨",
+        "passive": "复响"
+      },
+      "lore": "星轨歪一次，它响一声。响到第一千声那晚，它从浑仪上挣下来，去找把它敲歪的那只手。",
+      "kin": "傀"
+    },
+    {
+      "id": "mob-cc-ya",
+      "name": "炉火鸦",
+      "title": "赤城·剑炉余烬",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "gold",
+      "role": "burst",
+      "shape": "bird",
+      "look": {
+        "set": "赤城剑炉的炉口，火星升腾成流萤",
+        "outfit": "羽翼边缘挂着未冷的铁渣，眼睛是两粒烧红的炭",
+        "motif": "振翅时落下成串火点"
+      },
+      "skills": {
+        "attack": "啄火",
+        "skill": "燎羽",
+        "passive": "余烬"
+      },
+      "lore": "铸坏的剑都丢进炉里，剑没化，化出一只鸦。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-cc-quan",
+      "name": "铁渣犬",
+      "title": "赤城·吃炉渣长大的犬",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "blue",
+      "role": "burst",
+      "shape": "hound",
+      "look": {
+        "set": "赤城炉渣堆，热气把空气烘得发颤",
+        "outfit": "铁灰的犬身，缝隙里透出炉膛的红，尾巴是一截烧弯的铁条",
+        "motif": "打了个喷嚏，火星从鼻尖炸开一小簇"
+      },
+      "skills": {
+        "attack": "咬铁",
+        "skill": "喷渣",
+        "passive": "热灶"
+      },
+      "lore": "铸师丢什么它吃什么。有徒弟想喂它一块好铁，被师傅打了手背：好铁要成剑，不能成狗。",
+      "kin": "兽"
+    },
+    {
+      "id": "mob-cc-chong",
+      "name": "淬火虫",
+      "title": "赤城·住进淬火池的虫",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "green",
+      "role": "break",
+      "shape": "grub",
+      "look": {
+        "set": "赤城淬火池，白汽贴着水面翻涌",
+        "outfit": "分节的软躯，壳面像淬过火的铁纹，遇热泛出一层青蓝",
+        "motif": "弓身一弹，把一池白汽撞开一个洞"
+      },
+      "skills": {
+        "attack": "撞壳",
+        "skill": "淬击",
+        "passive": "百炼"
+      },
+      "lore": "剑在池里淬一千次成器，它在池里泡一千次成壳。炉主说它也是一把剑，只是没开刃。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-cc-diao",
+      "name": "鼓风貂",
+      "title": "赤城·一晚上吹旺九座炉的貂",
+      "faction": "cc",
+      "element": "storm",
+      "rarity": "purple",
+      "role": "support",
+      "shape": "marten",
+      "look": {
+        "set": "赤城炉群之间，风箱声此起彼伏",
+        "outfit": "细长的貂，皮毛被热风烫出波浪纹，腮帮永远鼓着",
+        "motif": "对着炉口长吹一口气，炉膛轰地亮起来"
+      },
+      "skills": {
+        "attack": "风刃",
+        "skill": "长吹",
+        "passive": "风箱"
+      },
+      "lore": "炉火旺不旺，不看柴看貂。它罢工那天，整座赤城一把剑也没铸出来。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-cc-yong",
+      "name": "断刃俑",
+      "title": "赤城·插满断剑的陶俑",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "purple",
+      "role": "guard",
+      "shape": "golem",
+      "look": {
+        "set": "赤城剑冢，成排断剑插在陶土里",
+        "outfit": "陶土俑身，肩背胸口插满半截断剑，剑身锈色里透着炉火的红",
+        "motif": "每挨一下，身上就多插进一截剑，它反而站得更稳"
+      },
+      "skills": {
+        "attack": "拔刃",
+        "skill": "插剑",
+        "passive": "剑冢"
+      },
+      "lore": "每把没铸成的剑都想再试一次。它让断剑插在自己身上，替它们站进战场。",
+      "kin": "傀"
+    },
+    {
+      "id": "mob-cc-jian",
+      "name": "剑冢蜃",
+      "title": "赤城·千柄断剑的倒影",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "gold",
+      "role": "burst",
+      "shape": "wraith",
+      "look": {
+        "set": "赤城剑冢上空，热气把剑影揉成一团",
+        "outfit": "半透明的剑影聚成的蜃形，游动时体内可见一柄柄断剑缓缓旋转",
+        "motif": "出手时千百剑影同时刺出，落点却只有一处"
+      },
+      "skills": {
+        "attack": "剑影",
+        "skill": "蜃楼",
+        "passive": "千剑一念"
+      },
+      "lore": "剑冢的剑影积了千年，凝成了蜃。它记住每一柄剑没打完的那一式，然后一起使出来。",
+      "kin": "鬼"
+    },
+    {
+      "id": "mob-yh-man",
+      "name": "潮鳗",
+      "title": "瀛海·珠阙暗流",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "gold",
+      "role": "sustain",
+      "shape": "eel",
+      "look": {
+        "set": "瀛海珠阙外的暗流，珊瑚与沉船交错",
+        "outfit": "长躯覆着湿亮的青蓝鳞，背鳍上挂着碎珠与海藻",
+        "motif": "张口时水流绕着牙尖打转"
+      },
+      "skills": {
+        "attack": "噬浪",
+        "skill": "回潮",
+        "passive": "海息"
+      },
+      "lore": "珠阙掉的珠子，最后都进了它的肚子，所以它游起来有铃声。",
+      "kin": "兽"
+    },
+    {
+      "id": "mob-yh-ct",
+      "name": "泡泡鲀",
+      "title": "瀛海·受惊就吹成珠的鲀",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "blue",
+      "role": "guard",
+      "shape": "puffer",
+      "look": {
+        "set": "瀛海珠阙浅滩，气泡成串往上升",
+        "outfit": "圆滚滚的鲀，鼓起时全身刺根根立起，刺尖各挂着一颗小气泡",
+        "motif": "一受惊就把自己吹成一颗大珠，咕噜噜横在路中央"
+      },
+      "skills": {
+        "attack": "撞刺",
+        "skill": "鼓身",
+        "passive": "气鼓"
+      },
+      "lore": "珠阙的珠童分不清它和真珠，常整筐捞走。它也不恼——被捞走的当晚，自己滚回海里。",
+      "kin": "兽"
+    },
+    {
+      "id": "mob-yh-bei",
+      "name": "珠贝婢",
+      "title": "瀛海·替珠阙养珠的小贝",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "green",
+      "role": "sustain",
+      "shape": "shell",
+      "look": {
+        "set": "瀛海养珠的贝架，一排排贝壳在浅水里张合",
+        "outfit": "半开的粉贝壳托着一团柔光，壳缘嵌着一圈小珠，走一步掉一颗",
+        "motif": "贝壳一开一合，把怀里那颗珠擦得更亮一点"
+      },
+      "skills": {
+        "attack": "掷珠",
+        "skill": "养珠",
+        "passive": "珠泪"
+      },
+      "lore": "她养的珠子颗颗圆润。问秘诀，她说：对每颗珠子，都当成最后一颗来疼。",
+      "kin": "灵"
+    },
+    {
+      "id": "mob-yh-teng",
+      "name": "沉船藤",
+      "title": "瀛海·长在沉船里的藤",
+      "faction": "yh",
+      "element": "verdant",
+      "rarity": "purple",
+      "role": "break",
+      "shape": "vine",
+      "look": {
+        "set": "瀛海沉船湾，船骨半埋在沙里",
+        "outfit": "湿亮的墨绿藤躯，身体里嵌着船板与铆钉，开花的地方正好是船名的位置",
+        "motif": "收紧藤身，船骨咯吱作响，木屑混着花瓣一起落下"
+      },
+      "skills": {
+        "attack": "船骨",
+        "skill": "绞缠",
+        "passive": "吃浪"
+      },
+      "lore": "它把沉船一根根抱紧，等船骨烂完，就开花结籽，替船把名字再漂一遍海。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-yh-mu",
+      "name": "灯水母",
+      "title": "瀛海·提灯巡夜的水母",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "purple",
+      "role": "support",
+      "shape": "jelly",
+      "look": {
+        "set": "瀛海夜潮，海底一片幽蓝",
+        "outfit": "伞盖是一只透亮的灯笼，触须垂成穗子，游动时整片海跟着明明灭灭",
+        "motif": "伞盖一收一放，灯笼里的光就晃出一圈涟漪"
+      },
+      "skills": {
+        "attack": "灯烫",
+        "skill": "引潮",
+        "passive": "夜巡"
+      },
+      "lore": "海底没有日月，靠它巡夜。它熄一次，海底就算过了一夜。",
+      "kin": "灵"
+    },
+    {
+      "id": "mob-yh-hong",
+      "name": "鲸落傀",
+      "title": "瀛海·一整头鲸的骨架",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "red",
+      "role": "guard",
+      "shape": "golem",
+      "look": {
+        "set": "瀛海深处的鲸落场，骨架上生满发光的海藻",
+        "outfit": "鲸骨拼成的巨人，肋骨间游着小鱼，头顶栖着一盏溟火",
+        "motif": "抬手时肋骨间的小鱼四散，又在下一动作里游回原位"
+      },
+      "skills": {
+        "attack": "骨扫",
+        "skill": "落鲸",
+        "passive": "一鲸落"
+      },
+      "lore": "一头鲸落下来，养活海底十年。它记得这十年里的每一个住户，所以谁也别想在它面前装死。",
+      "kin": "傀"
+    },
+    {
+      "id": "boss-zf-pan",
+      "name": "星案判官",
+      "title": "紫府·案上无名的执笔人",
+      "faction": "zf",
+      "element": "storm",
+      "rarity": "red",
+      "role": "control",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "throne",
+      "look": {
+        "set": "悬空星案，案下万丈星渊，纸页翻动如潮",
+        "outfit": "玄紫圆领官袍，十二条玉衡串成冠，左手执笔、右手按着翻不开的命册",
+        "motif": "笔尖落处星轨断裂，被他划掉的名字就再没亮起过"
+      },
+      "skills": {
+        "attack": "判笔点星",
+        "skill": "落星断命",
+        "passive": "案上无名"
+      },
+      "lore": "他说自己只是抄录，从不判决。可案上那本册子，凡是名字被划掉的，世间再没人记得他长什么样。",
+      "voice": {
+        "phases": [
+          "星案在前，报上名来。",
+          "朱笔既落——不容更改！",
+          "删到最后……原来是我。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "boss-cc-zhu",
+      "name": "炉主",
+      "title": "赤城·千年不熄的一炉",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "gold",
+      "role": "break",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "forge",
+      "look": {
+        "set": "赤城剑炉最深处，铁水像河一样在脚边流",
+        "outfit": "半身化作炉体的巨人，肩背嵌着断剑，胸口炉门开合一呼一吸",
+        "motif": "一锤落下，铁水与火星一起腾空成柱"
+      },
+      "skills": {
+        "attack": "落锤",
+        "skill": "倾炉裂山",
+        "passive": "余火不熄"
+      },
+      "lore": "剑炉烧了一千年，铸坏的剑比铸成的多。那些没成的剑，都在炉主胸腔里烧着。",
+      "voice": {
+        "phases": [
+          "炉温正好，添柴吧。",
+          "烈火焚炉——谁敢挡锋！",
+          "炉裂了……火，不灭。"
+        ]
+      },
+      "kin": "异",
+      "sex": "m",
+      "archetype": "成男",
+      "ageBand": "adult",
+      "species": "human",
+      "beast": false
+    },
+    {
+      "id": "boss-yh-jiao",
+      "name": "潮生蛟",
+      "title": "瀛海·珠阙底下的旧主",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "red",
+      "role": "cleave",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "leviathan",
+      "look": {
+        "set": "瀛海珠阙之下，潮水逆流向上堆成一面墙",
+        "outfit": "盘绕的苍青蛟身，鳞间嵌着沉船的珠串，角上挂一盏灭了的引潮灯",
+        "motif": "翻身时整片海跟着起立，珠阙在水里倒转"
+      },
+      "skills": {
+        "attack": "搅潮",
+        "skill": "万丈潮生",
+        "passive": "水底听声"
+      },
+      "lore": "珠阙沉了三次，碑上写的都是「镇蛟」。它记得每一块碑的位置，也记得每一个刻碑的人。",
+      "voice": {
+        "phases": [
+          "潮信将至——退者生。",
+          "碑文，锁不住龙吟！",
+          "潮落之时……尸骨还乡。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "boss-qx-du",
+      "name": "蠹简先生",
+      "title": "栖霞·把藏书吃空的人",
+      "faction": "qx",
+      "element": "verdant",
+      "rarity": "gold",
+      "role": "guard",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "throne",
+      "look": {
+        "set": "栖霞藏书阁最里层，书架只剩骨，纸屑像雪一样落",
+        "outfit": "一袭被虫蛀穿的青袍，袖口爬满细密虫纹，头上一顶用书页折成的冠",
+        "motif": "翻开一本，里面的字全部爬出来钻进他的袍子里"
+      },
+      "skills": {
+        "attack": "啮页",
+        "skill": "万卷穿身",
+        "passive": "字入腹中"
+      },
+      "lore": "蒙学的孩子背书背不出，就来求他吃掉那一页。后来他把整座藏书阁都吃空了，孩子们也再没背出过书。",
+      "voice": {
+        "phases": [
+          "开讲了，都坐好。",
+          "这一课，用命来记！",
+          "书页尽头……轮到我，读你们。"
+        ]
+      },
+      "kin": "异",
+      "sex": "m",
+      "archetype": "成男",
+      "ageBand": "adult",
+      "species": "human",
+      "beast": false
+    },
+    {
+      "id": "boss-xi-shi",
+      "name": "隙主·蚀",
+      "title": "万象·从裂缝里长出来的饥饿",
+      "faction": "zf",
+      "element": "storm",
+      "rarity": "red",
+      "role": "control",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "riftmaw",
+      "look": {
+        "set": "六界交界处的裂隙，缝隙里没有光也没有暗",
+        "outfit": "一道直立的天隙，隙缘生满倒卷的触须，隙心是一只缓缓开合的巨口",
+        "motif": "巨口开合之间，路过的光被整条整条地吸进去"
+      },
+      "skills": {
+        "attack": "隙咬",
+        "skill": "吞缘",
+        "passive": "无底"
+      },
+      "lore": "没人知道裂隙通向哪里。只知道它吃过一段缘痕，就开始循着缘的味道，一口一口吃六界。",
+      "voice": {
+        "phases": [
+          "缝隙初张，缘味渐浓。",
+          "连光带暗——一并吞了！",
+          "撑破了……也，值了。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "boss-yuan-wu",
+      "name": "渊主·无名",
+      "title": "归墟·所有被忘记的名字",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "red",
+      "role": "cleave",
+      "boss": true,
+      "bossTitle": "妖王",
+      "shape": "abyssking",
+      "look": {
+        "set": "归墟之底，被忘记的名字在这里沉成一片海",
+        "outfit": "墨色的渊中巨人，身上浮着无数空白的名牌，冠冕是判官笔的残锋",
+        "motif": "抬手时名牌如潮涌起，每一块名牌上都没有字"
+      },
+      "skills": {
+        "attack": "没名",
+        "skill": "万古沉名",
+        "passive": "被忘记者"
+      },
+      "lore": "它是所有被划掉的名字的总和。它不恨谁——它只是想让划名字的人，也尝一尝被忘记的滋味。",
+      "voice": {
+        "phases": [
+          "名字留下，人可以走。",
+          "渊海翻覆——万物无名！",
+          "无名之主……终得，归渊。"
+        ]
+      },
+      "kin": "异"
+    },
+    {
+      "id": "mob-yx-yue",
+      "name": "月蚀枭",
+      "title": "云岫·不睡月的枭",
+      "faction": "yx",
+      "element": "dusk",
+      "rarity": "red",
+      "role": "control",
+      "shape": "bird",
+      "look": {
+        "set": "云岫最高的崖头，月亮被云啃去一角",
+        "outfit": "墨色巨枭，面盘上两圈月晕，翼羽展开时像一页页翻动的夜",
+        "motif": "扭头时月光跟着暗一寸，叫一声云就缺一块"
+      },
+      "skills": {
+        "attack": "攫夜",
+        "skill": "蚀月",
+        "passive": "不眠"
+      },
+      "lore": "它每叫一声，云岫的月亮就缺一角。坞里人说，月亮是被它一声一声吃圆又吃缺的。",
+      "kin": "妖"
+    },
+    {
+      "id": "mob-gh-jian",
+      "name": "剑霜俑",
+      "title": "广寒·佩霜成剑的俑",
+      "faction": "gh",
+      "element": "storm",
+      "rarity": "red",
+      "role": "guard",
+      "shape": "golem",
+      "look": {
+        "set": "广寒霜径尽头，剑形的冰柱一排排立在雪里",
+        "outfit": "冰棱拼成的俑，周身插满霜凝成的剑，每一柄剑心里冻着一段旧誓言",
+        "motif": "拔剑时霜粒腾起，剑身上的旧誓闪了一下又冻回去"
+      },
+      "skills": {
+        "attack": "霜剑",
+        "skill": "誓垒",
+        "passive": "百誓不折"
+      },
+      "lore": "把誓言说出口的人多了，霜就把誓言冻成剑。它替所有没兑现的誓言，站在这里。",
+      "kin": "傀"
+    },
+    {
+      "id": "mob-cc-hou",
+      "name": "炉吼",
+      "title": "赤城·炉膛里长出的吼声",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "red",
+      "role": "cleave",
+      "shape": "beast",
+      "look": {
+        "set": "剑炉最深处的炉膛口，热浪把石壁烤成琉璃色",
+        "outfit": "兽形的火团，吼声是它的身体，鬃毛是一缕一缕跳动的炉焰",
+        "motif": "每吼一声，全城九座炉的火苗跟着齐齐窜高"
+      },
+      "skills": {
+        "attack": "吼裂",
+        "skill": "燎原",
+        "passive": "众炉同声"
+      },
+      "lore": "铸师骂炉的话、徒弟喊热的抱怨、开炉时的吆喝，积了千年，凝成了这声吼。",
+      "kin": "兽"
+    },
+    {
+      "id": "mob-qx-mo",
+      "name": "书冢蠹",
+      "title": "栖霞·吃了一坟场书的蠹",
+      "faction": "qx",
+      "element": "storm",
+      "rarity": "red",
+      "role": "burst",
+      "shape": "wraith",
+      "look": {
+        "set": "书隐后山 buried 的字纸冢，未烧的残页堆成小丘",
+        "outfit": "纸灰聚成的蠹影，身体里嵌着翻页的白，爬过的地方字迹簌簌往下掉",
+        "motif": "开口时吐出半页残文，字句在半空咬合，像一副合上的牙"
+      },
+      "skills": {
+        "attack": "啮文",
+        "skill": "纸葬",
+        "passive": "字债"
+      },
+      "lore": "书隐烧不掉的书都埋在后山。它把整座字纸冢吃穿了一个洞，从洞里爬出来时，已经把每一页都记住了。",
+      "kin": "鬼"
+    },
+    {
+      "id": "mob-qx-deng2",
+      "name": "衔灯雀",
+      "title": "栖霞·给夜路引灯的小雀",
+      "faction": "qx",
+      "element": "light",
+      "rarity": "blue",
+      "role": "sustain",
+      "base": "r-qx-04",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "灵",
+      "lore": "它衔的不是火，是别人忘带出门的那句叮嘱。",
+      "look": {
+        "set": "栖霞书隐回廊外的夜路石阶，两侧纸灯笼将熄未熄，远处晚钟楼压成剪影",
+        "outfit": "暮青灰的小雀妖，喙里衔一盏拇指大的旧纸灯，翼缘三道浅金细纹，尾羽五枚剪成灯焰形",
+        "motif": "它把灯往你面前递了递，又回头看你有没有跟上"
+      }
+    },
+    {
+      "id": "mob-cc-tie",
+      "name": "铁砂蝎",
+      "title": "赤城·炉渣里爬出来的蝎",
+      "faction": "cc",
+      "element": "flame",
+      "rarity": "green",
+      "role": "burst",
+      "base": "n-cc-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "妖",
+      "lore": "尾针里没有毒，只有淬过火的铁砂，扎一下锈三天。",
+      "look": {
+        "set": "赤城剑炉后的炉渣坡，烧黑的碎石与冷却的铁渣堆成小山，远处炉门透出暗红",
+        "outfit": "铁色甲壳的蝎妖，八足撑地、尾节高翘，尾针凝着黑亮的淬火铁砂",
+        "motif": "尾针往地上一扎，溅起一串暗红火星与铁砂"
+      }
+    },
+    {
+      "id": "mob-cc-feng",
+      "name": "风箱蛤",
+      "title": "赤城·一鼓一吸给炉膛送风的蛤",
+      "faction": "cc",
+      "element": "storm",
+      "rarity": "blue",
+      "role": "burst",
+      "base": "r-cc-02",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "兽",
+      "lore": "炉师说它一张一合的节奏，比鼓风弟子稳得多。",
+      "look": {
+        "set": "赤城剑炉的鼓风房，墙上挂着旧风箱与铁管，炉火从门缝里透进来",
+        "outfit": "烟褐色的风箱蛤，背脊嵌一根磨亮的木拉杆，腮囊一鼓一收",
+        "motif": "两个腮囊鼓满，背上的六个出风孔同时喷出热流把灰吹成旋"
+      }
+    },
+    {
+      "id": "mob-yx-tenghua",
+      "name": "藤花蛊",
+      "title": "云岫·开在断藤上的花蛊",
+      "faction": "yx",
+      "element": "dusk",
+      "rarity": "blue",
+      "role": "burst",
+      "base": "r-yx-03",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "异",
+      "lore": "藤冢夫人剪下的断藤不肯枯，自己开出了花，花里住着小小的执念。",
+      "look": {
+        "set": "云岫药行的断藤棚下，湿土里插着半截剪断的枯藤与落花",
+        "outfit": "深墨绿的藤身盘成螺旋，顶端开一朵六瓣胭脂色大花，藤节鼓起一排蛊囊",
+        "motif": "花心朝你转过来，花瓣里那点胭脂色的执念缓缓游动"
+      }
+    },
+    {
+      "id": "mob-zf-gui",
+      "name": "漏签龟",
+      "title": "紫府·驮着漏页命签的老龟",
+      "faction": "zf",
+      "element": "storm",
+      "rarity": "purple",
+      "role": "burst",
+      "base": "sr-zf-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "灵",
+      "lore": "它背上那些签，是从命册里漏出来的名字——每一个都还有人记得。",
+      "look": {
+        "set": "紫府星案下的旧档案廊，木架与竹签筒排到黑暗里，案上一盏灯",
+        "outfit": "深墨绿的老龟，背甲上捆一只裂了缝的旧签筒，十几支命签从筒口漏出来",
+        "motif": "它慢慢抬头，背上的命签轻轻一颤，签上的刻痕泛起紫雷光"
+      }
+    },
+    {
+      "id": "mob-zf-zhi",
+      "name": "折纸鹞",
+      "title": "紫府·被划掉的公文折成的鹞",
+      "faction": "zf",
+      "element": "light",
+      "rarity": "green",
+      "role": "sustain",
+      "base": "n-zf-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "傀",
+      "lore": "作废的公文不许烧，只好折成鹞放走。它们飞不远，总在星案顶上打转。",
+      "look": {
+        "set": "紫府星案顶外的夜风里，石阶与铜浑仪压成剪影，天幕横着一道星轨",
+        "outfit": "作废公文纸折成的鹞，菱形鸢面与两张折纸翼，尾后拖三条细纸条",
+        "motif": "它总在星案顶上打转，纸翼被风折出锐角，又被断线拽回来"
+      }
+    },
+    {
+      "id": "mob-yh-pao",
+      "name": "泣珠鲛",
+      "title": "湮海·哭不出珠的鲛人",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "blue",
+      "role": "control",
+      "base": "r-yh-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "妖",
+      "lore": "鲛人泣珠，它哭了一百年只有水。后来它明白了：它的泪，咸得和海水一样。",
+      "look": {
+        "set": "湮海珠阙外的月夜浅滩，浅水倒映珠帘与珊瑚林的剪影",
+        "outfit": "苍青鳞皮的鲛人，长发湿垂，鱼尾盘在身前，双手捧一只空蚌壳",
+        "motif": "水珠从她掌心凝出又碎成海水，始终没有一颗变成珍珠"
+      }
+    },
+    {
+      "id": "mob-yh-ding",
+      "name": "锚链鳗",
+      "title": "湮海·缠住沉船锚链的鳗",
+      "faction": "yh",
+      "element": "tide",
+      "rarity": "green",
+      "role": "sustain",
+      "base": "n-yh-03",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "兽",
+      "lore": "船沉了它不走，锚烂了它也不走。它守的不是船，是船上人没说完的话。",
+      "look": {
+        "set": "湮海沉船的浅水残骸，断桅与锈锚半埋在水里，水下透光成束落下",
+        "outfit": "青灰长躯的海鳗，身体绕着一截锈红锚链三圈，背鳍连成一条薄鳍膜",
+        "motif": "它从锚链堆里缓缓探出前半身，链环缝里的碎贝壳簌簌往下掉"
+      }
+    },
+    {
+      "id": "boss-gx-wangchao",
+      "name": "忘潮主",
+      "title": "归墟·收走潮声的那一位",
+      "faction": "gx",
+      "element": "tide",
+      "rarity": "red",
+      "role": "sustain",
+      "base": "ur-gh-01",
+      "boss": true,
+      "bossTitle": "妖王",
+      "kin": "异",
+      "lore": "海水到了归墟就没有声音。不是海静了，是它把潮声一摞一摞收进袖中——它说，等攒够了，就还给那些再也回不了岸的人。"
+    },
+    {
+      "id": "mob-qx-yuan2",
+      "name": "抄书猿",
+      "title": "栖霞·偷笔的旁听生",
+      "faction": "qx",
+      "element": "light",
+      "rarity": "green",
+      "role": "guard",
+      "shape": "beast",
+      "look": {
+        "set": "栖霞书隐的蒙学书案，案上摊着未干的习字纸与砚台，窗外斜阳穿廊",
+        "outfit": "矮壮的四足猿妖，肩背高弓伏在案边，背上用旧麻绳捆着一卷竹简，双手各握一支秃笔",
+        "motif": "一笔落下，抄错的笔画从纸上浮起来，在它身边散成不成句的残痕"
+      },
+      "base": "n-qx-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "兽",
+      "lore": "它不识字，但抄了三十年，抄错的笔画自己成了精。"
+    },
+    {
+      "id": "mob-yx-tenghua2",
+      "name": "藤花蛊",
+      "title": "云岫·开在断藤上的花蛊",
+      "faction": "yx",
+      "element": "dusk",
+      "rarity": "blue",
+      "role": "burst",
+      "base": "r-yx-03",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "异",
+      "lore": "藤冢夫人剪下的断藤不肯枯，自己开出了花，花里住着小小的执念。",
+      "look": {
+        "set": "云岫药行的断藤棚下，湿土里插着半截剪断的枯藤与落花",
+        "outfit": "深墨绿的藤身盘成螺旋，顶端开一朵六瓣胭脂色大花，藤节鼓起一排蛊囊",
+        "motif": "花心朝你转过来，花瓣里那点胭脂色的执念缓缓游动"
+      }
+    },
+    {
+      "id": "mob-yx-lu2",
+      "name": "迷谷鹿",
+      "title": "云岫·把旅人往深处领的鹿",
+      "faction": "yx",
+      "element": "dusk",
+      "rarity": "purple",
+      "role": "control",
+      "base": "sr-yx-02",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "兽",
+      "lore": "它引路不收报酬，只收故事——听到一半的故事，让它念念不忘。",
+      "look": {
+        "set": "云岫迷谷的山雾林道，松雪与旧碑压成灰绿剪影，雾在脚边合拢",
+        "outfit": "深褐与月白渐层的鹿妖，四叉鹿角缠着雾，颈间挂一串骨片",
+        "motif": "它回头看你一眼，抬步往雾深处走，鹿角上的雾珠一路滴落"
+      }
+    },
+    {
+      "id": "mob-gh-tu2",
+      "name": "捣霜兔",
+      "title": "广寒·替司主捣霜的玉兔弃徒",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "green",
+      "role": "guard",
+      "base": "n-gh-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "灵",
+      "lore": "它被月府除名的原因，是把一坛没收好的霜当成了药捣了。",
+      "look": {
+        "set": "广寒拾霜司的旧霜作坊，成列石臼与结霜回廊，月从右上方打进来",
+        "outfit": "霜灰与月白的兔妖，双足立起抱着短玉杵，系一件磨破的月府短围裙",
+        "motif": "它一下一下捣着石臼，杵头扬起的霜白粉在月光里散开"
+      }
+    },
+    {
+      "id": "mob-gh-e2",
+      "name": "衔月蛾",
+      "title": "广寒·绕着残月扑火的蛾",
+      "faction": "gh",
+      "element": "dusk",
+      "rarity": "blue",
+      "role": "burst",
+      "base": "r-gh-01",
+      "boss": false,
+      "bossTitle": "",
+      "kin": "妖",
+      "lore": "月不圆的那几夜，它就一圈一圈地补，扑到翅上全是霜。",
+      "look": {
+        "set": "广寒霜庭的残月下，桂枝剪影与成列霜臼压在中景，前景一层浮霜",
+        "outfit": "霜灰与月白的大蛾妖，两对翅平展，前翅各有一枚弯月斑，触须卷成问号",
+        "motif": "它绕着残月一圈圈扑，翅上的霜粉簌簌落在月白的光里"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1734 @@
+{
+  "schema": 1,
+  "id": "shuangdeng-1",
+  "kind": "limited",
+  "name": "广寒·霜灯引",
+  "desc": "广寒界的霜夜里，拾霜司点起引路灯，替迷途的旅人照一段路。十二关连战，掉落器魂与缘玉，霜灯商店可换缘玉与洗髓丹。 除主线关卡外，另设三段试炼与一重挑战，通关可得活动积分，积分可在商店兑换。",
+  "banner": "/bg/evbg-shuangdeng_v1.jpg",
+  "shop": [
+    {
+      "key": "jade100",
+      "label": "缘玉 ×100",
+      "cost": {
+        "score": 900
+      },
+      "stock": 2,
+      "jade": 600,
+      "costNote": "活动积分"
+    },
+    {
+      "key": "soul30",
+      "label": "器魂 ×30",
+      "cost": {
+        "score": 450
+      },
+      "stock": 4,
+      "mat": {
+        "soul": 45
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "pill2",
+      "label": "洗髓丹 ×2",
+      "cost": {
+        "score": 600
+      },
+      "stock": 3,
+      "mat": {
+        "pill": 3
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "note10",
+      "label": "注疏 ×10",
+      "cost": {
+        "score": 500
+      },
+      "stock": 3,
+      "mat": {
+        "note": 15
+      },
+      "costNote": "活动积分"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ev-shuangdeng-01",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 01·灯起",
+      "faction": "gh",
+      "stamina": 6,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.3,
+          "team": [
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 24,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 24,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 24,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-bing",
+              "rarity": "blue",
+              "level": 24,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 24,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 5000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 20
+      },
+      "drop": {
+        "coin": 1000,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 22,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 5,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-m02",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 02·寒潭",
+      "faction": "gh",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.3,
+          "team": [
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 25,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 25,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 25,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-bing",
+              "rarity": "blue",
+              "level": 25,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 25,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 5600,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 20
+      },
+      "drop": {
+        "coin": 1120,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 22,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 5,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-m03",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 03·雪径",
+      "faction": "gh",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.4,
+          "team": [
+            {
+              "id": "mob-gh-mao",
+              "rarity": "purple",
+              "level": 27,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 27,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e2",
+              "rarity": "blue",
+              "level": 27,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 27,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 27,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 7840,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1288,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 7,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-02",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 04·霜桥",
+      "faction": "gh",
+      "stamina": 6,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.4,
+          "team": [
+            {
+              "id": "mob-gh-mao",
+              "rarity": "purple",
+              "level": 28,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 28,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e2",
+              "rarity": "blue",
+              "level": 28,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 28,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 28,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 7000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1150,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 7,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-m05",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 05·冰灯",
+      "faction": "gh",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-gh-chan",
+              "rarity": "gold",
+              "level": 29,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 29,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 29,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-bing",
+              "rarity": "blue",
+              "level": 29,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 29,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 10080,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1512,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 30,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 9,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-m06",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 06·夜巡",
+      "faction": "gh",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 31,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-chan",
+              "rarity": "gold",
+              "level": 31,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e2",
+              "rarity": "blue",
+              "level": 31,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-mao",
+              "rarity": "purple",
+              "level": 31,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-bing",
+              "rarity": "blue",
+              "level": 31,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 13440,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 40
+      },
+      "drop": {
+        "coin": 1792,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 36,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 12,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 2,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-03",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 07·月门",
+      "faction": "gh",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-gh-chan",
+              "rarity": "gold",
+              "level": 32,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 32,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 32,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-bing",
+              "rarity": "blue",
+              "level": 32,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 32,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 9000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1350,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 30,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 9,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-m08",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 08·月窟",
+      "faction": "gh",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 34,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 34,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 34,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 34,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 34,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 17920,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 55
+      },
+      "drop": {
+        "coin": 2240,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 48,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 15,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 2,
+            "rate": 0.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-04",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 09·拾霜",
+      "faction": "gh",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 36,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-chan",
+              "rarity": "gold",
+              "level": 36,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e2",
+              "rarity": "blue",
+              "level": 36,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-mao",
+              "rarity": "purple",
+              "level": 36,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-bing",
+              "rarity": "blue",
+              "level": 36,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 12000,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 40
+      },
+      "drop": {
+        "coin": 1600,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 36,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 12,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 2,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-m10",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 10·霜台",
+      "faction": "gh",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.3,
+          "team": [
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 37,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 37,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 37,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-bing",
+              "rarity": "blue",
+              "level": 37,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 37,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 5600,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 20
+      },
+      "drop": {
+        "coin": 1120,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 22,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 5,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-m11",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 11·归灯",
+      "faction": "gh",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.4,
+          "team": [
+            {
+              "id": "mob-gh-mao",
+              "rarity": "purple",
+              "level": 39,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 39,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e2",
+              "rarity": "blue",
+              "level": 39,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 39,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu",
+              "rarity": "green",
+              "level": 39,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 7840,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1288,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 7,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-05",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "name": "广寒·霜灯引 12·入瓮",
+      "faction": "gh",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 40,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 40,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 40,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 40,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 40,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 16000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 55
+      },
+      "drop": {
+        "coin": 2000,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 48,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 15,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 2,
+            "rate": 0.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-1-trial-01",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "section": "trial",
+      "name": "广寒·霜灯引 试炼01·霜刃初试",
+      "faction": "gh",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 86,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 86,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 86,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 86,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 86,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.1,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 86,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 86,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 86,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 86,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 86,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thin-qi"
+        },
+        {
+          "id": "thunder-pool"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-shuangdeng-05",
+      "firstClear": {
+        "coin": 16000,
+        "jade": 120,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 2500,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 42,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 10,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-1-trial-02",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "section": "trial",
+      "name": "广寒·霜灯引 试炼02·百炼成钢",
+      "faction": "gh",
+      "stamina": 12,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.2,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 90,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 90,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 90,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 90,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 90,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.3,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 90,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 90,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 90,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 90,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 90,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thunder-pool"
+        },
+        {
+          "id": "miasma"
+        }
+      ],
+      "stars": {
+        "turns": 28,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-shuangdeng-1-trial-01",
+      "firstClear": {
+        "coin": 20000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 2800,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 54,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 14,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-1-trial-03",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "section": "trial",
+      "name": "广寒·霜灯引 试炼03·绝地反击",
+      "faction": "gh",
+      "stamina": 13,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.4,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.5,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.6,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "miasma"
+        },
+        {
+          "id": "iron-wall"
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-shuangdeng-1-trial-02",
+      "firstClear": {
+        "coin": 24000,
+        "jade": 200,
+        "stamina": 0,
+        "dust": 75
+      },
+      "drop": {
+        "coin": 3100,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 66,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 18,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-shuangdeng-1-challenge-01",
+      "chapter": 0,
+      "chapterLabel": "广寒·霜灯引",
+      "kind": "event",
+      "section": "challenge",
+      "name": "广寒·霜灯引 挑战01·无上之境",
+      "faction": "gh",
+      "stamina": 15,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.6,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.8,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 3,
+          "team": [
+            {
+              "id": "boss-gh-dengying",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-jian",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-tu2",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-zhu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-gh-e",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "iron-wall"
+        },
+        {
+          "id": "lone-band"
+        },
+        {
+          "id": "twin"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-shuangdeng-1-trial-03",
+      "firstClear": {
+        "coin": 40000,
+        "jade": 300,
+        "stamina": 0,
+        "dust": 120
+      },
+      "drop": {
+        "coin": 4000,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 90,
+            "rate": 1
+          },
+          {
+            "key": "xinyin",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    }
+  ],
+  "bossArt": "/art/bosses/boss-gh-dengying-dynamic.png",
+  "bossId": "boss-gh-dengying",
+  "accent": "#a8d8f0",
+  "themeSub": "霜夜祭月 · 冰灯引路",
+  "milestones": [
+    {
+      "score": 1750,
+      "label": "初露锋芒",
+      "reward": {
+        "coin": 22000,
+        "mat": {
+          "page": 34
+        }
+      }
+    },
+    {
+      "score": 3450,
+      "label": "渐入佳境",
+      "reward": {
+        "jade": 270,
+        "mat": {
+          "soul": 51
+        }
+      }
+    },
+    {
+      "score": 5200,
+      "label": "名动一方",
+      "reward": {
+        "jade": 540,
+        "mat": {
+          "pill": 5
+        }
+      }
+    },
+    {
+      "score": 6900,
+      "label": "登峰造极",
+      "reward": {
+        "jade": 1080,
+        "mat": {
+          "tome:gold": 2
+        }
+      }
+    }
+  ],
+  "shopMode": "once",
+  "starRewards": {
+    "main": {
+      "1": {
+        "score": 60,
+        "coin": 2000,
+        "jade": 30
+      },
+      "2": {
+        "score": 110,
+        "coin": 3500,
+        "jade": 40
+      },
+      "3": {
+        "score": 140,
+        "coin": 6000,
+        "jade": 50
+      }
+    },
+    "trial": {
+      "1": {
+        "score": 140,
+        "coin": 4000,
+        "jade": 60
+      },
+      "2": {
+        "score": 240,
+        "coin": 6000,
+        "jade": 80
+      },
+      "3": {
+        "score": 310,
+        "coin": 9000,
+        "jade": 100
+      }
+    },
+    "challenge": {
+      "1": {
+        "score": 210,
+        "coin": 8000,
+        "jade": 100
+      },
+      "2": {
+        "score": 360,
+        "coin": 12000,
+        "jade": 140
+      },
+      "3": {
+        "score": 540,
+        "coin": 18000,
+        "jade": 180
+      }
+    }
+  }
+}

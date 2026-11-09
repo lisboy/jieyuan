@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "comment": "日常/周常活动任务表：由 tools/lib/tasks.mjs 读取，进度按 save.taskDaily / save.taskWeekly 计数，每日 04:00 / 每周一 04:00 刷新。metric 与结算钩子同名：login 签到、battles 战斗场次、wins 胜利、sweeps 扫荡次数、stamina 消耗心神、pulls 问缘次数、eventWins 活动关胜利、towerWins 登仙塔胜利、noDeath 无阵亡胜利。activity 为完成该任务获得的活跃值，用于任务里程碑。2026-11-03 奖励整体上调：日常约 ×2、周常约 ×2.2、里程碑宝箱同步加厚。",
+  "daily": {
+    "id": "daily",
+    "label": "日常活动",
+    "desc": "每日刷新。完成日常任务积累活跃值，逐档开启日常宝箱；错过不补，次日重新开始。",
+    "reset": "每日 04:00 刷新",
+    "tasks": [
+      { "id": "d-login", "label": "每日签到", "desc": "领取每日签到奖励", "metric": "login", "goal": 1, "activity": 10, "reward": { "coin": 2400, "mat": { "page": 10 } } },
+      { "id": "d-battle", "label": "淬炼身心", "desc": "完成 3 场战斗", "metric": "battles", "goal": 3, "activity": 15, "reward": { "coin": 3600, "mat": { "soul": 10 } } },
+      { "id": "d-win", "label": "初战告捷", "desc": "取得 3 场胜利", "metric": "wins", "goal": 3, "activity": 15, "reward": { "mat": { "essence": 24, "pill": 1 } } },
+      { "id": "d-stamina", "label": "勤修不辍", "desc": "消耗 60 点心神", "metric": "stamina", "goal": 60, "activity": 15, "reward": { "mat": { "page": 20 } } },
+      { "id": "d-sweep", "label": "从容扫荡", "desc": "完成 2 次扫荡", "metric": "sweeps", "goal": 2, "activity": 10, "reward": { "coin": 2800, "mat": { "note": 3 } } },
+      { "id": "d-pull", "label": "缘来一试", "desc": "问缘 1 次", "metric": "pulls", "goal": 1, "activity": 10, "reward": { "jade": 80 } },
+      { "id": "d-event", "label": "活动常客", "desc": "通关 2 次活动关卡", "metric": "eventWins", "goal": 2, "activity": 15, "reward": { "mat": { "essence": 30, "xingsha": 3 } } },
+      { "id": "d-tower", "label": "登塔问道", "desc": "通关 1 次登仙塔", "metric": "towerWins", "goal": 1, "activity": 10, "reward": { "mat": { "xingsha": 5, "wensha": 2 } } }
+    ],
+    "milestones": [
+      { "at": 40, "label": "日常·小成", "reward": { "coin": 8000, "mat": { "page": 20, "soul": 15 } } },
+      { "at": 70, "label": "日常·精进", "reward": { "jade": 150, "mat": { "essence": 30, "pill": 2 } } },
+      { "at": 100, "label": "日常·圆满", "reward": { "jade": 260, "mat": { "pill": 3, "soul": 30 } } }
+    ],
+    "shop": [
+      { "key": "dshop-page", "label": "散页 ×10", "cost": 8000, "gives": { "page": 10 } },
+      { "key": "dshop-note", "label": "注疏 ×5", "cost": 12000, "gives": { "note": 5 } },
+      { "key": "dshop-pill", "label": "洗髓丹 ×1", "cost": 30000, "gives": { "pill": 1 } },
+      { "key": "dshop-jade", "label": "缘玉 ×60", "cost": 20000, "gives": { "jade": 60 } }
+    ],
+    "shopNote": "完成全部日常任务（打满每日关卡）后开放，每日 04:00 换一批"
+  },
+  "weekly": {
+    "id": "weekly",
+    "label": "周常活动",
+    "desc": "每周刷新。周常任务更重，奖励也更厚；一周内完成越多，里程碑档位越高。",
+    "reset": "每周一 04:00 刷新",
+    "tasks": [
+      { "id": "w-battle", "label": "百战之志", "desc": "完成 20 场战斗", "metric": "battles", "goal": 20, "activity": 20, "reward": { "coin": 24000, "mat": { "soul": 20 } } },
+      { "id": "w-win", "label": "常胜之姿", "desc": "取得 15 场胜利", "metric": "wins", "goal": 15, "activity": 20, "reward": { "jade": 450, "mat": { "essence": 60 } } },
+      { "id": "w-stamina", "label": "勤行周天", "desc": "消耗 400 点心神", "metric": "stamina", "goal": 400, "activity": 20, "reward": { "mat": { "essence": 120, "pill": 3 } } },
+      { "id": "w-sweep", "label": "扫荡清修", "desc": "完成 10 次扫荡", "metric": "sweeps", "goal": 10, "activity": 15, "reward": { "coin": 18000, "mat": { "note": 20 } } },
+      { "id": "w-pull", "label": "缘结十方", "desc": "问缘 10 次", "metric": "pulls", "goal": 10, "activity": 15, "reward": { "jade": 700 } },
+      { "id": "w-event", "label": "活动达人", "desc": "通关 10 次活动关卡", "metric": "eventWins", "goal": 10, "activity": 20, "reward": { "mat": { "soul": 120, "xingsha": 30 } } },
+      { "id": "w-tower", "label": "登仙问鼎", "desc": "通关 5 次登仙塔", "metric": "towerWins", "goal": 5, "activity": 20, "reward": { "mat": { "wensha": 12, "xinyin": 1 } } }
+    ],
+    "milestones": [
+      { "at": 60, "label": "周常·小成", "reward": { "coin": 50000, "mat": { "soul": 40, "page": 40 } } },
+      { "at": 100, "label": "周常·精进", "reward": { "jade": 700, "mat": { "tome:gold": 2, "pill": 4 } } },
+      { "at": 130, "label": "周常·圆满", "reward": { "jade": 1200, "mat": { "xinyin": 2, "wensha": 10 } } }
+    ]
+  }
+}

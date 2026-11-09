@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Build & release outputs
+data/
+release/
+release-*.zip
+release-*.zip.part*
+dist/
+
+# Large art / media source assets (distributed via GitHub Releases)
+content/art/
+assets/
+.raw-art/
+.raw-boss/
+.raw-mobs/
+
+# Compiled C# output
+src/**/bin/
+src/**/obj/
+**/*.dll
+**/*.pdb
+
+# Models & downloaded binaries
+tools/models/
+
+# Internal scratch / acceptance scripts
+.trace/
+.agent/
+.trae/
+target/
+
+# Temp files
+*.log
+*.tmp
+*.bak
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Local database overrides
+config/database.local.json

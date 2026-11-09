@@ -1,0 +1,336 @@
+/* 拾缘 · expansion-tasks —— 日常/周常活动 + 活动积分里程碑（追加到 expansion-events.css 之后加载）
+   全部走 .xpe-/.xt- 前缀，复用 style.css 的 :root 变量。 */
+
+/* ========== 活动积分条（活动商店上方） ========== */
+.xpe-scorebar {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 12px; margin: 0 0 10px;
+  border: 1px solid rgba(232, 201, 138, .28); border-radius: 10px;
+  background: rgba(232, 201, 138, .06);
+  font-size: 12px; color: var(--dim);
+}
+.xpe-scorebar b { font-size: 17px; color: var(--gold-hi); margin-left: 2px; }
+.xpe-scorebar-tip { margin-left: auto; font-size: 10.5px; color: var(--faint); }
+
+/* ========== 活动分段（关卡 / 试炼 / 挑战） ========== */
+.xpe-sec + .xpe-sec { margin-top: 16px; }
+.xpe-sec-note { margin-left: auto; font-size: 10.5px; color: var(--faint); letter-spacing: 0; font-family: inherit; }
+.xpe-stage.locked { opacity: .42; cursor: not-allowed; }
+.xpe-stage.locked:hover { transform: none; border-color: var(--line); background: rgba(255, 255, 255, .015); }
+.xpe-col-main { min-width: 0; }
+
+/* ========== 积分里程碑 ========== */
+.xpe-mslist { display: grid; gap: 7px; }
+.xpe-ms {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 11px; border: 1px solid var(--line); border-radius: 10px;
+  background: rgba(255, 255, 255, .015);
+}
+.xpe-ms.done { opacity: .62; }
+.xpe-ms.ready { border-color: rgba(232, 201, 138, .5); background: rgba(232, 201, 138, .07); }
+.xpe-ms.locked { opacity: .78; }
+.xms-score {
+  flex: 0 0 68px; text-align: center;
+  font-family: var(--font-display); font-size: 16px; color: var(--gold);
+  display: grid; line-height: 1.1;
+}
+.xms-score span { font-size: 9.5px; color: var(--faint); font-family: var(--font-body, inherit); letter-spacing: .12em; }
+.xpe-ms.locked .xms-score { color: var(--faint); }
+.xms-main { flex: 1; min-width: 0; }
+.xms-t { font-size: 12.5px; font-weight: 600; color: var(--ink); }
+.xms-d { font-size: 10.5px; color: var(--faint); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.xms-done { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; color: #7fd1c8; }
+.xms-lk { flex: 0 0 auto; font-size: 10.5px; color: var(--faint); }
+/* 动作区固定宽高：领取按钮 / 已领取 / 还差分 三种状态切换时行高完全不跳 */
+.xms-act {
+  flex: 0 0 88px; min-width: 88px; height: 30px;
+  display: flex; align-items: center; justify-content: flex-end; gap: 4px;
+}
+.xms-act .btn { height: 26px; padding: 0 12px; line-height: 26px; white-space: nowrap; }
+.xms-act .xms-done, .xms-act .xms-lk { height: 26px; display: inline-flex; align-items: center; white-space: nowrap; }
+/* 里程碑：行本身等高，禁止子元素改变高度 */
+.xpe-ms { min-height: 50px; box-sizing: border-box; }
+body.event-mode .xpe-msgrid .xpe-ms { min-height: 64px; }
+/* 限时活动关卡卡的三档星级奖励（★1 / ★2 / ★3 逐档展示） */
+.xs-first.xs-starw { display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.xs-first.xs-starw .xsw { white-space: nowrap; }
+/* 每日商城：完成全部日常任务后开放（单行四格紧凑条，避免把里程碑挤出屏） */
+.xpe-dailyshop-row { flex: 0 0 auto; margin-top: 10px; }
+.xpe-dailyshop-hd {
+  display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px;
+  font-family: var(--font-display); font-size: 12px; letter-spacing: .12em; color: var(--gold);
+}
+.xpe-dailyshop-hd span { font-size: 10px; letter-spacing: 0; color: var(--faint); font-family: inherit; }
+.xpe-dailyshop { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+.xpe-dailyshop.locked { opacity: .55; }
+.xds-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 6px 10px; border: 1px solid var(--line); border-radius: 9px; background: rgba(255, 255, 255, .015);
+}
+.xds-item.off { opacity: .55; }
+.xds-main { min-width: 0; display: grid; gap: 1px; }
+.xds-main b { font-size: 11.5px; font-weight: 600; color: var(--ink); }
+.xds-main span { font-size: 10px; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.xds-act { flex: 0 0 auto; display: flex; align-items: center; gap: 6px; }
+.xds-price { font-size: 10.5px; color: var(--gold); display: inline-flex; align-items: center; gap: 2px; }
+.xds-lk { font-size: 10.5px; color: var(--faint); }
+.xpe-dailyshop-tip { margin-top: 5px; font-size: 10.5px; color: var(--faint); }
+
+/* ========== 日常 / 周常任务 ========== */
+.xpe-taskwrap { min-width: 0; }
+.xpe-taskhd {
+  display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap;
+  border: 1px solid rgba(232, 201, 138, .22); border-radius: var(--r-m);
+  background: rgba(232, 201, 138, .04); padding: 12px 16px;
+}
+.xpe-taskhd-r { margin-left: auto; min-width: 210px; display: grid; gap: 6px; }
+.xpe-tasklist { margin-top: 10px; display: grid; gap: 7px; }
+.xpe-task {
+  display: grid; grid-template-columns: 1fr 190px 84px; gap: 12px; align-items: center;
+  padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px;
+  background: rgba(255, 255, 255, .015);
+}
+.xpe-task.done { border-color: rgba(127, 209, 200, .3); background: rgba(127, 209, 200, .04); }
+.xpe-task.claimed { opacity: .55; }
+.xt-main { min-width: 0; }
+.xt-t { font-size: 12.5px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 7px; }
+.xt-act {
+  font-size: 10px; color: var(--gold); border: 1px solid rgba(232, 201, 138, .4);
+  border-radius: 999px; padding: 0 6px; background: rgba(232, 201, 138, .08);
+}
+.xt-d { font-size: 10.5px; color: var(--faint); margin-top: 1px; }
+.xt-bar { display: flex; align-items: center; gap: 8px; margin-top: 5px; font-size: 10px; color: var(--faint); }
+.xt-bar .bar { flex: 1; }
+.xt-rw { font-size: 10.5px; color: var(--dim); line-height: 1.45; }
+/* 动作区固定宽高：领取按钮（26px）/ 已领取 / 进度百分比三种状态切换时行高完全不跳。
+ * 2026-11-05 用户反馈「领取后缩高度」：以前 .xt-btn 无固定尺寸，按钮消失后整行塌 10px。 */
+.xt-btn {
+  flex: 0 0 auto; min-width: 84px; min-height: 30px; box-sizing: border-box;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.xt-btn .btn { height: 26px; padding: 0 12px; line-height: 26px; white-space: nowrap; }
+.xt-done, .xt-lk { height: 26px; display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; white-space: nowrap; }
+.xt-done { color: #7fd1c8; }
+.xt-lk { color: var(--faint); }
+
+/* 左侧活跃值卡 */
+.xpe-taskact {
+  margin-top: 12px; padding: 10px 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: rgba(255, 255, 255, .02);
+}
+.xpe-taskact-hd { display: flex; align-items: baseline; gap: 6px; font-size: 11.5px; color: var(--dim); }
+.xpe-taskact-hd b { font-size: 20px; color: var(--gold-hi); }
+.xpe-taskact-hd span { font-size: 10.5px; color: var(--faint); }
+.xpe-taskact .bar { margin: 7px 0 6px; }
+.xpe-taskact-tip { font-size: 10.5px; color: var(--faint); line-height: 1.6; }
+
+/* 窄屏：任务行折成两段，避免奖励列被挤没 */
+@media (max-width: 1180px) {
+  .xpe-task { grid-template-columns: 1fr 96px; }
+  .xt-rw { grid-column: 1 / -1; }
+  .xt-btn { grid-column: 2; grid-row: 1; align-self: center; }
+}
+
+/* ======================================================================
+   活动屏一屏布局（2026-11-03）
+   用户要求：活动界面不要滚动条。做法是把活动屏锁进视口：
+   #app 纵向 flex，顶栏固定，活动屏吃剩余高度；活动内容用子页签分区，
+   日常/周常任务双列排；只有仙令奖励轨是分页的，不再纵向滚动。
+   ====================================================================== */
+body.event-mode { height: 100vh; overflow: hidden; }
+body.event-mode #app { height: 100vh; display: flex; flex-direction: column; }
+body.event-mode #topbar {
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, #0b0f17, #0a0e15);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+/* 活动屏把场景大图压到几乎不可见：背景山体/雾气会和文字抢对比度，
+ * 这里是「看不清、背景混乱」的另一半根因（面板之外的留白区）。 */
+body.event-mode #bgLayer { opacity: .1; filter: saturate(.5) blur(1px); }
+body.event-mode #bgLayer::after { background: rgba(5, 6, 10, .9); }
+body.event-mode .xpe-side {
+  background: linear-gradient(180deg, #151d2b 0%, #0e141f 100%);
+  border-color: #2a3448;
+}
+body.event-mode #screens {
+  flex: 1 1 auto; min-height: 0; width: 100%;
+  max-width: min(1900px, calc(100vw - 16px));
+  margin: 0 auto; padding: 8px 0 10px;
+}
+body.event-mode .screen.on { height: 100%; }
+body.event-mode .xpe-screen { height: 100%; display: flex; flex-direction: column; gap: 8px; }
+body.event-mode .xpe-tabsbar { margin-bottom: 0; padding: 6px 12px; flex: 0 0 auto; }
+body.event-mode .xpe-wrap { flex: 1 1 auto; min-height: 0; }
+body.event-mode .xpe-side {
+  height: 100%; min-height: 0; display: flex; flex-direction: column;
+  padding: 14px; overflow: hidden;
+}
+body.event-mode .xpe-side .xpe-banner { aspect-ratio: 16 / 9; flex: 0 0 auto; }
+/* 侧栏底部留白用说明文字收口，不再让横幅硬撑高度 */
+body.event-mode .xpe-side-note { margin-top: auto; }
+body.event-mode .xpe-main {
+  height: 100%; min-height: 0; display: flex; flex-direction: column;
+  padding: 14px 16px; overflow: hidden;
+}
+body.event-mode .xpe-side-note { font-size: 10.5px; line-height: 1.65; }
+body.event-mode .xpe-scorebox { margin-top: 9px; }
+body.event-mode .xpe-score { padding: 7px 10px; }
+
+/* 活动内子页签（关卡 / 试炼 / 挑战 / 商店 / 里程碑） */
+.xpe-eventpane { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.xpe-subnav { flex: 0 0 auto; display: flex; gap: 7px; margin-bottom: 10px; align-items: center; }
+.xpe-subnav-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-display); font-size: 12.5px; letter-spacing: .06em;
+  color: var(--dim); background: rgba(255, 255, 255, .03);
+  border: 1px solid var(--line2); border-radius: 9px; padding: 6px 13px; cursor: pointer;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.xpe-subnav-btn .num { font-size: 10px; color: var(--faint); letter-spacing: 0; }
+.xpe-subnav-btn:hover { color: var(--ink); border-color: var(--gold-dp); }
+.xpe-subnav-btn.on {
+  color: var(--gold-hi); border-color: rgba(232, 201, 138, .6);
+  background: rgba(232, 201, 138, .1);
+}
+.xpe-subnav-btn.on .num { color: var(--gold); }
+.xpe-eventbody { flex: 1 1 auto; min-height: 0; overflow: hidden; }
+.xpe-stagelist { display: grid; gap: 7px; }
+/* 关卡卡：紧凑两列 × 6 行（2026-11-03 用户反馈「太大了、好丑，要不就设计关卡多一点」——
+ * 旧版只有 4~6 张卡，却用 grid-auto-rows:minmax(64px,1fr)+stretch 拉满整屏，单卡近 200px 高、像空盒子。
+ * 现在每活动主线 12 关，两列 6 行按可用高度均分，单卡约 70~90px，信息密度回来了。 */
+body.event-mode .xpe-stagelist { grid-template-columns: 1fr 1fr; gap: 7px; }
+@media (max-width: 1180px) {
+  body.event-mode .xpe-stagelist { grid-template-columns: 1fr; }
+}
+@media (min-width: 2200px) {
+  body.event-mode .xpe-stagelist { grid-template-columns: repeat(3, 1fr); }
+}
+body.event-mode .xpe-stagelist .xpe-stage + .xpe-stage { margin-top: 0; }
+body.event-mode .xpe-stage { padding: 9px 12px; }
+body.event-mode .xpe-stage .xs-first { font-size: 10px; color: var(--gold); opacity: .85; margin-top: 3px; }
+
+/* 活动说明卡：右侧固定栏，替代内容区中段大片空白（不是装饰，是规则/玩法说明） */
+.xpe-eventbody { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 14px; align-items: stretch; }
+.xpe-eventmain { min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.xpe-eventmain > .xpe-sec { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.xpe-eventmain > .xpe-mslist { flex: 1 1 auto; min-height: 0; }
+.xpe-eventmain .xpe-stagelist { flex: 1 1 auto; grid-auto-rows: minmax(58px, 1fr); align-content: stretch; max-height: 100%; }
+/* 仅 1 关（挑战）时不要拉成一整屏，保持自然高度 */
+.xpe-eventmain .xpe-stagelist:has(.xpe-stage:only-child) { flex: 0 0 auto; grid-auto-rows: auto; }
+/* 底部三格信息卡：关卡/商店页填满剩余高度，不靠拉高卡片硬撑 */
+.xpe-extrainfo { margin-top: auto; padding-top: 10px; }
+.xpe-extrainfo .xe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.xpe-extrainfo .xe-card {
+  display: grid; gap: 2px; padding: 12px 14px;
+  border: 1px solid var(--line); border-radius: 10px; background: rgba(255, 255, 255, .025);
+}
+.xpe-extrainfo .xe-k { font-size: 10.5px; letter-spacing: .14em; color: var(--faint); }
+.xpe-extrainfo .xe-card b { font-family: var(--font-display); font-size: 20px; color: var(--gold-hi); }
+.xpe-extrainfo .xe-s { font-size: 10.5px; color: var(--faint); }
+/* 关卡行按内容自然高度排，12 关也不占满整屏 */
+body.event-mode .xpe-stagelist .xpe-stage { min-height: 52px; }
+.xpe-eventnote {
+  align-self: stretch; padding: 13px 15px;
+  border: 1px solid rgba(232, 201, 138, .18); border-radius: 10px;
+  background: rgba(232, 201, 138, .035);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.xpe-eventnote .xn-t {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-display); font-size: 13px; letter-spacing: .1em; color: var(--gold);
+  padding-bottom: 7px; border-bottom: 1px dashed rgba(232, 201, 138, .16);
+}
+.xpe-eventnote .xn-row { display: grid; grid-template-columns: 40px 1fr; gap: 7px; font-size: 11px; line-height: 1.75; color: var(--dim); }
+.xpe-eventnote .xn-k { color: var(--faint); letter-spacing: .1em; }
+.xpe-eventnote .xn-sep { height: 1px; background: rgba(232, 201, 138, .14); margin: 3px 0; }
+.xpe-eventnote .xn-big { display: flex; align-items: baseline; gap: 6px; font-family: var(--font-display); color: var(--gold-hi); }
+.xpe-eventnote .xn-big b { font-size: 26px; }
+.xpe-eventnote .xn-big span { font-size: 11px; color: var(--faint); }
+/* 里程碑页：按内容自然高度排（旧版 grid-auto-rows: minmax(92px,1fr) 会把 4 档拉成整屏空格，截图里“太丑”就是它） */
+body.event-mode .xpe-msgrid { grid-auto-rows: auto; align-content: start; }
+.xpe-msnote { margin-top: 9px; flex: 0 0 auto; }
+.xpe-goodgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; align-content: start; }
+.xpe-goodgrid .xpe-good + .xpe-good { margin-top: 0; }
+.xpe-msgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; align-content: start; }
+.xpe-msgrid .xpe-ms { padding: 10px 12px; }
+/* 里程碑 4 档：两列 × 两行，行高固定按内容，不再拉伸留白 */
+body.event-mode .xpe-eventmain .xpe-msgrid.xpe-mslist { grid-template-columns: 1fr 1fr; }
+body.event-mode .xpe-msgrid { grid-auto-rows: minmax(64px, auto); align-content: start; }
+body.event-mode .xpe-sec-hd { margin-bottom: 8px; padding-bottom: 6px; }
+body.event-mode .xpe-stage { padding: 7px 11px; }
+body.event-mode .xpe-stage + .xpe-stage { margin-top: 0; }
+
+/* 日常 / 周常：任务双列 + 里程碑横排，整页收进一屏 */
+body.event-mode .xpe-taskwrap { height: 100%; min-height: 0; display: flex; flex-direction: column; }
+body.event-mode .xpe-taskhd { flex: 0 0 auto; padding: 10px 14px; gap: 12px; }
+body.event-mode .xpe-taskhd .panel-sub { font-size: 10.5px; }
+body.event-mode .xpe-tasklist {
+  flex: 0 0 auto; margin-top: 8px;
+  grid-template-columns: 1fr 1fr; gap: 7px; align-content: start;
+}
+/* 三列：主信息 / 奖励 / 固定宽动作区。动作区必须单独占列，
+ * 否则「领取」变「已领取」时按钮换行/塌陷，整行高度前后不一致（截图红框问题）。 */
+body.event-mode .xpe-task {
+  grid-template-columns: minmax(0, 1fr) 118px 84px;
+  gap: 8px; padding: 5px 10px; min-height: 62px; box-sizing: border-box;
+}
+body.event-mode .xpe-task .xt-btn { margin-top: 0; align-self: center; }
+body.event-mode .xpe-task .xt-t { font-size: 12px; }
+body.event-mode .xpe-task .xt-d { font-size: 10px; }
+body.event-mode .xpe-task .xt-bar { margin-top: 4px; font-size: 9.5px; }
+body.event-mode .xt-rw { font-size: 10px; line-height: 1.4; text-align: right; }
+body.event-mode .xt-btn { margin-top: 5px; }
+body.event-mode .xpe-mslist { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+body.event-mode .xpe-ms { padding: 8px 10px; min-height: 56px; }
+body.event-mode .xpe-ms .xms-d { white-space: normal; }
+body.event-mode .xpe-taskact { margin-top: 9px; padding: 8px 11px; }
+body.event-mode .xpe-taskact-hd b { font-size: 17px; }
+
+/* 仙令：奖励轨分页，不再纵向滚动 */
+body.event-mode .xpe-passlist {
+  max-height: none; min-height: 0; flex: 1 1 auto; overflow: hidden;
+  grid-template-columns: 1fr 1fr; gap: 6px 10px; align-content: start;
+}
+.xpe-pager { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 10px; font-size: 11px; color: var(--dim); }
+.xpe-pager button {
+  font-size: 11px; color: var(--dim); border: 1px solid var(--line2); border-radius: 7px; padding: 3px 10px;
+  background: rgba(255, 255, 255, .03);
+}
+.xpe-pager button:disabled { opacity: .35; cursor: default; }
+body.event-mode .xpe-pass-hd { flex: 0 0 auto; padding: 10px 14px; }
+body.event-mode .xpe-pass-head { flex: 0 0 auto; }
+
+/* 矮屏（1280×720 一类）再收紧一档，保证内容不顶出 */
+@media (max-height: 820px) {
+  body.event-mode #screens { padding-top: 5px; padding-bottom: 6px; }
+  body.event-mode .xpe-tabsbar { padding: 4px 10px; }
+  body.event-mode .xpe-main { padding: 10px 12px; }
+  body.event-mode .xpe-side { padding: 10px; }
+  body.event-mode .xpe-side .xpe-banner { aspect-ratio: 16 / 7; }
+  body.event-mode .xpe-side-note { display: none; }
+  body.event-mode .xpe-bossline { margin-top: 7px; padding: 4px 8px; }
+  body.event-mode .xpe-stage { padding: 5px 9px; }
+  body.event-mode .xpe-stage .xs-mods { display: none; }
+  body.event-mode .xpe-task { padding: 5px 8px; }
+  body.event-mode .xpe-task .xt-d { display: none; }
+}
+
+/* 1280~1440 窄宽：顶栏资源条 + 齿轮在活动屏压紧一档。
+ * 资源条 4 个胶囊在 15px 字号下宽 452px，加上齿轮会把 body 撑到 1357px
+ * （#screens 有 overflow 兜底所以看不见，但 document.scrollWidth 仍溢出）。 */
+@media (max-width: 1440px) {
+  body.event-mode #topbar .trow { gap: 10px; padding: 8px 14px 6px; }
+  body.event-mode #tabs { gap: 0; }
+  body.event-mode .tab { padding: 8px 9px 9px; font-size: 13.5px; letter-spacing: .08em; }
+  body.event-mode #tabsNew { padding: 6px 14px 8px; gap: 5px; }
+  body.event-mode .chip-new { font-size: 11.5px; padding: 4px 9px 4px 5px; }
+  body.event-mode #resBar { gap: 5px; }
+  body.event-mode .res { gap: 5px; padding: 4px 8px 4px 6px; font-size: 11.5px; }
+  body.event-mode .res svg { width: 14px; height: 14px; }
+  body.event-mode .res .num { min-width: 26px; }
+  body.event-mode .res .plus { width: 13px; height: 13px; font-size: 10px; }
+  body.event-mode .brand .sigil { width: 28px; height: 28px; font-size: 16px; }
+  body.event-mode .brand b { font-size: 18px; letter-spacing: .2em; }
+  body.event-mode .brand i { font-size: 10px; }
+  body.event-mode .iconbtn { width: 28px; height: 28px; }
+}

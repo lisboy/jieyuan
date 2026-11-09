@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>拾缘</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/art/icon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/art/icon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/art/icon/apple-touch-icon.png">
+<meta name="theme-color" content="#0b0e16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/expansion.css">
+<link rel="stylesheet" href="css/expansion-events.css">
+<link rel="stylesheet" href="css/expansion-tasks.css">
+<link rel="stylesheet" href="css/expansion-growth.css">
+<link rel="stylesheet" href="css/expansion-battle.css">
+<link rel="stylesheet" href="css/expansion-realm.css">
+<link rel="stylesheet" href="css/tutorial.css">
+</head>
+<body>
+
+<!-- 登录 / 注册 -->
+<div id="authGate">
+  <img class="auth-bg" src="/bg/home.jpg" alt="" data-fb="rm">
+  <div class="auth-scenery" aria-hidden="true"><i class="m1"></i><i class="m2"></i><i class="m3"></i></div>
+  <img class="auth-hero" src="/data/characters/ur-zf-01/art/dynamic.png" alt="" data-fb="portrait">
+  <div class="auth-hero-plate">
+    <b>虞清都</b>
+    <span>紫府 · 太史令 · 紫雷</span>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-brand"><span class="sigil">缘</span><b>拾 缘</b><i>在线版</i></div>
+    <p class="auth-sub">清气升为天，浊气沉为渊。仙真早已隐去，只在万物的呼吸之间留下一道极细的「缘痕」。</p>
+    <div class="auth-tabs">
+      <button class="on" data-aop="login">登 录</button>
+      <button data-aop="register">注 册</button>
+    </div>
+    <div class="auth-form">
+      <input id="authUser" maxlength="16" placeholder="用户名（4-16 位，字母或中文开头）" autocomplete="username">
+      <input id="authPass" type="password" maxlength="32" placeholder="密码（8-32 位，须含字母和数字）" autocomplete="current-password">
+      <button id="authGo" class="btn primary lg">进 入 拾 缘</button>
+      <div id="authErr" class="auth-err"></div>
+    </div>
+  </div>
+  <div class="auth-foot">拾缘 · 网页版 v0.1.0 · 推荐 Chrome / Edge 浏览器</div>
+</div>
+
+<div id="app" style="display:none">
+  <header id="topbar">
+    <div class="trow">
+      <div class="brand">
+        <span class="sigil">缘</span>
+        <b>拾 缘</b>
+        <i id="whoami"></i>
+      </div>
+      <nav id="tabs"></nav>
+      <div id="resBar"></div>
+      <button id="btnGear" class="iconbtn" data-tip="系统|音量与账号（快捷键 Esc）"></button>
+    </div>
+    <nav id="tabsNew"></nav>
+  </header>
+
+  <!-- 不要在这里写 data-wide：名册的放宽由 go() 切 body.roster-mode 控制，
+       放进 HTML 就成了全站常开（写死的那一版把主城/坊市的留白也一起吃掉了）。 -->
+  <main id="screens"></main>
+</div>
+
+<!-- 抽卡翻牌浮层 -->
+<div id="reveal">
+  <div style="text-align:center; padding: 20px;">
+    <div class="reveal-title">
+      <h1>缘 至</h1>
+      <p>点击卡背翻开 · 全部翻完后可收下</p>
+    </div>
+    <div class="reveal-pity" id="revealPity"></div>
+    <div class="reveal-grid" id="revealGrid"></div>
+    <div class="reveal-foot">
+      <button class="btn" id="revealAll">全部翻开</button>
+      <button class="btn primary" id="revealOk">收 下</button>
+    </div>
+  </div>
+</div>
+
+<!-- 战斗回放浮层 -->
+<div id="battleView">
+  <div class="bv-bg" id="bvBg"></div>
+  <div id="bvFlash"></div>
+  <div id="bvBanner"></div>
+
+  <div class="bv-top">
+    <button class="btn danger" id="bvClose">撤 退</button>
+    <div class="bv-headtitle">
+      <div class="bv-title" id="bvTitle">战 斗</div>
+      <div class="bv-sub num"><span id="bvWave"></span><span class="bv-dia">◆</span><span id="bvRound"></span></div>
+    </div>
+    <button class="btn" id="bvSpeed">速度 ×2</button>
+    <button class="btn" id="bvAuto">自动</button>
+    <button class="btn" id="bvSkip">跳 过</button>
+  </div>
+
+  <div class="bv-bondrow" id="bvBonds"></div>
+
+  <div class="bv-main">
+    <aside class="bv-logpanel">
+      <div class="panel-title" style="font-size:14px">战 况</div>
+      <div class="bv-log" id="bvLog"></div>
+      <div class="bv-hint">六气相克：克制 +30% / 被克 −15%</div>
+    </aside>
+
+    <div class="bv-board">
+      <div class="bv-row" id="bvFoes"></div>
+      <div class="bv-row" id="bvAllies"></div>
+    </div>
+  </div>
+
+  <div class="bv-bottom">
+    <div class="bv-actor" id="bvActor">
+      <div class="ba-face" id="baFace"></div>
+      <div class="ba-info">
+        <div class="ba-name-row"><span class="ba-name" id="baName">—</span><span class="ba-tag" id="baTag"></span></div>
+        <div class="ba-meta num" id="baMeta"></div>
+        <div class="ba-hp"><i id="baHp" style="width:0%"></i><span class="num" id="baHpT">0 / 0</span></div>
+        <div class="ba-en num" id="baEn">怒气 0/100</div>
+        <div class="ba-stat" id="baStat"></div>
+        <div class="ba-buffs" id="baBuffs"></div>
+      </div>
+    </div>
+    <div class="bv-skills" id="bvSkills"></div>
+  </div>
+
+  <!-- 终式元素特效层（按角色元素/定位出不同演出，铺在 cut-in 立绘之上） -->
+  <div id="bvUltFx"></div>
+
+  <!-- 终式 cut-in -->
+  <div id="bvCutin">
+    <div class="ci-shade"></div>
+    <img class="ci-art" id="ciArt" alt="">
+    <div class="ci-text">
+      <div class="ci-who" id="ciWho"></div>
+      <div class="ci-skill" id="ciSkill"></div>
+      <div class="ci-desc" id="ciDesc"></div>
+    </div>
+  </div>
+</div>
+
+<div id="modalHost"></div>
+<div id="tooltip"></div>
+<div id="toasts"></div>
+
+<script src="js/core.js"></script>
+<script src="js/story-emo.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/starter-gift.js"></script>
+<script src="js/screens-main.js"></script>
+<script src="js/screens-mid.js"></script>
+<script src="js/battle-ui.js"></script>
+<script src="js/battle-fx.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/settle.js"></script>
+<script src="js/events.js"></script>
+<script src="js/report.js"></script>
+<script src="js/realm.js"></script>
+<script src="js/tutorial.js"></script>
+</body>
+</html>

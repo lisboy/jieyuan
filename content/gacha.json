@@ -1,0 +1,74 @@
+{
+  "comment": "卡池与保底。概率之和必须为 1，由 validate.mjs 卡死；保底状态存在玩家存档里，因此抽取序列只由 (banner, seed, pullIndex) 决定，可复现、可回归测试。",
+  "cost": {
+    "single": 160,
+    "ten": 1440,
+    "tenPullCount": 10,
+    "bonusPerTen": 0,
+    "note": "十连 1440 玉 = 9 折。缘玉单抽价 160，即 3000 初始玉 = 18 抽。"
+  },
+  "perPullEssence": 4,
+  "perPullEssenceNote": "每抽固定给 4 尘缘（十连 40），加上重复卡回收，保证'抽不动也不亏'。2026-10-26 重校：重复卡那份原来是主来源（实测每抽 ≈22 尘缘），把'120 尘缘/片'压成了 5 抽一片；重复卡尘缘砍到 1/4 后，全重复口径约 77 尘缘/十连，即 120 尘缘 ≈ 1.5 次十连换 1 片定向残卷。",
+  "rates": {
+    "diamond": 0.0005,
+    "red": 0.012,
+    "gold": 0.06,
+    "purple": 0.18,
+    "blue": 0.4,
+    "green": 0.3475
+  },
+  "pity": {
+    "softAt": 51,
+    "redRateStepPerPull": 0.06,
+    "hardAt": 80,
+    "tenGuarantees": "blue",
+    "carriesOverBetweenBanners": {
+      "red": false,
+      "purple": false
+    },
+    "note": "2026-11-04 新增晶钻档：晶钻 0.05%（全池最稀有，晶钻限定池 160 抽硬保底）、红 1.2%（UR）、金 6%（SSR）、紫 18%（SR）、蓝 40%（R）、绿 34.75%（N）；十连至少一张蓝及以上。"
+  },
+  "dupConversion": {
+    "use": "economy.decompose",
+    "note": "重复卡自动转本体残卷 + 尘缘，见 economy.json。"
+  },
+  "banners": {
+    "novice": {
+      "label": "初逢",
+      "type": "novice",
+      "pool": "all",
+      "pullLimit": 60,
+      "guaranteeRedAt": 60,
+      "costDiscount": 0.5,
+      "note": "限 60 抽，五折，第 60 抽必出一张 UR。新人第一队靠它。"
+    },
+    "standard": {
+      "label": "尘缘簿",
+      "type": "standard",
+      "pool": "all",
+      "note": "常驻池，129 张全入池。"
+    },
+    "diamond": {
+      "label": "晶月临照",
+      "type": "featured",
+      "featured": [
+        "dk-gh-08"
+      ],
+      "pool": "all",
+      "rateBoost": {
+        "diamond": 0.0005,
+        "red": 0
+      },
+      "noRed": true,
+      "diamondHardAt": 160,
+      "diamondSoftAt": 120,
+      "diamondRateStepPerPull": 0.01,
+      "note": "晶钻限定池：全池仅姬月寒一张晶钻，基础出率万分之五；120 抽起进入软保底，每多 1 抽晶钻出率 +1%（其余阶位按比例压缩），160 抽硬保底必出当期 UP 晶钻（姬月寒），且保底卡必须以翻卡结果的形式呈现。本池不产出其他 UR（红阶出率 0，软/硬保底也不抬红），其余阶位照常。"
+    }
+  },
+  "poolRules": {
+    "excludeOwnedMaxStar": 0,
+    "newCharacterOnlyInStandard": false,
+    "note": "所有角色常驻可抽，限定池只是提高出率与定向，不做'错过就没了'——单人开发不做绝版焦虑。晶钻角色全池仅姬月寒，所有池共享万分之五的晶钻出率。"
+  }
+}

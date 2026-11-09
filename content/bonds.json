@@ -1,0 +1,1148 @@
+{
+  "comment": "羁绊：team 里同时上阵 tier 名成员即触发。加成通过 Member.bias 注入战斗，大招是表现层的合击演出。",
+  "schema": 1,
+  "bonds": [
+    {
+      "id": "bond-faction-zf",
+      "kind": "faction",
+      "name": "紫府·星案同契",
+      "tier": 2,
+      "members": [
+        "ur-zf-01",
+        "ur-zf-03",
+        "ssr-zf-02",
+        "ssr-zf-03",
+        "sr-zf-01",
+        "sr-zf-02",
+        "sr-zf-03",
+        "sr-zf-04",
+        "r-zf-01",
+        "r-zf-02",
+        "r-zf-03",
+        "r-zf-04",
+        "n-zf-01",
+        "ur-zf-04",
+        "r-zf-07",
+        "ssr-zf-04",
+        "sr-zf-05",
+        "sr-zf-06",
+        "r-zf-05",
+        "r-zf-06",
+        "n-zf-03",
+        "n-zf-04"
+      ],
+      "bonus": {
+        "atk": 1.06,
+        "hp": 1.06,
+        "spd": 1
+      },
+      "effect": "同门同气：攻击 +6%、生命 +6%",
+      "ult": {
+        "name": "紫垣照影·星落成章",
+        "desc": "两人同引星案，紫气垂落如帘，把敌人的命数改写成一页废稿。"
+      }
+    },
+    {
+      "id": "bond-faction-gh",
+      "kind": "faction",
+      "name": "广寒·拾霜同契",
+      "tier": 2,
+      "members": [
+        "ur-gh-01",
+        "ssr-gh-06",
+        "ssr-gh-05",
+        "ssr-gh-01",
+        "ur-gh-04",
+        "sr-gh-01",
+        "ur-gh-05",
+        "sr-gh-03",
+        "sr-gh-04",
+        "r-gh-01",
+        "ur-gh-06",
+        "r-gh-03",
+        "ur-gh-07",
+        "dk-gh-08",
+        "n-gh-01",
+        "n-gh-02",
+        "ssr-gh-03",
+        "ssr-gh-04",
+        "sr-gh-05",
+        "sr-gh-06",
+        "r-gh-05",
+        "r-gh-06",
+        "n-gh-03",
+        "n-gh-04"
+      ],
+      "bonus": {
+        "atk": 1.06,
+        "hp": 1.06,
+        "spd": 1
+      },
+      "effect": "同门同气：攻击 +6%、生命 +6%",
+      "ult": {
+        "name": "广寒同樽·霜月共影",
+        "desc": "拾霜司共举一盏冷月，霜线自地面升起，将战场冻成一幅静物。"
+      }
+    },
+    {
+      "id": "bond-faction-yx",
+      "kind": "faction",
+      "name": "云岫·万灵同契",
+      "tier": 2,
+      "members": [
+        "ur-yx-01",
+        "ssr-yx-01",
+        "ssr-yx-02",
+        "ssr-yx-03",
+        "sr-yx-01",
+        "sr-yx-02",
+        "sr-yx-03",
+        "sr-yx-04",
+        "r-yx-01",
+        "r-yx-02",
+        "r-yx-03",
+        "r-yx-04",
+        "n-yx-01",
+        "n-yx-02",
+        "r-yx-07",
+        "ssr-yx-04",
+        "ssr-yx-05",
+        "sr-yx-05",
+        "r-yx-05",
+        "r-yx-06",
+        "n-yx-03",
+        "n-yx-04"
+      ],
+      "bonus": {
+        "atk": 1.06,
+        "hp": 1.06,
+        "spd": 1
+      },
+      "effect": "同门同气：攻击 +6%、生命 +6%",
+      "ult": {
+        "name": "万灵同声·岫云共起",
+        "desc": "万灵坞唤来满山草木同声而鸣，云岫翻涌，替同伴挡下一劫。"
+      }
+    },
+    {
+      "id": "bond-faction-qx",
+      "kind": "faction",
+      "name": "栖霞·书隐同契",
+      "tier": 2,
+      "members": [
+        "ur-qx-01",
+        "ssr-qx-01",
+        "ssr-qx-02",
+        "sr-qx-01",
+        "sr-qx-02",
+        "sr-qx-03",
+        "sr-qx-04",
+        "ur-qx-03",
+        "r-qx-02",
+        "r-qx-03",
+        "r-qx-04",
+        "n-qx-01",
+        "ur-qx-04",
+        "r-qx-07",
+        "ssr-qx-03",
+        "ssr-qx-04",
+        "sr-qx-05",
+        "r-qx-05",
+        "r-qx-06",
+        "n-qx-03",
+        "n-qx-04"
+      ],
+      "bonus": {
+        "atk": 1.06,
+        "hp": 1.06,
+        "spd": 1
+      },
+      "effect": "同门同气：攻击 +6%、生命 +6%",
+      "ult": {
+        "name": "栖霞共砚·书断长夜",
+        "desc": "两人合砚落笔，字迹化作锁链缠住长夜，敌人读到自己的败局。"
+      }
+    },
+    {
+      "id": "bond-faction-cc",
+      "kind": "faction",
+      "name": "赤城·剑炉同契",
+      "tier": 2,
+      "members": [
+        "ur-cc-01",
+        "ssr-cc-01",
+        "ssr-cc-02",
+        "sr-cc-01",
+        "sr-cc-02",
+        "sr-cc-03",
+        "sr-cc-04",
+        "r-cc-01",
+        "r-cc-02",
+        "r-cc-03",
+        "r-cc-04",
+        "n-cc-01",
+        "n-cc-02",
+        "r-cc-06",
+        "ssr-cc-03",
+        "ssr-cc-04",
+        "sr-cc-05",
+        "sr-cc-06",
+        "r-cc-05",
+        "n-cc-03"
+      ],
+      "bonus": {
+        "atk": 1.06,
+        "hp": 1.06,
+        "spd": 1
+      },
+      "effect": "同门同气：攻击 +6%、生命 +6%",
+      "ult": {
+        "name": "赤城同炉·剑鸣九霄",
+        "desc": "赤城剑炉同开一炉，铁水成刃，一剑鸣彻九霄。"
+      }
+    },
+    {
+      "id": "bond-faction-yh",
+      "kind": "faction",
+      "name": "瀛海·珠阙同契",
+      "tier": 2,
+      "members": [
+        "ur-yh-01",
+        "ur-yh-03",
+        "ur-yh-04",
+        "ur-yh-05",
+        "sr-yh-01",
+        "sr-yh-02",
+        "sr-yh-03",
+        "sr-yh-04",
+        "r-yh-01",
+        "ur-yh-06",
+        "r-yh-03",
+        "ur-yh-07",
+        "ur-yh-08",
+        "ur-yh-09",
+        "r-yh-06",
+        "ssr-yh-04",
+        "sr-yh-05",
+        "sr-yh-06",
+        "r-yh-05",
+        "n-yh-03"
+      ],
+      "bonus": {
+        "atk": 1.06,
+        "hp": 1.06,
+        "spd": 1
+      },
+      "effect": "同门同气：攻击 +6%、生命 +6%",
+      "ult": {
+        "name": "瀛海同舟·珠阙潮生",
+        "desc": "瀛海珠阙合潮而起，万顷水光托着同门，把敌人压回潮底。"
+      }
+    },
+    {
+      "id": "bond-element-flame",
+      "kind": "element",
+      "name": "六气·离火同阵",
+      "tier": 2,
+      "members": [
+        "ur-cc-01",
+        "ssr-cc-01",
+        "ur-yh-05",
+        "sr-cc-01",
+        "sr-cc-02",
+        "sr-cc-04",
+        "r-cc-02",
+        "r-cc-03",
+        "n-cc-01",
+        "n-cc-02",
+        "sr-yh-04",
+        "ur-yh-07",
+        "r-cc-06",
+        "ssr-cc-03",
+        "ssr-cc-04",
+        "sr-cc-05",
+        "r-cc-05",
+        "n-cc-03"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "hp": 1,
+        "spd": 1.04
+      },
+      "effect": "同源相引：攻击 +8%、速度 +4%",
+      "ult": {
+        "name": "离火焚天·灯花照夜",
+        "desc": "同气者的火并作一处，灯花炸开成海，烧穿敌阵。"
+      }
+    },
+    {
+      "id": "bond-element-verdant",
+      "kind": "element",
+      "name": "六气·青木同阵",
+      "tier": 2,
+      "members": [
+        "ssr-yx-01",
+        "ssr-yx-02",
+        "ur-yh-04",
+        "sr-yx-01",
+        "sr-yx-02",
+        "sr-yx-03",
+        "sr-yx-04",
+        "r-yx-02",
+        "r-yx-03",
+        "n-yx-01",
+        "n-yx-02",
+        "sr-yh-03",
+        "r-yh-03",
+        "r-yx-07",
+        "ssr-yx-04",
+        "sr-yx-05",
+        "sr-yh-06",
+        "r-yx-05",
+        "n-yx-03"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "hp": 1,
+        "spd": 1.04
+      },
+      "effect": "同源相引：攻击 +8%、速度 +4%",
+      "ult": {
+        "name": "青木回春·万壑生风",
+        "desc": "林气同源，枯枝一瞬抽芽，风过万壑皆为援手。"
+      }
+    },
+    {
+      "id": "bond-element-tide",
+      "kind": "element",
+      "name": "六气·沧水同阵",
+      "tier": 2,
+      "members": [
+        "ur-yh-01",
+        "ssr-qx-01",
+        "ur-yh-03",
+        "sr-qx-02",
+        "r-qx-02",
+        "r-qx-04",
+        "ur-qx-04",
+        "sr-yh-01",
+        "sr-yh-02",
+        "r-yh-01",
+        "ur-yh-06",
+        "ur-yh-08",
+        "ur-yh-09",
+        "r-yh-06",
+        "ssr-qx-04",
+        "ssr-yh-04",
+        "sr-yh-05",
+        "r-qx-06",
+        "r-yh-05",
+        "n-qx-04",
+        "n-yh-03"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "hp": 1,
+        "spd": 1.04
+      },
+      "effect": "同源相引：攻击 +8%、速度 +4%",
+      "ult": {
+        "name": "沧水回澜·墨池生浪",
+        "desc": "同源之水叠成一浪高过一浪，把敌人推回岸上。"
+      }
+    },
+    {
+      "id": "bond-element-light",
+      "kind": "element",
+      "name": "六气·曜光同阵",
+      "tier": 2,
+      "members": [
+        "ur-qx-01",
+        "ur-zf-03",
+        "ssr-zf-03",
+        "sr-zf-02",
+        "sr-zf-04",
+        "r-zf-02",
+        "r-zf-04",
+        "ur-zf-04",
+        "sr-qx-01",
+        "sr-qx-04",
+        "ur-qx-03",
+        "n-qx-01",
+        "r-zf-07",
+        "ssr-zf-04",
+        "ssr-qx-03",
+        "sr-zf-06",
+        "sr-qx-05",
+        "r-zf-06",
+        "r-qx-05",
+        "n-zf-04",
+        "n-qx-03"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "hp": 1,
+        "spd": 1.04
+      },
+      "effect": "同源相引：攻击 +8%、速度 +4%",
+      "ult": {
+        "name": "曜光初照·千镜同辉",
+        "desc": "同气者共引一线天光，千镜同辉，无处可藏。"
+      }
+    },
+    {
+      "id": "bond-element-storm",
+      "kind": "element",
+      "name": "六气·紫雷同阵",
+      "tier": 2,
+      "members": [
+        "ur-zf-01",
+        "ssr-gh-06",
+        "ssr-zf-02",
+        "ur-gh-04",
+        "ssr-qx-02",
+        "ssr-cc-02",
+        "sr-zf-01",
+        "sr-zf-03",
+        "sr-gh-03",
+        "r-zf-01",
+        "r-zf-03",
+        "n-zf-01",
+        "ur-gh-06",
+        "n-gh-02",
+        "sr-qx-03",
+        "r-qx-03",
+        "sr-cc-03",
+        "r-cc-01",
+        "r-cc-04",
+        "r-qx-07",
+        "ssr-gh-04",
+        "sr-zf-05",
+        "sr-gh-06",
+        "sr-cc-06",
+        "r-zf-05",
+        "r-gh-06",
+        "n-zf-03",
+        "n-gh-04"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "hp": 1,
+        "spd": 1.04
+      },
+      "effect": "同源相引：攻击 +8%、速度 +4%",
+      "ult": {
+        "name": "九霄雷动·紫电同鸣",
+        "desc": "同源之雷互相引动，一道落下，满场皆是回响。"
+      }
+    },
+    {
+      "id": "bond-element-dusk",
+      "kind": "element",
+      "name": "六气·素月同阵",
+      "tier": 2,
+      "members": [
+        "ur-gh-01",
+        "ur-yx-01",
+        "ssr-gh-05",
+        "ssr-gh-01",
+        "ssr-yx-03",
+        "sr-gh-01",
+        "ur-gh-05",
+        "sr-gh-04",
+        "r-gh-01",
+        "r-gh-03",
+        "ur-gh-07",
+        "dk-gh-08",
+        "n-gh-01",
+        "r-yx-01",
+        "r-yx-04",
+        "ssr-gh-03",
+        "ssr-yx-05",
+        "sr-gh-05",
+        "r-gh-05",
+        "r-yx-06",
+        "n-gh-03",
+        "n-yx-04"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "hp": 1,
+        "spd": 1.04
+      },
+      "effect": "同源相引：攻击 +8%、速度 +4%",
+      "ult": {
+        "name": "暮云合璧·雁字成行",
+        "desc": "暮色相合，雁阵掠过战场，敌人的身影被一寸寸吞掉。"
+      }
+    },
+    {
+      "id": "bond-role-burst",
+      "kind": "role",
+      "name": "破军·相济同心",
+      "tier": 2,
+      "members": [
+        "ssr-gh-05",
+        "ssr-yx-03",
+        "ssr-qx-02",
+        "ssr-cc-02",
+        "ur-yh-03",
+        "sr-zf-01",
+        "r-zf-02",
+        "r-zf-03",
+        "ur-gh-06",
+        "r-yx-03",
+        "ur-qx-03",
+        "r-cc-02",
+        "n-cc-01",
+        "sr-yh-04",
+        "ssr-yh-04",
+        "sr-gh-05",
+        "sr-cc-06",
+        "r-zf-05",
+        "r-yh-05",
+        "n-qx-03"
+      ],
+      "bonus": {
+        "atk": 1.03,
+        "hp": 1.1,
+        "spd": 1
+      },
+      "effect": "同行相济：生命 +10%、攻击 +3%",
+      "ult": {
+        "name": "破军同锋·矢无虚发",
+        "desc": "两人同执一锋，前后相衔，把一处伤口凿成深井。"
+      }
+    },
+    {
+      "id": "bond-role-cleave",
+      "kind": "role",
+      "name": "席卷·相济同心",
+      "tier": 2,
+      "members": [
+        "ur-yx-01",
+        "ssr-zf-03",
+        "ur-gh-04",
+        "ur-yh-05",
+        "ur-gh-05",
+        "ur-yh-06",
+        "r-yx-01",
+        "sr-qx-02",
+        "sr-cc-01",
+        "ssr-yx-05",
+        "ssr-cc-03",
+        "sr-qx-05",
+        "r-gh-05",
+        "n-yx-03"
+      ],
+      "bonus": {
+        "atk": 1.03,
+        "hp": 1.1,
+        "spd": 1
+      },
+      "effect": "同行相济：生命 +10%、攻击 +3%",
+      "ult": {
+        "name": "席卷共势·千山一推",
+        "desc": "同势者并肩一推，阵线如同退潮，全线崩开。"
+      }
+    },
+    {
+      "id": "bond-role-break",
+      "kind": "role",
+      "name": "凿阵·相济同心",
+      "tier": 2,
+      "members": [
+        "ur-cc-01",
+        "ssr-zf-02",
+        "sr-yx-03",
+        "n-yx-02",
+        "sr-qx-04",
+        "ur-yh-07",
+        "r-yx-07",
+        "n-cc-03",
+        "sr-gh-04",
+        "r-cc-03",
+        "ssr-qx-03"
+      ],
+      "bonus": {
+        "atk": 1.03,
+        "hp": 1.1,
+        "spd": 1
+      },
+      "effect": "同行相济：生命 +10%、攻击 +3%",
+      "ult": {
+        "name": "凿阵同心·叩关碎甲",
+        "desc": "两人同凿一处，甲声连响三下，护体自此作废。"
+      }
+    },
+    {
+      "id": "bond-role-sustain",
+      "kind": "role",
+      "name": "回春·相济同心",
+      "tier": 2,
+      "members": [
+        "ur-gh-01",
+        "ur-zf-03",
+        "ssr-yx-01",
+        "ssr-qx-01",
+        "r-zf-01",
+        "n-zf-01",
+        "r-gh-01",
+        "n-gh-02",
+        "r-yx-02",
+        "r-qx-04",
+        "sr-cc-04",
+        "r-cc-04",
+        "sr-yh-03",
+        "ur-yh-08",
+        "r-cc-06",
+        "r-yh-06",
+        "ssr-zf-04",
+        "ssr-yx-04",
+        "sr-yx-05",
+        "r-yx-05",
+        "r-qx-06",
+        "n-gh-03",
+        "n-yx-04"
+      ],
+      "bonus": {
+        "atk": 1.03,
+        "hp": 1.1,
+        "spd": 1
+      },
+      "effect": "同行相济：生命 +10%、攻击 +3%",
+      "ult": {
+        "name": "回春共脉·长生同渡",
+        "desc": "两人合脉，伤处以肉眼可见的速度合上，谁也没被落下。"
+      }
+    },
+    {
+      "id": "bond-role-guard",
+      "kind": "role",
+      "name": "磐石·相济同心",
+      "tier": 2,
+      "members": [
+        "ur-yh-01",
+        "ssr-gh-01",
+        "ssr-cc-01",
+        "sr-zf-02",
+        "r-zf-04",
+        "n-gh-01",
+        "sr-yx-01",
+        "sr-yx-04",
+        "n-yx-01",
+        "sr-qx-03",
+        "n-qx-01",
+        "sr-cc-02",
+        "sr-yh-01",
+        "ur-yh-09",
+        "r-zf-07",
+        "ssr-cc-04",
+        "sr-zf-06",
+        "sr-cc-05",
+        "r-yx-06",
+        "r-qx-05",
+        "n-zf-04",
+        "n-qx-04"
+      ],
+      "bonus": {
+        "atk": 1.03,
+        "hp": 1.1,
+        "spd": 1
+      },
+      "effect": "同行相济：生命 +10%、攻击 +3%",
+      "ult": {
+        "name": "磐石同守·不动如山",
+        "desc": "两人并肩成墙，山河不动，风浪自消。"
+      }
+    },
+    {
+      "id": "bond-role-control",
+      "kind": "role",
+      "name": "摄魂·相济同心",
+      "tier": 2,
+      "members": [
+        "ur-zf-01",
+        "ur-yh-04",
+        "sr-zf-04",
+        "sr-gh-01",
+        "ur-gh-07",
+        "sr-yx-02",
+        "sr-qx-01",
+        "r-qx-02",
+        "r-cc-01",
+        "r-yh-01",
+        "r-qx-07",
+        "ssr-gh-03",
+        "sr-yh-06",
+        "r-zf-06"
+      ],
+      "bonus": {
+        "atk": 1.03,
+        "hp": 1.1,
+        "spd": 1
+      },
+      "effect": "同行相济：生命 +10%、攻击 +3%",
+      "ult": {
+        "name": "摄魂同禁·万法归寂",
+        "desc": "两人同念一诀，场上符辞尽数哑火，敌手只剩呼吸。"
+      }
+    },
+    {
+      "id": "bond-role-support",
+      "kind": "role",
+      "name": "扶倾·相济同心",
+      "tier": 2,
+      "members": [
+        "ur-qx-01",
+        "ssr-gh-06",
+        "ssr-yx-02",
+        "sr-zf-03",
+        "sr-gh-03",
+        "ur-zf-04",
+        "r-gh-03",
+        "r-yx-04",
+        "r-qx-03",
+        "ur-qx-04",
+        "sr-cc-03",
+        "n-cc-02",
+        "sr-yh-02",
+        "r-yh-03",
+        "ssr-gh-04",
+        "ssr-qx-04",
+        "sr-zf-05",
+        "sr-gh-06",
+        "sr-yh-05",
+        "r-gh-06",
+        "r-cc-05",
+        "n-zf-03",
+        "n-gh-04",
+        "n-yh-03"
+      ],
+      "bonus": {
+        "atk": 1.03,
+        "hp": 1.1,
+        "spd": 1
+      },
+      "effect": "同行相济：生命 +10%、攻击 +3%",
+      "ult": {
+        "name": "扶倾同舟·递力共渡",
+        "desc": "一人递力，一人接住，气脉在两具身体间来回奔跑。"
+      }
+    },
+    {
+      "id": "bond-own-shuangxin",
+      "kind": "own",
+      "name": "霜心同契",
+      "tier": 2,
+      "members": [
+        "ur-gh-01",
+        "ssr-gh-06"
+      ],
+      "bonus": {
+        "atk": 1.05,
+        "hp": 1.05
+      },
+      "effect": "拥有即生效：顾霜心与谢枕霜攻击+5%、生命+5%（姐妹）",
+      "ult": {
+        "name": "双霜映月",
+        "desc": "姐妹各执半盏霜，合为一轮完整的冷月。"
+      }
+    },
+    {
+      "id": "bond-own-xinglan",
+      "kind": "own",
+      "name": "星汉同明",
+      "tier": 2,
+      "members": [
+        "ur-zf-01",
+        "r-zf-07"
+      ],
+      "bonus": {
+        "atk": 1.05,
+        "spd": 1.04
+      },
+      "effect": "拥有即生效：虞清都与褚星阑攻击+5%、速度+4%（同僚知己）",
+      "ult": {
+        "name": "紫垣双曜",
+        "desc": "两盏星灯并燃，照见同一条归途。"
+      }
+    },
+    {
+      "id": "bond-own-chaoyue",
+      "kind": "own",
+      "name": "潮月相生",
+      "tier": 2,
+      "members": [
+        "ur-yh-01",
+        "ur-yx-01"
+      ],
+      "bonus": {
+        "atk": 1.04,
+        "hp": 1.06
+      },
+      "effect": "拥有即生效：姜潮生与涂山月见攻击+4%、生命+6%（旧识）",
+      "ult": {
+        "name": "潮托月出",
+        "desc": "潮水把月亮举出海面，月光替潮水指路。"
+      }
+    },
+    {
+      "id": "bond-own-zhuchan",
+      "kind": "own",
+      "name": "铸火青灯",
+      "tier": 2,
+      "members": [
+        "ur-cc-01",
+        "r-cc-06"
+      ],
+      "bonus": {
+        "atk": 1.05,
+        "hp": 1.05
+      },
+      "effect": "拥有即生效：赫连铸与青枢攻击+5%、生命+5%（炉火相承）",
+      "ult": {
+        "name": "万焰一灯",
+        "desc": "铸炉万焰，终收进一盏青灯。"
+      }
+    },
+    {
+      "id": "bond-own-linsong",
+      "kind": "own",
+      "name": "栖微同卷",
+      "tier": 2,
+      "members": [
+        "ur-qx-01",
+        "r-qx-07"
+      ],
+      "bonus": {
+        "atk": 1.04,
+        "spd": 1.05
+      },
+      "effect": "拥有即生效：林栖迟与宋知微攻击+4%、速度+5%（同窗）",
+      "ult": {
+        "name": "青简双声",
+        "desc": "两卷书同时翻页，字句自己站出来迎敌。"
+      }
+    },
+    {
+      "id": "bond-own-shuangzhu",
+      "kind": "own",
+      "name": "霜杵捣月",
+      "tier": 2,
+      "members": [
+        "ur-gh-01",
+        "ssr-gh-01"
+      ],
+      "bonus": {
+        "atk": 1.04,
+        "hp": 1.04
+      },
+      "effect": "拥有即生效：顾霜心与白玉杵攻击+4%、生命+4%（主从）",
+      "ult": {
+        "name": "玉杵寒霜",
+        "desc": "玉杵一落，霜花四溅。"
+      }
+    },
+    {
+      "id": "bond-own-suli",
+      "kind": "own",
+      "name": "月见灵狸",
+      "tier": 2,
+      "members": [
+        "ur-yx-01",
+        "ssr-yx-03"
+      ],
+      "bonus": {
+        "atk": 1.04,
+        "spd": 1.04
+      },
+      "effect": "拥有即生效：涂山月见与苏狸攻击+4%、速度+4%（同族·狐）",
+      "ult": {
+        "name": "双尾衔月",
+        "desc": "大狐小狐各衔一角月影。"
+      }
+    },
+    {
+      "id": "bond-own-yanzhao",
+      "kind": "own",
+      "name": "砚上清秋",
+      "tier": 2,
+      "members": [
+        "ur-zf-01",
+        "ur-zf-03"
+      ],
+      "bonus": {
+        "hp": 1.05,
+        "spd": 1.04
+      },
+      "effect": "拥有即生效：虞清都与沈砚秋生命+5%、速度+4%（师徒）",
+      "ult": {
+        "name": "一笔秋声",
+        "desc": "师授一笔，弟子写成满纸秋声。"
+      }
+    },
+    {
+      "id": "bond-own-tieyi",
+      "kind": "own",
+      "name": "铁衣承焰",
+      "tier": 2,
+      "members": [
+        "ur-cc-01",
+        "ssr-cc-01"
+      ],
+      "bonus": {
+        "atk": 1.04,
+        "hp": 1.05
+      },
+      "effect": "拥有即生效：赫连铸与殷铁衣攻击+4%、生命+5%（兄弟）",
+      "ult": {
+        "name": "炉前双壁",
+        "desc": "一铸一守，炉前立起两堵墙。"
+      }
+    },
+    {
+      "id": "bond-own-luozhu",
+      "kind": "own",
+      "name": "潮生珠泪",
+      "tier": 2,
+      "members": [
+        "ur-yh-01",
+        "ur-yh-03"
+      ],
+      "bonus": {
+        "atk": 1.05,
+        "spd": 1.03
+      },
+      "effect": "拥有即生效：姜潮生与洛珠攻击+5%、速度+3%（恋人）",
+      "ult": {
+        "name": "沧海一珠",
+        "desc": "潮声里浮起一颗不落的珠。"
+      }
+    },
+    {
+      "id": "bond-own-jiangshen",
+      "kind": "own",
+      "name": "江左烟月",
+      "tier": 2,
+      "members": [
+        "r-yx-07",
+        "ssr-yx-05"
+      ],
+      "bonus": {
+        "atk": 1.04,
+        "hp": 1.04
+      },
+      "effect": "拥有即生效：辛夷与江鹤衣攻击+4%、生命+4%（同族）",
+      "ult": {
+        "name": "烟月双渡",
+        "desc": "烟水与月色各渡一程。"
+      }
+    },
+    {
+      "id": "bond-dep-shuangyue",
+      "kind": "deploy",
+      "name": "霜月三叠",
+      "tier": 3,
+      "members": [
+        "ur-gh-01",
+        "ssr-gh-05",
+        "ssr-gh-03"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "crit": 1.05
+      },
+      "effect": "三人同阵生效：攻击+8%、暴击+5%（广寒霜月阵）",
+      "ult": {
+        "name": "三月临霜",
+        "desc": "三轮冷月叠在一处，霜光连成一片。"
+      }
+    },
+    {
+      "id": "bond-dep-hanluan",
+      "kind": "deploy",
+      "name": "寒鸾同翔",
+      "tier": 3,
+      "members": [
+        "ssr-gh-06",
+        "ur-gh-04",
+        "ssr-gh-04"
+      ],
+      "bonus": {
+        "atk": 1.07,
+        "spd": 1.06
+      },
+      "effect": "三人同阵生效：攻击+7%、速度+6%（广寒风雪阵）",
+      "ult": {
+        "name": "鸾掠寒空",
+        "desc": "三只寒鸾掠过，风雪自成阵势。"
+      }
+    },
+    {
+      "id": "bond-dep-xingyi",
+      "kind": "deploy",
+      "name": "紫垣星弈",
+      "tier": 3,
+      "members": [
+        "ur-zf-01",
+        "r-zf-07",
+        "ssr-zf-03"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "crit": 1.04
+      },
+      "effect": "三人同阵生效：攻击+8%、暴击+4%（紫府星弈阵）",
+      "ult": {
+        "name": "星落为劫",
+        "desc": "三子落盘，星位皆成杀劫。"
+      }
+    },
+    {
+      "id": "bond-dep-huoyan",
+      "kind": "deploy",
+      "name": "炉火燎原",
+      "tier": 3,
+      "members": [
+        "ur-cc-01",
+        "ssr-cc-02",
+        "ssr-cc-03"
+      ],
+      "bonus": {
+        "atk": 1.09,
+        "hp": 1.05
+      },
+      "effect": "三人同阵生效：攻击+9%、生命+5%（赤城火阵）",
+      "ult": {
+        "name": "万焰燎原",
+        "desc": "炉火出城，一路烧到天边。"
+      }
+    },
+    {
+      "id": "bond-dep-taoxian",
+      "kind": "deploy",
+      "name": "桃源三隐",
+      "tier": 3,
+      "members": [
+        "ur-qx-01",
+        "ssr-qx-03",
+        "ssr-qx-04"
+      ],
+      "bonus": {
+        "atk": 1.07,
+        "hp": 1.06
+      },
+      "effect": "三人同阵生效：攻击+7%、生命+6%（青墟隐者阵）",
+      "ult": {
+        "name": "桃源闭门",
+        "desc": "桃源门一关，外人再找不到路。"
+      }
+    },
+    {
+      "id": "bond-dep-yaolin",
+      "kind": "deploy",
+      "name": "妖林三魅",
+      "tier": 3,
+      "members": [
+        "ur-yx-01",
+        "r-yx-07",
+        "ssr-yx-05"
+      ],
+      "bonus": {
+        "atk": 1.08,
+        "spd": 1.05
+      },
+      "effect": "三人同阵生效：攻击+8%、速度+5%（妖潮魅影阵）",
+      "ult": {
+        "name": "千影过林",
+        "desc": "林子里影子比树还多。"
+      }
+    },
+    {
+      "id": "bond-dep-tingchao",
+      "kind": "deploy",
+      "name": "听潮三叠浪",
+      "tier": 3,
+      "members": [
+        "ur-yh-01",
+        "r-yh-06",
+        "ssr-yh-04"
+      ],
+      "bonus": {
+        "atk": 1.07,
+        "hp": 1.07
+      },
+      "effect": "三人同阵生效：攻击+7%、生命+7%（云海归潮阵）",
+      "ult": {
+        "name": "九叠潮",
+        "desc": "潮声叠了九次才拍上岸。"
+      }
+    },
+    {
+      "id": "bond-dep-zhuque",
+      "kind": "deploy",
+      "name": "四灵·朱焰",
+      "tier": 4,
+      "members": [
+        "ur-cc-01",
+        "r-cc-06",
+        "ssr-cc-03",
+        "ssr-cc-04"
+      ],
+      "bonus": {
+        "atk": 1.1,
+        "hp": 1.08
+      },
+      "effect": "四人同阵生效：攻击+10%、生命+8%（赤城全员火阵）",
+      "ult": {
+        "name": "朱雀南巡",
+        "desc": "朱焰自南天掠过，四野皆燃。"
+      }
+    },
+    {
+      "id": "bond-dep-xuanming",
+      "kind": "deploy",
+      "name": "四灵·玄溟",
+      "tier": 4,
+      "members": [
+        "ur-yh-01",
+        "r-yh-06",
+        "ur-yh-03",
+        "ssr-yh-04"
+      ],
+      "bonus": {
+        "atk": 1.09,
+        "hp": 1.09,
+        "spd": 1.04
+      },
+      "effect": "四人同阵生效：攻击+9%、生命+9%、速度+4%（云海全员潮阵）",
+      "ult": {
+        "name": "玄冥北望",
+        "desc": "北溟水涨，四灵俯首。"
+      }
+    },
+    {
+      "id": "bond-dep-qishuang",
+      "kind": "deploy",
+      "name": "四灵·栖霜",
+      "tier": 4,
+      "members": [
+        "ur-gh-01",
+        "ssr-gh-06",
+        "ssr-gh-05",
+        "ssr-gh-04",
+        "dk-gh-08"
+      ],
+      "bonus": {
+        "atk": 1.1,
+        "spd": 1.06
+      },
+      "effect": "四人同阵生效：攻击+10%、速度+6%（广寒全员霜阵）",
+      "ult": {
+        "name": "广寒清夜",
+        "desc": "霜满长夜，月不西沉。"
+      }
+    }
+  ]
+}

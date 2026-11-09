@@ -1,0 +1,1680 @@
+{
+  "schema": 1,
+  "id": "caiyao-1",
+  "kind": "permanent",
+  "name": "云岫·采药行",
+  "desc": "云岫山脚的药农今年收成好，缺的是肯上山的帮手。十二段山路，掉落散页与注疏，采满可在药行换洗髓丹——前期养成最缺的那一口。 除主线关卡外，另设三段试炼与一重挑战，通关可得活动积分，积分可在商店兑换。",
+  "banner": "/bg/evbg-caiyao_v1.jpg",
+  "shop": [
+    {
+      "key": "page20",
+      "label": "散页 ×20",
+      "cost": {
+        "score": 150
+      },
+      "stock": 5,
+      "mat": {
+        "page": 30
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "note5",
+      "label": "注疏 ×5",
+      "cost": {
+        "score": 250
+      },
+      "stock": 5,
+      "mat": {
+        "note": 8
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "pill1",
+      "label": "洗髓丹 ×1",
+      "cost": {
+        "score": 350
+      },
+      "stock": 3,
+      "mat": {
+        "pill": 2
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "jade60",
+      "label": "缘玉 ×60",
+      "cost": {
+        "score": 550
+      },
+      "stock": 2,
+      "jade": 360,
+      "costNote": "活动积分"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ev-caiyao-01",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 01·晨露",
+      "faction": "yx",
+      "stamina": 5,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.2,
+          "team": [
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 10,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 10,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-tenghua2",
+              "rarity": "blue",
+              "level": 10,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 10,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 10,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 16,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 3000,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 20
+      },
+      "drop": {
+        "coin": 700,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 18,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 3,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m02",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 02·溪畔",
+      "faction": "yx",
+      "stamina": 6,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.2,
+          "team": [
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 11,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 11,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-tenghua2",
+              "rarity": "blue",
+              "level": 11,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 11,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 11,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 16,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 3360,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 20
+      },
+      "drop": {
+        "coin": 784,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 18,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 3,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m03",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 03·石阶",
+      "faction": "yx",
+      "stamina": 6,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.3,
+          "team": [
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 12,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 12,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 12,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-gui",
+              "rarity": "blue",
+              "level": 12,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 12,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 16,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 4480,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 952,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 22,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m04",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 04·药王庙",
+      "faction": "yx",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.4,
+          "team": [
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 12,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 12,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-tenghua2",
+              "rarity": "blue",
+              "level": 12,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-gui",
+              "rarity": "blue",
+              "level": 12,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 12,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 6160,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1120,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 5,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 2,
+            "rate": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-02",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 05·山径",
+      "faction": "yx",
+      "stamina": 5,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.3,
+          "team": [
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 13,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 13,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 13,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-gui",
+              "rarity": "blue",
+              "level": 13,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 13,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 16,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 4000,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 850,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 22,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m06",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 06·云崖",
+      "faction": "yx",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 14,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 14,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 14,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 14,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 14,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8960,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 40
+      },
+      "drop": {
+        "coin": 1456,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 32,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 2,
+            "rate": 0.8
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.35
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m07",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 07·采芝",
+      "faction": "yx",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.2,
+          "team": [
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 15,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 15,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-tenghua2",
+              "rarity": "blue",
+              "level": 15,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 15,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 15,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 16,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 3360,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 20
+      },
+      "drop": {
+        "coin": 784,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 18,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 3,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-03",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 08·药圃",
+      "faction": "yx",
+      "stamina": 6,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.4,
+          "team": [
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 16,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 16,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-tenghua2",
+              "rarity": "blue",
+              "level": 16,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-gui",
+              "rarity": "blue",
+              "level": 16,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 16,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 5500,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1000,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 5,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 2,
+            "rate": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m09",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 09·百草",
+      "faction": "yx",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.3,
+          "team": [
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 17,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 17,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 17,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-gui",
+              "rarity": "blue",
+              "level": 17,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 17,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 16,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 4480,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 952,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 22,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m10",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 10·归山",
+      "faction": "yx",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.4,
+          "team": [
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 17,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 17,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-tenghua2",
+              "rarity": "blue",
+              "level": 17,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-gui",
+              "rarity": "blue",
+              "level": 17,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu",
+              "rarity": "green",
+              "level": 17,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 6160,
+        "jade": 60,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1120,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "page",
+            "qty": 5,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 2,
+            "rate": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-m11",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 11·满载",
+      "faction": "yx",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 18,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8960,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 40
+      },
+      "drop": {
+        "coin": 1456,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 32,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 2,
+            "rate": 0.8
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.35
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-04",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "name": "云岫·采药行 12·老参",
+      "faction": "yx",
+      "stamina": 6,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 18,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 18,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8000,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 40
+      },
+      "drop": {
+        "coin": 1300,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 32,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 2,
+            "rate": 0.8
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.35
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-1-trial-01",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "section": "trial",
+      "name": "云岫·采药行 试炼01·霜刃初试",
+      "faction": "yx",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.7,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 42,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 42,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 42,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thin-qi"
+        },
+        {
+          "id": "thunder-pool"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-caiyao-04",
+      "firstClear": {
+        "coin": 16000,
+        "jade": 120,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 1625,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 42,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 10,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-1-trial-02",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "section": "trial",
+      "name": "云岫·采药行 试炼02·百炼成钢",
+      "faction": "yx",
+      "stamina": 12,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.9,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 46,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 46,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 46,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thunder-pool"
+        },
+        {
+          "id": "miasma"
+        }
+      ],
+      "stars": {
+        "turns": 28,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-caiyao-1-trial-01",
+      "firstClear": {
+        "coin": 20000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 1820,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 54,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 14,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-1-trial-03",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "section": "trial",
+      "name": "云岫·采药行 试炼03·绝地反击",
+      "faction": "yx",
+      "stamina": 13,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.1,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 52,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.2,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 52,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.3,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 52,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "miasma"
+        },
+        {
+          "id": "iron-wall"
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-caiyao-1-trial-02",
+      "firstClear": {
+        "coin": 24000,
+        "jade": 200,
+        "stamina": 0,
+        "dust": 75
+      },
+      "drop": {
+        "coin": 2015,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 66,
+            "rate": 1
+          },
+          {
+            "key": "note",
+            "qty": 18,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-caiyao-1-challenge-01",
+      "chapter": 0,
+      "chapterLabel": "云岫·采药行",
+      "kind": "event",
+      "section": "challenge",
+      "name": "云岫·采药行 挑战01·无上之境",
+      "faction": "yx",
+      "stamina": 15,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.3,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 60,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.5,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 60,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.7,
+          "team": [
+            {
+              "id": "boss-yx-teng",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-yan",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-lu2",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-mang",
+              "rarity": "blue",
+              "level": 60,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yx-zhi",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "iron-wall"
+        },
+        {
+          "id": "lone-band"
+        },
+        {
+          "id": "twin"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-caiyao-1-trial-03",
+      "firstClear": {
+        "coin": 40000,
+        "jade": 300,
+        "stamina": 0,
+        "dust": 120
+      },
+      "drop": {
+        "coin": 2600,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 90,
+            "rate": 1
+          },
+          {
+            "key": "xinyin",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    }
+  ],
+  "bossArt": "/art/bosses/boss-yx-teng.png",
+  "bossId": "boss-yx-teng",
+  "accent": "#8fd1a0",
+  "themeSub": "晨露药谷 · 云岫采行",
+  "milestones": [
+    {
+      "score": 6000,
+      "label": "初露锋芒",
+      "reward": {
+        "coin": 22000,
+        "mat": {
+          "page": 34
+        }
+      }
+    },
+    {
+      "score": 15000,
+      "label": "渐入佳境",
+      "reward": {
+        "jade": 270,
+        "mat": {
+          "soul": 51
+        }
+      }
+    },
+    {
+      "score": 30000,
+      "label": "名动一方",
+      "reward": {
+        "jade": 540,
+        "mat": {
+          "pill": 5
+        }
+      }
+    },
+    {
+      "score": 60000,
+      "label": "登峰造极",
+      "reward": {
+        "jade": 1080,
+        "mat": {
+          "tome:gold": 2
+        }
+      }
+    }
+  ]
+}

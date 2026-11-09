@@ -1,0 +1,59 @@
+{
+  "comment": "稀有度定义：成长值/等级上限/星级上限三重拉开。base+growth 为七维模板，角色实际值 = 模板 × role 权重 × 个体 bias。erg（怒气回复）决定终结技频率：满上限 100，每回合回复 erg 点，数值按旧公式 4+速度/8+星+突破×2 的节奏反推（支援/回春快、破军慢），缘器词条可继续往上叠。base 的 atk/hp 比决定前期战斗节奏：按 2026-10-23 的实测（原比例下一次普攻只削掉同强度对手 17% 生命，杂兵关要打 19 个回合/单位），把 base atk 提高约 1.5 倍、base hp 降约 0.85 倍，让普攻落在 25%~30% 生命、护盾与治疗仍按 atk 缩放。growth 不动，所以后期强度曲线与关卡 mult 不用重排。2026-10-27 按玩家反馈“升级手感弱”将五档 growth 整体上调 +60%（纯数据改动，属性公式不变）：每级绝对涨幅变大、升级更明显；代价是满级裸装更高、后期偏易，若实测后期过松，可轻量上调关卡 enemy mult/level 收回。",
+  "starStep": 0.06,
+  "breakthroughStep": 0.10,
+  "tiers": {
+    "diamond": {
+      "code": "dk", "label": "晶钻", "order": 6, "color": "#9be9ff", "frame": "晶钻边框·棱晶流光",
+      "levelCap": 80, "starCap": 10, "cost": 5, "dropWeight": 0.05, "powerScale": 1.875,
+      "base":  { "hp": 168, "atk": 67.5, "def": 28.5, "mdef": 25.5, "spd": 24, "crit": 0.27, "erg": 9 },
+      "growth": { "hp": 23.04, "atk": 10.08, "def": 6.96, "mdef": 6.24, "spd": 1.32, "crit": 0.00288, "erg": 0.204 },
+      "slots": ["attack", "ultimate", "passive", "assist"],
+      "fodder": { "toTier": null, "sameToNext": null, "note": "晶钻不可作材料；重复获得转化为大量本体残卷与尘缘" }
+    },
+    "red": {
+      "code": "ur", "label": "红", "order": 5, "color": "#c8323c", "frame": "红边框·鎏金纹路",
+      "levelCap": 80, "starCap": 10, "cost": 5, "dropWeight": 1.2, "powerScale": 1.25,
+      "base":  { "hp": 112, "atk": 45, "def": 19, "mdef": 17, "spd": 16, "crit": 0.18, "erg": 6 },
+      "growth": { "hp": 15.36, "atk": 6.72, "def": 4.64, "mdef": 4.16, "spd": 0.88, "crit": 0.00192, "erg": 0.136 },
+      "slots": ["attack", "ultimate", "passive", "assist"],
+      "fodder": { "toTier": null, "sameToNext": null, "note": "红阶不作材料，满星后转为图鉴/觉醒消耗" }
+    },
+    "gold": {
+      "code": "ssr", "label": "金", "order": 4, "color": "#d9a13b", "frame": "金边框·浮雕纹路",
+      "levelCap": 70, "starCap": 10, "cost": 4, "dropWeight": 6.0, "powerScale": 1.10,
+      "base":  { "hp": 100, "atk": 39, "def": 17, "mdef": 15, "spd": 15, "crit": 0.15, "erg": 5.8 },
+      "growth": { "hp": 12.48, "atk": 5.44, "def": 3.84, "mdef": 3.36, "spd": 0.72, "crit": 0.0016, "erg": 0.112 },
+      "slots": ["attack", "ultimate", "passive", "assist"],
+      "fodder": { "toTier": "red", "sameToNext": 4, "note": "4 张同名金卡 → 红阶觉醒材料" }
+    },
+    "purple": {
+      "code": "sr", "label": "紫", "order": 3, "color": "#8257c9", "frame": "紫边框·简纹",
+      "levelCap": 60, "starCap": 10, "cost": 3, "dropWeight": 18.0, "powerScale": 1.00,
+      "base":  { "hp": 88, "atk": 35, "def": 15, "mdef": 13, "spd": 14, "crit": 0.12, "erg": 5.5 },
+      "growth": { "hp": 9.92, "atk": 4.32, "def": 3.04, "mdef": 2.72, "spd": 0.576, "crit": 0.00128, "erg": 0.096 },
+      "slots": ["attack", "ultimate", "passive"],
+      "fodder": { "toTier": "gold", "sameToNext": 3, "note": "3 张同稀有度紫卡 → 随机金卡升星材料" }
+    },
+    "blue": {
+      "code": "r", "label": "蓝", "order": 2, "color": "#3b7fd4", "frame": "蓝边框·素面",
+      "levelCap": 50, "starCap": 10, "cost": 2, "dropWeight": 40.0, "powerScale": 0.88,
+      "base":  { "hp": 78, "atk": 30, "def": 13, "mdef": 12, "spd": 13, "crit": 0.10, "erg": 5.2 },
+      "growth": { "hp": 7.84, "atk": 3.36, "def": 2.4, "mdef": 2.08, "spd": 0.448, "crit": 0.00096, "erg": 0.08 },
+      "slots": ["attack", "ultimate", "passive"],
+      "fodder": { "toTier": "purple", "sameToNext": 3, "note": "3 张同稀有度蓝卡 → 随机紫卡" }
+    },
+    "green": {
+      "code": "n", "label": "绿", "order": 1, "color": "#3f9e63", "frame": "绿边框·素面",
+      "levelCap": 40, "starCap": 10, "cost": 1, "dropWeight": 34.8, "powerScale": 0.76,
+      "base":  { "hp": 70, "atk": 27, "def": 12, "mdef": 11, "spd": 12, "crit": 0.08, "erg": 5 },
+      "growth": { "hp": 6.08, "atk": 2.56, "def": 1.92, "mdef": 1.6, "spd": 0.32, "crit": 0.00064, "erg": 0.064 },
+      "slots": ["attack", "ultimate", "passive"],
+      "fodder": { "toTier": "blue", "sameToNext": 3, "note": "绿卡是主力材料池与低费开局位" }
+    }
+  },
+  "expected_at_cap": {
+    "comment": "满级裸装生命自检值，validate.mjs 用它防住数值漂移。2026-10-27 growth 整体 +60% 后同步重算；晶钻 = 红阶 1.5 倍。",
+    "diamond": 1988, "red": 1325, "gold": 961, "purple": 673, "blue": 462, "green": 307
+  }
+}

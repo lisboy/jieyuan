@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" width="120" height="160">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8e6b0"/>
+      <stop offset="0.45" stop-color="#e2b45c"/>
+      <stop offset="1" stop-color="#a9762a"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7e2"/>
+      <stop offset="1" stop-color="#e8d3a4"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#ffe9a8" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="60" cy="78" rx="55" ry="72" fill="url(#glow)"/>
+  <!-- 外层符纸 -->
+  <rect x="18" y="12" width="84" height="136" rx="10" fill="url(#gold)" stroke="#7c5318" stroke-width="2"/>
+  <rect x="24" y="18" width="72" height="124" rx="7" fill="url(#paper)" stroke="#b98a3a" stroke-width="1.5"/>
+  <!-- 顶部结绳 -->
+  <path d="M60 6 C48 0 40 8 46 15 C50 20 56 18 60 15 C64 18 70 20 74 15 C80 8 72 0 60 6 Z" fill="#c0392b" stroke="#7d2118" stroke-width="1.5"/>
+  <circle cx="60" cy="15" r="3.2" fill="#e8c26a" stroke="#7c5318" stroke-width="1"/>
+  <!-- 中央「命」印 -->
+  <rect x="36" y="46" width="48" height="48" rx="6" fill="#b3261e" opacity="0.92"/>
+  <text x="60" y="82" text-anchor="middle" font-family="STKaiti, KaiTi, serif" font-size="34" font-weight="700" fill="#ffe9b0">命</text>
+  <!-- 竖排纹样 -->
+  <path d="M44 108 h32 M44 118 h32 M44 128 h24" stroke="#b98a3a" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+  <!-- 四角云纹 -->
+  <path d="M30 26 q6 4 0 8 M90 26 q-6 4 0 8 M30 134 q6 -4 0 -8 M90 134 q-6 -4 0 -8" stroke="#b98a3a" stroke-width="1.4" fill="none" opacity="0.7"/>
+</svg>

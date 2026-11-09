@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Shiyuan.Core</RootNamespace>
+    <!-- 只有这一层碰 System.Text.Json：Unity 里没有这个 BCL 程序集，
+         所以 Shiyuan.Core 保持零 JSON 依赖，可以被 Assets/Scripts 原样导入。 -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shiyuan.Core\Shiyuan.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,137 @@
+{
+  "_comment": "角色『缘』专属天赋链（2026-11-05 需求 / 2026-11-05 二次修订 / 2026-11-05 三次修订）：抽到新角色是 0 缘，之后每再抽到一次 +1 缘，最高 6 缘。每个角色一条独立缘谱（按定位族生成，名字挂在角色名下）。每一缘都带『机制型效果』（fx 原语，进战斗真实生效）——减速/减防/易伤/追击/护盾/回复/嘲讽/定身/续气等，属性只是辅料。6 缘是质变档，机制与数值都明显加强，但整体曲线按定位族平衡：输出族偏易伤与追击，守护族偏减伤与护盾，辅助族偏全队增益。0 缘没有星；1 绿、2 蓝、3 紫、4 金、5 红金、6 粉金。满 6 缘后再抽到该角色，按 dupeEssenceAtMax 折算大量缘尘。三次修订：天赋强度按角色阶级递增（tierScale），同一套缘谱在不同阶级角色身上数值不同。",
+  "version": 3,
+  "max": 6,
+  "tierScale": {
+    "diamond": 1.30,
+    "red": 1.15,
+    "gold": 1.00,
+    "purple": 0.90,
+    "blue": 0.80,
+    "green": 0.70
+  },
+  "tierScaleNote": "天赋强度按角色阶级递增：以金阶为 1.00 基准，晶钻 ×1.30 / 红 ×1.15 / 金 ×1.00 / 紫 ×0.90 / 蓝 ×0.80 / 绿 ×0.70。作用范围：缘谱的 self/team 属性、以及 fx 机制数值（减防/易伤/追击伤害/治疗/护盾/怒气/控制概率）；回合数与可叠层数不随阶级变化。",
+  "colors": [
+    { "fate": 0, "label": "0缘", "color": null, "glow": null },
+    { "fate": 1, "label": "1缘", "color": "#5fd38d", "glow": "rgba(95,211,141,.65)" },
+    { "fate": 2, "label": "2缘", "color": "#4aa8ff", "glow": "rgba(74,168,255,.65)" },
+    { "fate": 3, "label": "3缘", "color": "#b678ff", "glow": "rgba(182,120,255,.7)" },
+    { "fate": 4, "label": "4缘", "color": "#f5c542", "glow": "rgba(245,197,66,.75)" },
+    { "fate": 5, "label": "5缘", "color": "#ff8a4a", "glow": "rgba(255,138,74,.85)", "color2": "#ffd76a" },
+    { "fate": 6, "label": "6缘", "color": "#ff9ad5", "glow": "rgba(255,154,213,.95)", "color2": "#ffd76a" }
+  ],
+  "dupeEssenceAtMax": {
+    "diamond": 2400,
+    "red": 1200,
+    "gold": 600,
+    "purple": 200,
+    "blue": 60,
+    "green": 20
+  },
+  "dupeEssenceAtMaxNote": "6 缘后再抽到：不再给缘，改给大量缘尘（约同稀有度单次重复给的 4~8 倍），让『抽满以后还在抽』不是纯亏。",
+  "directScroll": {
+    "diamond": { "cost": 24000, "stockPerWeek": 1 },
+    "red": { "cost": 8000, "stockPerWeek": 2 },
+    "gold": { "cost": 4000, "stockPerWeek": 3 },
+    "purple": { "cost": 1500, "stockPerWeek": 4 },
+    "blue": { "cost": 600, "stockPerWeek": 5 },
+    "green": { "cost": 200, "stockPerWeek": 6 }
+  },
+  "directScrollNote": "定向残卷（尘缘阁）改为『任选一名已拥有角色，缘 +1』，价格按目标角色阶级区分，越高的阶越贵且每周库存越少；6 缘角色不能再用。",
+  "templates": {
+    "burst": {
+      "title": "破军缘谱",
+      "tag": "爆发 · 破甲追击",
+      "levels": [
+        { "name": "初缘·锋起", "self": { "atk": 1.07 }, "team": {}, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "def", "op": "mul", "value": 0.97, "turns": 99 }], "desc": "敌方全体防御 -3%" },
+        { "name": "双缘·同袍", "self": {}, "team": { "atk": 1.03 }, "fx": [{ "k": "trigger", "on": "turn_end", "fx": [{ "k": "damage", "target": "enemy_all", "coef": 0.05, "type": "true" }] }], "desc": "每次行动后，对敌方全体追加 5% 攻击的无视防御伤害" },
+        { "name": "三缘·回锋", "self": { "hp": 1.08, "def": 1.05 }, "team": {}, "fx": [{ "k": "mark", "target": "enemy_all", "dmgTake": 0.05, "turns": 99 }], "desc": "敌方全体受到伤害 +5%" },
+        { "name": "四缘·照隙", "self": { "crit": 0.05 }, "team": {}, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "buff", "target": "self", "stat": "atk", "op": "mul", "value": 1.02, "turns": 99, "maxStacks": 3 }] }], "desc": "每回合开始自身攻击 +2%（可叠 3 层）" },
+        { "name": "五缘·共刃", "self": {}, "team": { "atk": 1.03, "crit": 0.02 }, "fx": [{ "k": "trigger", "on": "turn_end", "fx": [{ "k": "damage", "target": "enemy_all", "coef": 0.07, "type": "true" }] }], "desc": "每次行动后追加 7% 攻击的无视防御伤害" },
+        { "name": "六缘·万星归一", "self": { "atk": 1.24, "crit": 0.10 }, "team": { "atk": 1.06 }, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "def", "op": "mul", "value": 0.86, "turns": 99 }, { "k": "mark", "target": "enemy_all", "dmgTake": 0.08, "turns": 99 }, { "k": "trigger", "on": "turn_end", "fx": [{ "k": "damage", "target": "enemy_all", "coef": 0.12, "type": "true" }] }], "desc": "敌方全体防御 -14%、受到伤害 +8%；每次行动后追加 12% 攻击的无视防御伤害" }
+      ]
+    },
+    "cleave": {
+      "title": "席卷缘谱",
+      "tag": "群攻 · 疾风连斩",
+      "levels": [
+        { "name": "初缘·风起", "self": { "atk": 1.06 }, "team": {}, "fx": [{ "k": "buff", "target": "self", "stat": "spd", "op": "mul", "value": 1.03, "turns": 99 }], "desc": "自身速度 +3%" },
+        { "name": "双缘·连潮", "self": {}, "team": { "atk": 1.02 }, "fx": [{ "k": "trigger", "on": "turn_end", "fx": [{ "k": "damage", "target": "enemy_all", "coef": 0.04, "type": "phys" }] }], "desc": "每次行动后，对敌方全体造成 4% 攻击的物理伤害" },
+        { "name": "三缘·回澜", "self": { "hp": 1.07, "def": 1.05 }, "team": {}, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "spd", "op": "mul", "value": 0.96, "turns": 99 }], "desc": "敌方全体速度 -4%" },
+        { "name": "四缘·逐影", "self": { "spd": 1.06 }, "team": {}, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "buff", "target": "self", "stat": "spd", "op": "mul", "value": 1.02, "turns": 99, "maxStacks": 3 }] }], "desc": "每回合开始自身速度 +2%（可叠 3 层）" },
+        { "name": "五缘·同舟", "self": {}, "team": { "hp": 1.04 }, "fx": [{ "k": "mark", "target": "enemy_all", "dmgTake": 0.04, "turns": 99 }], "desc": "敌方全体受到伤害 +4%" },
+        { "name": "六缘·千山俱动", "self": { "atk": 1.22, "spd": 1.08 }, "team": { "atk": 1.05, "hp": 1.04 }, "fx": [{ "k": "buff", "target": "self", "stat": "spd", "op": "mul", "value": 1.05, "turns": 99 }, { "k": "trigger", "on": "turn_end", "fx": [{ "k": "damage", "target": "enemy_all", "coef": 0.10, "type": "phys" }] }], "desc": "自身速度 +5%；每次行动后对敌方全体造成 10% 攻击的物理伤害" }
+      ]
+    },
+    "break": {
+      "title": "凿阵缘谱",
+      "tag": "破防 · 碎甲穿透",
+      "levels": [
+        { "name": "初缘·叩关", "self": { "atk": 1.06 }, "team": {}, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "def", "op": "mul", "value": 0.94, "turns": 99 }], "desc": "敌方全体防御 -6%" },
+        { "name": "双缘·同心", "self": {}, "team": { "atk": 1.03 }, "fx": [{ "k": "trigger", "on": "turn_end", "fx": [{ "k": "damage", "coef": 0.08, "type": "true" }] }], "desc": "每次行动后对当前目标追加 8% 攻击的无视防御伤害" },
+        { "name": "三缘·守拙", "self": { "hp": 1.06, "def": 1.06 }, "team": {}, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "mdef", "op": "mul", "value": 0.94, "turns": 99 }], "desc": "敌方全体法防 -6%" },
+        { "name": "四缘·裂甲", "self": { "crit": 0.04 }, "team": {}, "fx": [{ "k": "mark", "target": "enemy_all", "dmgTake": 0.05, "turns": 99 }], "desc": "敌方全体受到伤害 +5%" },
+        { "name": "五缘·共凿", "self": {}, "team": { "crit": 0.02 }, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "def", "op": "mul", "value": 0.98, "turns": 99, "maxStacks": 3 }] }], "desc": "每回合开始敌方全体防御 -2%（可叠 3 层）" },
+        { "name": "六缘·天关尽开", "self": { "atk": 1.24, "crit": 0.08 }, "team": { "atk": 1.06 }, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "def", "op": "mul", "value": 0.85, "turns": 99 }, { "k": "debuff", "target": "enemy_all", "stat": "mdef", "op": "mul", "value": 0.85, "turns": 99 }, { "k": "mark", "target": "enemy_all", "dmgTake": 0.06, "turns": 99 }], "desc": "敌方全体双防 -15%、受到伤害 +6%" }
+      ]
+    },
+    "sustain": {
+      "title": "回春缘谱",
+      "tag": "治疗 · 生生不息",
+      "levels": [
+        { "name": "初缘·生息", "self": { "hp": 1.07 }, "team": {}, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "heal", "target": "ally_all", "coef": 0.04 }] }], "desc": "每回合开始为全队回复 4% 攻击力的生命" },
+        { "name": "双缘·荫庇", "self": {}, "team": { "hp": 1.03 }, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "shield", "target": "self", "coef": 0.04, "turns": 2 }] }], "desc": "每回合开始为自身套上 4% 攻击力的护盾（2 回合）" },
+        { "name": "三缘·柔韧", "self": { "def": 1.08, "mdef": 1.06 }, "team": {}, "fx": [{ "k": "buff", "target": "self", "stat": "healTake", "op": "mul", "value": 1.10, "turns": 99 }], "desc": "自身受疗效果 +10%" },
+        { "name": "四缘·脉动", "self": { "erg": 1.10 }, "team": {}, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "heal", "target": "ally_all", "coef": 0.03 }] }], "desc": "每回合开始为全队额外回复 3% 攻击力的生命" },
+        { "name": "五缘·同泽", "self": {}, "team": { "hp": 1.04 }, "fx": [{ "k": "buff", "target": "ally_all", "stat": "dmgTake", "op": "mul", "value": 0.96, "turns": 99 }], "desc": "全队受到伤害 -4%" },
+        { "name": "六缘·春回大地", "self": { "hp": 1.15, "erg": 1.15, "atk": 1.10 }, "team": { "hp": 1.06, "def": 1.04 }, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "heal", "target": "ally_all", "coef": 0.08 }] }, { "k": "buff", "target": "ally_all", "stat": "dmgTake", "op": "mul", "value": 0.92, "turns": 99 }], "desc": "每回合开始为全队回复 8% 攻击力的生命；全队受到伤害 -8%" }
+      ]
+    },
+    "guard": {
+      "title": "镇岳缘谱",
+      "tag": "守护 · 不动如山",
+      "levels": [
+        { "name": "初缘·立壁", "self": { "hp": 1.08 }, "team": {}, "fx": [{ "k": "buff", "target": "self", "stat": "dmgTake", "op": "mul", "value": 0.94, "turns": 99 }], "desc": "自身受到伤害 -6%" },
+        { "name": "双缘·护道", "self": {}, "team": { "def": 1.04 }, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "shield", "target": "self", "coef": 0.05, "turns": 2 }] }], "desc": "每回合开始为自身套上 5% 攻击力的护盾（2 回合）" },
+        { "name": "三缘·磐心", "self": { "def": 1.10, "mdef": 1.06 }, "team": {}, "fx": [{ "k": "buff", "target": "self", "stat": "dmgTake", "op": "mul", "value": 0.94, "turns": 99 }], "desc": "自身受到伤害再 -6%" },
+        { "name": "四缘·厚土", "self": { "hp": 1.06 }, "team": {}, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "taunt", "turns": 2 }] }], "desc": "每回合开始嘲讽敌方：单体技能只能攻击自己" },
+        { "name": "五缘·同岳", "self": {}, "team": { "hp": 1.04 }, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "atk", "op": "mul", "value": 0.95, "turns": 99 }], "desc": "敌方全体攻击 -5%" },
+        { "name": "六缘·不周不倒", "self": { "hp": 1.18, "def": 1.12 }, "team": { "hp": 1.05, "def": 1.05 }, "fx": [{ "k": "buff", "target": "ally_all", "stat": "dmgTake", "op": "mul", "value": 0.90, "turns": 99 }, { "k": "trigger", "on": "turn_start", "fx": [{ "k": "heal", "target": "self", "coef": 0.06 }] }], "desc": "全队受到伤害 -10%；每回合自身回复 6% 攻击力的生命" }
+      ]
+    },
+    "control": {
+      "title": "摄魂缘谱",
+      "tag": "控制 · 迟滞定身",
+      "levels": [
+        { "name": "初缘·聚气", "self": { "erg": 1.08 }, "team": {}, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "spd", "op": "mul", "value": 0.94, "turns": 99 }], "desc": "敌方全体速度 -6%" },
+        { "name": "双缘·牵机", "self": {}, "team": { "spd": 1.03 }, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "spd", "op": "mul", "value": 0.98, "turns": 99, "maxStacks": 3 }] }], "desc": "每回合开始敌方全体速度 -2%（可叠 3 层）" },
+        { "name": "三缘·静水", "self": { "hp": 1.07, "def": 1.05 }, "team": {}, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "atk", "op": "mul", "value": 0.98, "turns": 99, "maxStacks": 3 }] }], "desc": "每回合开始敌方全体攻击 -2%（可叠 3 层）" },
+        { "name": "四缘·迷踪", "self": { "spd": 1.06, "crit": 0.03 }, "team": {}, "fx": [{ "k": "buff", "target": "self", "stat": "spd", "op": "mul", "value": 1.03, "turns": 99 }], "desc": "自身速度 +3%" },
+        { "name": "五缘·共缚", "self": {}, "team": { "erg": 1.05 }, "fx": [{ "k": "trigger", "on": "turn_end", "fx": [{ "k": "stun", "target": "enemy_random", "chance": 0.08, "turns": 1 }] }], "desc": "每次行动后 8% 概率定身一名敌人 1 回合" },
+        { "name": "六缘·万籁俱寂", "self": { "erg": 1.15, "spd": 1.08, "atk": 1.12 }, "team": { "spd": 1.05, "atk": 1.03 }, "fx": [{ "k": "debuff", "target": "enemy_all", "stat": "spd", "op": "mul", "value": 0.90, "turns": 99 }, { "k": "debuff", "target": "enemy_all", "stat": "atk", "op": "mul", "value": 0.92, "turns": 99 }], "desc": "敌方全体速度 -10%、攻击 -8%" }
+      ]
+    },
+    "support": {
+      "title": "玄辅缘谱",
+      "tag": "辅助 · 同心续气",
+      "levels": [
+        { "name": "初缘·灵犀", "self": { "hp": 1.06 }, "team": {}, "fx": [{ "k": "buff", "target": "ally_all", "stat": "atk", "op": "mul", "value": 1.03, "turns": 99 }], "desc": "全队攻击 +3%" },
+        { "name": "双缘·扶摇", "self": {}, "team": { "atk": 1.02, "hp": 1.02 }, "fx": [{ "k": "trigger", "on": "turn_start", "fx": [{ "k": "energy", "target": "ally_all", "value": 3 }] }], "desc": "每回合开始全队怒气 +3" },
+        { "name": "三缘·御风", "self": { "def": 1.06, "mdef": 1.06 }, "team": {}, "fx": [{ "k": "buff", "target": "ally_all", "stat": "def", "op": "mul", "value": 1.04, "turns": 99 }], "desc": "全队防御 +4%" },
+        { "name": "四缘·周流", "self": { "erg": 1.10 }, "team": {}, "fx": [{ "k": "trigger", "on": "turn_end", "fx": [{ "k": "energy", "target": "ally_all", "value": 2 }] }], "desc": "每次行动后全队怒气 +2" },
+        { "name": "五缘·辅车", "self": {}, "team": { "atk": 1.03, "hp": 1.03 }, "fx": [{ "k": "buff", "target": "ally_all", "stat": "dmgTake", "op": "mul", "value": 0.96, "turns": 99 }], "desc": "全队受到伤害 -4%" },
+        { "name": "六缘·造化同心", "self": { "hp": 1.12, "erg": 1.12, "atk": 1.10 }, "team": { "atk": 1.05, "hp": 1.05, "spd": 1.03 }, "fx": [{ "k": "buff", "target": "ally_all", "stat": "atk", "op": "mul", "value": 1.06, "turns": 99 }, { "k": "trigger", "on": "turn_start", "fx": [{ "k": "energy", "target": "ally_all", "value": 4 }] }], "desc": "全队攻击 +6%；每回合开始全队怒气 +4" }
+      ]
+    }
+  },
+  "fxNote": "缘谱的 fx 与技能共用同一套战斗原语（tools/lib/skill-text.mjs / SkillExecutor），由 serve 组装进 allyTeam[].fateFx，C# 开战时按『缘·天赋链』施放：直接 fx 立刻生效，trigger 按 turn_start / turn_end 在本人回合触发。",
+  "starScrolls": {
+    "diamond": { "label": "晶钻升星卷", "color": "#9be9ff" },
+    "red": { "label": "红阶升星卷", "color": "#c8323c" },
+    "gold": { "label": "金阶升星卷", "color": "#d9a13b" },
+    "purple": { "label": "紫阶升星卷", "color": "#8257c9" },
+    "blue": { "label": "蓝阶升星卷", "color": "#3b7fd4" },
+    "green": { "label": "绿阶升星卷", "color": "#3f9e63" }
+  },
+  "starScrollNote": "所有角色升星只消耗『对应阶级升星卷』（1→2 星 1 张，2→3 星 2 张……9→10 星 9 张，满星共 45 张），升星不再吃本体残卷/通用残卷。升星卷只从残卷本掉落（普通 1 张 / 秘本 2 张 / 劫余 3 张，按玩家队伍里最缺的那一档产出）；2026-11-06 起不再乘副本 ×3 总倍率、开局也不再赠送，升星回归长期养成目标。"
+}

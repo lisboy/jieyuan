@@ -1,0 +1,158 @@
+{
+  "comment": "新注册账号（含重置存档）的新手教学指引。强制式：聚光+指针指到该点的位置，点对了才推进，其他位置点不动。步骤类型：info=说明（只能点「下一步」）；click=必须点 target；action=点击后等对应 /api/action 返回并满足 wait 条件才推进。顺序按新号真实处境排：初始只有随机 1 个 SSR、尘缘 0、第一关未打 → 先抽卡补人 → 上阵满 5 人 → 升级/升技能强化 → 才出征第一关 → 结算。全程约 7-8 分钟。",
+  "version": 6,
+  "id": "starter-2026",
+  "title": "初入拾缘",
+  "estimatedMinutes": 8,
+  "steps": [
+    {
+      "id": "welcome",
+      "kind": "info",
+      "screen": "home",
+      "seconds": 20,
+      "title": "初入拾缘 · 约 8 分钟",
+      "text": "道友初来乍到。你现在只有一位同行者——开局随机赠送的 SSR 伙伴，第一关也还没打过。\n\n这份指引按顺序带你：抽卡补人 → 上阵满五人 → 升级强化 → 升技能 → 出征首战。每一步都会指给你「点哪里」，只点发光的位置即可；其他位置这时点不动。",
+      "cta": "开 始"
+    },
+    {
+      "id": "hero",
+      "kind": "info",
+      "screen": "home",
+      "target": ".hero-stage",
+      "seconds": 10,
+      "title": "① 主城 · 同行之缘",
+      "text": "中间舞台站着的是开局随机赠送的 SSR 伙伴，已经在出战队伍里——但目前队伍只有这一位。\n\n左右小箭头可以切换舞台上的伙伴，点击立绘会回应你。",
+      "cta": "知道了"
+    },
+    {
+      "id": "open-gacha",
+      "kind": "click",
+      "screen": "home",
+      "target": "#tabs [data-tab=\"gacha\"]",
+      "seconds": 8,
+      "title": "② 去缘阁抽卡",
+      "text": "队伍只有 1 人，先去结缘新伙伴。点击上方发光的「缘阁」页签——缘阁是获得新角色的唯一途径。",
+      "cta": "点缘阁"
+    },
+    {
+      "id": "pick-novice",
+      "kind": "click",
+      "screen": "gacha",
+      "target": "#scr-gacha .banner [data-banner=\"novice\"]",
+      "seconds": 8,
+      "title": "③ 选新手池「初逢」",
+      "text": "左边列着卡池。第一项「初逢」是新手池：五折价、限 60 抽、第 60 抽必出红阶——新人第一队都从这里来。\n\n点它选中。",
+      "cta": "点初逢"
+    },
+    {
+      "id": "do-pull",
+      "kind": "action",
+      "actionType": "pull",
+      "waitHidden": "#reveal.on",
+      "waitNoModal": true,
+      "screen": "gacha",
+      "target": "#scr-gacha [data-pull=\"10\"]",
+      "seconds": 45,
+      "title": "④ 十连结缘",
+      "text": "点「十 连 缘 签」。十连只要 720 缘玉（新手池五折），而且十连必出紫阶以上——这一次能补进好几位伙伴。\n\n翻牌时点卡背翻开，或点「全部翻开」，最后点「收 下」。",
+      "cta": "点十连"
+    },
+    {
+      "id": "after-pull",
+      "kind": "info",
+      "screen": "gacha",
+      "target": "#scr-gacha .gacha-bottom",
+      "seconds": 12,
+      "title": "⑤ 抽到的新伙伴",
+      "text": "抽到的新伙伴已经进名册。**每再抽到一次同名角色，他的「缘」+1**（最高 6 缘）——缘是角色专属天赋链，会加自身属性、也会给全队光环，卡牌顶上的彩色缘星就是它；升星则要靠「对应阶级升星卷」。\n\n接下来去名册，把队伍补满。",
+      "cta": "下一步"
+    },
+    {
+      "id": "open-roster",
+      "kind": "click",
+      "screen": "gacha",
+      "target": "#tabs [data-tab=\"roster\"]",
+      "seconds": 8,
+      "title": "⑥ 去名册编队",
+      "text": "点上方「名册」。名册同时是编队和养成的工作台。",
+      "cta": "点名册"
+    },
+    {
+      "id": "team-up",
+      "kind": "click",
+      "screen": "roster",
+      "target": "#scr-roster [data-tteam]",
+      "repeat": 4,
+      "repeatFillTeam": true,
+      "repeatLabel": "还差 {n} 位",
+      "seconds": 30,
+      "title": "⑦ 上阵补满五人",
+      "text": "现在队伍里只有开局送的那位 SSR。中间角色卡下方有「上 阵」按钮，点一位未上阵的伙伴就会入队。\n\n出战编队最多五人，队伍人越多、战力越高，推图越稳。把队伍补满 5 人再出去。",
+      "cta": "点上阵"
+    },
+    {
+      "id": "do-feed",
+      "kind": "action",
+      "actionType": "feed",
+      "screen": "roster",
+      "target": "#scr-roster [data-feed]",
+      "seconds": 20,
+      "title": "⑧ 升级强化",
+      "text": "第一关还没打，先把等级练起来。右栏是当前选中角色的养成面板，点「升 级」一次升一级，按钮下方会先写清这一级要花多少铜钱、消耗哪些经验物——看清了再点。\n\n等级到上限要「突 破」，升星则要对应阶级的「升星卷」（绿/蓝/紫/金/红/晶钻六档，1→2 星 1 张、2→3 星 2 张……）。重复抽到同名角色还能涨「缘」，最多 6 缘。",
+      "cta": "点升级"
+    },
+    {
+      "id": "do-skill",
+      "kind": "action",
+      "actionType": "skill",
+      "screen": "roster",
+      "target": "#scr-roster [data-skill]",
+      "seconds": 20,
+      "title": "⑨ 升级技能",
+      "text": "「技 能」一栏每条术法右侧有「升级」，点开后会先弹出对比框：左边是当前效果，右边是升级后的效果，确认划算再点「确认升级」。\n\n消耗技能书与铜钱，开局送了 3 本金阶技能书，升一次试试。",
+      "cta": "点升级并确认"
+    },
+    {
+      "id": "open-stages",
+      "kind": "click",
+      "screen": "roster",
+      "target": "#tabs [data-tab=\"stages\"]",
+      "seconds": 8,
+      "title": "⑩ 出征第一关",
+      "text": "队伍满员、也强化过了，去打下第一关。点上方「出征」。",
+      "cta": "点出征"
+    },
+    {
+      "id": "do-battle",
+      "kind": "action",
+      "actionType": "battle",
+      "waitVisible": "[data-settleok]",
+      "screen": "stages",
+      "target": "#scr-stages [data-battle]",
+      "seconds": 90,
+      "title": "⑪ 打第一场",
+      "text": "右下角是当前选中的关卡，点「出 战」。\n\n战斗会自动演出；不想看可以点右上「跳 过」直接看结算。胜利会得铜钱、经验物与缘玉。",
+      "cta": "点出战"
+    },
+    {
+      "id": "close-settle",
+      "kind": "click",
+      "waitNoModal": true,
+      "screen": "stages",
+      "target": "[data-settleok]",
+      "seconds": 10,
+      "title": "⑫ 领取战利品",
+      "text": "结算面板列出本场收获。点「确 定」收下，奖励已经进背包。",
+      "cta": "点确定"
+    },
+    {
+      "id": "finish",
+      "kind": "info",
+      "screen": "stages",
+      "seconds": 20,
+      "title": "可以出发了",
+      "text": "已经带你走完一圈：抽卡补人 → 上阵满编 → 升级/升技能 → 出征首战。\n\n之后顺手记两条：\n· 坊市在顶栏「坊市」。尘缘阁花「尘缘」（重复角色才转出），铜钱坊市花「铜钱」，买之前先看货币。\n· 洞府、历练副本、登仙塔、缘器阁、虚境等新系统，都先看说明再动手。\n\n祝你一路顺缘。",
+      "cta": "踏入江湖"
+    }
+  ]
+}

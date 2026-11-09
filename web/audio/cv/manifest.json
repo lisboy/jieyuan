@@ -1,0 +1,3306 @@
+{
+  "boss-cc-zhu": {
+    "id": "boss-cc-zhu",
+    "name": "炉主",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": -4,
+    "vol": 6,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.wav",
+      "hurt": "hurt.wav",
+      "phase-1": "phase-1.wav",
+      "phase-2": "phase-2.wav",
+      "phase-3": "phase-3.wav",
+      "ultimate": "ultimate.wav",
+      "win": "win.wav"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·炉主·男",
+    "audio_preset": "缘·炉主·男",
+    "audio_note": "2026-11-07 用户反馈男性角色是女声：改用男声预设「缘·炉主·男」按槽位分情绪重制（wav 直出），旧 mp3 备份见 .cv-backup/boss-cc-zhu/"
+  },
+  "boss-gh-shuang": {
+    "id": "boss-gh-shuang",
+    "name": "弃霜人",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 10,
+    "rate": -3,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "phase-1": "phase-1.mp3",
+      "phase-2": "phase-2.mp3",
+      "phase-3": "phase-3.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·弃霜人",
+    "audio_preset": "缘·弃霜人",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·弃霜人」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/boss-gh-shuang/，工具 tools/cv-presets.py"
+  },
+  "boss-qx-du": {
+    "id": "boss-qx-du",
+    "name": "蠹简先生",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -5,
+    "rate": -13,
+    "vol": -4,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.wav",
+      "hurt": "hurt.wav",
+      "phase-1": "phase-1.wav",
+      "phase-2": "phase-2.wav",
+      "phase-3": "phase-3.wav",
+      "ultimate": "ultimate.wav",
+      "win": "win.wav"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·蠹简先生·男",
+    "audio_preset": "缘·蠹简先生·男",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·蠹简先生」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/boss-qx-du/，工具 tools/cv-presets.py"
+  },
+  "boss-xi-shi": {
+    "id": "boss-xi-shi",
+    "name": "隙主·蚀",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -9,
+    "rate": -13,
+    "vol": 4,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "phase-1": "phase-1.mp3",
+      "phase-2": "phase-2.mp3",
+      "phase-3": "phase-3.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·隙主·蚀",
+    "audio_preset": "缘·隙主·蚀",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·隙主·蚀」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/boss-xi-shi/，工具 tools/cv-presets.py"
+  },
+  "boss-yh-jiao": {
+    "id": "boss-yh-jiao",
+    "name": "潮生蛟",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -28,
+    "rate": -14,
+    "vol": 6,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "phase-1": "phase-1.mp3",
+      "phase-2": "phase-2.mp3",
+      "phase-3": "phase-3.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·潮生蛟",
+    "audio_preset": "缘·潮生蛟",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·潮生蛟」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/boss-yh-jiao/，工具 tools/cv-presets.py"
+  },
+  "boss-yuan-wu": {
+    "id": "boss-yuan-wu",
+    "name": "渊主·无名",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -26,
+    "rate": -9,
+    "vol": 6,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "phase-1": "phase-1.mp3",
+      "phase-2": "phase-2.mp3",
+      "phase-3": "phase-3.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·渊主·无名",
+    "audio_preset": "缘·渊主·无名",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·渊主·无名」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/boss-yuan-wu/，工具 tools/cv-presets.py"
+  },
+  "boss-yx-teng": {
+    "id": "boss-yx-teng",
+    "name": "藤冢夫人",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -4,
+    "rate": -10,
+    "vol": 2,
+    "persona": "端庄",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "phase-1": "phase-1.mp3",
+      "phase-2": "phase-2.mp3",
+      "phase-3": "phase-3.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·藤冢夫人",
+    "audio_preset": "缘·藤冢夫人",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·藤冢夫人」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/boss-yx-teng/，工具 tools/cv-presets.py"
+  },
+  "boss-zf-pan": {
+    "id": "boss-zf-pan",
+    "name": "星案判官",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -10,
+    "rate": -14,
+    "vol": 4,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "phase-1": "phase-1.mp3",
+      "phase-2": "phase-2.mp3",
+      "phase-3": "phase-3.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·星案判官",
+    "audio_preset": "缘·星案判官",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·星案判官」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/boss-zf-pan/，工具 tools/cv-presets.py"
+  },
+  "mob-cc-chong": {
+    "id": "mob-cc-chong",
+    "name": "淬火虫",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 9,
+    "rate": 10,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·淬火虫",
+    "audio_preset": "缘·淬火虫",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·淬火虫」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-cc-chong/，工具 tools/cv-presets.py"
+  },
+  "mob-cc-diao": {
+    "id": "mob-cc-diao",
+    "name": "鼓风貂",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 12,
+    "rate": 12,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·鼓风貂",
+    "audio_preset": "缘·鼓风貂",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·鼓风貂」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-cc-diao/，工具 tools/cv-presets.py"
+  },
+  "mob-cc-hou": {
+    "id": "mob-cc-hou",
+    "name": "炉吼",
+    "voice": "zh-CN-YunjianNeural",
+    "pitch": -11,
+    "rate": -10,
+    "vol": 8,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·炉吼",
+    "audio_preset": "缘·炉吼",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·炉吼」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-cc-hou/，工具 tools/cv-presets.py"
+  },
+  "mob-cc-jian": {
+    "id": "mob-cc-jian",
+    "name": "剑冢蜃",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 12,
+    "rate": -13,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·剑冢蜃",
+    "audio_preset": "缘·剑冢蜃",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·剑冢蜃」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-cc-jian/，工具 tools/cv-presets.py"
+  },
+  "mob-cc-quan": {
+    "id": "mob-cc-quan",
+    "name": "铁渣犬",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 1,
+    "rate": -10,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·铁渣犬",
+    "audio_preset": "缘·铁渣犬",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·铁渣犬」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-cc-quan/，工具 tools/cv-presets.py"
+  },
+  "mob-cc-ya": {
+    "id": "mob-cc-ya",
+    "name": "炉火鸦",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 19,
+    "rate": 10,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·炉火鸦",
+    "audio_preset": "缘·炉火鸦",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·炉火鸦」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-cc-ya/，工具 tools/cv-presets.py"
+  },
+  "mob-cc-yong": {
+    "id": "mob-cc-yong",
+    "name": "断刃俑",
+    "voice": "zh-CN-YunyangNeural",
+    "pitch": -11,
+    "rate": -9,
+    "vol": 0,
+    "persona": "儒雅",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·断刃俑",
+    "audio_preset": "缘·断刃俑",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·断刃俑」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-cc-yong/，工具 tools/cv-presets.py"
+  },
+  "mob-gh-bing": {
+    "id": "mob-gh-bing",
+    "name": "冰棱俑",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 21,
+    "rate": -6,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·冰棱俑",
+    "audio_preset": "缘·冰棱俑",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·冰棱俑」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-gh-bing/，工具 tools/cv-presets.py"
+  },
+  "mob-gh-chan": {
+    "id": "mob-gh-chan",
+    "name": "桂魄蟾",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 8,
+    "rate": -13,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·桂魄蟾",
+    "audio_preset": "缘·桂魄蟾",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·桂魄蟾」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-gh-chan/，工具 tools/cv-presets.py"
+  },
+  "mob-gh-e": {
+    "id": "mob-gh-e",
+    "name": "霜蛾幼灵",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -6,
+    "rate": -13,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·霜蛾幼灵",
+    "audio_preset": "缘·霜蛾幼灵",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·霜蛾幼灵」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-gh-e/，工具 tools/cv-presets.py"
+  },
+  "mob-gh-jian": {
+    "id": "mob-gh-jian",
+    "name": "剑霜俑",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 8,
+    "rate": 4,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·剑霜俑",
+    "audio_preset": "缘·剑霜俑",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·剑霜俑」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-gh-jian/，工具 tools/cv-presets.py"
+  },
+  "mob-gh-mao": {
+    "id": "mob-gh-mao",
+    "name": "桂影猫",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 7,
+    "rate": -14,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·桂影猫",
+    "audio_preset": "缘·桂影猫",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·桂影猫」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-gh-mao/，工具 tools/cv-presets.py"
+  },
+  "mob-gh-tu": {
+    "id": "mob-gh-tu",
+    "name": "玉杵兔",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 7,
+    "rate": -14,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·玉杵兔",
+    "audio_preset": "缘·玉杵兔",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·玉杵兔」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-gh-tu/，工具 tools/cv-presets.py"
+  },
+  "mob-gh-zhu": {
+    "id": "mob-gh-zhu",
+    "name": "霜蛛",
+    "voice": "zh-CN-YunyangNeural",
+    "pitch": -20,
+    "rate": -17,
+    "vol": 3,
+    "persona": "冷峻",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·霜蛛",
+    "audio_preset": "缘·霜蛛",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·霜蛛」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-gh-zhu/，工具 tools/cv-presets.py"
+  },
+  "mob-qx-deng": {
+    "id": "mob-qx-deng",
+    "name": "灯下狸",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 21,
+    "rate": 7,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·灯下狸",
+    "audio_preset": "缘·灯下狸",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·灯下狸」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-qx-deng/，工具 tools/cv-presets.py"
+  },
+  "mob-qx-li": {
+    "id": "mob-qx-li",
+    "name": "墨池鲤",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 26,
+    "rate": 0,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·墨池鲤",
+    "audio_preset": "缘·墨池鲤",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·墨池鲤」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-qx-li/，工具 tools/cv-presets.py"
+  },
+  "mob-qx-mo": {
+    "id": "mob-qx-mo",
+    "name": "书冢蠹",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 23,
+    "rate": -1,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·书冢蠹",
+    "audio_preset": "缘·书冢蠹",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·书冢蠹」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-qx-mo/，工具 tools/cv-presets.py"
+  },
+  "mob-qx-shi": {
+    "id": "mob-qx-shi",
+    "name": "石灯傀",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 7,
+    "rate": -8,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·石灯傀",
+    "audio_preset": "缘·石灯傀",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·石灯傀」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-qx-shi/，工具 tools/cv-presets.py"
+  },
+  "mob-qx-yuan": {
+    "id": "mob-qx-yuan",
+    "name": "纸鸢妖",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 29,
+    "rate": 2,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·纸鸢妖",
+    "audio_preset": "缘·纸鸢妖",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·纸鸢妖」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-qx-yuan/，工具 tools/cv-presets.py"
+  },
+  "mob-qx-zhong": {
+    "id": "mob-qx-zhong",
+    "name": "晚钟偶",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 20,
+    "rate": -3,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·晚钟偶",
+    "audio_preset": "缘·晚钟偶",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·晚钟偶」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-qx-zhong/，工具 tools/cv-presets.py"
+  },
+  "mob-qx-zhu": {
+    "id": "mob-qx-zhu",
+    "name": "风竹魈",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 21,
+    "rate": 6,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·风竹魈",
+    "audio_preset": "缘·风竹魈",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·风竹魈」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-qx-zhu/，工具 tools/cv-presets.py"
+  },
+  "mob-yh-bei": {
+    "id": "mob-yh-bei",
+    "name": "珠贝婢",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 6,
+    "rate": -8,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·珠贝婢",
+    "audio_preset": "缘·珠贝婢",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·珠贝婢」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yh-bei/，工具 tools/cv-presets.py"
+  },
+  "mob-yh-ct": {
+    "id": "mob-yh-ct",
+    "name": "泡泡鲀",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 4,
+    "rate": -13,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·泡泡鲀",
+    "audio_preset": "缘·泡泡鲀",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·泡泡鲀」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yh-ct/，工具 tools/cv-presets.py"
+  },
+  "mob-yh-hong": {
+    "id": "mob-yh-hong",
+    "name": "鲸落傀",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -25,
+    "rate": -12,
+    "vol": 6,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·鲸落傀",
+    "audio_preset": "缘·鲸落傀",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·鲸落傀」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yh-hong/，工具 tools/cv-presets.py"
+  },
+  "mob-yh-man": {
+    "id": "mob-yh-man",
+    "name": "潮鳗",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -24,
+    "rate": -12,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·潮鳗",
+    "audio_preset": "缘·潮鳗",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·潮鳗」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yh-man/，工具 tools/cv-presets.py"
+  },
+  "mob-yh-mu": {
+    "id": "mob-yh-mu",
+    "name": "灯水母",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -14,
+    "rate": -5,
+    "vol": 2,
+    "persona": "端庄",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·灯水母",
+    "audio_preset": "缘·灯水母",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·灯水母」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yh-mu/，工具 tools/cv-presets.py"
+  },
+  "mob-yh-teng": {
+    "id": "mob-yh-teng",
+    "name": "沉船藤",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -5,
+    "rate": 4,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·沉船藤",
+    "audio_preset": "缘·沉船藤",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·沉船藤」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yh-teng/，工具 tools/cv-presets.py"
+  },
+  "mob-yx-gui": {
+    "id": "mob-yx-gui",
+    "name": "石苔龟",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 11,
+    "rate": 8,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·石苔龟",
+    "audio_preset": "缘·石苔龟",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·石苔龟」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yx-gui/，工具 tools/cv-presets.py"
+  },
+  "mob-yx-lu": {
+    "id": "mob-yx-lu",
+    "name": "鹿铃幼兽",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 25,
+    "rate": 3,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·鹿铃幼兽",
+    "audio_preset": "缘·鹿铃幼兽",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·鹿铃幼兽」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yx-lu/，工具 tools/cv-presets.py"
+  },
+  "mob-yx-mang": {
+    "id": "mob-yx-mang",
+    "name": "雾蟒",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 8,
+    "rate": 6,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·雾蟒",
+    "audio_preset": "缘·雾蟒",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·雾蟒」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yx-mang/，工具 tools/cv-presets.py"
+  },
+  "mob-yx-yan": {
+    "id": "mob-yx-yan",
+    "name": "山魇",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": -5,
+    "vol": 2,
+    "persona": "端庄",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·山魇",
+    "audio_preset": "缘·山魇",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·山魇」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yx-yan/，工具 tools/cv-presets.py"
+  },
+  "mob-yx-yue": {
+    "id": "mob-yx-yue",
+    "name": "月蚀枭",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -12,
+    "rate": -18,
+    "vol": -6,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·月蚀枭",
+    "audio_preset": "缘·月蚀枭",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·月蚀枭」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yx-yue/，工具 tools/cv-presets.py"
+  },
+  "mob-yx-zhi": {
+    "id": "mob-yx-zhi",
+    "name": "蕨羽雉",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 29,
+    "rate": 7,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·蕨羽雉",
+    "audio_preset": "缘·蕨羽雉",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·蕨羽雉」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-yx-zhi/，工具 tools/cv-presets.py"
+  },
+  "mob-zf-chou": {
+    "id": "mob-zf-chou",
+    "name": "算筹傀",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 27,
+    "rate": 1,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·算筹傀",
+    "audio_preset": "缘·算筹傀",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·算筹傀」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-zf-chou/，工具 tools/cv-presets.py"
+  },
+  "mob-zf-dou": {
+    "id": "mob-zf-dou",
+    "name": "墨斗鱼精",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -24,
+    "rate": -11,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·墨斗鱼精",
+    "audio_preset": "缘·墨斗鱼精",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·墨斗鱼精」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-zf-dou/，工具 tools/cv-presets.py"
+  },
+  "mob-zf-heng": {
+    "id": "mob-zf-heng",
+    "name": "玉衡铃",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": -12,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·玉衡铃",
+    "audio_preset": "缘·玉衡铃",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·玉衡铃」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-zf-heng/，工具 tools/cv-presets.py"
+  },
+  "mob-zf-ling": {
+    "id": "mob-zf-ling",
+    "name": "残卷灵",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 19,
+    "rate": -6,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·残卷灵",
+    "audio_preset": "缘·残卷灵",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·残卷灵」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-zf-ling/，工具 tools/cv-presets.py"
+  },
+  "mob-zf-luo": {
+    "id": "mob-zf-luo",
+    "name": "星尘螺",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": -14,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·星尘螺",
+    "audio_preset": "缘·星尘螺",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·星尘螺」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-zf-luo/，工具 tools/cv-presets.py"
+  },
+  "mob-zf-que": {
+    "id": "mob-zf-que",
+    "name": "缺页童",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 18,
+    "rate": 1,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·缺页童",
+    "audio_preset": "缘·缺页童",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·缺页童」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/mob-zf-que/，工具 tools/cv-presets.py"
+  },
+  "n-cc-01": {
+    "id": "n-cc-01",
+    "name": "阿铜",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 9,
+    "rate": 6,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿铜",
+    "audio_preset": "缘·阿铜",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿铜」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-cc-01/，工具 tools/cv-presets.py"
+  },
+  "n-cc-02": {
+    "id": "n-cc-02",
+    "name": "火浣",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -5,
+    "rate": 3,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·火浣",
+    "audio_preset": "缘·火浣",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·火浣」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-cc-02/，工具 tools/cv-presets.py"
+  },
+  "n-gh-01": {
+    "id": "n-gh-01",
+    "name": "小满",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 10,
+    "rate": -8,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·小满",
+    "audio_preset": "缘·小满",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·小满」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-gh-01/，工具 tools/cv-presets.py"
+  },
+  "n-gh-02": {
+    "id": "n-gh-02",
+    "name": "冷烟",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": 8,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·冷烟",
+    "audio_preset": "缘·冷烟",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·冷烟」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-gh-02/，工具 tools/cv-presets.py"
+  },
+  "n-qx-01": {
+    "id": "n-qx-01",
+    "name": "阿朴",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 24,
+    "rate": 6,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿朴",
+    "audio_preset": "缘·阿朴",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿朴」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-qx-01/，工具 tools/cv-presets.py"
+  },
+  "n-yx-01": {
+    "id": "n-yx-01",
+    "name": "阿獾",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 29,
+    "rate": 1,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿獾",
+    "audio_preset": "缘·阿獾",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿獾」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-yx-01/，工具 tools/cv-presets.py"
+  },
+  "n-yx-02": {
+    "id": "n-yx-02",
+    "name": "采蕨",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -3,
+    "rate": -15,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·采蕨",
+    "audio_preset": "缘·采蕨",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·采蕨」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-yx-02/，工具 tools/cv-presets.py"
+  },
+  "n-zf-01": {
+    "id": "n-zf-01",
+    "name": "阿霰",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 30,
+    "rate": 0,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿霰",
+    "audio_preset": "缘·阿霰",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿霰」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-zf-01/，工具 tools/cv-presets.py"
+  },
+  "r-cc-01": {
+    "id": "r-cc-01",
+    "name": "铁线",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 5,
+    "rate": -9,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·铁线",
+    "audio_preset": "缘·铁线",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·铁线」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-cc-01/，工具 tools/cv-presets.py"
+  },
+  "r-cc-02": {
+    "id": "r-cc-02",
+    "name": "莲生",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": 10,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·莲生",
+    "audio_preset": "缘·莲生",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·莲生」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-cc-02/，工具 tools/cv-presets.py"
+  },
+  "r-cc-03": {
+    "id": "r-cc-03",
+    "name": "锤锦",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 6,
+    "rate": -10,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·锤锦",
+    "audio_preset": "缘·锤锦",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·锤锦」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-cc-03/，工具 tools/cv-presets.py"
+  },
+  "r-cc-04": {
+    "id": "r-cc-04",
+    "name": "烟渚",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 2,
+    "rate": -10,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·烟渚",
+    "audio_preset": "缘·烟渚",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·烟渚」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-cc-04/，工具 tools/cv-presets.py"
+  },
+  "r-gh-01": {
+    "id": "r-gh-01",
+    "name": "霜华",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 11,
+    "rate": 16,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·霜华",
+    "audio_preset": "缘·霜华",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·霜华」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-gh-01/，工具 tools/cv-presets.py"
+  },
+  "r-gh-03": {
+    "id": "r-gh-03",
+    "name": "江晚棠",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -6,
+    "rate": -15,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·江晚棠",
+    "audio_preset": "缘·江晚棠",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·江晚棠」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-gh-03/，工具 tools/cv-presets.py"
+  },
+  "r-qx-02": {
+    "id": "r-qx-02",
+    "name": "何昭昭",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 1,
+    "rate": -11,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·何昭昭",
+    "audio_preset": "缘·何昭昭",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·何昭昭」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-qx-02/，工具 tools/cv-presets.py"
+  },
+  "r-qx-03": {
+    "id": "r-qx-03",
+    "name": "阿归",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 27,
+    "rate": 1,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿归",
+    "audio_preset": "缘·阿归",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿归」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-qx-03/，工具 tools/cv-presets.py"
+  },
+  "r-qx-04": {
+    "id": "r-qx-04",
+    "name": "柳含章",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 10,
+    "rate": -8,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·柳含章",
+    "audio_preset": "缘·柳含章",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·柳含章」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-qx-04/，工具 tools/cv-presets.py"
+  },
+  "r-yh-01": {
+    "id": "r-yh-01",
+    "name": "沫吟",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 8,
+    "rate": -10,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·沫吟",
+    "audio_preset": "缘·沫吟",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·沫吟」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yh-01/，工具 tools/cv-presets.py"
+  },
+  "r-yh-03": {
+    "id": "r-yh-03",
+    "name": "汀兰",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 2,
+    "rate": -8,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·汀兰",
+    "audio_preset": "缘·汀兰",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·汀兰」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yh-03/，工具 tools/cv-presets.py"
+  },
+  "r-yx-01": {
+    "id": "r-yx-01",
+    "name": "山桃",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 10,
+    "rate": 6,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·山桃",
+    "audio_preset": "缘·山桃",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·山桃」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yx-01/，工具 tools/cv-presets.py"
+  },
+  "r-yx-02": {
+    "id": "r-yx-02",
+    "name": "涧草",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": 5,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·涧草",
+    "audio_preset": "缘·涧草",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·涧草」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yx-02/，工具 tools/cv-presets.py"
+  },
+  "r-yx-03": {
+    "id": "r-yx-03",
+    "name": "雪爪",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 12,
+    "rate": 16,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·雪爪",
+    "audio_preset": "缘·雪爪",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·雪爪」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yx-03/，工具 tools/cv-presets.py"
+  },
+  "r-yx-04": {
+    "id": "r-yx-04",
+    "name": "乌臼",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 22,
+    "rate": 3,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·乌臼",
+    "audio_preset": "缘·乌臼",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·乌臼」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yx-04/，工具 tools/cv-presets.py"
+  },
+  "r-zf-01": {
+    "id": "r-zf-01",
+    "name": "苏暮雨",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -5,
+    "rate": 2,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·苏暮雨",
+    "audio_preset": "缘·苏暮雨",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·苏暮雨」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-zf-01/，工具 tools/cv-presets.py"
+  },
+  "r-zf-02": {
+    "id": "r-zf-02",
+    "name": "卫子期",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 28,
+    "rate": 1,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·卫子期",
+    "audio_preset": "缘·卫子期",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·卫子期」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-zf-02/，工具 tools/cv-presets.py"
+  },
+  "r-zf-03": {
+    "id": "r-zf-03",
+    "name": "商祈",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 10,
+    "rate": 6,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·商祈",
+    "audio_preset": "缘·商祈",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·商祈」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-zf-03/，工具 tools/cv-presets.py"
+  },
+  "r-zf-04": {
+    "id": "r-zf-04",
+    "name": "谢无咎",
+    "voice": "zh-CN-YunyangNeural",
+    "pitch": -1,
+    "rate": -6,
+    "vol": 0,
+    "persona": "儒雅",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·谢无咎",
+    "audio_preset": "缘·谢无咎",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·谢无咎」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-zf-04/，工具 tools/cv-presets.py"
+  },
+  "sr-cc-01": {
+    "id": "sr-cc-01",
+    "name": "温燎",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -16,
+    "rate": -12,
+    "vol": 2,
+    "persona": "端庄",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·温燎",
+    "audio_preset": "缘·温燎",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·温燎」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-cc-01/，工具 tools/cv-presets.py"
+  },
+  "sr-cc-02": {
+    "id": "sr-cc-02",
+    "name": "石敢",
+    "voice": "zh-CN-YunyangNeural",
+    "pitch": -20,
+    "rate": -17,
+    "vol": 3,
+    "persona": "冷峻",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·石敢",
+    "audio_preset": "缘·石敢",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·石敢」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-cc-02/，工具 tools/cv-presets.py"
+  },
+  "sr-cc-03": {
+    "id": "sr-cc-03",
+    "name": "阿淬",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 13,
+    "rate": 9,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿淬",
+    "audio_preset": "缘·阿淬",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿淬」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-cc-03/，工具 tools/cv-presets.py"
+  },
+  "sr-cc-04": {
+    "id": "sr-cc-04",
+    "name": "炉月",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -10,
+    "rate": 4,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·炉月",
+    "audio_preset": "缘·炉月",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·炉月」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-cc-04/，工具 tools/cv-presets.py"
+  },
+  "sr-gh-01": {
+    "id": "sr-gh-01",
+    "name": "桂枝寒",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 25,
+    "rate": -3,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·桂枝寒",
+    "audio_preset": "缘·桂枝寒",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·桂枝寒」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-gh-01/，工具 tools/cv-presets.py"
+  },
+  "sr-gh-03": {
+    "id": "sr-gh-03",
+    "name": "明梭",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 18,
+    "rate": 6,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·明梭",
+    "audio_preset": "缘·明梭",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·明梭」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-gh-03/，工具 tools/cv-presets.py"
+  },
+  "sr-gh-04": {
+    "id": "sr-gh-04",
+    "name": "尉明",
+    "voice": "zh-CN-YunjianNeural",
+    "pitch": -6,
+    "rate": 5,
+    "vol": 10,
+    "persona": "豪迈",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·尉明",
+    "audio_preset": "缘·尉明",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·尉明」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-gh-04/，工具 tools/cv-presets.py"
+  },
+  "sr-qx-01": {
+    "id": "sr-qx-01",
+    "name": "阿蒙",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 20,
+    "rate": 0,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿蒙",
+    "audio_preset": "缘·阿蒙",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿蒙」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-qx-01/，工具 tools/cv-presets.py"
+  },
+  "sr-qx-02": {
+    "id": "sr-qx-02",
+    "name": "温叙",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 20,
+    "rate": 12,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·温叙",
+    "audio_preset": "缘·温叙",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·温叙」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-qx-02/，工具 tools/cv-presets.py"
+  },
+  "sr-qx-03": {
+    "id": "sr-qx-03",
+    "name": "裴云简",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 22,
+    "rate": 11,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·裴云简",
+    "audio_preset": "缘·裴云简",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·裴云简」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-qx-03/，工具 tools/cv-presets.py"
+  },
+  "sr-qx-04": {
+    "id": "sr-qx-04",
+    "name": "江采",
+    "voice": "zh-CN-YunjianNeural",
+    "pitch": -1,
+    "rate": 7,
+    "vol": 10,
+    "persona": "豪迈",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·江采",
+    "audio_preset": "缘·江采",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·江采」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-qx-04/，工具 tools/cv-presets.py"
+  },
+  "sr-yh-01": {
+    "id": "sr-yh-01",
+    "name": "卷珠",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -16,
+    "rate": -10,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·卷珠",
+    "audio_preset": "缘·卷珠",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·卷珠」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yh-01/，工具 tools/cv-presets.py"
+  },
+  "sr-yh-02": {
+    "id": "sr-yh-02",
+    "name": "夜潮",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -16,
+    "rate": -14,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·夜潮",
+    "audio_preset": "缘·夜潮",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·夜潮」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yh-02/，工具 tools/cv-presets.py"
+  },
+  "sr-yh-03": {
+    "id": "sr-yh-03",
+    "name": "珊然",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 10,
+    "rate": 5,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·珊然",
+    "audio_preset": "缘·珊然",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·珊然」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yh-03/，工具 tools/cv-presets.py"
+  },
+  "sr-yh-04": {
+    "id": "sr-yh-04",
+    "name": "溟渺",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -12,
+    "rate": 6,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·溟渺",
+    "audio_preset": "缘·溟渺",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·溟渺」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yh-04/，工具 tools/cv-presets.py"
+  },
+  "sr-yx-01": {
+    "id": "sr-yx-01",
+    "name": "白耳",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 26,
+    "rate": 8,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·白耳",
+    "audio_preset": "缘·白耳",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·白耳」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yx-01/，工具 tools/cv-presets.py"
+  },
+  "sr-yx-02": {
+    "id": "sr-yx-02",
+    "name": "岑蕙",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -23,
+    "rate": -14,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·岑蕙",
+    "audio_preset": "缘·岑蕙",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·岑蕙」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yx-02/，工具 tools/cv-presets.py"
+  },
+  "sr-yx-03": {
+    "id": "sr-yx-03",
+    "name": "石桃枝",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 8,
+    "rate": -10,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·石桃枝",
+    "audio_preset": "缘·石桃枝",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·石桃枝」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yx-03/，工具 tools/cv-presets.py"
+  },
+  "sr-yx-04": {
+    "id": "sr-yx-04",
+    "name": "鹿回",
+    "voice": "zh-CN-YunjianNeural",
+    "pitch": 4,
+    "rate": 12,
+    "vol": 10,
+    "persona": "豪迈",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·鹿回",
+    "audio_preset": "缘·鹿回",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·鹿回」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-yx-04/，工具 tools/cv-presets.py"
+  },
+  "sr-zf-01": {
+    "id": "sr-zf-01",
+    "name": "陆离",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 12,
+    "rate": -14,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·陆离",
+    "audio_preset": "缘·陆离",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·陆离」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-zf-01/，工具 tools/cv-presets.py"
+  },
+  "sr-zf-02": {
+    "id": "sr-zf-02",
+    "name": "姜雪扶",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -13,
+    "rate": 8,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·姜雪扶",
+    "audio_preset": "缘·姜雪扶",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·姜雪扶」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-zf-02/，工具 tools/cv-presets.py"
+  },
+  "sr-zf-03": {
+    "id": "sr-zf-03",
+    "name": "温小令",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 23,
+    "rate": -1,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·温小令",
+    "audio_preset": "缘·温小令",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·温小令」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-zf-03/，工具 tools/cv-presets.py"
+  },
+  "sr-zf-04": {
+    "id": "sr-zf-04",
+    "name": "岑月观",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 25,
+    "rate": 4,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·岑月观",
+    "audio_preset": "缘·岑月观",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·岑月观」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-zf-04/，工具 tools/cv-presets.py"
+  },
+  "ssr-cc-01": {
+    "id": "ssr-cc-01",
+    "name": "殷铁衣",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -11,
+    "rate": 0,
+    "vol": 6,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·殷铁衣",
+    "audio_preset": "缘·殷铁衣",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·殷铁衣」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-cc-01/，工具 tools/cv-presets.py"
+  },
+  "ssr-cc-02": {
+    "id": "ssr-cc-02",
+    "name": "谢残锋",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 22,
+    "rate": 2,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·谢残锋",
+    "audio_preset": "缘·谢残锋",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·谢残锋」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-cc-02/，工具 tools/cv-presets.py"
+  },
+  "ssr-gh-01": {
+    "id": "ssr-gh-01",
+    "name": "白玉杵",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 21,
+    "rate": 8,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·白玉杵",
+    "audio_preset": "缘·白玉杵",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·白玉杵」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-gh-01/，工具 tools/cv-presets.py"
+  },
+  "ssr-qx-01": {
+    "id": "ssr-qx-01",
+    "name": "顾兰台",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 3,
+    "rate": -15,
+    "vol": -4,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·顾兰台",
+    "audio_preset": "缘·顾兰台",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·顾兰台」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-qx-01/，工具 tools/cv-presets.py"
+  },
+  "ssr-qx-02": {
+    "id": "ssr-qx-02",
+    "name": "沈砚舟",
+    "voice": "zh-CN-YunyangNeural",
+    "pitch": -4,
+    "rate": -1,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·沈砚舟",
+    "audio_preset": "缘·沈砚舟",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·沈砚舟」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-qx-02/，工具 tools/cv-presets.py"
+  },
+  "ssr-yx-01": {
+    "id": "ssr-yx-01",
+    "name": "云中等",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 10,
+    "rate": -3,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·云中等",
+    "audio_preset": "缘·云中等",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·云中等」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-yx-01/，工具 tools/cv-presets.py"
+  },
+  "ssr-yx-02": {
+    "id": "ssr-yx-02",
+    "name": "姜窈",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -9,
+    "rate": -11,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·姜窈",
+    "audio_preset": "缘·姜窈",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·姜窈」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-yx-02/，工具 tools/cv-presets.py"
+  },
+  "ssr-yx-03": {
+    "id": "ssr-yx-03",
+    "name": "苏狸",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 17,
+    "rate": 15,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·苏狸",
+    "audio_preset": "缘·苏狸",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·苏狸」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-yx-03/，工具 tools/cv-presets.py"
+  },
+  "ssr-zf-02": {
+    "id": "ssr-zf-02",
+    "name": "韩昭",
+    "voice": "zh-CN-YunjianNeural",
+    "pitch": -16,
+    "rate": -7,
+    "vol": 6,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·韩昭",
+    "audio_preset": "缘·韩昭",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·韩昭」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-zf-02/，工具 tools/cv-presets.py"
+  },
+  "ssr-zf-03": {
+    "id": "ssr-zf-03",
+    "name": "阮云台",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 29,
+    "rate": 1,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阮云台",
+    "audio_preset": "缘·阮云台",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阮云台」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-zf-03/，工具 tools/cv-presets.py"
+  },
+  "ur-cc-01": {
+    "id": "ur-cc-01",
+    "name": "赫连铸",
+    "voice": "zh-CN-YunjianNeural",
+    "pitch": -6,
+    "rate": -10,
+    "vol": 8,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·赫连铸",
+    "audio_preset": "缘·赫连铸",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·赫连铸」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ur-cc-01/，工具 tools/cv-presets.py"
+  },
+  "ur-gh-01": {
+    "id": "ur-gh-01",
+    "name": "顾霜心",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 13,
+    "rate": 0,
+    "vol": 2,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:顾霜心",
+    "audio_preset": "顾霜心",
+    "audio_note": "2026-11-02 用 IndexTTS2「顾霜心」预设重制四槽位（登场/终结技/胜利/受击），替换原「缘·顾霜心」版本；备份见 .cv-backup/ur-gh-01/，生成入口 generate_audio"
+  },
+  "ur-qx-01": {
+    "id": "ur-qx-01",
+    "name": "林栖迟",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 22,
+    "rate": 16,
+    "vol": 6,
+    "persona": "元气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·林栖迟",
+    "audio_preset": "缘·林栖迟",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·林栖迟」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ur-qx-01/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-01": {
+    "id": "ur-yh-01",
+    "name": "姜潮生",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -23,
+    "rate": -10,
+    "vol": 6,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·姜潮生",
+    "audio_ref": "preset:缘·姜潮生",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·姜潮生」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ur-yh-01/，工具 tools/cv-presets.py"
+  },
+  "ur-yx-01": {
+    "id": "ur-yx-01",
+    "name": "涂山月见",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -10,
+    "rate": -18,
+    "vol": -6,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:年轻九尾狐女的嗓音，很好",
+    "audio_note": "2026-10-29 用 IndexTTS2「年轻九尾狐女的嗓音，很好」预设重制，台词同步重构为妩媚/诱人/勾魂方向（loudnorm -16 LUFS）；旧版备份见 .cv-backup/ur-yx-01/indextts2-20261028/",
+    "audio_preset": "年轻九尾狐女的嗓音，很好"
+  },
+  "ur-zf-01": {
+    "id": "ur-zf-01",
+    "name": "虞清都",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -14,
+    "rate": -12,
+    "vol": 4,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:清都",
+    "audio_preset": "清都",
+    "audio_note": "2026-11-01 用 IndexTTS2「清都」预设重生成四槽位（enter 中途停顿、隐忍欢喜版），台词按用户指定重写；旧版备份见 .cv-backup/ur-zf-01/20261101/"
+  },
+  "sr-zf-05": {
+    "id": "sr-zf-05",
+    "name": "沈观澜",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·沈观澜",
+    "audio_preset": "缘·沈观澜",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "sr-zf-06": {
+    "id": "sr-zf-06",
+    "name": "韩青崖",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·韩青崖",
+    "audio_preset": "缘·韩青崖",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "sr-gh-06": {
+    "id": "sr-gh-06",
+    "name": "桑晚",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·桑晚",
+    "audio_preset": "缘·桑晚",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "sr-yx-05": {
+    "id": "sr-yx-05",
+    "name": "阿箬",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿箬",
+    "audio_preset": "缘·阿箬",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "sr-cc-05": {
+    "id": "sr-cc-05",
+    "name": "铁苔",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·铁苔",
+    "audio_ref": "preset:缘·铁苔",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "sr-cc-06": {
+    "id": "sr-cc-06",
+    "name": "阿砺",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·阿砺",
+    "audio_ref": "preset:缘·阿砺",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "sr-yh-05": {
+    "id": "sr-yh-05",
+    "name": "贝青",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·贝青",
+    "audio_ref": "preset:缘·贝青",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "sr-yh-06": {
+    "id": "sr-yh-06",
+    "name": "桑鱼",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·桑鱼",
+    "audio_ref": "preset:缘·桑鱼",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "r-zf-05": {
+    "id": "r-zf-05",
+    "name": "程墨迟",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·程墨迟",
+    "audio_ref": "preset:缘·程墨迟",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "r-zf-06": {
+    "id": "r-zf-06",
+    "name": "卫星回",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·卫星回",
+    "audio_ref": "preset:缘·卫星回",
+    "audio_note": "2026-10-30 新建角色用 IndexTTS2 预设按四槽位情绪生成"
+  },
+  "ssr-zf-04": {
+    "id": "ssr-zf-04",
+    "name": "裴照微",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·裴照微·少女",
+    "audio_ref": "preset:缘·裴照微·少女",
+    "audio_note": "2026-11-01 按少女感+情绪感重制四槽位（24kHz/单声道/64kbps，响度约 -16 LUFS）"
+  },
+  "ssr-gh-03": {
+    "id": "ssr-gh-03",
+    "name": "白露生",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·白露生",
+    "audio_ref": "preset:缘·白露生",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-gh-04": {
+    "id": "ssr-gh-04",
+    "name": "陆停云",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·陆停云",
+    "audio_ref": "preset:缘·陆停云",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-yx-04": {
+    "id": "ssr-yx-04",
+    "name": "鹿衔霜",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·鹿衔霜",
+    "audio_ref": "preset:缘·鹿衔霜",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-yx-05": {
+    "id": "ssr-yx-05",
+    "name": "江鹤衣",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·江鹤衣",
+    "audio_ref": "preset:缘·江鹤衣",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-qx-03": {
+    "id": "ssr-qx-03",
+    "name": "谢知白",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·谢知白",
+    "audio_ref": "preset:缘·谢知白",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-qx-04": {
+    "id": "ssr-qx-04",
+    "name": "温见微",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·温见微",
+    "audio_ref": "preset:缘·温见微",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-cc-03": {
+    "id": "ssr-cc-03",
+    "name": "祝熔",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·祝熔",
+    "audio_ref": "preset:缘·祝熔",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-cc-04": {
+    "id": "ssr-cc-04",
+    "name": "傅照野",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·傅照野",
+    "audio_ref": "preset:缘·傅照野",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-yh-04": {
+    "id": "ssr-yh-04",
+    "name": "阮听潮",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·阮听潮",
+    "audio_ref": "preset:缘·阮听潮",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-gh-05": {
+    "id": "r-gh-05",
+    "name": "许霜枝",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·许霜枝",
+    "audio_ref": "preset:缘·许霜枝",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-gh-06": {
+    "id": "r-gh-06",
+    "name": "桑落",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·桑落",
+    "audio_ref": "preset:缘·桑落",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-yx-05": {
+    "id": "r-yx-05",
+    "name": "祝青禾",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·祝青禾",
+    "audio_ref": "preset:缘·祝青禾",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-yx-06": {
+    "id": "r-yx-06",
+    "name": "鹿溪",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·鹿溪",
+    "audio_ref": "preset:缘·鹿溪",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-qx-05": {
+    "id": "r-qx-05",
+    "name": "闻书",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·闻书",
+    "audio_ref": "preset:缘·闻书",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-qx-06": {
+    "id": "r-qx-06",
+    "name": "柳小砚",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·柳小砚",
+    "audio_ref": "preset:缘·柳小砚",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-cc-05": {
+    "id": "r-cc-05",
+    "name": "秦炉",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·秦炉",
+    "audio_ref": "preset:缘·秦炉",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "r-yh-05": {
+    "id": "r-yh-05",
+    "name": "阿珠",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·阿珠",
+    "audio_ref": "preset:缘·阿珠",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-zf-03": {
+    "id": "n-zf-03",
+    "name": "小算",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·小算",
+    "audio_ref": "preset:缘·小算",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-zf-04": {
+    "id": "n-zf-04",
+    "name": "阿烛",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·阿烛",
+    "audio_ref": "preset:缘·阿烛",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-gh-03": {
+    "id": "n-gh-03",
+    "name": "霜团",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·霜团",
+    "audio_ref": "preset:缘·霜团",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-gh-04": {
+    "id": "n-gh-04",
+    "name": "小杵",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·小杵",
+    "audio_ref": "preset:缘·小杵",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-yx-03": {
+    "id": "n-yx-03",
+    "name": "狸花",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·狸花",
+    "audio_ref": "preset:缘·狸花",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-yx-04": {
+    "id": "n-yx-04",
+    "name": "阿蕨",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·阿蕨",
+    "audio_ref": "preset:缘·阿蕨",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-qx-03": {
+    "id": "n-qx-03",
+    "name": "小墨",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·小墨",
+    "audio_ref": "preset:缘·小墨",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-qx-04": {
+    "id": "n-qx-04",
+    "name": "阿禾",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·阿禾",
+    "audio_ref": "preset:缘·阿禾",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-cc-03": {
+    "id": "n-cc-03",
+    "name": "铜豆",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·铜豆",
+    "audio_ref": "preset:缘·铜豆",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "n-yh-03": {
+    "id": "n-yh-03",
+    "name": "珠芽",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·珠芽",
+    "audio_ref": "preset:缘·珠芽",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "sr-gh-05": {
+    "id": "sr-gh-05",
+    "name": "姜月白",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·姜月白",
+    "audio_ref": "preset:缘·姜月白",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "sr-qx-05": {
+    "id": "sr-qx-05",
+    "name": "陆知秋",
+    "files": {
+      "enter": "enter.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3",
+      "hurt": "hurt.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_preset": "缘·陆知秋",
+    "audio_ref": "preset:缘·陆知秋",
+    "audio_note": "2026-10-31 新建角色按槽位生成"
+  },
+  "ssr-gh-06": {
+    "id": "ssr-gh-06",
+    "name": "谢枕霜",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": 0,
+    "vol": 0,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·谢枕霜",
+    "audio_preset": "缘·谢枕霜",
+    "audio_note": "2026-10-29 用 IndexTTS2「缘·谢枕霜」预设按四槽位情绪生成，24k 单声道 64k mp3"
+  },
+  "ssr-gh-05": {
+    "id": "ssr-gh-05",
+    "name": "闻人漱月",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": 0,
+    "vol": 0,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·闻人漱月",
+    "audio_preset": "缘·闻人漱月",
+    "audio_note": "2026-10-29 用 IndexTTS2「缘·闻人漱月」预设按四槽位情绪生成，24k 单声道 64k mp3"
+  },
+  "r-zf-07": {
+    "id": "r-zf-07",
+    "name": "褚星阑",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": 0,
+    "vol": 0,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·褚星阑",
+    "audio_preset": "缘·褚星阑",
+    "audio_note": "2026-10-29 用 IndexTTS2「缘·褚星阑」预设按四槽位情绪生成，24k 单声道 64k mp3"
+  },
+  "r-cc-06": {
+    "id": "r-cc-06",
+    "name": "青枢",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": 0,
+    "vol": 0,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·青枢",
+    "audio_preset": "缘·青枢",
+    "audio_note": "2026-10-29 用 IndexTTS2「缘·青枢」预设按四槽位情绪生成，24k 单声道 64k mp3"
+  },
+  "r-qx-07": {
+    "id": "r-qx-07",
+    "name": "宋知微",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": 0,
+    "vol": 0,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·宋知微",
+    "audio_preset": "缘·宋知微",
+    "audio_note": "2026-10-29 用 IndexTTS2「缘·宋知微」预设按四槽位情绪生成，24k 单声道 64k mp3"
+  },
+  "r-yx-07": {
+    "id": "r-yx-07",
+    "name": "辛夷",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": 0,
+    "vol": 0,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·辛夷",
+    "audio_preset": "缘·辛夷",
+    "audio_note": "2026-10-29 用 IndexTTS2「缘·辛夷」预设按四槽位情绪生成，24k 单声道 64k mp3"
+  },
+  "r-yh-06": {
+    "id": "r-yh-06",
+    "name": "阿汐",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": 0,
+    "vol": 0,
+    "persona": null,
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿汐",
+    "audio_preset": "缘·阿汐",
+    "audio_note": "2026-10-29 用 IndexTTS2「缘·阿汐」预设按四槽位情绪生成，24k 单声道 64k mp3"
+  },
+  "ur-gh-04": {
+    "id": "ur-gh-04",
+    "name": "洛绮",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -13,
+    "rate": -14,
+    "vol": 6,
+    "persona": null,
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·洛绮",
+    "audio_preset": "缘·洛绮",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·洛绮」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-gh-02/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-03": {
+    "id": "ur-yh-03",
+    "name": "洛珠",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -9,
+    "rate": 4,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·洛珠",
+    "audio_preset": "缘·洛珠",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·洛珠」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-yh-01/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-04": {
+    "id": "ur-yh-04",
+    "name": "温海月",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -9,
+    "rate": -12,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·温海月",
+    "audio_preset": "缘·温海月",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·温海月」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-yh-02/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-05": {
+    "id": "ur-yh-05",
+    "name": "阿溟火",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 30,
+    "rate": -3,
+    "vol": -2,
+    "persona": "软萌",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·阿溟火",
+    "audio_preset": "缘·阿溟火",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·阿溟火」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-yh-03/，工具 tools/cv-presets.py"
+  },
+  "ur-zf-03": {
+    "id": "ur-zf-03",
+    "name": "沈砚秋",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -14,
+    "rate": -18,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·沈砚秋",
+    "audio_preset": "缘·沈砚秋",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·沈砚秋」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/ssr-zf-01/，工具 tools/cv-presets.py"
+  },
+  "ur-gh-05": {
+    "id": "ur-gh-05",
+    "name": "殷羽衣",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -6,
+    "rate": 3,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·殷羽衣",
+    "audio_preset": "缘·殷羽衣",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·殷羽衣」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/sr-gh-02/，工具 tools/cv-presets.py"
+  },
+  "ur-gh-06": {
+    "id": "ur-gh-06",
+    "name": "叶知冥",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -23,
+    "rate": -12,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·叶知冥",
+    "audio_preset": "缘·叶知冥",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·叶知冥」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-gh-02/，工具 tools/cv-presets.py"
+  },
+  "ur-gh-07": {
+    "id": "ur-gh-07",
+    "name": "羽流萤",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 8,
+    "rate": -12,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·羽流萤",
+    "audio_preset": "缘·羽流萤",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·羽流萤」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-gh-04/，工具 tools/cv-presets.py"
+  },
+  "ur-qx-03": {
+    "id": "ur-qx-03",
+    "name": "苏晚照",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 7,
+    "rate": -14,
+    "vol": -6,
+    "persona": "文静",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·苏晚照",
+    "audio_preset": "缘·苏晚照",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·苏晚照」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-qx-01/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-06": {
+    "id": "ur-yh-06",
+    "name": "潮音",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -8,
+    "rate": 3,
+    "vol": 6,
+    "persona": "英气",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·潮音",
+    "audio_preset": "缘·潮音",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·潮音」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yh-02/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-07": {
+    "id": "ur-yh-07",
+    "name": "火浔",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -4,
+    "rate": -18,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·火浔",
+    "audio_preset": "缘·火浔",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·火浔」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/r-yh-04/，工具 tools/cv-presets.py"
+  },
+  "ur-qx-04": {
+    "id": "ur-qx-04",
+    "name": "云书",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 2,
+    "rate": -12,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·云书",
+    "audio_preset": "缘·云书",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·云书」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-qx-02/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-08": {
+    "id": "ur-yh-08",
+    "name": "细螺",
+    "voice": "zh-CN-XiaoyiNeural",
+    "pitch": 9,
+    "rate": 5,
+    "vol": 6,
+    "persona": "傲娇",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·细螺",
+    "audio_preset": "缘·细螺",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·细螺」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-yh-01/，工具 tools/cv-presets.py"
+  },
+  "ur-yh-09": {
+    "id": "ur-yh-09",
+    "name": "浮玉",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -26,
+    "rate": -15,
+    "vol": 5,
+    "persona": "御姐",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·浮玉",
+    "audio_preset": "缘·浮玉",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·浮玉」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-yh-02/，工具 tools/cv-presets.py"
+  },
+  "ur-zf-04": {
+    "id": "ur-zf-04",
+    "name": "祝眠",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": -5,
+    "rate": -17,
+    "vol": -8,
+    "persona": "柔情",
+    "deep": true,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·祝眠",
+    "audio_preset": "缘·祝眠",
+    "audio_note": "2026-10-28 用 IndexTTS2「缘·祝眠」预设按槽位分情绪（emo_mode=3）重制，替换原 edge-tts 版本；备份见 .cv-backup/n-zf-02/，工具 tools/cv-presets.py"
+  },
+  "dk-gh-08": {
+    "id": "dk-gh-08",
+    "name": "姬月寒",
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "pitch": 0,
+    "rate": -8,
+    "vol": 0,
+    "persona": "清冷孤傲",
+    "deep": false,
+    "files": {
+      "enter": "enter.mp3",
+      "hurt": "hurt.mp3",
+      "ultimate": "ultimate.mp3",
+      "win": "win.mp3"
+    },
+    "audio_provider": "indextts2",
+    "audio_ref": "preset:缘·姬月寒",
+    "audio_preset": "缘·姬月寒",
+    "audio_note": "2026-11-04 用 IndexTTS2「缘·姬月寒」预设四槽位（登场/终结技/胜利/受击），源 wav 转 mp3 192k 接入 web/audio/cv/dk-gh-08/"
+  }
+}

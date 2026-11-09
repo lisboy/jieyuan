@@ -1,0 +1,390 @@
+{
+  "comment": "经济系统：货币、体力、获取与消耗。设计基线——一个不充值的玩家每天约 6 分钟日常可攒到 1.6 抽；养成材料全部有稳定来源，没有任何一条要求玩家重复刷同一张卡之外的东西。所有数值都是这里定义的，代码里不写死。",
+  "currencies": {
+    "coin": {
+      "label": "铜钱",
+      "icon": "钱",
+      "color": "#c9a227",
+      "cap": 99999999,
+      "note": "通用货币：升级、升星、技能、扫荡。来源最广，因此也是最不值钱的。"
+    },
+    "jade": {
+      "label": "缘玉",
+      "icon": "玉",
+      "color": "#7fd1c8",
+      "cap": 999999,
+      "note": "高级货币：抽卡、买体力。主要靠首通与成就攒，商店只给少量。"
+    },
+    "stamina": {
+      "label": "心神",
+      "icon": "心",
+      "color": "#e0796b",
+      "cap": 120,
+      "regenMinutesPerUnit": 6,
+      "note": "体力。上限 120，6 分钟回 1 点，即每天自然回复 240 点 = 48 关。"
+    },
+    "shard": {
+      "label": "残卷",
+      "icon": "卷",
+      "color": "#8f7cc0",
+      "cap": 99999,
+      "note": "通用碎片，按稀有度分桶（shard:ur / shard:ssr ...），升星与定向兑换用。"
+    },
+    "essence": {
+      "label": "尘缘",
+      "icon": "尘",
+      "color": "#b0a894",
+      "cap": 999999,
+      "note": "重复卡分解所得，商店货币。它是'抽到不想要的卡'的补偿，所以只能换定向养成物。"
+    },
+    "tome": {
+      "label": "技能书",
+      "icon": "书",
+      "color": "#dcc182",
+      "cap": 99999,
+      "note": "技能升级唯一消耗，按稀有度分档（tome:purple 以下通用，金/红各一档）。"
+    }
+  },
+  "starter": {
+    "comment": "缘玉 4800 = 十连 6 次的预算（720×6=4320）再留一点买体力的余量，保证新手池的 60 抽保底在新手期就能走完，不会出现'差 3 抽但玉不够'的卡手。chars 是固定开局赠送角色（按 id）；randomRarity/randomCount 是按稀有度从全名册随机抽的开局角色（新号注册与重置存档都会重抽）。2026-11-01 起初始赠送改为随机 1 个 SSR（金阶）：从 data/index.json 中全部 gold 角色里随机抽，不再固定苏狸；3 本金阶技能书保留，因为所有 SSR 都能吃金书完成教学第一次技能升级；教学首关按 content/stages.json → tutorial 的倍率校准，任意 SSR 开局都能三星。2026-11-06：开局不再赠送任何升星卷（原绿10/蓝6/紫3/金1），升星卷只能通过残卷本长期积累，避免新号一进名册就能连升两星。",
+    "chars": [],
+    "randomRarity": "gold",
+    "randomCount": 1,
+    "coin": 5000,
+    "jade": 4800,
+    "stamina": 120,
+    "essence": 0,
+    "shard": {
+      "ur": 0,
+      "ssr": 0,
+      "sr": 0,
+      "r": 0,
+      "n": 0
+    },
+    "tome": {
+      "purple": 20,
+      "gold": 3,
+      "red": 4
+    },
+    "starScroll": {
+      "green": 0,
+      "blue": 0,
+      "purple": 0,
+      "gold": 0,
+      "red": 0,
+      "diamond": 0
+    },
+    "mat": {
+      "page": 40,
+      "pill": 2
+    }
+  },
+  "starterGift": {
+    "comment": "初始大礼包：每个存档限领一次（领取标记存存档 starterGift；重置存档=重新开局，会重新出现）。资源量按实际喂级算法校准：feedPlan 按「大经验物优先」消耗，每一级至少吃 1 件，所以大件（藏卷/注疏）会把 200 经验的一级烧掉几万经验。散页 1000 经验/张是唯一粒度足够细的口粮——单卡 Lv1→15 逐级向上取整共需 37 张散页、2970 铜钱；5 张卡 = 185 张散页、14,850 铜钱。礼包给 散页×200 + 铜钱×20000，留出约 8% 余量，保证任意 5 名角色从 1 级一键喂到 15 级不会卡在材料上。刻意不含缘玉（jade=0），避免和抽卡经济混在一起。randomRarity=red 即随机 1 名 UR。",
+    "coin": 20000,
+    "mat": {
+      "page": 200
+    },
+    "randomRarity": "red",
+    "randomCount": 1,
+    "jade": 0
+  },
+  "staminaPurchase": {
+    "jadePerUnit": 20,
+    "unitsPerPurchase": 60,
+    "maxPerDay": 2,
+    "priceStepJade": 20,
+    "note": "第一次 20 玉买 60 点，之后每次 +20 玉，每日 2 次封顶，凌晨重置。"
+  },
+  "daily": {
+    "resetHour": 4,
+    "firstWinPerFaction": {
+      "coin": 800,
+      "jade": 20
+    },
+    "login": {
+      "coin": 1000,
+      "stamina": 30
+    },
+    "dungeonJade": {
+      "times": 3,
+      "jade": 90,
+      "note": "历练副本每日缘玉：每天前 3 次通关（挑战或扫荡）各 +90 缘玉，共 270；之后只吃常规掉落（2026-11-02 需求「获取的奖励太少，翻3倍」：30→90）。"
+    },
+    "adventures": {
+      "chance": 0.08,
+      "times": 3,
+      "note": "仙缘奇遇（PLAYABLE P2-2）：手打胜利后按 chance 概率触发，每日至多 times 次"
+    },
+    "note": "每日奖励只给'今天打过一次'的确定性收益，不做日常任务清单——单人开发维护不了任务系统，也不想让玩家打卡。"
+  },
+  "sweep": {
+    "unlockedByStars": 3,
+    "cost": "stamina",
+    "note": "已三星通关的关卡可一次结算多次，掉率与手打完全一致（同一张 dropTable），只是不播战斗。"
+  },
+  "normalize": {
+    "comment": "归一：已强化角色可重置为 Lv.1 / ★1 / 0 阶，返还突破、升星、升级投入的 80%（铜钱与材料）。只重置这三项，技能等级与命格/觉醒保留。refundRate 是返还比例，改成 1 即全额返还。",
+    "refundRate": 0.8,
+    "refundCoin": true
+  },
+  "decompose": {
+    "comment": "抽到重复卡自动转'本体残卷'（该角色专属，2026-11-05 起不再用于升星，仅作老存档兼容）+ 尘缘；已满星的卡可手动分解成尘缘。通用残卷只从关卡/材料本/商店来。尘缘商店里能定向买本体残卷，这是'不靠运气也能把指定卡缘+1'的兜底。锚点（2026-11-02 调价）：定向残卷 1200 尘缘/片（2026-10-29 为 2400，原 120），每抽固定 4 尘缘 + 重复卡；每周限购 20 片。2026-11-02 同步：洗髓丹 100 尘缘/颗、每周 20 颗（原 220/3）。",
+    "dupToSameShard": {
+      "diamond": 3,
+      "red": 2,
+      "gold": 2,
+      "purple": 1,
+      "blue": 1,
+      "green": 1
+    },
+    "shardSubstitute": 2,
+    "shardSubstituteNote": "【已废弃·2026-11-05】升星改为只吃对应阶级升星卷，本体残卷/通用残卷不再参与升星判定；此字段仅为老存档展示兼容保留，不要再按它做数值或文案。历史背景：曾经升星缺本体残卷可用通用残卷按 2:1 顶替。",
+    "dupToEssence": {
+      "diamond": 900,
+      "red": 300,
+      "gold": 150,
+      "purple": 50,
+      "blue": 18,
+      "green": 6
+    },
+    "dupToEssenceNote": "2026-10-26 重校：原来 1200/400/120/40/12 让'每抽 4 尘缘'的锚点彻底失真——重复卡才是尘缘的主来源，实测每抽 ≈22 尘缘，于是'120 尘缘/片 = 三十连'实际只要 5 抽，定向残卷变成半白送。砍到约 1/4（300/150/50/18/6）后，重复卡仍远高于每抽 4 的固定值。2026-10-29 定向残卷单价调整为 2400 尘缘/片，回到'几十次连抽'的长线量级；2026-11-02 按需求再调整为 1200 尘缘/片。最高档（满星分解 decomposeOwned）不动：那是把一张已经养到头的卡毁掉，本来就该明显高于重复卡。",
+    "decomposeOwned": {
+      "diamond": 8000,
+      "red": 3000,
+      "gold": 1000,
+      "purple": 300,
+      "blue": 100,
+      "green": 30
+    },
+    "essenceShop": [
+      {
+        "key": "shard-any",
+        "label": "定向残卷（任选一角色 · 缘 +1）",
+        "costEach": 8000,
+        "stockPerWeek": 2,
+        "gives": {
+          "fateOf": 1
+        },
+        "note": "2026-11-05 改口径：定向残卷=任选一名已拥有角色缘+1。价格按目标阶级在 content/fate.json → directScroll 中单独定价（绿200/蓝600/紫1500/金4000/红8000/晶钻24000），此处 costEach 仅为最低档兜底。"
+      },
+      {
+        "key": "tome-gold",
+        "label": "金阶技能书",
+        "costEach": 150,
+        "stockPerWeek": 10,
+        "gives": {
+          "tome:gold": 1
+        }
+      },
+      {
+        "key": "tome-red",
+        "label": "红阶技能书",
+        "costEach": 600,
+        "stockPerWeek": 3,
+        "gives": {
+          "tome:red": 1
+        }
+      },
+      {
+        "key": "stamina",
+        "label": "心神 60 点",
+        "costEach": 200,
+        "stockPerWeek": 7,
+        "gives": {
+          "stamina": 60
+        }
+      },
+      {
+        "key": "pill-ess",
+        "label": "洗髓丹 ×1",
+        "costEach": 100,
+        "stockPerWeek": 20,
+        "gives": {
+          "pill": 1
+        }
+      },
+      {
+        "key": "stamina-ess",
+        "label": "心神 +60",
+        "costEach": 180,
+        "stockPerWeek": 5,
+        "gives": {
+          "stamina": 60
+        }
+      }
+    ]
+  },
+  "coinMarket": {
+    "comment": "铜钱坊市：每天用铜钱买经验物，是'铜钱花不完、经验物差一点'的兜底。为什么要它：14 天模拟跑到第 9 天，队伍五个人停在 Lv37~39/40，钱包里躺着 238523 铜钱和 131 颗洗髓丹，却只差约 1 万经验跨不过突破门槛——卡等级的是经验物而不是铜钱，而经验物只能靠刷本，刷本就受心神限制。大型卡牌游戏在这里都会给一条金币换经验的路（买体力太伤经济，买材料刚好）。定价锚：levelCurve.coinPerExp=0.1 铜钱/经验，坊市按 1.4 倍卖，让'直接买'永远比'刷本'贵，刷本仍是主路径，买只是补最后一口。限购按天，补的是当天的缺口，不是把整条曲线买穿。",
+    "scarceNote": "2026-10-26 重校：洗髓丹/金阶技能书/心神这三条不是经验物，它们是'稀缺养成物'，按原来的铜钱价等于白送（铜钱日常 15~18 万/天 + 首通一次性数百万，买空整张货架只要 49 万/天）。所以只涨价、不下架：洗髓丹 11,000→55,000 一枚（≈89 点体力，而扫关主是 6 体力一颗，买变成'急用才买'）、金书 40,000→200,000 一本（≈322 点体力，而技能本噩梦 3.3 体力一本）、心神 6,000→18,000（对齐'20 缘玉 = 60 心神'的口径，不再比直接用缘玉买体力便宜 3 倍）。散页/注疏/藏卷四条是真正的经验物，价格不动。2026-11-02 需求调整限购：洗髓丹 ×2 每日可买 10 次（原 3）、心神 +30 每日可买 10 次（原 2）。",
+    "lines": [
+      {
+        "key": "page-market",
+        "label": "散页 ×10",
+        "currency": "coin",
+        "costEach": 4200,
+        "stockPerDay": 10,
+        "gives": {
+          "page": 10
+        }
+      },
+      {
+        "key": "note-market",
+        "label": "注记 ×5",
+        "currency": "coin",
+        "costEach": 16800,
+        "stockPerDay": 5,
+        "gives": {
+          "note": 5
+        }
+      },
+      {
+        "key": "scroll-market",
+        "label": "残卷 ×2",
+        "currency": "coin",
+        "costEach": 50400,
+        "stockPerDay": 2,
+        "gives": {
+          "scroll": 2
+        }
+      },
+      {
+        "key": "pill-market",
+        "label": "洗髓丹 ×2",
+        "currency": "coin",
+        "costEach": 110000,
+        "stockPerDay": 10,
+        "gives": {
+          "pill": 2
+        }
+      },
+      {
+        "key": "tome-gold-market",
+        "label": "金阶技能书 ×1",
+        "currency": "coin",
+        "costEach": 200000,
+        "stockPerDay": 2,
+        "gives": {
+          "tome:gold": 1
+        }
+      },
+      {
+        "key": "stamina-market",
+        "label": "心神 +30",
+        "currency": "coin",
+        "costEach": 18000,
+        "stockPerDay": 10,
+        "gives": {
+          "stamina": 30
+        }
+      },
+      {
+        "key": "note-market-b",
+        "label": "注疏大礼包 ×10",
+        "currency": "coin",
+        "costEach": 30000,
+        "stockPerDay": 1,
+        "gives": {
+          "note": 10
+        }
+      },
+      {
+        "key": "page-market-b",
+        "label": "散页大礼包 ×40",
+        "currency": "coin",
+        "costEach": 15000,
+        "stockPerDay": 5,
+        "gives": {
+          "page": 40
+        }
+      }
+    ]
+  },
+  "coinNote": "铜钱的全部消耗：materials.json → levelCurve.coinPerExp、starCost.coin*、skillLevels.coin* 三张展开表，加上 economy.coinMarket.lines（坊市买经验物）。这里不再单独定义'每点属性值多少钱'——上一版那个 coinSinks 字段没有任何代码读它，只会误导后续调参。",
+  "manor": {
+    "comment": "洞府灵田：离线也生长。收获直接发钱包，给长草期一个每天回来看一眼的钩子。开垦有硬上限 maxPlots（灵田不是无限开的），且地契只收缘玉（铜钱买不到地）：第 n 次开垦 = reclaimJade × reclaimGrowth^(n-1)，向上取整到 5 的倍数，上限 9 块时依次为 40/60/90/135/205/305 缘玉。",
+    "cropsNote": "2026-10-26 重校：灵田原来没有日上限（serve 的 manorHarvest 只校验长没长好），而单次产出是按'一天只收一次'定的量级——结果 3 块田的露华 60 缘玉/小时 = 4320 缘玉/天 ≈ 27 抽/天，是设计基线（1.6 抽/天）的 17 倍，灵谷 34.6 万铜钱/天、云露 36 颗洗髓丹/天，把缘玉/铜钱/洗髓丹三条线一起击穿。判据改成'一收 = 一块田 3~12 小时的产出'，且 3 块田合计控制在日常产出的 10%~15%：灵谷 900/6h（3 块 10,800 铜钱/天 ≈ 日常 7%）、露华 8/8h（3 块 72 缘玉/天 ≈ 0.45 抽）、云露 1 丹/12h（3 块 6 颗/天，靠扫关主仍是 40 颗/天的主路径）、灵芽 10 铜钱/5min（练手，不再能靠蹲点刷）。",
+    "plots": 3,
+    "maxPlots": 9,
+    "reclaimJade": 40,
+    "reclaimGrowth": 1.5,
+    "crops": [
+      {
+        "key": "grain",
+        "label": "灵谷",
+        "durMs": 21600000,
+        "reward": {
+          "coin": 900
+        },
+        "note": "铜钱 ×900 · 6 小时"
+      },
+      {
+        "key": "dew",
+        "label": "露华",
+        "durMs": 28800000,
+        "reward": {
+          "jade": 8
+        },
+        "note": "缘玉 ×8 · 8 小时"
+      },
+      {
+        "key": "cloud",
+        "label": "云露",
+        "durMs": 43200000,
+        "reward": {
+          "pill": 1
+        },
+        "note": "洗髓丹 ×1 · 12 小时"
+      },
+      {
+        "key": "sprout",
+        "label": "灵芽",
+        "durMs": 300000,
+        "reward": {
+          "coin": 10
+        },
+        "note": "铜钱 ×10 · 5 分钟（练手用）"
+      }
+    ]
+  },
+  "codexRewards": {
+    "comment": "图鉴收集里程碑：达到档位可领一次性奖励。",
+    "tiers": [
+      {
+        "at": 10,
+        "jade": 200,
+        "essence": 100
+      },
+      {
+        "at": 20,
+        "jade": 300,
+        "essence": 150
+      },
+      {
+        "at": 30,
+        "jade": 400,
+        "essence": 200,
+        "coin": 10000
+      },
+      {
+        "at": 45,
+        "jade": 600,
+        "essence": 300,
+        "coin": 30000
+      },
+      {
+        "at": 60,
+        "jade": 800,
+        "essence": 400,
+        "coin": 60000
+      },
+      {
+        "at": 81,
+        "jade": 2000,
+        "essence": 1000,
+        "coin": 200000
+      }
+    ]
+  }
+}

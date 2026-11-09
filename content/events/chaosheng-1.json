@@ -1,0 +1,1889 @@
+{
+  "schema": 1,
+  "id": "chaosheng-1",
+  "kind": "limited",
+  "name": "瀛海·潮生祭",
+  "desc": "瀛海百年一次的潮生祭，珠阙开海市，万灯随潮起。十二关连战，尘缘与缘玉掉落最丰，海市可换红阶技能书与大量缘玉。 除主线关卡外，另设三段试炼与一重挑战，通关可得活动积分，积分可在商店兑换。",
+  "banner": "/bg/evbg-chaosheng_v1.jpg",
+  "shop": [
+    {
+      "key": "jade200",
+      "label": "缘玉 ×200",
+      "cost": {
+        "score": 1500
+      },
+      "stock": 2,
+      "jade": 1200,
+      "costNote": "活动积分"
+    },
+    {
+      "key": "tome-red1",
+      "label": "红阶技能书 ×1",
+      "cost": {
+        "score": 1850
+      },
+      "stock": 1,
+      "mat": {
+        "tome:red": 2
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "pill3",
+      "label": "洗髓丹 ×3",
+      "cost": {
+        "score": 800
+      },
+      "stock": 3,
+      "mat": {
+        "pill": 5
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "soul60",
+      "label": "器魂 ×60",
+      "cost": {
+        "score": 800
+      },
+      "stock": 2,
+      "mat": {
+        "soul": 90
+      },
+      "costNote": "活动积分"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ev-chaosheng-01",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 01·潮头",
+      "faction": "yh",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 50,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 50,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 50,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 50,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 50,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1400,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 34,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 6,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-m02",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 02·渔火",
+      "faction": "yh",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 50,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 50,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 50,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 50,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 50,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8960,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1568,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 34,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 6,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-02",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 03·珠市",
+      "faction": "yh",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.7,
+          "team": [
+            {
+              "id": "mob-yh-teng",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 60,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 60,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 60,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-ding"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 10000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 35
+      },
+      "drop": {
+        "coin": 1600,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 38,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 8,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-m04",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 04·踏浪",
+      "faction": "yh",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.7,
+          "team": [
+            {
+              "id": "mob-yh-teng",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 60,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 60,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 60,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-ding"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 11200,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 35
+      },
+      "drop": {
+        "coin": 1792,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 38,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 8,
+            "rate": 1
+          },
+          {
+            "key": "pill",
+            "qty": 1,
+            "rate": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-03",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 05·万灯",
+      "faction": "yh",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 70,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-teng",
+              "rarity": "purple",
+              "level": 70,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 70,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 70,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 70,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 13000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 40
+      },
+      "drop": {
+        "coin": 1800,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 44,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 10,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-m06",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 06·蜃楼",
+      "faction": "yh",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 70,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-teng",
+              "rarity": "purple",
+              "level": 70,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 70,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 70,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-bei",
+              "rarity": "green",
+              "level": 70,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 14560,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 40
+      },
+      "drop": {
+        "coin": 2016,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 44,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 10,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-m07",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 07·龙吟",
+      "faction": "yh",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.9,
+          "team": [
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 73,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 73,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 73,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 73,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 73,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-ding"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 17920,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 50
+      },
+      "drop": {
+        "coin": 2352,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 50,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 12,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.35
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-04",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 08·祭海",
+      "faction": "yh",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.9,
+          "team": [
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 74,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 74,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 74,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 74,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ct",
+              "rarity": "blue",
+              "level": 74,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-ding"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 16000,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 50
+      },
+      "drop": {
+        "coin": 2100,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 50,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 12,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.35
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-m09",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 09·归潮",
+      "faction": "yh",
+      "stamina": 13,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 75,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 75,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 75,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-teng",
+              "rarity": "purple",
+              "level": 75,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 75,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 24,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 21280,
+        "jade": 120,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 2688,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 58,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 14,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-05",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 10·潮生",
+      "faction": "yh",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 76,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 76,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 76,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-teng",
+              "rarity": "purple",
+              "level": 76,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 76,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 24,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 19000,
+        "jade": 120,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 2400,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 58,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 14,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-m11",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 11·海晏",
+      "faction": "yh",
+      "stamina": 14,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.9,
+          "team": [
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 77,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 77,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 77,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 77,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 77,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-ding"
+            }
+          ]
+        },
+        {
+          "mult": 2.1,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 77,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 77,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 77,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 77,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 77,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 34,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 28000,
+        "jade": 200,
+        "stamina": 0,
+        "dust": 80
+      },
+      "drop": {
+        "coin": 3360,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 72,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.2
+          },
+          {
+            "key": "pill",
+            "qty": 2,
+            "rate": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-06",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "name": "瀛海·潮生祭 12·珠阙",
+      "faction": "yh",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.9,
+          "team": [
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 78,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 78,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 78,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 78,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 78,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-ding"
+            }
+          ]
+        },
+        {
+          "mult": 2.1,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 78,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 78,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-pao",
+              "rarity": "blue",
+              "level": 78,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 78,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 78,
+              "slot": 4,
+              "star": 1
+            }
+          ],
+          "mobs": [
+            {
+              "id": "mob-yh-pao"
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 34,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 25000,
+        "jade": 200,
+        "stamina": 0,
+        "dust": 80
+      },
+      "drop": {
+        "coin": 3000,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 72,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.2
+          },
+          {
+            "key": "pill",
+            "qty": 2,
+            "rate": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-1-trial-01",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "section": "trial",
+      "name": "瀛海·潮生祭 试炼01·霜刃初试",
+      "faction": "yh",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.1,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.2,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thin-qi"
+        },
+        {
+          "id": "thunder-pool"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-chaosheng-06",
+      "firstClear": {
+        "coin": 16000,
+        "jade": 120,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 3750,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 42,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 10,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-1-trial-02",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "section": "trial",
+      "name": "瀛海·潮生祭 试炼02·百炼成钢",
+      "faction": "yh",
+      "stamina": 12,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.3,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.4,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thunder-pool"
+        },
+        {
+          "id": "miasma"
+        }
+      ],
+      "stars": {
+        "turns": 28,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-chaosheng-1-trial-01",
+      "firstClear": {
+        "coin": 20000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 4200,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 54,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 14,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-1-trial-03",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "section": "trial",
+      "name": "瀛海·潮生祭 试炼03·绝地反击",
+      "faction": "yh",
+      "stamina": 13,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.5,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.6,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.7,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "miasma"
+        },
+        {
+          "id": "iron-wall"
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-chaosheng-1-trial-02",
+      "firstClear": {
+        "coin": 24000,
+        "jade": 200,
+        "stamina": 0,
+        "dust": 75
+      },
+      "drop": {
+        "coin": 4650,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 66,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 18,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-chaosheng-1-challenge-01",
+      "chapter": 0,
+      "chapterLabel": "瀛海·潮生祭",
+      "kind": "event",
+      "section": "challenge",
+      "name": "瀛海·潮生祭 挑战01·无上之境",
+      "faction": "yh",
+      "stamina": 15,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.7,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.9,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 3.1,
+          "team": [
+            {
+              "id": "boss-yh-jiao",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-hong",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-man",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-ding",
+              "rarity": "green",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-yh-mu",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "iron-wall"
+        },
+        {
+          "id": "lone-band"
+        },
+        {
+          "id": "twin"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-chaosheng-1-trial-03",
+      "firstClear": {
+        "coin": 40000,
+        "jade": 300,
+        "stamina": 0,
+        "dust": 120
+      },
+      "drop": {
+        "coin": 6000,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 90,
+            "rate": 1
+          },
+          {
+            "key": "xinyin",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    }
+  ],
+  "bossArt": "/art/bosses/boss-yh-jiao.png",
+  "bossId": "boss-yh-jiao",
+  "accent": "#5fc8e8",
+  "themeSub": "潮汐祭典 · 珠阙海市",
+  "milestones": [
+    {
+      "score": 2200,
+      "label": "初露锋芒",
+      "reward": {
+        "coin": 22000,
+        "mat": {
+          "page": 34
+        }
+      }
+    },
+    {
+      "score": 4450,
+      "label": "渐入佳境",
+      "reward": {
+        "jade": 270,
+        "mat": {
+          "soul": 51
+        }
+      }
+    },
+    {
+      "score": 6650,
+      "label": "名动一方",
+      "reward": {
+        "jade": 540,
+        "mat": {
+          "pill": 5
+        }
+      }
+    },
+    {
+      "score": 8850,
+      "label": "登峰造极",
+      "reward": {
+        "jade": 1080,
+        "mat": {
+          "tome:gold": 2
+        }
+      }
+    }
+  ],
+  "shopMode": "once",
+  "starRewards": {
+    "main": {
+      "1": {
+        "score": 80,
+        "coin": 2000,
+        "jade": 30
+      },
+      "2": {
+        "score": 140,
+        "coin": 3500,
+        "jade": 40
+      },
+      "3": {
+        "score": 180,
+        "coin": 6000,
+        "jade": 50
+      }
+    },
+    "trial": {
+      "1": {
+        "score": 180,
+        "coin": 4000,
+        "jade": 60
+      },
+      "2": {
+        "score": 310,
+        "coin": 6000,
+        "jade": 80
+      },
+      "3": {
+        "score": 400,
+        "coin": 9000,
+        "jade": 100
+      }
+    },
+    "challenge": {
+      "1": {
+        "score": 270,
+        "coin": 8000,
+        "jade": 100
+      },
+      "2": {
+        "score": 460,
+        "coin": 12000,
+        "jade": 140
+      },
+      "3": {
+        "score": 650,
+        "coin": 18000,
+        "jade": 180
+      }
+    }
+  }
+}

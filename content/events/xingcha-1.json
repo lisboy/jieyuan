@@ -1,0 +1,1690 @@
+{
+  "schema": 1,
+  "id": "xingcha-1",
+  "kind": "permanent",
+  "name": "紫府·星槎渡",
+  "desc": "紫府观星台每旬放一艘星槎，渡人去天外捡陨星。十二段星路，掉落星砂、纹砂与心印——命格、器纹、终式改造三条长线的稳定来源。 除主线关卡外，另设三段试炼与一重挑战，通关可得活动积分，积分可在商店兑换。",
+  "banner": "/bg/evbg-xingcha_v1.jpg",
+  "shop": [
+    {
+      "key": "xingsha20",
+      "label": "星砂 ×20",
+      "cost": {
+        "score": 400
+      },
+      "stock": 3,
+      "mat": {
+        "xingsha": 30
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "wensha10",
+      "label": "纹砂 ×10",
+      "cost": {
+        "score": 600
+      },
+      "stock": 3,
+      "mat": {
+        "wensha": 15
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "xinyin1",
+      "label": "心印 ×1",
+      "cost": {
+        "score": 1300
+      },
+      "stock": 1,
+      "mat": {
+        "xinyin": 2
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "jade80",
+      "label": "缘玉 ×80",
+      "cost": {
+        "score": 700
+      },
+      "stock": 2,
+      "jade": 480,
+      "costNote": "活动积分"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ev-xingcha-01",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 01·启航",
+      "faction": "zf",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 50,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-que",
+              "rarity": "green",
+              "level": 50,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 50,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 50,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 50,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 7000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1200,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 28,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 3,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-m02",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 02·星港",
+      "faction": "zf",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 53,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-que",
+              "rarity": "green",
+              "level": 53,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 53,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 53,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 53,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 7840,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1344,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 28,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 3,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-m03",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 03·云帆",
+      "faction": "zf",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 55,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-heng",
+              "rarity": "gold",
+              "level": 55,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-zhi",
+              "rarity": "green",
+              "level": 55,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 55,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 55,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 10080,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1568,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 32,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-02",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 04·星潮",
+      "faction": "zf",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 58,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-heng",
+              "rarity": "gold",
+              "level": 58,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-zhi",
+              "rarity": "green",
+              "level": 58,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 58,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 58,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 9000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1400,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 32,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-m05",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 05·银河",
+      "faction": "zf",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.7,
+          "team": [
+            {
+              "id": "mob-zf-heng",
+              "rarity": "gold",
+              "level": 59,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 59,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 59,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 59,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 59,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 12320,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 35
+      },
+      "drop": {
+        "coin": 1792,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 38,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 5,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 2,
+            "rate": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-m06",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 06·天市",
+      "faction": "zf",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 61,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-heng",
+              "rarity": "gold",
+              "level": 61,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-zhi",
+              "rarity": "green",
+              "level": 61,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 61,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 61,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 22,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 15680,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 2128,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 44,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 6,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 2,
+            "rate": 0.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-03",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 07·陨铁",
+      "faction": "zf",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.7,
+          "team": [
+            {
+              "id": "mob-zf-heng",
+              "rarity": "gold",
+              "level": 62,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 62,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 62,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 62,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 62,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 11000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 35
+      },
+      "drop": {
+        "coin": 1600,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 38,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 5,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 2,
+            "rate": 0.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-m08",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 08·星槎",
+      "faction": "zf",
+      "stamina": 12,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 64,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 64,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 64,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 64,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 64,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 32,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 21280,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 65
+      },
+      "drop": {
+        "coin": 2688,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 58,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 8,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 3,
+            "rate": 1
+          },
+          {
+            "key": "xinyin",
+            "qty": 1,
+            "rate": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-04",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 09·天阙",
+      "faction": "zf",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 66,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-heng",
+              "rarity": "gold",
+              "level": 66,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-zhi",
+              "rarity": "green",
+              "level": 66,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 66,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 66,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 22,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 14000,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 1900,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 44,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 6,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 2,
+            "rate": 0.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-m10",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 10·渡劫",
+      "faction": "zf",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 60,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-que",
+              "rarity": "green",
+              "level": 60,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 60,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 60,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 60,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 7840,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1344,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 28,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 3,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-m11",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 11·星海",
+      "faction": "zf",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 69,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-heng",
+              "rarity": "gold",
+              "level": 69,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-zhi",
+              "rarity": "green",
+              "level": 69,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-dou",
+              "rarity": "blue",
+              "level": 69,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 69,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 10080,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1568,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 32,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-05",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "name": "紫府·星槎渡 12·归槎",
+      "faction": "zf",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 70,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 70,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 70,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 70,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 70,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 32,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 19000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 65
+      },
+      "drop": {
+        "coin": 2400,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 58,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 8,
+            "rate": 1
+          },
+          {
+            "key": "wensha",
+            "qty": 3,
+            "rate": 1
+          },
+          {
+            "key": "xinyin",
+            "qty": 1,
+            "rate": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-1-trial-01",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "section": "trial",
+      "name": "紫府·星槎渡 试炼01·霜刃初试",
+      "faction": "zf",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.2,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.3,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thin-qi"
+        },
+        {
+          "id": "thunder-pool"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-xingcha-05",
+      "firstClear": {
+        "coin": 16000,
+        "jade": 120,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 3000,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 42,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 10,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-1-trial-02",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "section": "trial",
+      "name": "紫府·星槎渡 试炼02·百炼成钢",
+      "faction": "zf",
+      "stamina": 12,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.4,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.5,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thunder-pool"
+        },
+        {
+          "id": "miasma"
+        }
+      ],
+      "stars": {
+        "turns": 28,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-xingcha-1-trial-01",
+      "firstClear": {
+        "coin": 20000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 3360,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 54,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 14,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-1-trial-03",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "section": "trial",
+      "name": "紫府·星槎渡 试炼03·绝地反击",
+      "faction": "zf",
+      "stamina": 13,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.6,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.7,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.8,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "miasma"
+        },
+        {
+          "id": "iron-wall"
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-xingcha-1-trial-02",
+      "firstClear": {
+        "coin": 24000,
+        "jade": 200,
+        "stamina": 0,
+        "dust": 75
+      },
+      "drop": {
+        "coin": 3720,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 66,
+            "rate": 1
+          },
+          {
+            "key": "xingsha",
+            "qty": 18,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-xingcha-1-challenge-01",
+      "chapter": 0,
+      "chapterLabel": "紫府·星槎渡",
+      "kind": "event",
+      "section": "challenge",
+      "name": "紫府·星槎渡 挑战01·无上之境",
+      "faction": "zf",
+      "stamina": 15,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.8,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 3,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 3.2,
+          "team": [
+            {
+              "id": "boss-zf-pan",
+              "rarity": "red",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-gui",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-ling",
+              "rarity": "purple",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-luo",
+              "rarity": "blue",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-zf-chou",
+              "rarity": "green",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "iron-wall"
+        },
+        {
+          "id": "lone-band"
+        },
+        {
+          "id": "twin"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-xingcha-1-trial-03",
+      "firstClear": {
+        "coin": 40000,
+        "jade": 300,
+        "stamina": 0,
+        "dust": 120
+      },
+      "drop": {
+        "coin": 4800,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 90,
+            "rate": 1
+          },
+          {
+            "key": "xinyin",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    }
+  ],
+  "bossArt": "/art/bosses/boss-zf-pan.png",
+  "bossId": "boss-zf-pan",
+  "accent": "#9a8fe8",
+  "themeSub": "银河渡口 · 星槎夜航",
+  "milestones": [
+    {
+      "score": 6000,
+      "label": "初露锋芒",
+      "reward": {
+        "coin": 22000,
+        "mat": {
+          "page": 34
+        }
+      }
+    },
+    {
+      "score": 15000,
+      "label": "渐入佳境",
+      "reward": {
+        "jade": 270,
+        "mat": {
+          "soul": 51
+        }
+      }
+    },
+    {
+      "score": 30000,
+      "label": "名动一方",
+      "reward": {
+        "jade": 540,
+        "mat": {
+          "pill": 5
+        }
+      }
+    },
+    {
+      "score": 60000,
+      "label": "登峰造极",
+      "reward": {
+        "jade": 1080,
+        "mat": {
+          "tome:gold": 2
+        }
+      }
+    }
+  ]
+}

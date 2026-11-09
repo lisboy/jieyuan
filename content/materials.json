@@ -1,0 +1,60 @@
+{
+  "comment": "养成材料。所有曲线只在这里写参数，由 tools/build.mjs 展开成 data/config.json 里的**显式数组**——Unity 只读表，不重算公式，因此不存在'编辑器里数值和网页对不上'。",
+
+  "expItems": {
+    "comment": "经验物价值。基准是'Lv1→20 一张卡约 63 张散页'，即散页一次材料本（6 张）够推进三分之一级——前期不该出现'材料够了铜钱不够'或反之。",
+    "page":   { "label": "散页", "exp": 1000,   "color": "#9aa3b2", "note": "青蓝小纸片，掉得最多" },
+    "note":   { "label": "注疏", "exp": 8000,  "color": "#6f9bd1", "note": "带批注的册子" },
+    "scroll": { "label": "藏卷", "exp": 60000, "color": "#dcc182", "note": "整卷收藏，后期主力" }
+  },
+
+  "breakItems": {
+    "comment": "突破专用材料，只从主线关卡（精英/中关/关主）与残卷本高难度掉，不能喂经验。为什么单独设一种：上一版突破消耗的是散页，而散页同时是升级口粮，harness 实测每打完一趟就把手里的散页喂进等级，三张卡永远攒不满 20 张去突破——同一个材料当两个用途，一定被便宜的那个吃光。",
+    "pill": { "label": "洗髓丹", "color": "#4fbf8f", "note": "一炉凝一颗，冲开境界用的" }
+  },
+
+  "levelCurve": {
+    "comment": "expToNext(level) = round(a * level^b + c * level + d)。按稀有度等级上限截断。",
+    "a": 42, "b": 1.72, "c": 55, "d": 120,
+    "coinPerExp": 0.1,
+    "coinNote": "1 点经验 = 0.1 铜钱。走过的四步：1.6（一卡 10 万，36 天才推完第一章）→ 0.25 → 0.3 → 0.1。0.3 是在 Lv1~40 段测出来的（红卡 Lv1→20 = 6.25 万经验 → 1.9 万铜钱），但 expToNext 按 level^1.72 涨，而关卡与材料本的铜钱产出几乎不涨，所以到 Lv50 之后一级就要 3.2 万经验 = 9.6 千铜钱、全队一级要 4.8 万，而第五章实测日进账只有 1.5 万——结果背包里堆着 320 散页 + 64 注记 + 113 残卷（约 760 万点经验）却一天只升 1 级，经验物彻底失去意义。定 0.1 的判据是让'升级费'回到与'刷经验的心神'同一量级：铜钱的约束应该出现在升星/技能/突破这三条长线，而不是出现在升级本身。",
+    "breakthroughs": [
+      { "atLevel": 20, "starMin": 1, "materials": { "pill": 4 }, "coin": 4000 },
+      { "atLevel": 40, "starMin": 2, "materials": { "pill": 12 }, "coin": 20000 },
+      { "atLevel": 60, "starMin": 4, "materials": { "pill": 30 }, "coin": 60000 },
+      { "atLevel": 80, "starMin": 6, "materials": { "pill": 60 }, "coin": 150000 }
+    ],
+    "breakthroughNote": "洗髓丹产量：精英 1 / 中关 2 / 关主 3，一章约 9 颗。所以第一次突破（4 颗/人）大约在推完第一章时给前排四人松开，第五次关卡墙自然引导玩家去打'能三星扫荡的关主'——刷关主掉丹是突破的唯一日常来源。"
+  },
+
+  "starCost": {
+    "comment": "升星消耗（2026-11-05 玩家口径改版）：所有角色升星只吃『对应阶级升星卷』——1→2 星 1 张、2→3 星 2 张……9→10 星 9 张；升星卷按六档（diamond/red/gold/purple/blue/green）分开，不再使用本体残卷/通用残卷。铜钱按 base*step^(n-1)*rarityMult 取整作金币回收。starCap 由 rarities.json 决定（全部 10 星）。",
+    "sameShardBase": 8, "sameShardStep": 1.55,
+    "anyShardBase": 4, "anyShardStep": 1.4,
+    "coinBase": 2500, "coinStep": 1.7,
+    "perRarityMult": { "diamond": 3.3, "red": 2.2, "gold": 1.6, "purple": 1.0, "blue": 0.6, "green": 0.35 }
+  },
+
+  "skillLevels": {
+    "comment": "技能 1..10 级。每级 fx 强度乘 (1 + perLevel*(lv-1))，卡面文本一律标 1 级基准值并写明'每级 +5%'，避免同一句话有两个版本。tomeCostBase 2026-10-26 由 1 提到 2：原来 round(1 × 1.35^(n-1) × 稀有度倍率) 会把绿卡前两级、蓝卡前几级算成 0 本，等于'白送技能等级'。2 是消除 0 的最小值（绿卡 2×0.35=0.7→1、蓝卡 2×0.6=1.2→1），总量放大到约 2 倍：紫 38→80、金 64→126、红 86→176。为什么不是 3：3 倍版本在模拟里让两张种子的一周进度从 500 关掉到 190 关（技能等级全线卡在 1 级，正好卡死第一章关主），0 本问题只需要 base=2 就能解决。",
+    "max": 10, "perLevel": 0.05,
+    "tomeByRarity": { "diamond": "red", "red": "red", "gold": "gold", "purple": "purple", "blue": "purple", "green": "purple" },
+    "tomeCostBase": 2, "tomeCostStep": 1.35,
+    "coinBase": 1200, "coinStep": 1.5
+  },
+
+  "tomes": {
+    "purple": { "label": "入门口诀", "color": "#8257c9", "note": "紫阶及以下通用" },
+    "gold": { "label": "心法残篇", "color": "#d9a13b", "note": "金阶技能" },
+    "red": { "label": "太史真解", "color": "#c8323c", "note": "红阶技能" }
+  },
+
+  "soul": {
+    "label": "器魂",
+    "color": "#8fb6e0",
+    "note": "缘器强化耗料；分解多余缘器获得（绿1/蓝2/紫5/金12/红25），穿戴中与本命不可分解"
+  },
+
+  "materialKeys": ["page", "note", "scroll", "pill", "soul", "xingsha", "wensha", "xinyin", "star_scroll", "tome:purple", "tome:gold", "tome:red"],
+  "note": "materialKeys 是掉落表允许引用的全集；validate.mjs 会卡住任何引用了不存在材料的关卡。"
+}

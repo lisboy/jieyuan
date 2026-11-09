@@ -1,0 +1,120 @@
+/* 拾缘 · expansion-growth —— 二期养成三件套：命格盘 / 心法改造 / 器纹刻铸（PLAYABLE P1）
+   金色调沿用缘器 tip 的 #d9a13b 系；质感与变量复用 style.css 的 :root 体系。 */
+
+/* ========== 命格 · 天赋盘（养成弹窗） ========== */
+
+.cons-diskname { font-size: 11px; color: #d9a13b; letter-spacing: .08em; margin-left: 6px; font-family: inherit; }
+.con-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.con-slot {
+  display: grid; gap: 2px; justify-items: center; padding: 8px 4px;
+  border-radius: 10px; border: 1px solid var(--line2); background: rgba(255, 255, 255, .03);
+  color: var(--dim); cursor: pointer; text-align: center;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+.con-slot:hover { border-color: rgba(217, 161, 59, .55); background: rgba(217, 161, 59, .06); transform: translateY(-1px); }
+.con-slot .cname { font-size: 11px; color: var(--faint); letter-spacing: .12em; }
+.con-slot .copt { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+.con-slot .ccost { font-size: 10px; color: var(--faint); line-height: 1.3; }
+.con-slot.lit { border-color: rgba(217, 161, 59, .45); background: rgba(217, 161, 59, .08); }
+.con-slot.lit .cname { color: #d9a13b; }
+.con-slot.lit .copt { color: #e8c98a; }
+.con-slot.lock, .con-slot.lock:hover { opacity: .55; cursor: default; transform: none; border-color: var(--line2); background: rgba(255, 255, 255, .03); }
+
+/* ========== 三选一浮层（命格点亮 / 心法改造共用） ========== */
+
+.con-opts { display: grid; gap: 8px; margin-top: 14px; }
+.con-opt {
+  display: flex; align-items: baseline; gap: 10px; text-align: left;
+  padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line2);
+  background: rgba(255, 255, 255, .03); color: var(--ink);
+  transition: border-color .15s, background .15s;
+}
+.con-opt:hover:not(:disabled) { border-color: rgba(217, 161, 59, .6); background: rgba(217, 161, 59, .07); }
+.con-opt:disabled { opacity: .45; cursor: not-allowed; }
+.con-opt .on { font-size: 14px; font-weight: 700; color: #e8c98a; flex: 0 0 auto; }
+.con-opt .od { font-size: 12px; color: var(--dim); line-height: 1.55; }
+.con-foot { margin-top: 12px; text-align: center; font-size: 12px; color: var(--gold); }
+
+/* ========== 心法 · 技能改造状态行（养成弹窗技能区底部） ========== */
+
+.cons-modline {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 8px 12px; border-radius: 10px; font-size: 12px;
+  border: 1px dashed var(--line2); color: var(--dim);
+}
+.cons-modline .mt { font-weight: 700; color: var(--faint); }
+.cons-modline .mdd { flex: 1; min-width: 0; }
+.cons-modline .mfix { font-size: 11px; color: var(--faint); }
+.cons-modline.has { border-style: solid; border-color: rgba(217, 161, 59, .4); background: rgba(217, 161, 59, .06); }
+.cons-modline.has .mt { color: #e8c98a; }
+
+/* ========== 器纹 · 行囊缘器角标 ========== */
+
+.runetag { font-size: 10px; padding: 1px 7px; cursor: help; white-space: nowrap; }
+
+/* ========== 三期：觉醒 + 传记（养成弹窗） ========== */
+
+/* 已觉醒的名字：染真名金并晕一层金光（名册卡片 / 详情 / 卡面 / 终式真名通用） */
+.awakened-name {
+  color: var(--gold-hi) !important;
+  text-shadow: 0 0 12px rgba(232, 201, 138, .55), 0 1px 3px rgba(0, 0, 0, .8);
+}
+
+/* 已觉醒徽章行 */
+.aw-badge {
+  display: flex; align-items: center; gap: 8px; padding: 9px 14px;
+  border-radius: 10px; border: 1px solid rgba(217, 161, 59, .5);
+  background: linear-gradient(120deg, rgba(217, 161, 59, .14), rgba(217, 161, 59, .04));
+  color: var(--gold-hi); font-weight: 700; letter-spacing: .06em; font-size: 13px;
+  text-shadow: 0 0 12px rgba(232, 201, 138, .35);
+}
+
+/* 觉醒三步任务清单 */
+.aw-steps { display: grid; gap: 6px; }
+.aw-step {
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+  border-radius: 10px; border: 1px dashed var(--line2); background: rgba(255, 255, 255, .03);
+}
+.aw-step .aw-ck {
+  flex: 0 0 auto; width: 20px; height: 20px; display: grid; place-items: center;
+  border-radius: 50%; border: 1px solid var(--line2); color: var(--faint);
+  font-size: 12px; font-weight: 700; line-height: 1;
+}
+.aw-step .aw-lb { display: grid; line-height: 1.4; font-size: 13px; color: var(--ink); }
+.aw-step .aw-lb i { font-style: normal; font-size: 11px; color: var(--faint); }
+.aw-step.ok { border-style: solid; border-color: rgba(217, 161, 59, .4); background: rgba(217, 161, 59, .07); }
+.aw-step.ok .aw-ck {
+  color: var(--gold-ink); border-color: transparent;
+  background: linear-gradient(120deg, #f4dfa8, #d9a13b);
+}
+.aw-step.ok .aw-lb { color: #e8c98a; }
+.aw-actrow { display: flex; align-items: center; gap: 12px; }
+.aw-actrow .btn { min-width: 118px; }
+
+/* ========== 三期：传记 modal（卷目列表 + 阅读页） ========== */
+
+.bio-modal { width: 520px; max-width: 94vw; }
+.bio-list { display: grid; gap: 10px; margin-top: 14px; }
+.bio-seg {
+  display: grid; gap: 8px; padding: 12px 14px;
+  border-radius: 10px; border: 1px solid var(--line2); background: rgba(255, 255, 255, .03);
+}
+.bio-seg.lock { opacity: .62; }
+.bio-seg.read { border-color: rgba(217, 161, 59, .35); background: rgba(217, 161, 59, .05); }
+.bio-seg .bs-hd { display: flex; align-items: baseline; gap: 8px; }
+.bio-seg .bs-t { font-family: var(--font-display); font-size: 15px; letter-spacing: .08em; color: #e8c98a; }
+.bio-seg.lock .bs-t { color: var(--dim); }
+.bio-seg .bs-ck { margin-left: auto; color: var(--gold); font-size: 13px; }
+.bio-seg .bs-tip { font-size: 12px; color: var(--faint); }
+
+/* 阅读页：段题金色 + 正文行高宽松的风雅排版 */
+.bio-reading .bio-pass { text-align: center; margin-top: 6px; }
+.bio-reading .bp-kicker { font-size: 11px; letter-spacing: .3em; color: var(--faint); }
+.bio-reading .bp-title {
+  font-family: var(--font-display); font-size: 22px; letter-spacing: .14em; margin-top: 8px;
+  color: var(--gold-hi); text-shadow: 0 0 16px rgba(232, 201, 138, .3);
+}
+.bio-reading .bp-rule { height: 1px; width: 60%; margin: 12px auto 14px; background: var(--gold-line); }
+.bio-reading .bp-text {
+  text-align: left; text-indent: 2em; font-size: 14px; line-height: 2; color: var(--ink);
+}

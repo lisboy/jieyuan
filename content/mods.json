@@ -1,0 +1,78 @@
+{
+  "comment": "天时·战场词条（DESIGN-EXPANSION §2.1）。meta.mjs 按关卡 id 的 seed 确定性抽 0~3 条写进 StageDoc.mods；C# StageScript 开战时施加。fx 是 C# ModFx 的扁平字段（不是嵌套对象）。tone: bad=纯害 / mixed=双刃 / risk=自选风险。dropBonus 是结算侧每条词条的掉落加成（不影响首通缘玉）。",
+  "schema": 1,
+  "mods": [
+    {
+      "id": "thin-qi",
+      "name": "灵气稀薄",
+      "desc": "我方能量获取 ×0.7，大招来得更慢",
+      "icon": "mods-qi",
+      "tone": "bad",
+      "fx": { "energyRate": 0.7 },
+      "dropBonus": 0.12
+    },
+    {
+      "id": "thunder-pool",
+      "name": "雷池",
+      "desc": "紫雷伤害 +40%，敌方雷气单位开局 +20 能量",
+      "icon": "mods-thunder",
+      "tone": "mixed",
+      "fx": { "elementDmgElement": "storm", "elementDmgMult": 1.4, "foeEnergyElement": "storm", "foeEnergyValue": 20 },
+      "dropBonus": 0.12
+    },
+    {
+      "id": "miasma",
+      "name": "瘴",
+      "desc": "每 3 回合，全体损失 3% 最大生命",
+      "icon": "mods-miasma",
+      "tone": "bad",
+      "fx": { "pulseEvery": 3, "pulsePct": 0.03 },
+      "dropBonus": 0.12
+    },
+    {
+      "id": "iron-wall",
+      "name": "铁壁",
+      "desc": "敌方防御 +25%，韧性上限 +50%",
+      "icon": "mods-wall",
+      "tone": "bad",
+      "fx": { "foeDefMult": 1.25, "toughMult": 1.5 },
+      "dropBonus": 0.12
+    },
+    {
+      "id": "lone-band",
+      "name": "孤军",
+      "desc": "只能上阵 4 人，本关掉落 +30%",
+      "icon": "mods-alone",
+      "tone": "risk",
+      "fx": { "teamCap": 4 },
+      "dropBonus": 0.3
+    },
+    {
+      "id": "lamp-out",
+      "name": "灯灭",
+      "desc": "治疗 -40%，护盾 +40%",
+      "icon": "mods-lamp",
+      "tone": "mixed",
+      "fx": { "healRate": 0.6, "shieldRate": 1.4 },
+      "dropBonus": 0.12
+    },
+    {
+      "id": "gale",
+      "name": "疾风",
+      "desc": "全体速度 +20%，受击伤害 +10%",
+      "icon": "mods-wind",
+      "tone": "mixed",
+      "fx": { "spdMult": 1.2, "dmgTaken": 1.1 },
+      "dropBonus": 0.12
+    },
+    {
+      "id": "twin",
+      "name": "双生",
+      "desc": "同波同名敌人共享 30% 伤害，逼迫点杀",
+      "icon": "mods-twin",
+      "tone": "bad",
+      "fx": { "linkShare": 0.3 },
+      "dropBonus": 0.12
+    }
+  ]
+}

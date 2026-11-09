@@ -1,0 +1,935 @@
+{
+  "comment": "低稀有度（紫/蓝/绿）技能的装配模板。build.mjs 按 role 取变体、按 rarity 的 powerScale 缩放系数、按 element 填词。金/红为人工手写，不用这里。{el}=六气名 {t}=目标数 {turns}。",
+  "targetPlaceholder": {
+    "enemy_all": "全体",
+    "enemy_front": "前排",
+    "ally_all": "全队",
+    "ally_lowest_hp": "最危急的同伴",
+    "self": "自身"
+  },
+  "ultimate": {
+    "burst": [
+      {
+        "name": "一刃断沧溟",
+        "energy": 70,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 2.4,
+            "type": "phys"
+          }
+        ],
+        "text": "凝一线{el}于刃，对单体造成 {d0}% {el}伤。"
+      },
+      {
+        "name": "指落惊鸿",
+        "energy": 65,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.9,
+            "type": "magic"
+          },
+          {
+            "k": "debuff",
+            "stat": "spd",
+            "op": "mul",
+            "value": 0.85,
+            "turns": 2
+          }
+        ],
+        "text": "指风点向眉心，造成 {d0}% {el}伤，并令其「迟行」({t1}回合)。"
+      },
+      {
+        "name": "三叠落星辰",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 0.62,
+            "type": "magic",
+            "times": 3
+          }
+        ],
+        "text": "一息三吐，对单体连击 3 次，每次 {d0}% {el}伤。"
+      },
+      {
+        "name": "长虹贯白日",
+        "energy": 65,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 2.2,
+            "type": "phys"
+          }
+        ],
+        "text": "一线白虹贯日而出，对单体造成 {d0}% {el}伤。"
+      },
+      {
+        "name": "孤星坠寒夜",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.02,
+            "type": "magic",
+            "times": 2
+          }
+        ],
+        "text": "寒星两坠，对单体连击 2 次，每次 {d0}% {el}伤。"
+      },
+      {
+        "name": "白虹贯月",
+        "energy": 70,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 2,
+            "type": "magic"
+          },
+          {
+            "k": "debuff",
+            "stat": "def",
+            "op": "mul",
+            "value": 0.9,
+            "turns": 2
+          }
+        ],
+        "text": "白虹贯月，造成 {d0}% {el}伤并削弱其防({t1}回合)。"
+      },
+      {
+        "name": "裂云惊雷",
+        "energy": 65,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.7,
+            "type": "phys"
+          },
+          {
+            "k": "buff",
+            "stat": "atk",
+            "op": "mul",
+            "value": 1.15,
+            "turns": 2,
+            "target": "self"
+          }
+        ],
+        "text": "一雷裂云，造成 {d0}% 伤害，自身攻击 +15%（2回合）。"
+      }
+    ],
+    "cleave": [
+      {
+        "name": {
+          "form": "万壑松风",
+          "spirit": "千峰裂雪"
+        },
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_all",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.15,
+            "type": "magic",
+            "target": "enemy_all"
+          }
+        ],
+        "text": "{el}气铺开，对敌方全体造成 {d0}% 伤害。"
+      },
+      {
+        "name": "天地归霜",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_all",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1,
+            "type": "magic",
+            "target": "enemy_all"
+          },
+          {
+            "k": "debuff",
+            "stat": "spd",
+            "op": "mul",
+            "value": 0.9,
+            "turns": 2,
+            "target": "enemy_all"
+          }
+        ],
+        "text": "寒气铺满全场，敌方全体受到 {d0}% 伤害并减速({t1}回合)。"
+      },
+      {
+        "name": "长风卷野",
+        "energy": 65,
+        "cd": 3,
+        "target": "enemy_all",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 0.58,
+            "type": "phys",
+            "times": 2,
+            "target": "enemy_all"
+          }
+        ],
+        "text": "长风连卷，对敌方全体连击 2 次，每次 {d0}% 伤害。"
+      },
+      {
+        "name": "山河俱裂",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_all",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 0.9,
+            "type": "phys",
+            "target": "enemy_all"
+          },
+          {
+            "k": "dot",
+            "mode": "atk",
+            "coef": 0.2,
+            "turns": 2,
+            "capCoef": 0.8,
+            "target": "enemy_all"
+          }
+        ],
+        "text": "一击震裂山河，全体受到 {d0}% 伤害并持续流血。"
+      }
+    ],
+    "break": [
+      {
+        "name": "叩阙问天",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.6,
+            "type": "phys"
+          },
+          {
+            "k": "debuff",
+            "stat": "def",
+            "op": "mul",
+            "value": 0.85,
+            "turns": 2
+          }
+        ],
+        "text": "一击震开护体，造成 {d0}% 伤害并削弱其防({t1}回合)。"
+      },
+      {
+        "name": "碎玉裂金声",
+        "energy": 65,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.3,
+            "type": "phys"
+          },
+          {
+            "k": "shieldBreak",
+            "value": 0.5
+          }
+        ],
+        "text": "专破护身法，打掉 50% 护盾并造成 {d0}% 伤害。"
+      },
+      {
+        "name": "铁马冰河",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.55,
+            "type": "phys"
+          },
+          {
+            "k": "debuff",
+            "stat": "def",
+            "op": "mul",
+            "value": 0.8,
+            "turns": 3
+          }
+        ],
+        "text": "铁马踏冰河，造成 {d0}% 伤害并大幅削防({t1}回合)。"
+      },
+      {
+        "name": "崩山裂石",
+        "energy": 65,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.35,
+            "type": "phys"
+          },
+          {
+            "k": "shieldBreak",
+            "value": 0.8
+          }
+        ],
+        "text": "崩山之势，打掉 80% 护盾并造成 {d0}% 伤害。"
+      },
+      {
+        "name": "折戟沉沙",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.5,
+            "type": "phys"
+          },
+          {
+            "k": "debuff",
+            "stat": "def",
+            "op": "mul",
+            "value": 0.85,
+            "turns": 2
+          }
+        ],
+        "text": "折其戟于沉沙，造成 {d0}% 伤害并削弱攻击({t1}回合)。"
+      },
+      {
+        "name": "摧枯拉朽",
+        "energy": 55,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 1.25,
+            "type": "phys"
+          },
+          {
+            "k": "dot",
+            "mode": "atk",
+            "coef": 0.22,
+            "turns": 2,
+            "capCoef": 0.8
+          },
+          {
+            "k": "shieldBreak",
+            "value": 0.6
+          }
+        ],
+        "text": "摧枯拉朽，造成 {d0}% 伤害并留下持续创伤。"
+      }
+    ],
+    "sustain": [
+      {
+        "name": "渡厄续长生",
+        "energy": 55,
+        "cd": 2,
+        "target": "ally_lowest_hp",
+        "fx": [
+          {
+            "k": "heal",
+            "coef": 1.5,
+            "target": "ally_lowest_hp"
+          }
+        ],
+        "text": "渡一口{el}气，回复最危急同伴 {h0}% 攻击力的生命。"
+      },
+      {
+        "name": "涤尘洗碧落",
+        "energy": 60,
+        "cd": 3,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "heal",
+            "coef": 0.72,
+            "target": "ally_all"
+          },
+          {
+            "k": "dispel",
+            "count": 1,
+            "target": "ally_all"
+          }
+        ],
+        "text": "洗去尘埃：全队回复 {h0}% 并解除 1 层负面。"
+      },
+      {
+        "name": "甘露润枯荣",
+        "energy": 55,
+        "cd": 3,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "heal",
+            "coef": 0.85,
+            "target": "ally_all"
+          }
+        ],
+        "text": "甘露遍洒，全队回复 {h0}% 攻击力生命。"
+      },
+      {
+        "name": "杏林春满",
+        "energy": 60,
+        "cd": 3,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "heal",
+            "coef": 0.6,
+            "target": "ally_all"
+          },
+          {
+            "k": "buff",
+            "stat": "def",
+            "op": "mul",
+            "value": 1.15,
+            "turns": 2,
+            "target": "ally_all"
+          }
+        ],
+        "text": "杏林春满：全队回复 {h0}% 并防御 +15%。"
+      },
+      {
+        "name": "枯木又逢春",
+        "energy": 60,
+        "cd": 3,
+        "target": "ally_lowest_hp",
+        "fx": [
+          {
+            "k": "heal",
+            "coef": 1.35,
+            "target": "ally_lowest_hp"
+          },
+          {
+            "k": "energy",
+            "value": 10,
+            "target": "ally_lowest_hp"
+          }
+        ],
+        "text": "枯木逢春，回复最危急同伴 {h0}% 生命并为其续气。"
+      },
+      {
+        "name": "清泉洗旧疴",
+        "energy": 55,
+        "cd": 2,
+        "target": "ally_lowest_hp",
+        "fx": [
+          {
+            "k": "heal",
+            "coef": 1.2,
+            "target": "ally_lowest_hp"
+          },
+          {
+            "k": "dispel",
+            "count": 1,
+            "target": "ally_lowest_hp"
+          }
+        ],
+        "text": "清泉洗去旧疾：回复 {h0}% 生命并解除 1 层负面。"
+      }
+    ],
+    "guard": [
+      {
+        "name": "一肩挡千劫",
+        "energy": 55,
+        "cd": 3,
+        "target": "ally_single",
+        "fx": [
+          {
+            "k": "shield",
+            "coef": 1.2,
+            "turns": 2
+          }
+        ],
+        "text": "以身为闸，为单体套上 {s0}% 的{el}盾（2回合）。"
+      },
+      {
+        "name": "镇关守夜人",
+        "energy": 60,
+        "cd": 3,
+        "target": "self",
+        "fx": [
+          {
+            "k": "taunt",
+            "turns": 2
+          },
+          {
+            "k": "buff",
+            "stat": "def",
+            "op": "mul",
+            "value": 1.25,
+            "turns": 2,
+            "target": "self"
+          }
+        ],
+        "text": "揽尽灾殃：嘲讽敌方 2 回合，自身防御 +25%。"
+      },
+      {
+        "name": "铁壁横江",
+        "energy": 60,
+        "cd": 3,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "shield",
+            "coef": 0.8,
+            "turns": 2,
+            "target": "ally_all"
+          }
+        ],
+        "text": "铁壁横江，为全队套上 {s0}% 的护盾（2回合）。"
+      },
+      {
+        "name": "不动如山",
+        "energy": 55,
+        "cd": 3,
+        "target": "self",
+        "fx": [
+          {
+            "k": "taunt",
+            "turns": 1
+          },
+          {
+            "k": "shield",
+            "coef": 1.4,
+            "turns": 2,
+            "target": "self"
+          }
+        ],
+        "text": "不动如山：嘲讽敌方 1 回合，自身获得 {s0}% 护盾。"
+      },
+      {
+        "name": "金汤永固",
+        "energy": 60,
+        "cd": 3,
+        "target": "ally_single",
+        "fx": [
+          {
+            "k": "shield",
+            "coef": 1,
+            "turns": 2,
+            "target": "ally_single"
+          },
+          {
+            "k": "buff",
+            "stat": "def",
+            "op": "mul",
+            "value": 1.2,
+            "turns": 2,
+            "target": "ally_single"
+          }
+        ],
+        "text": "金汤之固：为单体套 {s0}% 盾并防御 +20%。"
+      },
+      {
+        "name": "磐石当关",
+        "energy": 55,
+        "cd": 3,
+        "target": "self",
+        "fx": [
+          {
+            "k": "taunt",
+            "turns": 2
+          },
+          {
+            "k": "shield",
+            "coef": 0.9,
+            "turns": 2,
+            "target": "self"
+          }
+        ],
+        "text": "磐石当关：嘲讽敌方 2 回合，自身获得 {s0}% 护盾。"
+      }
+    ],
+    "control": [
+      {
+        "name": "一喝山河定",
+        "energy": 55,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 0.85,
+            "type": "magic"
+          },
+          {
+            "k": "stun",
+            "turns": 1,
+            "chance": 0.65
+          }
+        ],
+        "text": "一声「定」，造成 {d0}% 伤害并以 65% 概率定身 1 回合。"
+      },
+      {
+        "name": "封喉锁玉言",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_all",
+        "fx": [
+          {
+            "k": "silence",
+            "turns": 1,
+            "chance": 0.45
+          }
+        ],
+        "text": "封住咒辞：敌方全体 45% 概率无法施术 1 回合。"
+      },
+      {
+        "name": "缚魂一线",
+        "energy": 55,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 0.7,
+            "type": "magic"
+          },
+          {
+            "k": "stun",
+            "turns": 1,
+            "chance": 0.5
+          }
+        ],
+        "text": "缚魂一线，造成 {d0}% 伤害并以 50% 概率定身 1 回合。"
+      },
+      {
+        "name": "天罗地网",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_all",
+        "fx": [
+          {
+            "k": "debuff",
+            "stat": "spd",
+            "op": "mul",
+            "value": 0.75,
+            "turns": 2,
+            "target": "enemy_all"
+          }
+        ],
+        "text": "天罗地网，敌方全体速度 -25%（2回合）。"
+      },
+      {
+        "name": "噤声寒蝉",
+        "energy": 55,
+        "cd": 3,
+        "target": "enemy_single",
+        "fx": [
+          {
+            "k": "damage",
+            "coef": 0.6,
+            "type": "magic"
+          },
+          {
+            "k": "silence",
+            "turns": 1,
+            "chance": 0.6,
+            "target": "enemy_single"
+          }
+        ],
+        "text": "噤若寒蝉：造成 {d0}% 伤害并以 60% 概率沉默 1 回合。"
+      },
+      {
+        "name": "画地为界",
+        "energy": 60,
+        "cd": 3,
+        "target": "enemy_all",
+        "fx": [
+          {
+            "k": "stun",
+            "turns": 1,
+            "chance": 0.3,
+            "target": "enemy_all"
+          }
+        ],
+        "text": "画地为界：敌方全体 30% 概率定身 1 回合。"
+      }
+    ],
+    "support": [
+      {
+        "name": "借东风一缕",
+        "energy": 50,
+        "cd": 3,
+        "target": "ally_single",
+        "fx": [
+          {
+            "k": "buff",
+            "stat": "atk",
+            "op": "mul",
+            "value": 1.22,
+            "turns": 2
+          }
+        ],
+        "text": "把自身{el}分给同伴，其攻击 +22%（2回合）。"
+      },
+      {
+        "name": "续香火千年",
+        "energy": 45,
+        "cd": 2,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "energy",
+            "value": 18,
+            "target": "ally_all"
+          }
+        ],
+        "text": "为全队续上一缕香火：全员怒气 +18。"
+      },
+      {
+        "name": "星火相传",
+        "energy": 50,
+        "cd": 3,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "energy",
+            "value": 10,
+            "target": "ally_all"
+          },
+          {
+            "k": "buff",
+            "stat": "atk",
+            "op": "mul",
+            "value": 1.1,
+            "turns": 2,
+            "target": "ally_all"
+          }
+        ],
+        "text": "星火相传：全队怒气 +10，攻击 +10%（2回合）。"
+      },
+      {
+        "name": "同心结",
+        "energy": 50,
+        "cd": 3,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "buff",
+            "stat": "def",
+            "op": "mul",
+            "value": 1.2,
+            "turns": 2,
+            "target": "ally_all"
+          }
+        ],
+        "text": "同心结：全队防御 +20%（2回合）。"
+      },
+      {
+        "name": "众志成城",
+        "energy": 55,
+        "cd": 3,
+        "target": "ally_all",
+        "fx": [
+          {
+            "k": "buff",
+            "stat": "atk",
+            "op": "mul",
+            "value": 1.12,
+            "turns": 2,
+            "target": "ally_all"
+          },
+          {
+            "k": "buff",
+            "stat": "mdef",
+            "op": "mul",
+            "value": 1.1,
+            "turns": 2,
+            "target": "ally_all"
+          }
+        ],
+        "text": "众志成城：全队攻击 +12%、法抗 +10%（2回合）。"
+      },
+      {
+        "name": "薪尽火传",
+        "energy": 55,
+        "cd": 3,
+        "target": "ally_single",
+        "fx": [
+          {
+            "k": "energy",
+            "value": 25,
+            "target": "ally_single"
+          },
+          {
+            "k": "buff",
+            "stat": "atk",
+            "op": "mul",
+            "value": 1.08,
+            "turns": 2,
+            "target": "ally_single"
+          }
+        ],
+        "text": "薪尽火传：为单体续气 +25 并攻击 +8%（2回合）。"
+      }
+    ]
+  },
+  "passive": {
+    "burst": [
+      {
+        "name": "未动先声",
+        "fx": [
+          {
+            "k": "trigger",
+            "on": "battle_start",
+            "fx": [
+              {
+                "k": "buff",
+                "stat": "spd",
+                "op": "mul",
+                "value": 1.15,
+                "turns": 1,
+                "target": "self"
+              }
+            ]
+          }
+        ],
+        "text": "开战时自身速度 +15%（1回合）。"
+      }
+    ],
+    "cleave": [
+      {
+        "name": "烬余不熄",
+        "fx": [
+          {
+            "k": "trigger",
+            "on": "skill_used",
+            "fx": [
+              {
+                "k": "dot",
+                "mode": "atk",
+                "coef": 0.28,
+                "turns": 2,
+                "capCoef": 0.9
+              }
+            ]
+          }
+        ],
+        "text": "施术后残留火气，目标每回合受 {p0}% 持续伤害（2回合）。"
+      }
+    ],
+    "break": [
+      {
+        "name": "寸劲称斤",
+        "fx": [
+          {
+            "k": "trigger",
+            "on": "self_hit",
+            "fx": [
+              {
+                "k": "debuff",
+                "stat": "atk",
+                "op": "mul",
+                "value": 0.9,
+                "turns": 2
+              }
+            ]
+          }
+        ],
+        "text": "被击中时反压一手，攻击者伤害 -10%（2回合）。"
+      }
+    ],
+    "sustain": [
+      {
+        "name": "长明不灭灯",
+        "fx": [
+          {
+            "k": "trigger",
+            "on": "ally_down",
+            "fx": [
+              {
+                "k": "heal",
+                "coef": 0.8,
+                "target": "ally_lowest_hp"
+              }
+            ]
+          }
+        ],
+        "text": "有同伴倒下时，为其续一口元气（回复 80% 攻击力生命）。"
+      }
+    ],
+    "guard": [
+      {
+        "name": "铁骨承霜",
+        "fx": [
+          {
+            "k": "trigger",
+            "on": "turn_start",
+            "fx": [
+              {
+                "k": "shield",
+                "coef": 0.55,
+                "turns": 1,
+                "target": "self",
+                "decays": true
+              }
+            ]
+          }
+        ],
+        "text": "每回合初自行结一层薄盾（55% 攻击力，回合末消散）。"
+      }
+    ],
+    "control": [
+      {
+        "name": "洞见秋毫",
+        "fx": [
+          {
+            "k": "trigger",
+            "on": "critical_hit",
+            "fx": [
+              {
+                "k": "energy",
+                "value": 10,
+                "target": "self"
+              }
+            ]
+          }
+        ],
+        "text": "命中要害时额外续气 +10。"
+      }
+    ],
+    "support": [
+      {
+        "name": "分香赠故人",
+        "fx": [
+          {
+            "k": "trigger",
+            "on": "turn_end",
+            "fx": [
+              {
+                "k": "energy",
+                "value": 8,
+                "target": "ally_all_except_self"
+              }
+            ]
+          }
+        ],
+        "text": "回合末为其他同伴续气 +8。"
+      }
+    ]
+  },
+  "polish_note": "模板装配出来的文本刻意保持可用但不讲究，validate.mjs 会列出待人工润色清单。"
+}

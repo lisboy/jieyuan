@@ -1,0 +1,1751 @@
+{
+  "schema": 1,
+  "id": "luhuo-1",
+  "kind": "limited",
+  "name": "赤城·炉火宴",
+  "desc": "赤城剑炉开炉七日，炉火映红半座山。旧例是学徒替炉主守火、顺手捡些淬火边角料。十二关连战，产出技能书与器魂，炉火宴商店可换红阶真解。 除主线关卡外，另设三段试炼与一重挑战，通关可得活动积分，积分可在商店兑换。",
+  "banner": "/bg/evbg-luhuo_v1.jpg",
+  "shop": [
+    {
+      "key": "tome-purple3",
+      "label": "紫阶技能书 ×3",
+      "cost": {
+        "score": 350
+      },
+      "stock": 5,
+      "mat": {
+        "tome:purple": 5
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "tome-gold1",
+      "label": "金阶技能书 ×1",
+      "cost": {
+        "score": 700
+      },
+      "stock": 3,
+      "mat": {
+        "tome:gold": 2
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "tome-red1",
+      "label": "红阶技能书 ×1",
+      "cost": {
+        "score": 1700
+      },
+      "stock": 1,
+      "mat": {
+        "tome:red": 2
+      },
+      "costNote": "活动积分"
+    },
+    {
+      "key": "soul40",
+      "label": "器魂 ×40",
+      "cost": {
+        "score": 500
+      },
+      "stock": 3,
+      "mat": {
+        "soul": 60
+      },
+      "costNote": "活动积分"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ev-luhuo-01",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 01·守火",
+      "faction": "cc",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 40,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 40,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 40,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 40,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 40,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 6000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1100,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 2,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 4,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-m02",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 02·拾薪",
+      "faction": "cc",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 41,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 41,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 41,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 41,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 41,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 6720,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1232,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 2,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 4,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-m03",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 03·鼓风",
+      "faction": "cc",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-cc-diao",
+              "rarity": "purple",
+              "level": 43,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-yong",
+              "rarity": "purple",
+              "level": 43,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-feng",
+              "rarity": "blue",
+              "level": 43,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 43,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 43,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8960,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1456,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 30,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 3,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-02",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 04·淬锋",
+      "faction": "cc",
+      "stamina": 7,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-cc-diao",
+              "rarity": "purple",
+              "level": 44,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-yong",
+              "rarity": "purple",
+              "level": 44,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-feng",
+              "rarity": "blue",
+              "level": 44,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 44,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 44,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1300,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 30,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 3,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-m05",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 05·试剑",
+      "faction": "cc",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.7,
+          "team": [
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 45,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 45,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 45,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-yong",
+              "rarity": "purple",
+              "level": 45,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 45,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 11200,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 35
+      },
+      "drop": {
+        "coin": 1680,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 36,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-m06",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 06·熔金",
+      "faction": "cc",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 47,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 47,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-feng",
+              "rarity": "blue",
+              "level": 47,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-diao",
+              "rarity": "purple",
+              "level": 47,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-yong",
+              "rarity": "purple",
+              "level": 47,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 14560,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 2016,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 42,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 2,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-03",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 07·开炉",
+      "faction": "cc",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.7,
+          "team": [
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 48,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 48,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 48,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-yong",
+              "rarity": "purple",
+              "level": 48,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 48,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 10000,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 35
+      },
+      "drop": {
+        "coin": 1500,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 36,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 4,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-m08",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 08·铸心",
+      "faction": "cc",
+      "stamina": 12,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 50,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 50,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 50,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 50,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 50,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 20160,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 2464,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 55,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.25
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-04",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 09·剑鸣",
+      "faction": "cc",
+      "stamina": 8,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.8,
+          "team": [
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 52,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 52,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-feng",
+              "rarity": "blue",
+              "level": 52,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-diao",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-yong",
+              "rarity": "purple",
+              "level": 52,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 20,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 13000,
+        "jade": 100,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 1800,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 42,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 2,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-m10",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 10·火光",
+      "faction": "cc",
+      "stamina": 10,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.5,
+          "team": [
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 50,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 50,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 50,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 50,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 50,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 6720,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 25
+      },
+      "drop": {
+        "coin": 1232,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 26,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 2,
+            "rate": 1
+          },
+          {
+            "key": "soul",
+            "qty": 4,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-m11",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 11·传炉",
+      "faction": "cc",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 1.6,
+          "team": [
+            {
+              "id": "mob-cc-diao",
+              "rarity": "purple",
+              "level": 55,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-yong",
+              "rarity": "purple",
+              "level": 55,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-feng",
+              "rarity": "blue",
+              "level": 55,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-chong",
+              "rarity": "green",
+              "level": 55,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-quan",
+              "rarity": "blue",
+              "level": 55,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 18,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 8960,
+        "jade": 80,
+        "stamina": 0,
+        "dust": 30
+      },
+      "drop": {
+        "coin": 1456,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 30,
+            "rate": 1
+          },
+          {
+            "key": "tome:purple",
+            "qty": 3,
+            "rate": 1
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-05",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "name": "赤城·炉火宴 12·炉主",
+      "faction": "cc",
+      "stamina": 9,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 56,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 56,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 56,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 56,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 56,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "firstClear": {
+        "coin": 18000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 2200,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 55,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 1,
+            "rate": 0.25
+          },
+          {
+            "key": "tome:gold",
+            "qty": 1,
+            "rate": 0.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-1-trial-01",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "section": "trial",
+      "name": "赤城·炉火宴 试炼01·霜刃初试",
+      "faction": "cc",
+      "stamina": 11,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.2,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.3,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thin-qi"
+        },
+        {
+          "id": "thunder-pool"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-luhuo-05",
+      "firstClear": {
+        "coin": 16000,
+        "jade": 120,
+        "stamina": 0,
+        "dust": 45
+      },
+      "drop": {
+        "coin": 2750,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 42,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 10,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-1-trial-02",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "section": "trial",
+      "name": "赤城·炉火宴 试炼02·百炼成钢",
+      "faction": "cc",
+      "stamina": 12,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.4,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.5,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "thunder-pool"
+        },
+        {
+          "id": "miasma"
+        }
+      ],
+      "stars": {
+        "turns": 28,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-luhuo-1-trial-01",
+      "firstClear": {
+        "coin": 20000,
+        "jade": 160,
+        "stamina": 0,
+        "dust": 60
+      },
+      "drop": {
+        "coin": 3080,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 54,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 14,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-1-trial-03",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "section": "trial",
+      "name": "赤城·炉火宴 试炼03·绝地反击",
+      "faction": "cc",
+      "stamina": 13,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.6,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.7,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 2.8,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "miasma"
+        },
+        {
+          "id": "iron-wall"
+        }
+      ],
+      "stars": {
+        "turns": 30,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-luhuo-1-trial-02",
+      "firstClear": {
+        "coin": 24000,
+        "jade": 200,
+        "stamina": 0,
+        "dust": 75
+      },
+      "drop": {
+        "coin": 3410,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 66,
+            "rate": 1
+          },
+          {
+            "key": "tome:red",
+            "qty": 18,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-luhuo-1-challenge-01",
+      "chapter": 0,
+      "chapterLabel": "赤城·炉火宴",
+      "kind": "event",
+      "section": "challenge",
+      "name": "赤城·炉火宴 挑战01·无上之境",
+      "faction": "cc",
+      "stamina": 15,
+      "sweep": false,
+      "waves": [
+        {
+          "mult": 2.8,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 3,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        },
+        {
+          "mult": 3.2,
+          "team": [
+            {
+              "id": "boss-cc-zhu",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 0,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-hou",
+              "rarity": "red",
+              "level": 95,
+              "slot": 1,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-tie",
+              "rarity": "green",
+              "level": 95,
+              "slot": 2,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-jian",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 3,
+              "star": 1
+            },
+            {
+              "id": "mob-cc-ya",
+              "rarity": "gold",
+              "level": 95,
+              "slot": 4,
+              "star": 1
+            }
+          ]
+        }
+      ],
+      "mods": [
+        {
+          "id": "iron-wall"
+        },
+        {
+          "id": "lone-band"
+        },
+        {
+          "id": "twin"
+        }
+      ],
+      "stars": {
+        "turns": 26,
+        "noDeath": true,
+        "hpAbove": 0.2
+      },
+      "requires": "ev-luhuo-1-trial-03",
+      "firstClear": {
+        "coin": 40000,
+        "jade": 300,
+        "stamina": 0,
+        "dust": 120
+      },
+      "drop": {
+        "coin": 4400,
+        "materials": [
+          {
+            "key": "essence",
+            "qty": 90,
+            "rate": 1
+          },
+          {
+            "key": "xinyin",
+            "qty": 1,
+            "rate": 0.5
+          }
+        ]
+      }
+    }
+  ],
+  "bossArt": "/art/bosses/boss-cc-zhu.png",
+  "bossId": "boss-cc-zhu",
+  "accent": "#f08a4b",
+  "themeSub": "铸剑熔炉 · 地火盛宴",
+  "milestones": [
+    {
+      "score": 1750,
+      "label": "初露锋芒",
+      "reward": {
+        "coin": 22000,
+        "mat": {
+          "page": 34
+        }
+      }
+    },
+    {
+      "score": 3550,
+      "label": "渐入佳境",
+      "reward": {
+        "jade": 270,
+        "mat": {
+          "soul": 51
+        }
+      }
+    },
+    {
+      "score": 5300,
+      "label": "名动一方",
+      "reward": {
+        "jade": 540,
+        "mat": {
+          "pill": 5
+        }
+      }
+    },
+    {
+      "score": 7050,
+      "label": "登峰造极",
+      "reward": {
+        "jade": 1080,
+        "mat": {
+          "tome:gold": 2
+        }
+      }
+    }
+  ],
+  "shopMode": "once",
+  "starRewards": {
+    "main": {
+      "1": {
+        "score": 60,
+        "coin": 2000,
+        "jade": 30
+      },
+      "2": {
+        "score": 110,
+        "coin": 3500,
+        "jade": 40
+      },
+      "3": {
+        "score": 150,
+        "coin": 6000,
+        "jade": 50
+      }
+    },
+    "trial": {
+      "1": {
+        "score": 140,
+        "coin": 4000,
+        "jade": 60
+      },
+      "2": {
+        "score": 250,
+        "coin": 6000,
+        "jade": 80
+      },
+      "3": {
+        "score": 320,
+        "coin": 9000,
+        "jade": 100
+      }
+    },
+    "challenge": {
+      "1": {
+        "score": 210,
+        "coin": 8000,
+        "jade": 100
+      },
+      "2": {
+        "score": 370,
+        "coin": 12000,
+        "jade": 140
+      },
+      "3": {
+        "score": 500,
+        "coin": 18000,
+        "jade": 180
+      }
+    }
+  }
+}

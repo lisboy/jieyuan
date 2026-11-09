@@ -1,0 +1,1304 @@
+{
+  "comment": "攻击特效。三层叠加，任何一张卡的特效都能由数据推出来，不需要为 81 个角色各写一份：\n1) 六气决定'是什么东西在飞'（颜色 + 弹道形状 + 命中形态）；\n2) 定位决定'怎么打'（运动曲线、命中数、镜头行为）；\n3) 角色 art.motif 决定'手里那件东西'，红阶另有 signature 覆盖。\nUnity 侧 VfxDirector 按这份表用 ParticleSystem 程序化拼装（不依赖美术资源）；浏览器切片用同一份表出 CSS keyframes。",
+  "elements": {
+    "flame": {
+      "label": "离火",
+      "main": "#d0563c",
+      "spark": "#ffcf7a",
+      "smoke": "#3a1f1a",
+      "projectile": "lance",
+      "hit": "burst",
+      "aftershock": "ground_burn",
+      "desc": "赤色短枪形弹体，命中炸开成橘色火星，地面留两秒焦痕"
+    },
+    "verdant": {
+      "label": "青木",
+      "main": "#54915f",
+      "spark": "#cfe8a8",
+      "smoke": "#1f2a1c",
+      "projectile": "leaf_blade",
+      "hit": "wrap",
+      "aftershock": "sprout",
+      "desc": "旋转的青叶刃，命中处缠出藤蔓再碎开"
+    },
+    "tide": {
+      "label": "沧水",
+      "main": "#3d7f9c",
+      "spark": "#bfe6f0",
+      "smoke": "#16232b",
+      "projectile": "crest",
+      "hit": "splash",
+      "aftershock": "ripple",
+      "desc": "弧形水浪推进，命中溅起水花并在地面荡开一圈"
+    },
+    "light": {
+      "label": "曜光",
+      "main": "#dcc182",
+      "spark": "#fff6d8",
+      "smoke": "#2a2418",
+      "projectile": "beam",
+      "hit": "prism",
+      "aftershock": "glint",
+      "desc": "直线光束，命中折成三片镜芒"
+    },
+    "storm": {
+      "label": "紫雷",
+      "main": "#8f7cc0",
+      "spark": "#dcd0ff",
+      "smoke": "#1a1626",
+      "projectile": "talisman",
+      "hit": "chain",
+      "aftershock": "scorch",
+      "desc": "符纸飞出，命中炸成沿阵位跳跃的紫电"
+    },
+    "dusk": {
+      "label": "素月",
+      "main": "#6a5f86",
+      "spark": "#e3e8ff",
+      "smoke": "#141320",
+      "projectile": "feather",
+      "hit": "bloom_frost",
+      "aftershock": "moonshadow",
+      "desc": "月白羽片飘落式弹道，命中开成一圈霜花"
+    }
+  },
+  "roles": {
+    "comment": "hitScope/hitCount 刻意拆成两个定长字段，而不是一个'既可能是数字又可能是字符串'的 hits：\nShiyuan.Core 要保持零 JSON 依赖（Unity 的 BCL 里没有 System.Text.Json），\n联合类型只能靠 ContentIO 挂转换器，等于把这份表的可读性换成一层只有 C# 看得懂的胶水。",
+    "burst": {
+      "label": "破军",
+      "windup": 0.18,
+      "travel": "dash",
+      "hitScope": "target",
+      "hitCount": 1,
+      "hitstop": 0.1,
+      "shake": 5,
+      "camera": "punch_in",
+      "note": "起手顿一下再直线突进，单点重击，命中定帧"
+    },
+    "cleave": {
+      "label": "席卷",
+      "windup": 0.14,
+      "travel": "arc",
+      "hitScope": "all_enemies",
+      "hitCount": 1,
+      "hitstop": 0.04,
+      "shake": 3,
+      "camera": "pan",
+      "note": "横扫弧线依次点亮每个敌方阵位，节奏是'一串'而不是'一坨'"
+    },
+    "break": {
+      "label": "凿阵",
+      "windup": 0.22,
+      "travel": "overhead",
+      "hitScope": "target",
+      "hitCount": 2,
+      "hitstop": 0.08,
+      "shake": 7,
+      "camera": "shake_only",
+      "note": "高举下砸，第一下裂纹第二下破盾，镜头只抖不定帧太久"
+    },
+    "sustain": {
+      "label": "回春",
+      "windup": 0.12,
+      "travel": "rise",
+      "hitScope": "all_allies",
+      "hitCount": 1,
+      "hitstop": 0,
+      "shake": 0,
+      "camera": "zoom_out",
+      "note": "从我方脚下升起的光雨，不抖屏，加号飘字"
+    },
+    "guard": {
+      "label": "磐石",
+      "windup": 0.1,
+      "travel": "slam_ground",
+      "hitScope": "self_line",
+      "hitCount": 1,
+      "hitstop": 0.05,
+      "shake": 4,
+      "camera": "zoom_out",
+      "note": "拄地展开盾面波纹，覆盖一排，盾值数字浮在盾面上"
+    },
+    "control": {
+      "label": "摄魂",
+      "windup": 0.2,
+      "travel": "drift",
+      "hitScope": "picked",
+      "hitCount": 1,
+      "hitstop": 0.06,
+      "shake": 1,
+      "camera": "focus_target",
+      "note": "缓慢飘到目标额前，命中后目标身上缠一圈暗纹并标出状态图标"
+    },
+    "support": {
+      "label": "扶倾",
+      "windup": 0.12,
+      "travel": "link",
+      "hitScope": "all_allies",
+      "hitCount": 1,
+      "hitstop": 0,
+      "shake": 0,
+      "camera": "pan",
+      "note": "从施法者拉出连线依次点到我方，线上有气流光跑动"
+    }
+  },
+  "slots": {
+    "attack": {
+      "scale": 1,
+      "sound": "hit_soft",
+      "duration": 0.75
+    },
+    "ultimate": {
+      "scale": 1.9,
+      "sound": "hit_heavy",
+      "duration": 1.6,
+      "freezeFrame": true,
+      "note": "终结技先黑屏留角色剪影与名字（卡面立绘直接当剪影用），再放特效"
+    },
+    "passive": {
+      "scale": 0.6,
+      "sound": "cue_only",
+      "duration": 0.4,
+      "note": "被动只在触发者身上出一圈主色细环 + 小字，不抢主戏"
+    },
+    "assist": {
+      "scale": 0.8,
+      "sound": "cue_only",
+      "duration": 0.5
+    }
+  },
+  "propFromMotif": {
+    "enabled": true,
+    "note": "弹体中心画该角色 art.motif 里那件道具（符纸/玉杵/算筹/小锤/竹帚…），因此同色同定位的两张卡依然能看出不是同一张。"
+  },
+  "signature": {
+    "comment": "红阶 8 张的专属演出，覆盖 element+role 的默认组合。晶钻档为专属视频级演出。",
+    "dk-gh-08": {
+      "name": "太阴碎晶·万相归霜",
+      "sequence": ["blackout", "charge", "crystal_orb", "seal", "domain", "slash", "shock", "pillar", "finish"],
+      "palette": ["#9be9ff", "#3fa9d8"],
+      "duration": 3.03,
+      "video": "/art/ult/dk-gh-08.mp4",
+      "cvSync": true,
+      "note": "用户提供 Kling 视频（2026-11-04）：3.03s 真人物动画单镜头，右臂前指凝晶→上抬引动晶环→收势；1600×900/30fps，与大招配音 3.05s 同起同收"
+    },
+    "ur-zf-01": {
+      "name": "太史夜算",
+      "sequence": [
+        "blackout",
+        "star_chart_sweep",
+        "verdict_line"
+      ],
+      "palette": [
+        "#8f7cc0",
+        "#dcc182"
+      ],
+      "duration": 2.4,
+      "note": "先全黑，一道星轨横扫过敌方阵位，最后一条竖线落下定音"
+    },
+    "ur-gh-01": {
+      "name": "收霜入瓮",
+      "sequence": [
+        "frost_bloom",
+        "urn_pull",
+        "silence_field"
+      ],
+      "palette": [
+        "#6a5f86",
+        "#e3e8ff"
+      ],
+      "duration": 2.2,
+      "note": "霜花在地面开成圈，把敌方身上的光点全部吸进瓮里，随后全场静音半秒"
+    },
+    "ssr-gh-06": {
+      "name": "引雷入谱",
+      "sequence": [
+        "scroll_unfurl",
+        "thunder_ink",
+        "name_burn"
+      ],
+      "palette": [
+        "#8f7cc0",
+        "#f0e6b8"
+      ],
+      "duration": 2.2,
+      "note": "霜谱自地下展开，紫雷落成墨点，最后一行名字在纸上烧亮"
+    },
+    "ssr-gh-05": {
+      "name": "霜天裂月",
+      "sequence": [
+        "moon_halve",
+        "frost_blade_drop",
+        "sea_freeze"
+      ],
+      "palette": [
+        "#2f4a72",
+        "#dbe7ff"
+      ],
+      "duration": 2.6,
+      "note": "月轮被一刀横切成两半，冰刃从切口垂落，整片霜海瞬间冻成镜面"
+    },
+    "ur-yx-01": {
+      "name": "万灵过山",
+      "sequence": [
+        "herd_charge",
+        "dust_wave",
+        "antler_mark"
+      ],
+      "palette": [
+        "#54915f",
+        "#cfe8a8"
+      ],
+      "duration": 2.3,
+      "note": "兽群剪影横向踩过画面三遍，最后一遍只留一支角印在目标身上"
+    },
+    "ur-cc-01": {
+      "name": "剑炉开膛",
+      "sequence": [
+        "forge_split",
+        "ember_storm",
+        "quench"
+      ],
+      "palette": [
+        "#d0563c",
+        "#ffcf7a"
+      ],
+      "duration": 2.5,
+      "note": "一道竖劈裂口，炉膛里的火星从裂口倒出来，收尾淬火白烟"
+    },
+    "ur-yh-01": {
+      "name": "珠阙回潮",
+      "sequence": [
+        "tide_wall",
+        "pearl_scatter",
+        "undercurrent"
+      ],
+      "palette": [
+        "#3d7f9c",
+        "#bfe6f0"
+      ],
+      "duration": 2.4,
+      "note": "水墙自右向左推过全场，珠帘散开后暗流把敌方往下拽一次"
+    },
+    "ur-qx-01": {
+      "name": "蒙学·开卷",
+      "sequence": [
+        "scroll_open",
+        "ink_rain",
+        "verdict_brush"
+      ],
+      "palette": [
+        "#dcc182",
+        "#fff6d8"
+      ],
+      "duration": 2.2,
+      "note": "巨卷在敌阵上方摊开，墨点落下成字，最后一笔横扫收束"
+    },
+    "r-zf-07": {
+      "name": "移岁接劫",
+      "sequence": [
+        "star_chart_sweep",
+        "verdict_line",
+        "name_burn"
+      ],
+      "palette": [
+        "#dcc182",
+        "#3f6d7a"
+      ],
+      "duration": 2.4,
+      "note": "星历整卷展开，铜尺划过之处字迹发亮，最后一笔把劫数改写到她自己名下"
+    },
+    "r-qx-07": {
+      "name": "误笔成谶",
+      "sequence": [
+        "scroll_open",
+        "ink_rain",
+        "verdict_brush"
+      ],
+      "palette": [
+        "#8f7cc0",
+        "#6f7f3f"
+      ],
+      "duration": 2.2,
+      "note": "书页翻成暴雨，墨点落地成字，最后一个字写完便凭空消失"
+    },
+    "r-yx-07": {
+      "name": "裂山一爪",
+      "sequence": [
+        "herd_charge",
+        "dust_wave",
+        "antler_mark"
+      ],
+      "palette": [
+        "#54915f",
+        "#7a4fa0"
+      ],
+      "duration": 2.4,
+      "note": "虎爪撕开山雾，兽群从她身后踏尘而过，最后一道爪痕刻进山门"
+    },
+    "r-cc-06": {
+      "name": "换芯开炉",
+      "sequence": [
+        "forge_split",
+        "ember_storm",
+        "quench"
+      ],
+      "palette": [
+        "#d0563c",
+        "#4f8a72"
+      ],
+      "duration": 2.5,
+      "note": "胸口的炉芯被拆开，火焰从接缝里喷出，整座剑炉为她重新淬火"
+    },
+    "r-yh-06": {
+      "name": "泪满成潮",
+      "sequence": [
+        "tide_wall",
+        "pearl_scatter",
+        "undercurrent"
+      ],
+      "palette": [
+        "#3d7f9c",
+        "#a86b9e"
+      ],
+      "duration": 2.3,
+      "note": "一海的泪化成珠，珠串升起成潮墙，潮退时所有伤口都被洗平"
+    },
+    "ssr-zf-04": {
+      "name": "万灯归途",
+      "sequence": [
+        "lantern_lift",
+        "flame_thread",
+        "name_glow"
+      ],
+      "palette": [
+        "#dcc182",
+        "#f0e6b8"
+      ],
+      "duration": 2.4,
+      "note": "灯廊万盏次第亮起，灯焰连成一线照出归途，最后你的名字在灯面上亮起"
+    },
+    "ssr-gh-03": {
+      "name": "一露一梦",
+      "sequence": [
+        "dew_collect",
+        "dream_ripple",
+        "moon_mirror"
+      ],
+      "palette": [
+        "#5f7f8f",
+        "#dbe7ff"
+      ],
+      "duration": 2.2,
+      "note": "露珠从叶尖悬停，露面映出陌生的城，月影落进露里碎成一片梦"
+    },
+    "ssr-gh-04": {
+      "name": "云开一隙",
+      "sequence": [
+        "cloud_press",
+        "thunder_split",
+        "gate_open"
+      ],
+      "palette": [
+        "#8f5f7a",
+        "#dbe7ff"
+      ],
+      "duration": 2.6,
+      "note": "云层被按到阙门外，一道雷劈开云隙，阙门在光里缓缓开启"
+    },
+    "ssr-yx-04": {
+      "name": "霜化春生",
+      "sequence": [
+        "snow_melt",
+        "antler_glow",
+        "grass_sprout"
+      ],
+      "palette": [
+        "#6b7d3f",
+        "#dbe7ff"
+      ],
+      "duration": 2.5,
+      "note": "背上积雪一层层化开，鹿角泛起暖光，霜下的草叶破土而出"
+    },
+    "ssr-yx-05": {
+      "name": "鹤群借风",
+      "sequence": [
+        "feather_fall",
+        "crane_rise",
+        "wind_sweep"
+      ],
+      "palette": [
+        "#8fa3b8",
+        "#f0e6b8"
+      ],
+      "duration": 2.3,
+      "note": "白羽落下又被风卷起，鹤群自崖底腾起，风扫过整片山崖"
+    },
+    "ssr-qx-03": {
+      "name": "笔断旧账",
+      "sequence": [
+        "page_turn",
+        "ink_strike",
+        "ledger_burn"
+      ],
+      "palette": [
+        "#6a4f8a",
+        "#dcc182"
+      ],
+      "duration": 2.2,
+      "note": "旧书自行翻页，细楷笔落下划掉整页旧账，纸页在金光里化灰"
+    },
+    "ssr-qx-04": {
+      "name": "一纸挡劫",
+      "sequence": [
+        "paper_unfold",
+        "script_gold",
+        "ink_shield"
+      ],
+      "palette": [
+        "#6a4f8a",
+        "#f0e6b8"
+      ],
+      "duration": 2.4,
+      "note": "经纸展开悬空，字句浮起成金光，墨迹在光里连成一道盾"
+    },
+    "ssr-cc-03": {
+      "name": "一炉铁水",
+      "sequence": [
+        "forge_blast",
+        "iron_pour",
+        "spark_burst"
+      ],
+      "palette": [
+        "#d0563c",
+        "#f0e6b8"
+      ],
+      "duration": 2.5,
+      "note": "炉门炸开，铁水如龙倾泻，火星在落地前炸成一片金红"
+    },
+    "ssr-cc-04": {
+      "name": "炉门不塌",
+      "sequence": [
+        "armor_lock",
+        "blade_guard",
+        "flame_wall"
+      ],
+      "palette": [
+        "#9a5a45",
+        "#d0563c"
+      ],
+      "duration": 2.6,
+      "note": "重甲扣死，厚背刀横在炉门前，火光沿刀身升起成一堵墙"
+    },
+    "ssr-yh-04": {
+      "name": "一潮拍岸",
+      "sequence": [
+        "horn_blow",
+        "tide_rise",
+        "name_return"
+      ],
+      "palette": [
+        "#4f7a8a",
+        "#dbe7ff"
+      ],
+      "duration": 2.7,
+      "note": "海螺号角吹响，潮水立起如墙，浪尖上一个个名字被念回来"
+    }
+  },
+  "budget": {
+    "maxParticlesPerEffect": 260,
+    "maxConcurrent": 3,
+    "mobileScale": 0.5,
+    "note": "程序化特效也要限流：同屏最多三层特效，移动端粒子减半。"
+  },
+  "variants": {
+    "comment": "角色层特效：同元素同定位的角色靠这一层区分。attack 决定普攻的段数/节奏/命中收尾，ult 决定终式在主演出之外叠的那一层；ultName 是角色专属招式演出名（signature 角色优先用专属名，其余按变体+定位+元素+势力生成保证唯一）。同元素同定位优先分配不同 (attack, ult) 组合。",
+    "attack": [
+      {
+        "key": "a1",
+        "label": "单锋",
+        "shots": 1,
+        "gap": 0,
+        "scale": 1,
+        "jitter": 0,
+        "burst": "default",
+        "trail": "thin",
+        "note": "一线直取，干净利落"
+      },
+      {
+        "key": "a2",
+        "label": "三叠",
+        "shots": 3,
+        "gap": 58,
+        "scale": 0.62,
+        "jitter": 22,
+        "burst": "default",
+        "trail": "short",
+        "note": "三连轻击，节奏碎而密"
+      },
+      {
+        "key": "a3",
+        "label": "双影",
+        "shots": 2,
+        "gap": 84,
+        "scale": 0.84,
+        "jitter": 14,
+        "burst": "default",
+        "trail": "mid",
+        "note": "两段错位，像两个人同时出手"
+      },
+      {
+        "key": "a4",
+        "label": "回锋",
+        "shots": 1,
+        "gap": 0,
+        "scale": 1.12,
+        "jitter": 0,
+        "burst": "boomerang",
+        "trail": "long",
+        "note": "出手后回锋补一下，落点二次爆"
+      },
+      {
+        "key": "a5",
+        "label": "散星",
+        "shots": 4,
+        "gap": 42,
+        "scale": 0.5,
+        "jitter": 34,
+        "burst": "default",
+        "trail": "spark",
+        "note": "四散星点，覆盖面最广"
+      },
+      {
+        "key": "a6",
+        "label": "沉岳",
+        "shots": 1,
+        "gap": 0,
+        "scale": 1.28,
+        "jitter": 0,
+        "burst": "slam",
+        "trail": "heavy",
+        "note": "高举下砸，命中震屏更重"
+      },
+      {
+        "key": "a7",
+        "label": "游丝",
+        "shots": 2,
+        "gap": 110,
+        "scale": 0.72,
+        "jitter": 8,
+        "burst": "thread",
+        "trail": "silk",
+        "note": "两道游丝缠上去，慢但黏"
+      },
+      {
+        "key": "a8",
+        "label": "破晓",
+        "shots": 1,
+        "gap": 0,
+        "scale": 0.95,
+        "jitter": 0,
+        "burst": "flare",
+        "trail": "ray",
+        "note": "起手蓄光，命中炸成一朵亮花"
+      }
+    ],
+    "ult": [
+      {
+        "key": "u1",
+        "label": "镇",
+        "extra": "ring",
+        "note": "落点先压一圈镇纹，再起主特效"
+      },
+      {
+        "key": "u2",
+        "label": "裂",
+        "extra": "crack",
+        "note": "地面裂开一线，主特效沿裂缝推进"
+      },
+      {
+        "key": "u3",
+        "label": "旋",
+        "extra": "vortex",
+        "note": "主特效外再卷一圈回旋气流"
+      },
+      {
+        "key": "u4",
+        "label": "缚",
+        "extra": "chains",
+        "note": "先落锁链状光带，再收束到目标"
+      },
+      {
+        "key": "u5",
+        "label": "照",
+        "extra": "pillar",
+        "note": "一道竖直光柱先落到目标身上"
+      },
+      {
+        "key": "u6",
+        "label": "潮",
+        "extra": "ripple",
+        "note": "从落点向外推开数圈波纹"
+      },
+      {
+        "key": "u7",
+        "label": "羽",
+        "extra": "feather",
+        "note": "漫天细羽飘落，落点才炸开"
+      },
+      {
+        "key": "u8",
+        "label": "劫",
+        "extra": "bolt",
+        "note": "主特效之前先劈一记预兆雷"
+      }
+    ],
+    "byChar": {
+      "ur-zf-01": {
+        "attack": "a2",
+        "ult": "u7",
+        "ultName": "太史夜算"
+      },
+      "ur-gh-01": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "收霜入瓮"
+      },
+      "ur-yx-01": {
+        "attack": "a5",
+        "ult": "u4",
+        "ultName": "万灵过山"
+      },
+      "ur-qx-01": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "蒙学·开卷"
+      },
+      "ur-cc-01": {
+        "attack": "a4",
+        "ult": "u5",
+        "ultName": "剑炉开膛"
+      },
+      "ur-yh-01": {
+        "attack": "a5",
+        "ult": "u4",
+        "ultName": "珠阙回潮"
+      },
+      "ssr-gh-06": {
+        "attack": "a8",
+        "ult": "u7",
+        "ultName": "引雷入谱"
+      },
+      "ssr-gh-05": {
+        "attack": "a1",
+        "ult": "u8",
+        "ultName": "霜天裂月"
+      },
+      "ur-zf-03": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "裂息·光星"
+      },
+      "ssr-zf-02": {
+        "attack": "a4",
+        "ult": "u3",
+        "ultName": "旋岳·雷星"
+      },
+      "ssr-zf-03": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮痕·光星"
+      },
+      "ssr-gh-01": {
+        "attack": "a2",
+        "ult": "u7",
+        "ultName": "羽壁·霜月"
+      },
+      "ur-gh-04": {
+        "attack": "a7",
+        "ult": "u6",
+        "ultName": "潮痕·雷月"
+      },
+      "ssr-yx-01": {
+        "attack": "a2",
+        "ult": "u1",
+        "ultName": "镇息·藤山"
+      },
+      "ssr-yx-02": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮引·藤山"
+      },
+      "ssr-yx-03": {
+        "attack": "a4",
+        "ult": "u7",
+        "ultName": "羽锋·霜山"
+      },
+      "ssr-qx-01": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇息·潮卷"
+      },
+      "ssr-qx-02": {
+        "attack": "a5",
+        "ult": "u4",
+        "ultName": "缚锋·雷卷"
+      },
+      "ssr-cc-01": {
+        "attack": "a5",
+        "ult": "u4",
+        "ultName": "缚壁·焰炉"
+      },
+      "ssr-cc-02": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇锋·雷炉"
+      },
+      "ur-yh-03": {
+        "attack": "a2",
+        "ult": "u1",
+        "ultName": "镇锋·潮海"
+      },
+      "ur-yh-04": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮锁·藤海"
+      },
+      "ur-yh-05": {
+        "attack": "a4",
+        "ult": "u3",
+        "ultName": "旋痕·焰海"
+      },
+      "sr-zf-01": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇锋·雷星"
+      },
+      "sr-zf-02": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮壁·光星"
+      },
+      "sr-zf-03": {
+        "attack": "a6",
+        "ult": "u3",
+        "ultName": "旋引·雷星"
+      },
+      "sr-zf-04": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "潮锁·光星"
+      },
+      "sr-gh-01": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮锁·霜月"
+      },
+      "ur-gh-05": {
+        "attack": "a2",
+        "ult": "u1",
+        "ultName": "镇锋·霜月"
+      },
+      "sr-gh-03": {
+        "attack": "a7",
+        "ult": "u8",
+        "ultName": "劫引·雷月"
+      },
+      "sr-gh-04": {
+        "attack": "a8",
+        "ult": "u3",
+        "ultName": "旋岳·霜月"
+      },
+      "r-zf-01": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮息·雷星"
+      },
+      "r-zf-02": {
+        "attack": "a2",
+        "ult": "u1",
+        "ultName": "镇锋·光星"
+      },
+      "r-zf-03": {
+        "attack": "a3",
+        "ult": "u8",
+        "ultName": "劫锋·雷星"
+      },
+      "r-zf-04": {
+        "attack": "a2",
+        "ult": "u7",
+        "ultName": "羽壁·光星"
+      },
+      "n-zf-01": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "裂息·雷星"
+      },
+      "ur-zf-04": {
+        "attack": "a6",
+        "ult": "u5",
+        "ultName": "照引·光星"
+      },
+      "r-gh-01": {
+        "attack": "a4",
+        "ult": "u5",
+        "ultName": "照息·霜月"
+      },
+      "ur-gh-06": {
+        "attack": "a1",
+        "ult": "u8",
+        "ultName": "劫锋·雷月"
+      },
+      "r-gh-03": {
+        "attack": "a8",
+        "ult": "u3",
+        "ultName": "旋引·霜月"
+      },
+      "ur-gh-07": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "裂锁·霜月"
+      },
+      "n-gh-01": {
+        "attack": "a2",
+        "ult": "u1",
+        "ultName": "镇壁·霜月"
+      },
+      "n-gh-02": {
+        "attack": "a5",
+        "ult": "u4",
+        "ultName": "缚息·雷月"
+      },
+      "sr-yx-01": {
+        "attack": "a7",
+        "ult": "u6",
+        "ultName": "潮壁·藤山"
+      },
+      "sr-yx-02": {
+        "attack": "a2",
+        "ult": "u3",
+        "ultName": "旋锁·藤山"
+      },
+      "sr-yx-03": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "裂岳·藤山"
+      },
+      "sr-yx-04": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇壁·藤山"
+      },
+      "r-yx-01": {
+        "attack": "a6",
+        "ult": "u7",
+        "ultName": "羽痕·霜山"
+      },
+      "r-yx-02": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "裂息·藤山"
+      },
+      "r-yx-03": {
+        "attack": "a2",
+        "ult": "u2",
+        "ultName": "裂锋·藤山"
+      },
+      "r-yx-04": {
+        "attack": "a1",
+        "ult": "u8",
+        "ultName": "劫引·霜山"
+      },
+      "n-yx-01": {
+        "attack": "a8",
+        "ult": "u3",
+        "ultName": "旋壁·藤山"
+      },
+      "n-yx-02": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "潮岳·藤山"
+      },
+      "sr-qx-01": {
+        "attack": "a7",
+        "ult": "u6",
+        "ultName": "潮锁·光卷"
+      },
+      "sr-qx-02": {
+        "attack": "a2",
+        "ult": "u7",
+        "ultName": "羽痕·潮卷"
+      },
+      "sr-qx-03": {
+        "attack": "a1",
+        "ult": "u8",
+        "ultName": "劫壁·雷卷"
+      },
+      "sr-qx-04": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇岳·光卷"
+      },
+      "ur-qx-03": {
+        "attack": "a4",
+        "ult": "u7",
+        "ultName": "羽锋·光卷"
+      },
+      "r-qx-02": {
+        "attack": "a3",
+        "ult": "u8",
+        "ultName": "劫锁·潮卷"
+      },
+      "r-qx-03": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇引·雷卷"
+      },
+      "r-qx-04": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "裂息·潮卷"
+      },
+      "n-qx-01": {
+        "attack": "a8",
+        "ult": "u7",
+        "ultName": "羽壁·光卷"
+      },
+      "ur-qx-04": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "潮引·潮卷"
+      },
+      "sr-cc-01": {
+        "attack": "a8",
+        "ult": "u3",
+        "ultName": "旋痕·焰炉"
+      },
+      "sr-cc-02": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "潮壁·焰炉"
+      },
+      "sr-cc-03": {
+        "attack": "a4",
+        "ult": "u5",
+        "ultName": "照引·雷炉"
+      },
+      "sr-cc-04": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮息·焰炉"
+      },
+      "r-cc-01": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "潮锁·雷炉"
+      },
+      "r-cc-02": {
+        "attack": "a8",
+        "ult": "u7",
+        "ultName": "羽锋·焰炉"
+      },
+      "r-cc-03": {
+        "attack": "a1",
+        "ult": "u8",
+        "ultName": "劫岳·焰炉"
+      },
+      "r-cc-04": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇息·雷炉"
+      },
+      "n-cc-01": {
+        "attack": "a7",
+        "ult": "u2",
+        "ultName": "裂锋·焰炉"
+      },
+      "n-cc-02": {
+        "attack": "a4",
+        "ult": "u3",
+        "ultName": "旋引·焰炉"
+      },
+      "sr-yh-01": {
+        "attack": "a3",
+        "ult": "u7",
+        "ultName": "羽壁·潮海"
+      },
+      "sr-yh-02": {
+        "attack": "a8",
+        "ult": "u7",
+        "ultName": "羽引·潮海"
+      },
+      "sr-yh-03": {
+        "attack": "a1",
+        "ult": "u8",
+        "ultName": "劫息·藤海"
+      },
+      "sr-yh-04": {
+        "attack": "a8",
+        "ult": "u2",
+        "ultName": "裂锋·焰海"
+      },
+      "r-yh-01": {
+        "attack": "a4",
+        "ult": "u7",
+        "ultName": "羽锁·潮海"
+      },
+      "ur-yh-06": {
+        "attack": "a7",
+        "ult": "u8",
+        "ultName": "劫锋·潮海"
+      },
+      "r-yh-03": {
+        "attack": "a2",
+        "ult": "u1",
+        "ultName": "镇引·藤海"
+      },
+      "ur-yh-07": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "裂岳·焰海"
+      },
+      "ur-yh-08": {
+        "attack": "a2",
+        "ult": "u7",
+        "ultName": "羽息·潮海"
+      },
+      "ur-yh-09": {
+        "attack": "a7",
+        "ult": "u6",
+        "ultName": "潮壁·潮海"
+      },
+      "r-zf-07": {
+        "attack": "a7",
+        "ult": "u6",
+        "ultName": "移岁接劫"
+      },
+      "r-qx-07": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "误笔成谶"
+      },
+      "r-yx-07": {
+        "attack": "a2",
+        "ult": "u1",
+        "ultName": "裂山一爪"
+      },
+      "r-cc-06": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "换芯开炉"
+      },
+      "r-yh-06": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "泪满成潮"
+      },
+      "ssr-zf-04": {
+        "attack": "a6",
+        "ult": "u5",
+        "ultName": "万灯归途"
+      },
+      "ssr-gh-03": {
+        "attack": "a6",
+        "ult": "u5",
+        "ultName": "一露一梦"
+      },
+      "ssr-gh-04": {
+        "attack": "a5",
+        "ult": "u7",
+        "ultName": "云开一隙"
+      },
+      "ssr-yx-04": {
+        "attack": "a3",
+        "ult": "u4",
+        "ultName": "霜化春生"
+      },
+      "ssr-yx-05": {
+        "attack": "a4",
+        "ult": "u5",
+        "ultName": "鹤群借风"
+      },
+      "ssr-qx-03": {
+        "attack": "a6",
+        "ult": "u7",
+        "ultName": "笔断旧账"
+      },
+      "ssr-qx-04": {
+        "attack": "a7",
+        "ult": "u4",
+        "ultName": "一纸挡劫"
+      },
+      "ssr-cc-03": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "一炉铁水"
+      },
+      "ssr-cc-04": {
+        "attack": "a2",
+        "ult": "u8",
+        "ultName": "炉门不塌"
+      },
+      "ssr-yh-04": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "一潮拍岸"
+      },
+      "sr-zf-05": {
+        "attack": "a4",
+        "ult": "u6",
+        "ultName": "潮引·雷星"
+      },
+      "sr-zf-06": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "裂壁·光星"
+      },
+      "sr-gh-05": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "裂锋·霜月"
+      },
+      "sr-gh-06": {
+        "attack": "a6",
+        "ult": "u5",
+        "ultName": "照引·雷月"
+      },
+      "sr-yx-05": {
+        "attack": "a3",
+        "ult": "u8",
+        "ultName": "劫息·藤山"
+      },
+      "sr-qx-05": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "裂痕·光卷"
+      },
+      "sr-cc-05": {
+        "attack": "a4",
+        "ult": "u7",
+        "ultName": "羽壁·焰炉"
+      },
+      "sr-cc-06": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "裂锋·雷炉"
+      },
+      "sr-yh-05": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "裂引·潮海"
+      },
+      "sr-yh-06": {
+        "attack": "a4",
+        "ult": "u7",
+        "ultName": "羽锁·藤海"
+      },
+      "r-zf-05": {
+        "attack": "a1",
+        "ult": "u2",
+        "ultName": "裂锋·雷星"
+      },
+      "r-zf-06": {
+        "attack": "a6",
+        "ult": "u5",
+        "ultName": "照锁·光星"
+      },
+      "r-gh-05": {
+        "attack": "a8",
+        "ult": "u1",
+        "ultName": "镇痕·霜月"
+      },
+      "r-gh-06": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮引·雷月"
+      },
+      "r-yx-05": {
+        "attack": "a2",
+        "ult": "u7",
+        "ultName": "羽息·藤山"
+      },
+      "r-yx-06": {
+        "attack": "a7",
+        "ult": "u4",
+        "ultName": "缚壁·霜山"
+      },
+      "r-qx-05": {
+        "attack": "a8",
+        "ult": "u7",
+        "ultName": "羽壁·光卷·贰"
+      },
+      "r-qx-06": {
+        "attack": "a3",
+        "ult": "u6",
+        "ultName": "潮息·潮卷"
+      },
+      "r-cc-05": {
+        "attack": "a3",
+        "ult": "u2",
+        "ultName": "裂引·焰炉"
+      },
+      "r-yh-05": {
+        "attack": "a8",
+        "ult": "u3",
+        "ultName": "旋锋·潮海"
+      },
+      "n-zf-03": {
+        "attack": "a7",
+        "ult": "u4",
+        "ultName": "缚引·雷星"
+      },
+      "n-zf-04": {
+        "attack": "a6",
+        "ult": "u3",
+        "ultName": "旋壁·光星"
+      },
+      "n-gh-03": {
+        "attack": "a6",
+        "ult": "u7",
+        "ultName": "羽息·霜月"
+      },
+      "n-gh-04": {
+        "attack": "a7",
+        "ult": "u5",
+        "ultName": "照引·雷月·贰"
+      },
+      "n-yx-03": {
+        "attack": "a4",
+        "ult": "u5",
+        "ultName": "照痕·藤山"
+      },
+      "n-yx-04": {
+        "attack": "a5",
+        "ult": "u5",
+        "ultName": "照息·霜山"
+      },
+      "n-qx-03": {
+        "attack": "a4",
+        "ult": "u5",
+        "ultName": "照锋·光卷"
+      },
+      "n-qx-04": {
+        "attack": "a5",
+        "ult": "u4",
+        "ultName": "缚壁·潮卷"
+      },
+      "n-cc-03": {
+        "attack": "a5",
+        "ult": "u6",
+        "ultName": "潮岳·焰炉"
+      },
+      "n-yh-03": {
+        "attack": "a6",
+        "ult": "u6",
+        "ultName": "潮引·潮海"
+      },
+      "dk-gh-08": {
+        "attack": "a2",
+        "ult": "u3",
+        "ultName": "太阴碎晶·万相归霜"
+      }
+    }
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "comment": "关卡。这里只写章节规格，tools/build.mjs 把它展开成 data/config.json 里的显式关卡表（含每一关的敌方编成、等级、掉落）——Unity 只读展开结果，不重算，所以关卡数再加也不会出现两端算歪。",
+  "teamSlots": 5,
+  "waveLimit": 3,
+  "waveRecover": 0.25,
+  "waveRecoverNote": "波与波之间，存活的我方单位回 25% 最大生命（血量与能量本来就跨波保留，倒下的人不会站起来）。为什么要有这条：多波关一旦出现'打不打得过'之外的第二个问题——够不够血皮走完剩下的波，玩家就会把灭队读成自己数值不够。探针实测（关主三波、每波满编 15 人时）我方总造伤已经高于承伤（伤差比 1.02~1.19）却被第三波收掉残局，就是这个症状；波次人数递减（见 waveSizes）加上波间调息，两条一起把'多波'变成节奏而不是惩罚。回血比例写在 config 里由 Core 的 StageScript 用，Runner 与 Unity 共用同一份，不会出现两端各回各的。",
+  "waveSizes": {
+    "comment": "每一波上阵几人（按波次顺序取，超出数组长度就沿用最后一档）。关主 [5,4,2]：第一波杂兵、第二波半队精英、第三波只剩关主带一个侍从。上一版三波全满编 15 人，探针实测我方总造伤已经高于承伤却被第三波收掉——那不是因为玩家弱，而是因为'满编三波'本质上是 3 场满编战斗叠加，任何编成都得靠 3 倍血池才扛得住，玩家会把这种结构问题读成数值不够。递减的波次还让关主战有'清场—决战'的节奏，最后一波单独的首领也是特效与镜头的重点。midBoss [4,3]，normal/elite 只有一波所以不受影响。",
+    "normal": [
+      5
+    ],
+    "elite": [
+      5
+    ],
+    "midBoss": [
+      4,
+      3
+    ],
+    "boss": [
+      5,
+      4,
+      2
+    ]
+  },
+  "starRules": {
+    "comment": "3 星判定的兜底规则。turns 的单位是'我方出手次数'（ATB 下每个单位行动一次算一次），真正的判定线按 starParByKind × 敌方总人数在展开时算好写进每一关，运行时只比大小。",
+    "turns": 40,
+    "noDeath": true,
+    "hpAbove": 0.5
+  },
+  "starParByKind": {
+    "comment": "每消灭一个敌方单位允许的我方出手次数：normal 关 6 次、精英 8 次、中关 9 次、关主 10 次（展开时乘敌方总人数写进每一关，运行时只比大小）。上一版写成'每单位每波 × 上阵人数 × 波数'，数值上恰好和'满编波 × 每波人数'等价，所以以前看不出差别；波次人数递减之后，及格线必须跟着'要打多少人'走，否则会留下'人变少了但及格线没变'的白送三星。",
+    "normal": 6,
+    "elite": 8,
+    "midBoss": 9,
+    "boss": 10
+  },
+  "starRewards": {
+    "1": {
+      "coin": 0
+    },
+    "2": {
+      "jade": 20
+    },
+    "3": {
+      "jade": 40,
+      "stamina": 20
+    }
+  },
+  "chapterSpec": [
+    {
+      "chapter": 1,
+      "faction": "qx",
+      "label": "栖霞·蒙学",
+      "stages": 100,
+      "levelBase": 1,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "green",
+        "green",
+        "blue"
+      ],
+      "stamina": 4,
+      "powerPerStage": 0.004
+    },
+    {
+      "chapter": 2,
+      "faction": "yx",
+      "label": "云岫·山径",
+      "stages": 100,
+      "levelBase": 13,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "blue",
+        "blue",
+        "purple"
+      ],
+      "stamina": 5,
+      "powerPerStage": 0.004
+    },
+    {
+      "chapter": 3,
+      "faction": "gh",
+      "label": "广寒·霜径",
+      "stages": 100,
+      "levelBase": 25,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "purple",
+        "purple",
+        "gold"
+      ],
+      "stamina": 6,
+      "powerPerStage": 0.004
+    },
+    {
+      "chapter": 4,
+      "faction": "zf",
+      "label": "紫府·星案",
+      "stages": 100,
+      "levelBase": 37,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "purple",
+        "gold",
+        "gold"
+      ],
+      "stamina": 7,
+      "powerPerStage": 0.004
+    },
+    {
+      "chapter": 5,
+      "faction": "cc",
+      "label": "赤城·剑炉",
+      "stages": 100,
+      "levelBase": 49,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "gold",
+        "gold",
+        "red"
+      ],
+      "stamina": 8,
+      "powerPerStage": 0.004
+    },
+    {
+      "chapter": 6,
+      "faction": "yh",
+      "label": "瀛海·珠阙",
+      "stages": 100,
+      "levelBase": 61,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "gold",
+        "red",
+        "red"
+      ],
+      "stamina": 9,
+      "bossId": "boss-yh-jiao",
+      "powerPerStage": 0.004
+    },
+    {
+      "chapter": 7,
+      "faction": "all",
+      "label": "万象·妖潮",
+      "stages": 100,
+      "levelBase": 73,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "gold",
+        "red",
+        "red"
+      ],
+      "stamina": 10,
+      "bossId": "boss-xi-shi",
+      "powerMult": 1.12,
+      "comment": "第 7 章起敌人从全势力小怪池混编（faction=all），妖潮是六界之乱的总爆发；powerMult 在形态倍率之上再乘一层，因为红阶等级已顶到 80 上限，难度只能靠乘数继续抬。",
+      "powerPerStage": 0.004
+    },
+    {
+      "chapter": 8,
+      "faction": "all",
+      "label": "归墟·无名之地",
+      "stages": 100,
+      "levelBase": 85,
+      "levelPerStage": 1,
+      "rarityLadder": [
+        "red",
+        "red",
+        "red"
+      ],
+      "stamina": 11,
+      "bossId": "boss-yuan-wu",
+      "powerMult": 1.26,
+      "comment": "终章。所有被忘记的名字沉在归墟，最终妖王渊主·无名镇守 s12。",
+      "powerPerStage": 0.004
+    }
+  ],
+  "stageShape": {
+    "comment": "章节节奏。12 关章（已弃用）按 mod 数组定型；100 关章由 meta.mjs 按公式定型：个位 5 = 精英，10 的倍数 = 中关（妖王护卫），本章最后一关 = 关主（妖王决战），其余 = 寻常。waveSizes/starParByKind 两种章共用。",
+    "normal": {
+      "mod": [
+        1,
+        2,
+        3,
+        7,
+        9,
+        11
+      ],
+      "waves": 1,
+      "starsBonus": 0
+    },
+    "elite": {
+      "mod": [
+        4,
+        5,
+        6,
+        10
+      ],
+      "waves": 2,
+      "starsBonus": 1
+    },
+    "boss": {
+      "mod": [
+        12
+      ],
+      "waves": 3,
+      "starsBonus": 2
+    },
+    "midBoss": {
+      "mod": [
+        8
+      ],
+      "waves": 2,
+      "starsBonus": 2
+    }
+  },
+  "enemyPower": {
+    "statMult": 1,
+    "eliteMult": 1.12,
+    "bossMult": 1.25,
+    "note": "敌方属性乘数。玩家靠编队与养成赢，不靠敌方数值放水。",
+    "powerPerStage": 0.004
+  },
+  "drops": {
+    "coinPerStamina": 620,
+    "dungeonRewardMult": 3,
+    "dungeonRewardMultNote": "2026-11-02：历练副本（4 类 × 3 难度）常规掉落整体 ×3（铜钱与全部材料数量，含洗髓丹；掉率不变）。需求：'获取的奖励太少，翻3倍'（先报 5 倍，同日调整为 3 倍）。只放大可重复刷的常规掉落，不动首通缘玉/首通铜钱——缘玉 2026-11-01 才刚按'全线翻倍'重校，再乘会把抽卡经济打穿；首通铜钱 2026-10-26 也刚压过。2026-11-06 例外：升星卷是新货币，按设计值单独投放、不吃这里的 ×3，否则普通本实际 15 张/次会让满星 45 张三次刷满。",
+    "firstClearMult": 1.5,
+    "firstClearMultNote": "2026-10-26 重校：首通铜钱原来是常规掉落的 2 倍，而主线有 800 关，一次性首通铜钱累计约 300 万——玩家前两周的钱包于是'开局就花不完'，铜钱彻底退出约束（8 天实测 709 万，同期全队养满只要约 650 万）。降到 1.5 倍后首通仍是'明显更肥'的确定性收益，但不再一次性灌爆。为什么不是 1.2：1.2 倍在模拟里让两个种子的首周钱包只剩 1/10，第一章关主的升星铜钱付不出，7 天卡在 栖霞 100 关主（关卡数 430→106）；1.5 倍两个种子分别是 486 / 405 关，与基线 496 / 430 基本持平，铜钱仍比原来少 11%~26%。常规掉落 coinPerStamina 不动。",
+    "starShardPerRun": 1,
+    "starScrollPerRun": 1,
+    "starShardPerRunNote": "升星卷产量（2026-11-06 收紧）：残卷本普通难度每次产出对应阶级升星卷 1 张，秘本 2 张、劫余 3 张（只按 dropMult 放大，不再乘 dungeonRewardMult 的 ×3 总倍率）。满星共需 1+2+…+9=45 张，普通本要刷 45 次≈270 心神，升星是明确的长期目标，不再几次副本就拉满。升星卷按玩家队伍里最缺升星卷的角色阶级发放，六档分开。旧『通用残卷』字段保留给老存档兼容，不再作为升星主材料。",
+    "firstClearJade": 16,
+    "firstClearJadeBoss": 50,
+    "jadeDoubleNote": "2026-11-01：所有关卡/活动的缘玉获取翻倍（需求：'所有关卡、活动的缘玉获取翻倍'）。本文件里被翻倍的键：starRewards 2★/3★ 的 jade（10/20 → 20/40）、drops.firstClearJade 与 firstClearJadeBoss（8/25 → 16/50，主线普通关与关主、材料本各难度同吃这一项）；登仙塔 tower.firstClearJade/bossFloorJade（60/150 → 120/300）。meta.mjs 里写死的宝箱缘玉（5/12/30 → 10/24/60）同步翻倍；content/events/*.json 的首通缘玉与商店缘玉也一并翻倍。只翻缘玉，不动铜钱/材料/尘缘，也不动首通铜钱倍率——铜钱 2026-10-26 才刚重校过，跟着翻会重新灌爆钱包。",
+    "pillByKind": {
+      "comment": "洗髓丹（突破材料）每关产量，按关卡形态给。寻常关 0 颗。100 关章后中关/关主数量随体量重校，避免突破材料通胀。",
+      "normal": 0,
+      "elite": 0,
+      "midBoss": 1,
+      "boss": 2
+    },
+    "materialTables": {
+      "exp": {
+        "label": "修行·散页",
+        "keys": [
+          "page",
+          "note",
+          "scroll"
+        ],
+        "stamina": 6
+      },
+      "star": {
+        "label": "修行·残卷",
+        "keys": [
+          "shard"
+        ],
+        "stamina": 6
+      },
+      "skill": {
+        "label": "修行·口诀",
+        "keys": [
+          "tome:purple",
+          "tome:gold",
+          "tome:red"
+        ],
+        "stamina": 6
+      },
+      "coin": {
+        "label": "修行·铜钱",
+        "keys": [
+          "coin"
+        ],
+        "stamina": 6
+      }
+    },
+    "note": "材料本每章解锁一档难度（普通/hard/噩梦），掉率随难度提升；日常四趟 = 24 心神，占自然回复的一成，不至于逼玩家买体力。"
+  },
+  "chestMob": {
+    "enabled": true,
+    "id": "mob-cc-xiang",
+    "note": "宝箱怪：固定宝箱关（每 5 关/整十关）第一波 0 号位塞一只宝箱妖，打死才开箱、掉宝箱奖励。关主关不塞（关主本身就是宝箱）。改 enabled=false 可一键回到纯掉落宝箱。"
+  },
+  "difficultyLadder": [
+    {
+      "key": "normal",
+      "label": "普通",
+      "levelOffset": 0,
+      "mult": 1,
+      "dropMult": 1,
+      "unlock": "none"
+    },
+    {
+      "key": "hard",
+      "label": "秘本",
+      "levelOffset": 12,
+      "mult": 1.18,
+      "dropMult": 1.8,
+      "unlock": "starCount",
+      "unlockValue": 30
+    },
+    {
+      "key": "nightmare",
+      "label": "劫余",
+      "levelOffset": 24,
+      "mult": 1.35,
+      "dropMult": 2.6,
+      "unlock": "starCount",
+      "unlockValue": 90
+    }
+  ],
+  "tower": {
+    "comment": "登仙塔：独立于主线的爬塔玩法。1000 层。每层的敌人等级/倍率/首通奖励在这里定死，展开成 meta.tower（同 StageDoc 结构，id 以 t 开头），Core 的 Unlocked/BattleRequest/SettleStage 直接复用。体力 0（登塔不耗心神），每层只首通有奖励、重复通关无掉落，不给白嫖途径。每 5 层一关主（妖王），倍率逐层抬升，等到 35 层起顶到 80 上限后全靠倍率加压。里程碑：20 层 SSR 角色 / 40 层 UR 角色 / 60 层 SSR 缘器 / 100 层 UR 缘器 / 150 层 UR 缘器×2，之后每 50 层按稀有度继续加码，到 1000 层封顶；角色奖励若已拥有则按重复卡规则折算为对应尘缘（外加本体残卷）。",
+    "floors": 1000,
+    "unlockStar": 8,
+    "levelBase": 12,
+    "levelPerFloor": 2,
+    "multBase": 1.02,
+    "multPerFloor": 0.02,
+    "bossEvery": 5,
+    "firstClearCoin": 1200,
+    "firstClearJade": 120,
+    "bossFloorJade": 300,
+    "bossFloorCoin": 2400,
+    "milestones": [
+      { "floor": 20, "char": { "rarity": "gold", "count": 1 } },
+      { "floor": 40, "char": { "rarity": "red", "count": 1 } },
+      { "floor": 60, "equip": { "rarity": "gold", "count": 1 } },
+      { "floor": 100, "equip": { "rarity": "red", "count": 1 } },
+      { "floor": 150, "equip": { "rarity": "red", "count": 2 } },
+      { "floor": 200, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 2 } },
+      { "floor": 250, "equip": { "rarity": "red", "count": 3 } },
+      { "floor": 300, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 3 } },
+      { "floor": 350, "equip": { "rarity": "red", "count": 4 } },
+      { "floor": 400, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 4 } },
+      { "floor": 450, "equip": { "rarity": "red", "count": 5 } },
+      { "floor": 500, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 5 } },
+      { "floor": 550, "equip": { "rarity": "red", "count": 6 } },
+      { "floor": 600, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 6 } },
+      { "floor": 650, "equip": { "rarity": "red", "count": 7 } },
+      { "floor": 700, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 7 } },
+      { "floor": 750, "equip": { "rarity": "red", "count": 8 } },
+      { "floor": 800, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 8 } },
+      { "floor": 850, "equip": { "rarity": "red", "count": 9 } },
+      { "floor": 900, "char": { "rarity": "red", "count": 1 }, "equip": { "rarity": "red", "count": 9 } },
+      { "floor": 950, "equip": { "rarity": "red", "count": 10 } },
+      { "floor": 1000, "char": { "rarity": "diamond", "count": 1 }, "equip": { "rarity": "red", "count": 10 } }
+    ]
+  },
+  "autoChapters": {
+    "comment": "主线自动章节：第 9 章起由 meta.mjs 按此规格程序化生成，直到 upTo 章，10 章 × 100 关 = 1000 关。势力轮转（每 7 的倍数章为全势力混编「万象」章），章节名由两组词确定性交错生成，倍率自第 8 章 1.26 起继续逐章上抬。妖王按表轮转。",
+    "upTo": 10,
+    "staminaCap": 14,
+    "powerMultStep": 0.06,
+    "nameA": [
+      "云",
+      "雾",
+      "霜",
+      "星",
+      "月",
+      "潮",
+      "烬",
+      "墨",
+      "灯",
+      "钟",
+      "藤",
+      "沙",
+      "雪",
+      "烟",
+      "雷",
+      "影"
+    ],
+    "nameB": [
+      "窟",
+      "原",
+      "涧",
+      "台",
+      "谷",
+      "城",
+      "林",
+      "径",
+      "渊",
+      "墟",
+      "滩",
+      "峰",
+      "泽",
+      "廊",
+      "冢",
+      "渡"
+    ]
+  },
+  "tutorial": {
+    "firstStageMult": 0.4,
+    "note": "教学首关（c1s01）专用敌方倍率。新手教学只安排一次「喂经验」——40 张散页全给初始 SSR 到 Lv15，其余四位队友仍是 Lv1；按常规倍率打会出现阵亡或超时，无法三星。初始角色改为随机 1 个 SSR 后，治疗/坦克型开局（如沈砚秋）自身输出低，0.7 下会打到 30+ 回合；实测 25 个 SSR × 4 种随机种子，压到 0.4（最终敌方总倍率 1.3×0.4=0.52）才能全员稳定三星。第 2 关起恢复正常倍率（从第 1 关就教玩家「上阵+养成=打赢」，不是教玩家刷开局）。"
+  }
+}

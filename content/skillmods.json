@@ -1,0 +1,41 @@
+{
+  "_comment": "心法·技能改造（P1-3）。按定位族给终式（大招）三选一改造；modFx 是通用字段字典随 member 下发，C# SkillExecutor 按字段名通用应用（不为角色写分支）。字段：dmgUp 终式伤害×(1+v)、extraHitPct 追加一段百分比、healEnergy 命中回能、toughUp 削韧×(1+v)、dotPct 附加持续伤害、extraTargets 目标数+、defShred 破防延长回合、healUp 治疗×(1+v)、shieldUp 护盾×(1+v)。消耗：心印 xinyin ×1，终身一次。",
+  "cost": 1,
+  "families": {
+    "burst": [
+      { "key": "burst_dmg", "name": "决意", "desc": "终式伤害提升 25%", "modFx": { "dmgUp": 0.25 } },
+      { "key": "burst_extra", "name": "连决", "desc": "终式命中后追加一段 60% 伤害", "modFx": { "extraHitPct": 0.6 } },
+      { "key": "burst_energy", "name": "汲魂", "desc": "终式命中敌人时自身回 6 点能量", "modFx": { "healEnergy": 6 } }
+    ],
+    "cleave": [
+      { "key": "cleave_wide", "name": "扩域", "desc": "终式目标数 +2", "modFx": { "extraTargets": 2 } },
+      { "key": "cleave_focus", "name": "淬锋", "desc": "终式伤害提升 30%", "modFx": { "dmgUp": 0.3 } },
+      { "key": "cleave_bleed", "name": "撕裂", "desc": "终式附加 12% 攻击的流血（2 回合）", "modFx": { "dotPct": 0.12 } }
+    ],
+    "break": [
+      { "key": "break_tough", "name": "凿骨", "desc": "终式削韧提升 50%", "modFx": { "toughUp": 0.5 } },
+      { "key": "break_shred", "name": "碎甲", "desc": "终式造成的破防延长 1 回合", "modFx": { "defShred": 1 } },
+      { "key": "break_heavy", "name": "重锤", "desc": "终式伤害 +35%，削韧 +20%", "modFx": { "dmgUp": 0.35, "toughUp": 0.2 } }
+    ],
+    "guard": [
+      { "key": "guard_shield", "name": "垒壁", "desc": "终式护盾值提升 40%", "modFx": { "shieldUp": 0.4 } },
+      { "key": "guard_thorn", "name": "荆甲", "desc": "终式伤害提升 20%，护盾 +15%", "modFx": { "dmgUp": 0.2, "shieldUp": 0.15 } },
+      { "key": "guard_wide", "name": "周天", "desc": "终式目标数 +1，护盾 +10%", "modFx": { "extraTargets": 1, "shieldUp": 0.1 } }
+    ],
+    "sustain": [
+      { "key": "sustain_heal", "name": "妙手", "desc": "终式治疗量提升 40%", "modFx": { "healUp": 0.4 } },
+      { "key": "sustain_energy", "name": "回春", "desc": "终式治疗时目标回 4 点能量", "modFx": { "healEnergy": 4 } },
+      { "key": "sustain_wide", "name": "普济", "desc": "终式目标数 +1，治疗 +15%", "modFx": { "extraTargets": 1, "healUp": 0.15 } }
+    ],
+    "control": [
+      { "key": "control_long", "name": "缚魂", "desc": "终式伤害提升 20%，削韧 +30%", "modFx": { "dmgUp": 0.2, "toughUp": 0.3 } },
+      { "key": "control_wide", "name": "天罗", "desc": "终式目标数 +2", "modFx": { "extraTargets": 2 } },
+      { "key": "control_drain", "name": "蚀灵", "desc": "终式命中回 5 点能量，伤害 +10%", "modFx": { "healEnergy": 5, "dmgUp": 0.1 } }
+    ],
+    "support": [
+      { "key": "support_buff", "name": "襄赞", "desc": "终式增益效果提升 25%", "modFx": { "buffUp": 0.25 } },
+      { "key": "support_heal", "name": "泽心", "desc": "终式治疗量提升 25%", "modFx": { "healUp": 0.25 } },
+      { "key": "support_energy", "name": "传薪", "desc": "终式为受增益目标回 4 点能量", "modFx": { "healEnergy": 4 } }
+    ]
+  }
+}

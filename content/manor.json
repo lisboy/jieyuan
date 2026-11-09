@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "comment": "洞府四建筑 + 炼丹配方（PLAYABLE P3）。灵田沿用 economy.manor 的种植/收获逻辑，本文件只管新增部分。产出公式：stock += 小时数 × perHour × rate^(lv-1)，上限 capHours 小时的产量；升级铜钱 = upBase × 2^(lv-1)。",
+  "buildings": [
+    {
+      "key": "danfang", "label": "丹房", "desc": "药庐煨炉，四季常温。产出炼丹所需的灵药。",
+      "res": "yaocao", "resLabel": "灵药", "perHour": 0.3, "rate": 1.12, "capHours": 8, "upBase": 220,
+      "balanceNote": "2026-10-31 重校：原 upBase 4000 使 Lv10 累计要 204 万铜钱（≈14 天全部收入），而满级每天只产 17 份灵药——升级永远回不了本。二次校准到 upBase 220（Lv10 累计 11.2 万 ≈ 0.75 天收入），按灵药 200 铜钱估值满级日产约 3994 铜钱，回本约 28 天，落在 30 天目标内。"
+    },
+    {
+      "key": "jianzhong", "label": "剑冢", "desc": "万剑归鞘之地，锈剑分解后凝出器魂。",
+      "res": "soul", "resLabel": "器魂", "perHour": 0.2, "rate": 1.14, "capHours": 8, "upBase": 420,
+      "balanceNote": "2026-10-31 重校：原 upBase 6000 → Lv10 累计 307 万，满级 13 份/天，回本 460 天。二次校准到 420（21.5 万 ≈ 1.4 天收入），按器魂 500 铜钱估值满级日产约 7804 铜钱，回本约 27.5 天。"
+    },
+    {
+      "key": "juling", "label": "聚灵阵", "desc": "阵纹引天地灵气，昼夜不歇地凝成缘玉。",
+      "res": "jade", "resLabel": "缘玉", "perHour": 0.2, "rate": 1.16, "capHours": 8, "upBase": 620,
+      "balanceNote": "2026-10-31 重校：原 upBase 8000 → Lv10 累计 409 万；满级 21 缘玉/天（≈0.13 抽），升级却要 27 天全部收入。二次校准到 620（31.7 万 ≈ 2.1 天收入），按缘玉 620 铜钱估值满级日产约 1.13 万铜钱，回本约 28 天；缘玉日产仍受控（日常 210/天，建筑最多补 9%）。"
+    },
+    {
+      "key": "cangjing", "label": "藏经阁", "desc": "收纳各方抄本，日久自然析出紫阶技能书。",
+      "res": "tome_purple", "resLabel": "紫阶技能书", "perHour": 0.08, "rate": 1.14, "capHours": 8, "upBase": 420,
+      "balanceNote": "2026-10-31 重校：原 upBase 10000 → Lv10 累计 511 万，满级 5 本/天，回本 774 天。二次校准到 420（21.5 万 ≈ 1.4 天收入），按紫书 1240 铜钱估值满级日产约 7739 铜钱，回本约 27.7 天。"
+    }
+  ],
+  "recipes": [
+    { "key": "xh", "name": "小还丹", "tier": 1, "need": { "yaocao": 3, "coin": 300 }, "fx": { "atk": 1.1 }, "desc": "气血翻涌，剑锋更快（本场攻击 +10%）" },
+    { "key": "ns", "name": "凝神丹", "tier": 1, "need": { "yaocao": 3, "coin": 300 }, "fx": { "erg": 1.15 }, "desc": "神凝气聚，怒气回复加快（本场怒气回复 +15%）" },
+    { "key": "gy", "name": "固元丹", "tier": 1, "need": { "yaocao": 4, "coin": 360 }, "fx": { "hp": 1.12 }, "desc": "固本培元（本场生命 +12%）" },
+    { "key": "bj", "name": "避劫丹", "tier": 2, "need": { "yaocao": 6, "coin": 800 }, "fx": { "def": 1.15, "mdef": 1.15 }, "desc": "金光护体（本场双防 +15%）" },
+    { "key": "pf", "name": "破妄丹", "tier": 2, "need": { "yaocao": 6, "coin": 800 }, "fx": { "crit": 0.06 }, "desc": "明察敌隙（本场暴击 +6%）" },
+    { "key": "xf", "name": "行风丹", "tier": 2, "need": { "yaocao": 6, "coin": 800 }, "fx": { "spd": 1.15 }, "desc": "身轻如燕（本场速度 +15%）" },
+    { "key": "hs", "name": "化煞丹", "tier": 3, "need": { "yaocao": 10, "coin": 1800 }, "fx": { "atk": 1.2, "crit": 0.04 }, "desc": "以煞养刀（本场攻击 +20%、暴击 +4%）" },
+    { "key": "lh", "name": "龙虎丹", "tier": 3, "need": { "yaocao": 10, "coin": 1800 }, "fx": { "hp": 1.18, "def": 1.18 }, "desc": "龙虎交汇（本场生命/防御 +18%）" },
+    { "key": "td", "name": "通窍丹", "tier": 3, "need": { "yaocao": 12, "coin": 2400 }, "fx": { "erg": 1.3, "spd": 1.1 }, "desc": "周天通透（本场怒气回复 +30%、速度 +10%）" },
+    { "key": "jd", "name": "金丹", "tier": 3, "need": { "yaocao": 15, "coin": 3600 }, "fx": { "atk": 1.15, "hp": 1.15, "def": 1.15, "mdef": 1.15 }, "desc": "一丹通百脉（本场四维 +15%）" }
+  ],
+  "quality": {
+    "comment": "火候四档：前端进度条往返三次提交停点 pct（0..1），服务端按区间定档，前后端口径一致。",
+    "bands": { "ex": [0.82, 0.94], "hi": [0.58, 0.82], "mid": [0.34, 0.58] },
+    "mul": { "lo": 0.7, "mid": 1.0, "hi": 1.2, "ex": 1.5 },
+    "label": { "lo": "普通", "mid": "良品", "hi": "上品", "ex": "极品" },
+    "color": { "lo": "#9aa3b2", "mid": "#6f9bd1", "hi": "#8fbf7f", "ex": "#d9a13b" }
+  }
+}
